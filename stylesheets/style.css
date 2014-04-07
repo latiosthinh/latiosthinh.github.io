@@ -34,40 +34,7 @@
 .se-content{
 	margin: 0 auto;
 }
-.se-content h3{
-	font-size: 60px;
-	position: relative;
-	display: inline-block;
-	padding: 10px 30px 8px 30px;
-	height: 80px;
-	background: #000;
-	line-height: 80px;
-	margin-bottom: 20px;
-	font-family: 'Bitter', 'Trebuchet MS', Arial;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
-}
-.se-content h3:before{
-	content: '';
-	width: 0;
-	height: 0;
-	border-top: 38px solid transparent;
-	border-bottom: 60px solid transparent;
-	border-right: 60px solid black;
-	position: absolute;
-	left: -59px;
-	top: 0px;
-}
-.se-content h3:after{
-	content: '';
-	width: 0;
-	height: 0;
-	border-top: 38px solid transparent;
-	border-bottom: 60px solid transparent;
-	border-left: 60px solid black;
-	position: absolute;
-	right: -59px;
-	top: 0px;
-}
+
 .se-slope:nth-child(odd) .se-content h3:before,
 .se-slope:nth-child(odd) .se-content h3:after{
 	border-right-color: #AA00FF;
@@ -93,7 +60,7 @@
 	-ms-transform: rotate(-5deg);
 	transform: rotate(-5deg);
 	color: #AA00FF;
-	padding: 130px 100px 250px 100px;
+	padding: 130px 100px 200px 100px;
 }
 .se-slope:nth-child(even) .se-content{
 	-webkit-transform: rotate(5deg);
@@ -102,7 +69,7 @@
 	-ms-transform: rotate(5deg);
 	transform: rotate(5deg);
 	color: #000;
-	padding: 150px 100px 250px 100px;
+	padding: 130px 100px 200px 100px;
 }
 .se-slope:nth-child(odd) .se-content h3{
 	background: #AA00FF;
