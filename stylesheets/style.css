@@ -141,3 +141,17 @@
 		
 	}
 }
+.codrops-bot {
+	font-family: Arial, sans-serif;
+
+	width: 100%;
+	background: #000;
+	opacity: 0.5;
+	text-transform: uppercase;
+	z-index: 9999;
+	position: fixed;
+	bottom: 0px;
+	-moz-box-shadow: 1px 0px 2px #000;
+	-webkit-box-shadow: 1px 0px 2px #000;
+	box-shadow: 1px 0px 2px #000;
+}
