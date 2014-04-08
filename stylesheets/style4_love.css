@@ -23,7 +23,7 @@
     background-repeat: none;
     opacity: 0;
     z-index: 0;
-	-webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     -webkit-animation: imageAnimation 36s linear infinite 0s;
     -moz-animation: imageAnimation 36s linear infinite 0s;
     -o-animation: imageAnimation 36s linear infinite 0s;
@@ -49,7 +49,7 @@
     font-size: 240px;
     padding: 0;
     line-height: 200px;
-	color: rgba(169,3,41, 0.8);
+	color: rgba(143,0,255, 0.8);
 }
 .cb-slideshow li:nth-child(1) span { background-image: url("https://cloud.githubusercontent.com/assets/7105120/2625796/ffc5dcd4-bda9-11e3-8aab-4fa25932c472.jpg") }
 .cb-slideshow li:nth-child(2) span {
