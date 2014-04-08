@@ -125,14 +125,7 @@
     -ms-animation-delay: 54s;
     animation-delay: 54s;
 }
-.cb-slideshow li:nth-child(11) span {
-    background-image: url("https://cloud.githubusercontent.com/assets/7105120/2642246/e355fd7e-bf05-11e3-85c6-98b22f508c66.jpg");
-    -webkit-animation-delay: 60s;
-    -moz-animation-delay: 60s;
-    -o-animation-delay: 60s;
-    -ms-animation-delay: 60s;
-    animation-delay: 60s;
-}
+
 .cb-slideshow li:nth-child(2) div {
     -webkit-animation-delay: 6s;
     -moz-animation-delay: 6s;
@@ -196,13 +189,7 @@
     -ms-animation-delay: 54s;
     animation-delay: 54s;
 }
-.cb-slideshow li:nth-child(11) div {
-    -webkit-animation-delay: 60s;
-    -moz-animation-delay: 60s;
-    -o-animation-delay: 60s;
-    -ms-animation-delay: 60s;
-    animation-delay: 60s;
-}
+
 /* Animation for the slideshow images */
 @-webkit-keyframes imageAnimation { 
 	0% {
