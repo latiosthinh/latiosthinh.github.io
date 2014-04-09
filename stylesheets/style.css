@@ -5,7 +5,8 @@
 }
 
 .container h1 {
-  font: 40px;
+  font: 100px;
   background-color: none;
   color: #000;
+  margin-top: 40%;
 }
