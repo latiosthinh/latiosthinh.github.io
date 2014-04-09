@@ -3,3 +3,9 @@
   height: 100%;
   background: #8F00FF;
 }
+
+.container h1 {
+  font: 40px;
+  background-color: none;
+  color: #000;
+}
