@@ -11,7 +11,11 @@ body{
   height: 100%;
   background: #F1F1F1;
   text-align: center;
+}
+
+span.thisIsShit {
   display: inline-block;
+  height: 100%;
   vertical-align: middle;
 }
 
