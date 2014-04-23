@@ -15,11 +15,10 @@ body{
   padding-top:5%;
   position: relative;
   text-align: center;
-  display: table;
 }
 
 img {
-  display: table-cell;
+  
   vertical-align:middle;
 }
 
