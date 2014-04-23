@@ -1,31 +1,19 @@
-body{
-  font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-  background: url("https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-ash3/t1.0-9/10151385_280118985495419_841910805137531874_n.jpg") center center no-repeat;
-  font-weight: 400;
-  font-size: 15px;
-  color: #fff;
+html,body {
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
 }
+
+body {
+  display:table;
+}
+
 
 .container {
-  width: 100%;	
-  height: 100%;
-  background: #F1F1F1;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.box-img {
-  width: 500px;
-  height: 500px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-img {
-  width: 500px;
-  height: 500px;
+  display:table-cell;
+  text-align:center;
+  vertical-align:middle;
 }
 
 
