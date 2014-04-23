@@ -34,7 +34,7 @@ img {
 		padding-top:3%;
 	}
 	img {
-		margin-top: 20%;
+	
 	}
 }
 @media screen and (max-width: 400px) {
@@ -44,6 +44,6 @@ img {
 	img {
 		width: 70%;
 		height: 70%;
-		margin-top: 40%;
+	
 	}
 }
