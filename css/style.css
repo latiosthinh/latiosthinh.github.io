@@ -20,3 +20,7 @@ body {
 .logosvg h2 {
     margin-top: 50px; 
 }
+#cover object embed {
+    width: 10%;
+    height: 10%;
+}
