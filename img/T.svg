@@ -1,0 +1,49 @@
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="421px" height="517px" viewBox="449.5 384.5 421 517" enable-background="new 449.5 384.5 421 517" xml:space="preserve">
+    
+<defs>
+    <style>
+        .tomlogo {
+            stroke-dasharray: 1500;
+            stroke-dashoffset: 0;
+            -webkit-animation: dash 3s linear forwards;
+            -o-animation: dash 3s linear forwards;
+            -moz-animation: dash 3s linear forwards;
+            animation: dash 3s linear forwards;
+        }
+        
+        @-webkit-keyframes dash {
+            from {
+                stroke-dashoffset: 1500;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @-o-keyframes dash {
+            from {
+                stroke-dashoffset: 1500;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @-moz-keyframes dash {
+            from {
+                stroke-dashoffset: 1500;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</defs>
+    
+<path class="tomlogo" fill="none" stroke="#9E1F63" stroke-width="25" stroke-miterlimit="10" d="M810.65,437.828c-0.025,0-0.053,0.002-0.077,0.002
+	H736.01c-17.58,0-34.43,3.16-50,8.939c-38.81,14.41-69.71,45.12-84.38,83.811c-4.16,10.979-7.02,22.61-8.37,34.68v276.833
+	c0,0.025-0.002,0.052-0.002,0.077c0,25.613,20.764,46.377,46.377,46.377s46.377-20.764,46.377-46.377
+	c0-0.025-0.002-0.052-0.002-0.077V591.74c0-33.78,27.38-61.16,61.16-61.16h63.403c0.024,0,0.052,0.002,0.077,0.002
+	c25.612,0,46.377-20.764,46.377-46.377S836.264,437.828,810.65,437.828z"/>
+<circle class="tomlogo" fill="none" stroke="#ED1C24" stroke-width="25" stroke-miterlimit="10" cx="524.684" cy="460.432" r="61.16"/>
+</svg>

@@ -1,0 +1,22 @@
+html,
+body {
+    height: 100%;
+}
+#cover {
+    background: url('../img/wall1.jpg') center center no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+#cover-caption {
+    width: 100%;
+}
+.logosvg {
+    padding-top: 250px;
+}
+.logosvg h2 {
+    margin-top: 50px; 
+}
