@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
+    <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    
+    <title>Simple ThomasN</title>
+
+    <script>
+        var myPlayer;
+        jQuery(function () {
+            myPlayer = jQuery("#video").YTPlayer();
+        });
+    </script>
+
+</head>
+<body>
+<div id="cover">
+    <div id="customElement" class="container-fluid">
+        <div id="cover-caption" class="row">
+            <div class="col-sm-12 text-xs-center">
+                <h4 class="fly-opac">Thomas Nguyen</h4>
+                <a href="" class="logosvg">
+                    <object>
+                        <embed src="img/T-color.svg" type="">
+                    </object>
+                </a>           
+                <h2>That moment when you take chance, and...</h2>
+                <br>
+                <h1 class="quote1 text-xs-center">
+                    <span class="fly1 fly-opac">F</span>
+                    <span class="fly2 fly-opac">L</span>
+                    <span class="fly3 fly-opac">Y</span>
+                </h1>
+            </div><!-- col -->
+        </div>
+    </div>
+</div>
+<div id="video" class="player" data-property="{videoURL:'3WWlhPmqXQI',containment:'#cover', showControls:false, autoPlay:true, loop:true, mute:false, startAt:0, opacity:1, addRaster:true, quality:'default'}">My video</div>
+
+
+<nav id="mainNav" class="navbar navbar-fixed-top">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+    </button>
+    <div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
+        <a id="logo" class="navbar-brand" href="#">
+            <!-- LOGO -->
+
+            <img src="img/T-small.png" alt="">
+
+        </a>
+        <ul class="nav navbar-nav pull-sm-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="#cover">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+</body>
+</html>
