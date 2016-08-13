@@ -1,0 +1,54 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="365px" height="447px" viewBox="194.312 244.167 365 447" enable-background="new 194.312 244.167 365 447"
+	 xml:space="preserve">
+    
+<defs>
+    <style>
+        .tomlogo {
+            stroke-dasharray: 1500;
+            stroke-dashoffset: 0;
+            -webkit-animation: dash 5s linear forwards;
+            -o-animation: dash 5s linear forwards;
+            -moz-animation: dash 5s linear forwards;
+            animation: dash 5s linear forwards;
+        }
+        
+        @-webkit-keyframes dash {
+            from {
+                stroke-dashoffset: 1500;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @-o-keyframes dash {
+            from {
+                stroke-dashoffset: 1500;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @-moz-keyframes dash {
+            from {
+                stroke-dashoffset: 1500;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</defs>
+    
+<path class="tomlogo" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M210.351,331.88
+	c0,21.842,17.708,39.55,39.549,39.55c0.022,0,0.046-0.002,0.067-0.002h54.069c28.808,0,52.156,23.35,52.156,52.158v213.497
+	c0,0.022-0.001,0.046-0.001,0.066c0,21.844,17.706,39.552,39.549,39.552c21.844,0,39.551-17.708,39.551-39.552
+	c0-0.021-0.002-0.044-0.002-0.066v-236.08c-1.151-10.292-3.59-20.212-7.138-29.575c-12.51-32.996-38.861-59.185-71.958-71.473
+	c-13.277-4.929-27.647-7.624-42.639-7.624h-63.587c-0.021,0-0.045-0.002-0.067-0.002C228.058,292.33,210.351,310.037,210.351,331.88
+	z"/>
+<circle class="tomlogo" fill="none" stroke="#ED1F24" stroke-width="12" stroke-miterlimit="10" cx="493.77" cy="311.606" r="52.157"/>
+<circle class="tomlogo" fill="none" stroke="#FAA41A" stroke-width="12" stroke-miterlimit="10" cx="493.77" cy="311.606" r="42.671"/>
+<circle class="tomlogo" fill="none" stroke="#F6EC13" stroke-width="12" stroke-miterlimit="10" cx="493.77" cy="311.606" r="32.569"/>
+<circle class="tomlogo" fill="none" stroke="#69BD45" stroke-width="12" stroke-miterlimit="10" cx="493.77" cy="311.606" r="21.586"/>
+<circle class="tomlogo" fill="none" stroke="#3953A4" stroke-width="12" stroke-miterlimit="10" cx="493.77" cy="311.606" r="12.135"/>
+</svg>

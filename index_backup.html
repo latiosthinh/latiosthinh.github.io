@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Video Background CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
+    <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+   
+    <!-- Script -->
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        var myPlayer;
+        jQuery(function () {
+            myPlayer = jQuery("#video").YTPlayer();
+        });
+    </script>
+</head>
+<body>
+    <div id="cover">
+        <div id="customElement" class="container text-xs-center">
+            <div class="row">
+                
+            </div>
+        </div>
+    </div>
+    
+    <div id="video" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=3WWlhPmqXQI&list=PL9C3k00ZRia_Xx1VRzaTwhIuxt6C2XuN7',containment:'#cover', showControls:false, autoPlay:true, loop:true, mute:false, startAt:0, opacity:1, addRaster:true, quality:'default'}">My video</div>
+
+
+</body>
+</html>

@@ -7,7 +7,7 @@
         .tomlogo {
             stroke-dasharray: 1500;
             stroke-dashoffset: 0;
-            -webkit-animation: dash linear forwards;
+            -webkit-animation: dash 3s linear forwards;
             -o-animation: dash 3s linear forwards;
             -moz-animation: dash 3s linear forwards;
             animation: dash 3s linear forwards;
