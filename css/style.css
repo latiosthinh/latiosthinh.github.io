@@ -1,42 +1,44 @@
 html,
 body {
-    height: 100%;
-    position: relative;
-}
-
-/* styling parallax
----------------------------------*/
-#parallax1 {
-    height: 100%;
-    background: url('../img/wall1.jpg') center center repeat fixed;
-    background-size: cover;
-}
-.main-section {
-    height: 100%;
-    clear: both;
-    padding: 90px 0 110px;
+    margin: 0; padding: 0;
 }
 
 /* styling cover page
 ---------------------------------*/
 #cover {
     color: white;
-    text-align: center;
+    height: 100vh; width: 100%;
+    background: url('../img/wall1.jpg') center center no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
 }
-#cover-caption {
-    width: 100%;
+#cover-caption h2, #cover-caption h4 {
+    font-family: "Lekton";
 }
-.logosvg h2 {
-    margin-top: 50px;
+h1.quote1 {
+    font-size: 85px;
+}
+h4.fly-opac { animation-delay: 5s; -webkit-animation-delay: 5s; -moz-animation-delay: 5s;}
+.fly-opac {
     opacity: 0;
-    animation: fadeIn 2s ease forwards;
-    animation-delay: 3s;
+    -webkit-animation: flyAppear 3s ease-in forwards;
+       -moz-animation: flyAppear 3s ease-in forwards;
+            animation: flyAppear 3s ease-in forwards;
 }
+
+.fly1 { animation-delay: 15s; -webkit-animation-delay: 15s; -moz-animation-delay: 15s;}
+.fly2 { animation-delay: 17s; -webkit-animation-delay: 17s; -moz-animation-delay: 17s;}
+.fly3 { animation-delay: 19s; -webkit-animation-delay: 19s; -moz-animation-delay: 19s;}
+
+@-webkit-keyframes flyAppear { from { opacity: 0;} to { opacity: 0.8;} }
+@-moz-keyframes flyAppear { from { opacity: 0;} to { opacity: 0.8;} }
+@keyframes flyAppear { from { opacity: 0;} to { opacity: 0.8;} }
+
 #cover object embed {
-    width: 10%;
-    height: 10%;
+    width: 25%;
+    height: auto;
+    margin-bottom: 55px;
 }
 
 /* styling navbar

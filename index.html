@@ -10,112 +10,75 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Simple ThomasN</title>
-  </head>
-  <body>
-   <section id="parallax1">
-        <!--  begin #cover  -->
-        <div id="cover" class="main-section">
-            <div id="cover-caption">
-                <div class="container">
-                    <div class="col-sm-12 col-sm-offset-1 logosvg">
-                        <object>
-                            <embed src="img/T.svg">
-                        </object>
-                        <br>
-                        <h2>Free to fly<br>- Thomas Nguyen -</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--  end #cover  -->
+    <link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
+    <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
-        <!--    main navbar    -->
-        <nav id="mainNav" class="navbar navbar-fixed-top">
-            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-            &#9776;
-            </button>
-            <div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
-                <a class="navbar-brand" href="#">
-                    <img id="logoImg" class="logoSmall" src="img/T-small.png" alt="">
-                </a>
-                <ul class="nav navbar-nav pull-sm-right">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#cover">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!--    end main navbar    -->
-
-
-        <!--  begin #portfolio  -->
-        <div id="portfolio" class="main-section">
-            <div class="container">
-                <div class="row text-xs-center">
-                    <h2>Portfolio</h2>
-                    <h6>Fresh portfolio of designs that will keep you wanting more.</h6>
-                    <div class="portfolioFilter">
-                        <ul class="Portfolio-nav wow fadeIn delay-02s">
-                            <li><a href="#" data-filter="*" class="current" >All</a></li>
-                            <li><a href="#" data-filter=".branding" >Branding</a></li>
-                            <li><a href="#" data-filter=".webdesign" >Web design</a></li>
-                            <li><a href="#" data-filter=".printdesign" >Print design</a></li>
-                            <li><a href="#" data-filter=".photography" >Photography</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolioContainer wow fadeInUp delay-04s">
-                <div class=" Portfolio-box printdesign">
-                    <a href="#"><img src="img/Portfolio-pic1.jpg" alt=""></a>
-                    <h3>Foto Album</h3>
-                    <p>Print Design</p>
-                </div>
-                <div class="Portfolio-box webdesign">
-                    <a href="#"><img src="img/Portfolio-pic2.jpg" alt=""></a>
-                    <h3>Luca Theme</h3>
-                    <p>Web Design</p>
-                </div>
-                <div class=" Portfolio-box branding">
-                    <a href="#"><img src="img/Portfolio-pic3.jpg" alt=""></a>
-                    <h3>Uni Sans</h3>
-                    <p>Branding</p>
-                </div>
-                <div class=" Portfolio-box photography" >
-                    <a href="#"><img src="img/Portfolio-pic4.jpg" alt=""></a>
-                    <h3>Vinyl Record</h3>
-                    <p>Photography</p>
-                </div>
-                <div class=" Portfolio-box branding">
-                    <a href="#"><img src="img/Portfolio-pic5.jpg" alt=""></a>
-                    <h3>Hipster</h3>
-                    <p>Branding</p>
-                </div>
-                <div class=" Portfolio-box photography">
-                    <a href="#"><img src="img/Portfolio-pic6.jpg" alt=""></a>
-                    <h3>Windmills</h3>
-                    <p>Photography</p>
-                </div>
-            </div>
-        </div>
-        <!--  end #portfolio  -->
-
-    </section>    <!--  end #parallax  -->
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
     
-  </body>
+    <title>Simple ThomasN</title>
+
+    <script>
+        var myPlayer;
+        jQuery(function () {
+            myPlayer = jQuery("#video").YTPlayer();
+        });
+    </script>
+
+</head>
+<body>
+<div id="cover">
+    <div id="customElement" class="container-fluid">
+        <div id="cover-caption" class="row">
+            <div class="col-sm-12 text-xs-center">
+                <h4 class="fly-opac">Thomas Nguyen</h4>
+                <a href="" class="logosvg">
+                    <object>
+                        <embed src="img/T-color.svg" type="">
+                    </object>
+                </a>           
+                <h2>That moment when you take chance, and...</h2>
+                <br>
+                <h1 class="quote1 text-xs-center">
+                    <span class="fly1 fly-opac">F</span>
+                    <span class="fly2 fly-opac">L</span>
+                    <span class="fly3 fly-opac">Y</span>
+                </h1>
+            </div><!-- col -->
+        </div>
+    </div>
+</div>
+<div id="video" class="player" data-property="{videoURL:'3WWlhPmqXQI',containment:'#cover', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, addRaster:true, quality:'default'}">My video</div>
+
+
+<nav id="mainNav" class="navbar navbar-fixed-top">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+    </button>
+    <div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
+        <a id="logo" class="navbar-brand" href="#">
+            <!-- LOGO -->
+
+            <img src="img/T-small.png" alt="">
+
+        </a>
+        <ul class="nav navbar-nav pull-sm-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="#cover">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+</body>
 </html>
