@@ -12,9 +12,10 @@ body {
     background-size: cover;
     display: flex;
     align-items: center;
+    over-flow: hidden;
 }
 #cover-caption h2, #cover-caption h4 {
-    font-family: "Lekton";
+    font-family: Lekton;
 }
 h1.quote1 {
     font-size: 85px;
