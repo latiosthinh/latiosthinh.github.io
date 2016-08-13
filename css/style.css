@@ -1,21 +1,12 @@
-html,
-body {
-    height: 100%; height: 100vh; width: 100%;
-    margin: 0; padding: 0;
-}
-
 /* styling cover page
 ---------------------------------*/
-#main-section {
+#cover {
+    padding-top: 17vh;
+    color: white;
     height: 100vh;  width: 100vw;
     background: url('../img/wall1.jpg') center center no-repeat;
     background-size: cover;
     overflow: hidden;
-}
-#cover {
-    padding-top: 17vh;
-    color: white;
-    height: 100%;  width: 100%;
 }
 #cover-caption h2, #cover-caption h4 {
     font-family: 'Lekton', 'Lobster', sans-serif;
