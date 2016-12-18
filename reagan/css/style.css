@@ -1,0 +1,235 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	width: 100vw; overflow-x: hidden;
+	color: #000;
+}
+#loading-screen {
+	position: fixed;
+	top: 0; left: 0;
+}
+ul.social-link {
+}
+ul.social-link li {
+	display: inline-block;
+	height: 15px;
+	line-height: 15px;
+	margin-right: 10px;
+}
+ul.social-link li span {
+	display: block;
+	height: 20px;
+	float: left;
+}
+ul.social-link li:nth-child(1) span {
+	width: 20px;
+	background: url(../img/social.png) 0 0;
+	background-size: cover;
+}
+ul.social-link li:nth-child(2) span {
+	width: 12px;
+	background: url(../img/social.png) -23px 0;
+	background-size: cover;
+}
+ul.social-link li:nth-child(3) span {
+	width: 24px;
+	background: url(../img/social.png) -46px 0;
+	background-size: cover;
+}
+ul.social-link li:nth-child(4) span {
+	width: 24px;
+	background: url(../img/social.png) 24px 0;
+	background-size: cover;
+}
+ul.social-link li a {
+	text-decoration: none;
+	color: #000;
+	font-size: 0.9rem;
+}
+div.logo {
+	border-bottom: 1px solid #7f3e98;
+	padding-bottom: 1.5rem;
+}
+img.logo-img {
+	width: 30%; height: auto;
+}
+nav ul {
+	list-style: none;
+}
+nav ul li {
+	display: inline-block;
+	padding: 1px 25px 1px 15px;
+}
+nav ul li a {
+	text-decoration: none;
+	color: #000;
+	font-size: 1.2em;
+}
+nav ul li:hover,
+li.active {
+	background: url(../img/nav-bg.png) right no-repeat #7f3e98;
+	background-size: contain;
+}
+nav ul li:hover a,
+li.active a {
+	color: #fff;
+	text-decoration: none;
+}
+div.main-top {
+	height: 75vh;
+	background: #dfcfe5;
+	margin-top: 60px;
+	color: #7f3e98;
+	position: relative;
+}
+.main-top-img {
+	height: 75vh; width: auto;
+}
+.main-top h3:first-child {
+	letter-spacing: 1.5rem;
+	margin-top: 300px; margin-left: 2%;
+	font-weight: 100;
+}
+.main-top-hr {
+	border: 1px solid;
+    width: 20%;
+	margin: 20px auto;
+}
+.main-arr {
+	position: absolute;
+	bottom: 10px;
+}
+.main-arr img {
+	width: 50px;
+    border: 1px solid #7f3e98;
+    border-radius: 50%;
+    padding: 10px;
+}
+div.main-center {
+	margin-top: 100px;
+}
+.main-center img {
+	height: 55px;
+	float: left;
+}
+h1.about {
+	height: 55px;
+	line-height: 55px;
+}
+.brand-story {
+	clear: both;
+	margin-top: 50px;
+}
+.brand-story h1 {
+	font-weight: 100;
+}
+.brand-hr {
+	border-top: 1px solid #7f3e98;
+	width: 50%;
+}
+.main-center-2 {
+	margin-top: 70px;
+}
+.center-2, .center-3, .center-4 {
+	margin-bottom: 60px;
+}
+.center-2-title,
+.center-3-title,
+.center-4-title {
+	position: relative;
+}
+.center-2-h1 {
+	padding-right: 60px;
+	position: absolute;
+    z-index: 1;
+    background: #fff;
+    top: -8px;
+}
+.center-2 p, .center-3 p, .center-4 p {
+	display: block;
+    margin-top: 60px;
+    width: 50%;
+}
+.center-2-hr {
+	width: 100%;
+    position: absolute;
+    top: 50%;
+    border-top: 1px solid #7f3e98;
+}
+.center-2 p {
+	clear: both;
+}
+.main-bottom {
+	height: 80vh;
+	background: url(../img/b.jpg) center center no-repeat;
+	background-size: cover;
+	color: #fff;
+	font-weight: bold;
+	padding-top: 15%;
+	position: relative;
+}
+.main-bottom div {
+	position: absolute;
+	top: 85%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 1;
+	transform: translateX(-50%) translateY(-50%);
+}
+.main-bottom p {
+	margin: 50px 22%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.row-contact {
+	margin: 60px 0;
+}
+div.contact h5 {
+	font-weight: bolder;
+}
+div.contact p {
+	font-size: 95%;
+}
+.footer-logo {
+	width: 70%;
+	margin-top: 20%;
+}
+.footer-hr {
+	border: 2px solid #7f3e98;
+	width: 5%;
+}
+div.last {
+	height: 70px;
+	background: #7f3e98;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
