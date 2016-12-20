@@ -25,18 +25,6 @@
   		<title>Reagan | BeautySalon</title>
 	</head>
 	<body>
-		<div id="loading-screen">
-			<video id="myvid" class="full-screen" autoplay >
-			  <source src="img/loading-video.mp4" type="video/mp4" >
-			</video>
-		</div>
-		<script type="text/javascript">
-			video = document.getElementById('myvid');
-			loadscr = document.getElementById('loading-screen');
-			video.addEventListener('ended',function() {
-				document.body.removeChild(loadscr);
-			});
-		</script>
 		<div id="main-div" class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 social-div text-xs-right">
@@ -58,12 +46,12 @@
 					<nav class="navbar">
 						<div class="container-fluid">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="index.html">HOME</a></li>
+								<li><a href="index.html">HOME</a></li>
 								<li><a href="service.html">SERVICE</a></li>
 								<li><a href="product.html">PRODUCT</a></li>
 								<li><a href="gallery.html">GALLERY</a></li>
 								<li><a href="partner.html">PARTNER</a></li>
-								<li><a href="membership.html">MEMBERSHIP</a></li>
+								<li class="active"><a href="membership.html">MEMBERSHIP</a></li>
 								<li><a href="career.html">CAREER</a></li>
 								<li><a href="about.html">ABOUT</a></li>
 								<li><a href="contact.html">CONTACT</a></li>
@@ -72,79 +60,45 @@
 					</nav>
 				</div>
 			</div>
-			
-			<div class="row main-top">
-				<div class="col-md-5 offset-md-1">
-					<img class="main-top-img" src="img/z.png" alt="">
-				</div>
-				<div class="col-md-5 text-xs-center">
-					<h3>WELCOME</h3>
-					<hr class="main-top-hr">
-					<h3>WE ARE REAGAN BEAUTY SALON</h3>
-				</div>
-				<div class="col-md-12 text-xs-center main-arr">
-					<a ><img class="click-arrow" src="img/arr-down.png" alt=""></a>
-				</div>
-			</div>
-			<script>
-				$(".click-arrow").click(function() {
-					$('html,body').animate({
-						scrollTop: $(".main-center").offset().top}, 2000);
-				});
-			</script>
-			
-			<div class="row main-center">
-				<div class="col-md-8 offset-md-2 text-xs-left">
-					<div>
-						<img src="img/object.jpg" alt="">
-						<h1 class="about">About us</h1>
-					</div>
-					<div class="brand-story">
-						<h1>Brand Story</h1>
-						<hr class="brand-hr">
-						<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-12" style="padding:0">
-					<img src="img/a.jpg" alt="">
-				</div>
-			</div>
-			
-			<div class="row main-center-2">
-				<div class="col-md-8 offset-md-2 text-xs-left center-2">
-					<div class="center-2-title">
-						<h1 class="center-2-h1">KÉRASTASE</h1>
-						<hr class="center-2-hr">
-					</div>
-					<p>Kérastase represents the finest in luxury care for hair, setting new standards in professional haircare products distributed through selected salons.</p>
-				</div>
-				
-				<div class="col-md-8 offset-md-2 text-xs-left center-3">
-					<div class="center-3-title">
-						<h1 class="center-2-h1">SCHWARZKOPF</h1>
-						<hr class="center-2-hr">
-					</div>
-					<p>Schwarzkopf has been synonymous with professional quality, love for hair and innovation for more than 100 years.</p>
-				</div>
-				
-				<div class="col-md-8 offset-md-2 text-xs-left center-4">
-					<div class="center-4-title">
-						<h1 class="center-2-h1">SHU UEMURA</h1>
-						<hr class="center-2-hr">
-					</div>
-					<p>She Uemura brings together the confidence in the power of nature and science with the passion and sensitivity of an artist.</p>
-				</div>
-			</div>
-			
-			<div class="row main-bottom">
+<!-- **************************************************************** 
+	HEADER 
+	**************************************************************** -->		
+			<div class="row gallery-top">
 				<div class="col-md-12 text-xs-center">
-					<h1>About Reagan</h1>
-					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+					<h1>MEMBERSHIP</h1>
 				</div>
 			</div>
+			
+			<div class="row member">
+				<div class="col-md-8 offset-md-2 text-xs-left member-1">
+					<h2>MEMBER</h2>
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="col-md-8 offset-md-2 text-xs-left member-2">
+					<h2>SILVER</h2>
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<hr class="divide-hr">
+				</div>
+				<div class="col-md-8 offset-md-2 text-xs-left member-3">
+					<h2>GOLD</h2>
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="col-md-8 offset-md-2 text-xs-left member-4">
+					<h2>V.I.P</h2>
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<img class="tree" src="img/member-tree.png" alt="">
+			</div>
+		
+	
 <!-- **************************************************************** 
 	FOOTER 
 	**************************************************************** -->
