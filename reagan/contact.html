@@ -46,14 +46,14 @@
 					<nav class="navbar">
 						<div class="container-fluid">
 							<ul class="nav navbar-nav">
-								<li><a href="index.html">HOME</a></li>
+								<li><a href="home.html">HOME</a></li>
 								<li><a href="service.html">SERVICE</a></li>
 								<li><a href="product.html">PRODUCT</a></li>
 								<li><a href="gallery.html">GALLERY</a></li>
 								<li><a href="partner.html">PARTNER</a></li>
 								<li><a href="membership.html">MEMBERSHIP</a></li>
 								<li><a href="career.html">CAREER</a></li>
-								<li><a href="about.html">ABOUT</a></li>
+<!--								<li><a href="about.html">ABOUT</a></li>-->
 								<li class="active"><a href="contact.html">CONTACT</a></li>
 							</ul>
 						</div>
@@ -63,24 +63,35 @@
 <!-- **************************************************************** 
 	HEADER 
 	**************************************************************** -->		
-			<div class="row service-top">
+			<div class="row gallery-top">
 				<div class="col-md-12 text-xs-center">
-					<h1>SERVICE</h1>
+					<h1>CONTACT US</h1>
 				</div>
 			</div>
 			
-			<div class="row service-center">
-				<div class="col-md-8 offset-md-2 text-xs-center">
-					<ul>
-						<li><a href="headspa.html">Head Spa</a></li>
-						<li><a href="">Head Spa</a></li>
-						<li><a href="">Head Spa</a></li>
-						<li><a href="">Head Spa</a></li>
-						<li><a href="">Head Spa</a></li>
-					</ul>
+			<div class="row gallery-txt">
+				<div class="col-md-8 offset-md-2 text-xs-left">
+					<div id="map"></div>	
+<!--					AIzaSyAwd_Hsf-BsTFJqg0f56yTYFiBIsZ5wvfg-->
+					<script>
+						function initMap() {
+							var myLatLng = {lat: 21.0329730, lng: 105.8552570};
+
+							var map = new google.maps.Map(document.getElementById('map'), {
+							zoom: 17,
+							center: myLatLng
+						});
+
+						var marker = new google.maps.Marker({
+							position: myLatLng,
+							map: map,
+							title: 'REAGAN'
+						});
+						}
+					</script>
+					<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwd_Hsf-BsTFJqg0f56yTYFiBIsZ5wvfg&callback=initMap"></script>
 				</div>
 			</div>
-		
 	
 <!-- **************************************************************** 
 	FOOTER 

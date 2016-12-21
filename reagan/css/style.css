@@ -8,7 +8,35 @@ html, body {
 }
 #loading-screen {
 	position: fixed;
-	top: 0; left: 0;
+	z-index: 15000;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	min-width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	background: #fff;
+}
+#main-div {
+	position: static;
+	width: 100vw;
+	height: 100vh;
+}
+a.link-to-home {
+	position: fixed;
+	bottom: 100px;
+	right: 50px;
+	z-index: 999;
+}
+a.link-to-home img {
+	width: 185px;
+    opacity: 0.7;
+}
+a.link-to-home:hover img {
+	opacity: 1;
+}
+.close-loadscreen {
+	z-index: -9 !important;
 }
 ul.social-link {
 }
@@ -405,10 +433,27 @@ hr.divide-hr {
 .career-full-img {
 	width: 100%;
 }
-
-
-
-
+#map {
+	max-height: 500px;
+	height: 500px;
+}
+a.left {
+	left: 0 !important;
+}
+a.right {
+	right: 0 !important;
+}
+.icon-prev img,
+.icon-next img {
+	width: 41px;
+}
+div.product-p {
+	padding: 70px 0;
+}
+div.product-p p {
+	text-align: justify;
+	padding: 0 15px 0 30px;
+}
 
 
 
