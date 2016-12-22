@@ -421,7 +421,7 @@ hr.divide-hr {
 	background-size: cover;
 }
 .career-center {
-	margin-bottom: 70px;
+	margin: 70px 0;
 }
 .career-center .row {
 	margin-bottom: 60px;
@@ -487,7 +487,9 @@ div.last {
 	height: 70px;
 	background: #7f3e98;
 }
-
+.time-new-roman {
+	font-family: "Times New Roman";
+}
 
 
 
