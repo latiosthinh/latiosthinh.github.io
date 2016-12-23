@@ -577,6 +577,12 @@ div.last {
 		margin-top: 0;
 		float: right;
 	}
+	.main-bottom div {
+		top: 65%;
+	}
+	.main-bottom p {
+		margin: 10px 1%;
+	}
 }
 
 
