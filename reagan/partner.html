@@ -13,7 +13,7 @@
 
 		<!-- Bootstrap CSS -->
     	<link rel="stylesheet" href="css/bootstrap.min.css">
-
+		<link rel="stylesheet" href="css/test.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 
   		<!-- Needed Script -->
@@ -26,22 +26,52 @@
 	</head>
 	<body>
 		<div id="main-div" class="container-fluid">
-			<div class="row">
+			<!--	COLLAPSE NAVBAR  -->
+			<div class="navbar navbar-fixed-top" role="navigation" id="slide-nav" style="background:rgba(0,0,0,0.9)">
+				<div class="container" style="width:100%">
+					<div class="navbar-header">
+						<a class="navbar-toggle"> 
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+						<a class="navbar-brand" href="#">
+							<img src="img/logo-left.png" alt="" width="100px">
+						</a>
+					</div>
+					<div id="slidemenu">
+						<ul class="nav navbar-nav">
+							<li><a href="home.html">HOME</a></li>
+							<li><a href="service.html">SERVICE</a></li>
+							<li><a href="product.html">PRODUCT</a></li>
+							<li><a href="gallery.html">GALLERY</a></li>
+							<li><a href="partner.html">PARTNER</a></li>
+							<li><a href="membership.html">MEMBERSHIP</a></li>
+							<li><a href="career.html">CAREER</a></li>
+							<li><a href="contact.html">CONTACT</a></li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+			<!--	END COLLAPSE NAVBAR  -->
+			<div class="row div-social">
 				<div class="col-md-12 social-div text-xs-right">
 					<ul class="social-link">
-						<li><span></span><a href="">0123-825-3552</a></li>
-						<li><span></span><a href="">facebook</a></li>
+						<li><span></span><a href="">+84 166 651 2951</a></li>
+						<li><span></span><a href="https://www.facebook.com/ReaGan.BeautySalon.Group/">facebook</a></li>
 						<li><span></span><a href="">twitter</a></li>
 						<li><span></span><a href="">instagram</a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row div-logo">
 				<div class="col-md-4 offset-md-4 logo text-xs-center">
 						<img class="logo-img" src="img/logo.png" alt="">
 				</div>
 			</div>
-			<div class="row">
+			<div class="row div-nav">
 				<div class="col-md-12 text-xs-center">
 					<nav class="navbar">
 						<div class="container-fluid">
@@ -53,12 +83,28 @@
 								<li class="active"><a href="partner.html">PARTNER</a></li>
 								<li><a href="membership.html">MEMBERSHIP</a></li>
 								<li><a href="career.html">CAREER</a></li>
-<!--								<li><a href="about.html">ABOUT</a></li>-->
 								<li><a href="contact.html">CONTACT</a></li>
 							</ul>
 						</div>
 					</nav>
 				</div>
+			</div>
+			<div class="fix-nav">
+				<nav class="navbar">
+					<div class="container-fluid">
+						<img src="img/logo.png" alt="" class="logo-left">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="home.html">HOME</a></li>
+							<li><a href="service.html">SERVICE</a></li>
+							<li><a href="product.html">PRODUCT</a></li>
+							<li><a href="gallery.html">GALLERY</a></li>
+							<li><a href="partner.html">PARTNER</a></li>
+							<li><a href="membership.html">MEMBERSHIP</a></li>
+							<li><a href="career.html">CAREER</a></li>
+							<li><a href="contact.html">CONTACT</a></li>
+						</ul>
+					</div>
+				</nav>
 			</div>
 <!-- **************************************************************** 
 	HEADER 
@@ -115,7 +161,7 @@
 					<hr class="footer-hr">
 					<p>Adress: 20 Hang Tre St.</p>
 					<p>Hoan Kiem Dist. Hanoi. Vietnam.</p>
-					<p>Tel: 01238253552</p>
+					<p>Tel: +84 166 651 2951</p>
 					<p>Email: reagan@gmail.com</p>
 				</div>
 			</div>
@@ -123,5 +169,64 @@
 				<div class="col-md-12 last"></div>
 			</div>
 		</div>
+		
+		<script>
+			$(window).scroll(function(){
+				var scroll = $(window).scrollTop();
+
+				if (scroll >= 150) $('.fix-nav').addClass('visible');
+				else $('.fix-nav').removeClass('visible');
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				//stick in the fixed 100% height behind the navbar but don't wrap it
+				$('#slide-nav.navbar-inverse').after($('<div class="inverse" id="navbar-height-col"></div>'));
+
+				$('#slide-nav.navbar-default').after($('<div id="navbar-height-col"></div>'));  
+
+				// Enter your ids or classes
+				var toggler = '.navbar-toggle';
+				var pagewrapper = '#page-content';
+				var navigationwrapper = '.navbar-header';
+				var menuwidth = '100%'; // the menu inside the slide menu itself
+				var slidewidth = '80%';
+				var menuneg = '-100%';
+				var slideneg = '-80%';
+
+
+				$("#slide-nav").on("click", toggler, function (e) {
+					var selected = $(this).hasClass('slide-active');
+
+					$('#slidemenu').stop().animate({
+					right: selected ? menuneg : '0px'
+					});
+
+					$('#navbar-height-col').stop().animate({
+						right: selected ? slideneg : '0px'
+					});
+
+					$(pagewrapper).stop().animate({
+						right: selected ? '0px' : slidewidth
+					});
+
+					$(navigationwrapper).stop().animate({
+						right: selected ? '0px' : slidewidth
+					});
+
+					$(this).toggleClass('slide-active', !selected);
+					$('#slidemenu').toggleClass('slide-active');
+					$('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+				});
+
+				var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
+
+				$(window).on("resize", function () {
+					if ($(window).width() > 1000 && $('.navbar-toggle').is(':hidden')) {
+						$(selected).removeClass('slide-active');
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
