@@ -17,6 +17,14 @@ html, body {
 	overflow: hidden;
 	background: #fff;
 }
+.full-screen {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
 #main-div {
 	position: static;
 	width: 100vw;
@@ -107,7 +115,6 @@ li.active a {
 }
 div.main-top {
 	height: 70vh;
-	background: url(../img/z.jpg) no-repeat fixed 100% #dfcfe5;
 	margin-top: 60px;
 	color: #7f3e98;
 	position: relative;
