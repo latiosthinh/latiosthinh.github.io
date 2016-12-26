@@ -1,7 +1,3 @@
-/* adjust body when menu is open */
-body.slide-active {
-    overflow-x: hidden
-}
 /* put toggle bars on the left :: not using button */
 #slide-nav .navbar-toggle {
 	cursor: pointer;
