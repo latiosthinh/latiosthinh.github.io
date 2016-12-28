@@ -171,7 +171,7 @@ li.active a {
     padding: 10px;
 }
 div.main-center {
-	margin-top: 19%;
+	margin-top: 12%;
 	
 }
 .main-center img {
@@ -290,7 +290,7 @@ div.last {
 	visibility: hidden;
 }
 .visible {
-	visibility: visible !important;
+	visibility: visible;
 }
 .logo-left {
 	width: 150px;
@@ -353,14 +353,22 @@ div.last {
 
 #group7 {
 	background: #7f3e98;
-	height: 550px;
+	height: 444px;
 	z-index: 3; /* slide over group 7 */
+	bottom: -35px;
 }
 #group7 .parallax__layer--base {
 }
 
-
-@media screen  and (max-width:1145) {
+@media screen  and (max-width:1440px) {
+	.center-2 p, .center-3 p, .center-4 p {
+		display: block;
+		margin-top: 60px;
+		width: 50%;
+		font-size: 1rem;
+	}
+}
+@media screen  and (max-width:1145px) {
 	.fix-nav {
 		visibility: hidden !important;
 	}
@@ -385,5 +393,10 @@ div.last {
 	}
 	.main-bottom p {
 		margin: 10px 1%;
+	}
+}
+@media screen  and (max-height:767px) {
+	.main-center, .main-center-2 {
+		margin-top: 0;
 	}
 }

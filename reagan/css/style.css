@@ -19,8 +19,8 @@ html, body {
 }
 .full-screen {
 	position: absolute;
-	width: 50%;
-	height: 50%;
+	width: 80%;
+	height: 80%;
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
@@ -32,8 +32,8 @@ html, body {
 }
 a.link-to-home {
 	position: fixed;
-	bottom: 100px;
-	right: 50px;
+	top: 50px;
+    left: 50px;
 	z-index: 999;
 }
 a.link-to-home img {
@@ -466,6 +466,16 @@ div.product-p {
 div.product-p p {
 	text-align: justify;
 	padding: 0 15px 0 30px;
+}
+#carousel-example-generic {
+	margin-bottom: 50px;
+}
+.carousel-indicators {
+	display: none !important;
+}
+.carousel-item p {
+	text-align: justify;
+	padding: 20px 15px 0 0;
 }
 
 
