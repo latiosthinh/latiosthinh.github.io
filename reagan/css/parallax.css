@@ -93,7 +93,7 @@ ul.social-link {
 }
 ul.social-link li {
 	display: inline-block;
-	line-height: 7px;
+	line-height: 20px;
 	margin-right: 10px;
 }
 ul.social-link li span {
@@ -106,9 +106,17 @@ ul.social-link li:nth-child(1) span {
 	background: url(../img/social.png) 0 0;
 	background-size: cover;
 }
+ul.social-link li:nth-child(1):hover span {
+	background: url(../img/social1.png) 0 0;
+	background-size: cover;
+}
 ul.social-link li:nth-child(2) span {
 	width: 12px;
 	background: url(../img/social.png) -23px 0;
+	background-size: cover;
+}
+ul.social-link li:nth-child(2):hover span {
+	background: url(../img/social1.png) -23px 0;
 	background-size: cover;
 }
 ul.social-link li:nth-child(3) span {
@@ -116,9 +124,17 @@ ul.social-link li:nth-child(3) span {
 	background: url(../img/social.png) -46px 0;
 	background-size: cover;
 }
+ul.social-link li:nth-child(3):hover span {
+	background: url(../img/social1.png) -46px 0;
+	background-size: cover;
+}
 ul.social-link li:nth-child(4) span {
 	width: 24px;
 	background: url(../img/social.png) 24px 0;
+	background-size: cover;
+}
+ul.social-link li:nth-child(4):hover span {
+	background: url(../img/social1.png) 24px 0;
 	background-size: cover;
 }
 ul.social-link li a {
