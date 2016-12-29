@@ -13,6 +13,7 @@
 
 		<link rel="stylesheet" href="css/parallax.css">
 		<link rel="stylesheet" href="css/test.css">
+		<link rel="stylesheet" href="css/animate.css">
 		
 		<!-- Bootstrap CSS -->
     	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -20,6 +21,8 @@
   		<!-- Needed Script -->
 		<script src="js/jquery-3.1.0.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/wow.min.js"></script>
+		
 		<title>Reagan | Beauty Salon</title>
 		
 		<script type="text/javascript">
@@ -84,25 +87,24 @@
 						<div class="row">
 							<div class="row div-social">
 								<div class="col-md-12 social-div text-xs-right">
-									<ul class="social-link">
-										<li><span></span><a href="">+84 166 651 2951</a></li>
+									<ul class="social-link wow animated fadeInRight">
+										<li><span></span><a href="">+841666512951</a></li>
 										<li><span></span><a href="https://www.facebook.com/ReaGan.BeautySalon.Group/">facebook</a></li>
-										<li><span></span><a href="">twitter</a></li>
-										<li><span></span><a href="">instagram</a></li>
+										<li><span></span><a href="https://www.instagram.com/reagan.beautysalon/">instagram</a></li>
 									</ul>
 								</div>
 							</div>
 
 							<div class="row div-logo">
 								<div class="col-md-4 offset-md-4 logo text-xs-center">
-									<a href="home.html"><img class="logo-img" src="img/logo.png" alt=""></a>
+									<a href="home.html"><img class="logo-img wow animated fadeInDown" src="img/logo.png" alt=""></a>
 								</div>
 							</div>
 							<div class="row div-nav">
 								<div class="col-md-12 text-xs-center">
 									<nav class="navbar">
 										<div class="container-fluid">
-											<ul class="nav navbar-nav">
+											<ul class="nav navbar-nav wow animated fadeInUp">
 												<li class="active"><a href="home.html">HOME</a></li>
 												<li><a href="service.html">SERVICE</a></li>
 												<li><a href="product.html">PRODUCT</a></li>
@@ -126,22 +128,17 @@
 			
 			<div id="group2" class="parallax__group scroll-group">
 				<div class="parallax__layer parallax__layer--base">
-					<div class="title">
-						<h3 class="time-new-roman">WELCOME</h3>
-						<hr class="main-top-hr">
-						<h3>WE ARE REAGAN BEAUTY SALON</h3>
-					</div>
-					<div class="main-arr">
+					<div class="main-arr text-xs-center">
 						<a><img class="click-arrow" src="img/arr-down.png" alt=""></a>
 					</div>
 				</div>
-				<div class="parallax__layer parallax__layer--back"></div>
+<!--				<div class="parallax__layer parallax__layer--back"></div>-->
 			</div>
 			
 			<script>
 				$(".click-arrow").click(function() {
 					$('.parallax').animate({
-						scrollTop: ($("#group3").offset().top)
+						scrollTop: ($(".main-center").offset().top - window.innerHeight +200)
 					}, 2000);
 				});
 			</script>
@@ -240,54 +237,14 @@
 			});
 		</script>
 		<script>
-			$(document).ready(function () {
-				//stick in the fixed 100% height behind the navbar but don't wrap it
-				$('#slide-nav.navbar-inverse').after($('<div class="inverse" id="navbar-height-col"></div>'));
-
-				$('#slide-nav.navbar-default').after($('<div id="navbar-height-col"></div>'));  
-
-				// Enter your ids or classes
-				var toggler = '.navbar-toggle';
-				var pagewrapper = '#page-content';
-				var navigationwrapper = '.navbar-header';
-				var menuwidth = '100%'; // the menu inside the slide menu itself
-				var slidewidth = '80%';
-				var menuneg = '-100%';
-				var slideneg = '-80%';
-
-
-				$("#slide-nav").on("click", toggler, function (e) {
-					var selected = $(this).hasClass('slide-active');
-
-					$('#slidemenu').stop().animate({
-					right: selected ? menuneg : '0px'
-					});
-
-					$('#navbar-height-col').stop().animate({
-						right: selected ? slideneg : '0px'
-					});
-
-					$(pagewrapper).stop().animate({
-						right: selected ? '0px' : slidewidth
-					});
-
-					$(navigationwrapper).stop().animate({
-						right: selected ? '0px' : slidewidth
-					});
-
-					$(this).toggleClass('slide-active', !selected);
-					$('#slidemenu').toggleClass('slide-active');
-					$('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
-				});
-
-				var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
-
-				$(window).on("resize", function () {
-					if ($(window).width() > 1000 && $('.navbar-toggle').is(':hidden')) {
-						$(selected).removeClass('slide-active');
-					}
-				});
-			});
+			wow = new WOW ({
+			  boxClass:     'wow',      // default
+			  animateClass: 'animated', // default
+			  offset:       0,          // default
+			  mobile:       true,       // default
+			  live:         true        // default
+			})
+			wow.init();
 		</script>
 	</body>
 </html>
