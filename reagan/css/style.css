@@ -25,6 +25,11 @@ html, body {
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 }
+.playerBox {
+	width: 100% !important;
+	height: 100% !important;
+	margin: 0 !important;
+}
 #main-div {
 	position: static;
 	width: 100vw;
@@ -46,12 +51,39 @@ a.link-to-home:hover img {
 .close-loadscreen {
 	z-index: -9 !important;
 }
+.title {
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 60%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.title h3 {
+	color: #7f3e98;
+}
+.title h3:first-child {
+	letter-spacing: 1.5rem;
+	font-weight: 100;
+}
+.main-top-hr {
+	border: 1px solid #7f3e98;
+    width: 25%;
+	margin: 20px 35%;
+}
+.div-nav {
+	background: #fff;
+	height: auto;
+}
+.navbar {
+     padding: 0 !important; 
+}
 ul.social-link {
+	margin-bottom: 0;
 }
 ul.social-link li {
 	display: inline-block;
-	height: 15px;
-	line-height: 15px;
+	line-height: 20px;
 	margin-right: 10px;
 }
 ul.social-link li span {
@@ -64,9 +96,17 @@ ul.social-link li:nth-child(1) span {
 	background: url(../img/social.png) 0 0;
 	background-size: cover;
 }
+ul.social-link li:nth-child(1):hover span {
+	background: url(../img/social1.png) 0 0;
+	background-size: cover;
+}
 ul.social-link li:nth-child(2) span {
 	width: 12px;
 	background: url(../img/social.png) -23px 0;
+	background-size: cover;
+}
+ul.social-link li:nth-child(2):hover span {
+	background: url(../img/social1.png) -23px 0;
 	background-size: cover;
 }
 ul.social-link li:nth-child(3) span {
@@ -74,15 +114,26 @@ ul.social-link li:nth-child(3) span {
 	background: url(../img/social.png) -46px 0;
 	background-size: cover;
 }
+ul.social-link li:nth-child(3):hover span {
+	background: url(../img/social1.png) -46px 0;
+	background-size: cover;
+}
 ul.social-link li:nth-child(4) span {
 	width: 24px;
 	background: url(../img/social.png) 24px 0;
+	background-size: cover;
+}
+ul.social-link li:nth-child(4):hover span {
+	background: url(../img/social1.png) 24px 0;
 	background-size: cover;
 }
 ul.social-link li a {
 	text-decoration: none;
 	color: #000;
 	font-size: 0.9rem;
+}
+ul.social-link li:hover a {
+	color: #7f3e98;
 }
 div.logo {
 	border-bottom: 1px solid #7f3e98;
@@ -93,15 +144,17 @@ img.logo-img {
 }
 nav ul {
 	list-style: none;
+	padding-top: 15px;
 }
 nav ul li {
 	display: inline-block;
-	padding: 1px 25px 1px 15px;
+	padding: 0px 30px 1px 20px;
 }
 nav ul li a {
+	display: block;
 	text-decoration: none;
 	color: #000;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 }
 nav ul li:hover,
 li.active {
@@ -249,8 +302,7 @@ h1.about {
 .service-center ul li {
 	padding: 0;
     display: block;
-   	max-width: 1169px;
-    max-height: 300px;
+   	max-width: 900px;
 	margin-bottom: 90px;
 }
 .service-center ul li a {
@@ -260,7 +312,7 @@ h1.about {
 	text-decoration: none;
 	font-size: 3rem;
 	color: transparent;
-	padding: 7rem 0;
+	padding: 4rem 0;
 }
 .service-center ul li:first-child a {
 	background: url(../img/s11.jpg) center right no-repeat;
@@ -477,7 +529,15 @@ div.product-p p {
 	text-align: justify;
 	padding: 20px 15px 0 0;
 }
-
+.contact-detail {
+	margin-bottom: 60px;
+}
+.contact-detail h5 {
+	margin-bottom: 20px;
+}
+.list-h5 {
+	text-indent: 50px;
+}
 
 
 
@@ -491,6 +551,8 @@ div.product-p p {
 div.row-contact {
 	padding: 60px 0;
 	background: #ebebeb;
+	position: relative;
+	    height: 300px;
 }
 div.contact h5 {
 	font-weight: bolder;
@@ -498,9 +560,20 @@ div.contact h5 {
 div.contact p {
 	font-size: 95%;
 }
+div.contact {
+	position: absolute;
+    top: 52%;
+    left: 47%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.footer-logo-div {
+	position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateX(-50%) translateY(-50%);
+}
 .footer-logo {
 	width: 70%;
-	margin-top: 20%;
 }
 .footer-hr {
 	border: 2px solid #7f3e98;
@@ -512,6 +585,10 @@ div.last {
 }
 .time-new-roman {
 	font-family: "Times New Roman";
+}
+.purple {
+	color: #7f3e98;
+	font-weight: bold;
 }
 .fix-nav {
 	position: fixed !important;
