@@ -310,8 +310,7 @@ div.contact p {
 	margin-left: 0;
 }
 div.last {
-	height: 70px;
-	margin-top: 45px;
+	height: 60px;
 	background: #7f3e98;
 }
 .fix-nav {
@@ -398,7 +397,7 @@ div.last {
 #group7 .parallax__layer--base {
 }
 
-@media screen  and (max-width:1440px) {
+@media screen  and (max-width:1550px) {
 	.center-2 p, .center-3 p, .center-4 p,
 	nav ul li a, .brand-story p, div.contact p {
 		font-size: 1rem;
@@ -408,6 +407,26 @@ div.last {
 	}
 	#group2 {
 		margin-top: 20vh;
+	}
+	div.main-center {
+		margin-top: -2%;
+	}
+	.main-center img {
+		height: 40px;
+	}
+	h1.about {
+		height: 40px;
+		line-height: 40px;
+	}
+	.stylish {
+		min-width: 150px;
+		min-height: 150px;
+	}
+	.brand-story {
+		margin-top: 30px;
+	}
+	div.row-contact {
+		padding: 0 0 40px 0;
 	}
 }
 @media screen  and (max-width:1145px) {
