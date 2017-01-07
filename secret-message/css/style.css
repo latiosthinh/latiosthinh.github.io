@@ -1,0 +1,53 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  height: 100%;
+  background: #1d1f20;
+  padding: 20rem;
+  text-align: center;
+}
+
+h1 {
+  position: relative;
+  font-size: 8rem;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 10;
+}
+
+.magic {
+  z-index: 5;
+  position: absolute;
+  top: calc(50% - 10rem);
+  left: calc(50% - 10rem);
+  width: 10rem;
+  height: 10rem;
+  background: url("../bg.jpg") 50% 50% no-repeat fixed;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.check-out {
+  z-index: 100;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 2rem;
+  color: #fff;
+  font-family: test;
+}
+.check-out a {
+  color: #ffaaaa;
+}
