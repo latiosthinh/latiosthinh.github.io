@@ -32,7 +32,7 @@ h1 {
   left: calc(20% - 10rem);
   width: 10rem;
   height: 10rem;
-  background: url("../bg.jpg") 50% 50% no-repeat fixed;
+  background: url("../bg.jpg") no-repeat fixed;
   background-size: cover;
   border-radius: 50%;
 }
