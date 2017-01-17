@@ -30,9 +30,9 @@ h1 {
   position: absolute;
   top: calc(20% - 10rem);
   left: calc(20% - 10rem);
-  width: 4rem;
-  height: 4rem;
-  background: url("../bg.jpg") no-repeat fixed;
+  width: 50rem;
+  height: 50rem;
+  background: url("../Cute-Love-Wallpaper.jpg") no-repeat fixed;
   background-size: cover;
   border-radius: 50%;
 }
