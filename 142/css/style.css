@@ -45,7 +45,7 @@ body {
     bottom: 10px;
     left:50%;
     transform: translate(-50%,-50%);
-    width: 50px;
+    width: 100px;
     height: auto;
 }
 .img-lg {
@@ -71,9 +71,6 @@ body {
 @media screen and (max-width:1200px) {
 	.img-lg {
         visibility: hidden;
-    }
-    .scroll-img {
-        width: 70px;
     }
 }
 @media screen and (min-width:1201px) {
