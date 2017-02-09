@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+/*
+.panelCon{
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+}
+.panel {
+    width: 100%;
+}
+.panel h1 {
+    width: 100px;
+    position: fixed;
+    z-index: 100;
+    display: block;
+    text-align: center;
+    top: 50%;
+}
+#pane-1 {
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+}
+#pane-2 {
+    background-color: red;
+}*/
+.panel {
+    width: 100%;
+}
+#pane-1 {
+    height: 100vh;
+    background-color: #fff;
+}
+#pane-2 {
+    height: 100vh;
+    background-color: red;
+}
+.scroll-img {
+    position: fixed;
+    z-index: 1000;
+    bottom: 10px;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 50px;
+    height: auto;
+}
+.img-lg {
+    background: url(../large-bg.png) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.img-md {
+    background: url(../medium-blue.png) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+@media screen and (max-width:1200px) {
+	.img-lg {
+        visibility: hidden;
+    }
+    .scroll-img {
+        width: 70px;
+    }
+}
+@media screen and (min-width:1201px) {
+	.img-md {
+        visibility: hidden;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
