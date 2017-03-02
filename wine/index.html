@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<title>jquery.video-frame-animation.js demo page</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+	<script type="text/javascript" src="js/jquery.video-frame-animation.js"></script>
+	<script type="text/javascript">
+	$(function () {
+		$('#imgWrapper').videoFrameAnimation({
+			numImages	   : 500,
+			imgDir		   : 'videoframes/',
+			imgName		   : 'wine0',
+			upgradeHighRes : true,
+			imgDirBig	   : 'videoframes_big/',
+			preload		   : true,
+			buffer		   : 25
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="imgWrapper"></div>
+    
+</body>
+</html>
