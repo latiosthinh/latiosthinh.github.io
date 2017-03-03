@@ -28,12 +28,10 @@
         $.preloadImages = function() {
             for (var i = 0; i < arguments.length; i++) {
                 $("<img />").attr("src", "videoframes/"+arguments[i]);
-                $("<img />").attr("src", "videoframes_big/"+arguments[i]);
             }
         }
         for (var i = 0; i < 604; i++) {
             $.preloadImages("videoframes/wine00"+i+"jpg");
-            $.preloadImages("videoframes_big/wine00"+i+"jpg");
         }
     </script>
 </body>
