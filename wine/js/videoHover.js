@@ -18,7 +18,7 @@ function hideVideo(e) {
            video.pause();
        }
        else{
-           video.currentTime += -.1;
+           video.currentTime -= .1;
        }
                 },65);
 }
