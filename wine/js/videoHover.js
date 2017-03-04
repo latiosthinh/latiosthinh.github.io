@@ -20,5 +20,5 @@ function hideVideo(e) {
        else{
            video.currentTime -= .1;
        }
-                },65);
+                },50);
 }
