@@ -11,6 +11,8 @@ body {
 #videoWrapper {
     height: 100vh;
     overflow: hidden;
+    background: url(../img/wine0001.jpg) center center no-repeat;
+    background-size: cover;
 }
 #videoWrapper .thevideo {
     height: 100vh;
