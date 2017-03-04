@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'IcoMoon-Free';
+    src: url('../font/IcoMoon-Free.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'IcoMoon-Free' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-facebook:before { content: "\ea90"; }
+.icon-facebook2:before { content: "\ea91"; }
+.icon-instagram:before { content: "\ea92"; }
+.icon-youtube:before { content: "\ea9d"; }
+.icon-youtube2:before { content: "\ea9e"; }
+.icon-behance:before { content: "\eaa8"; }
+.icon-behance2:before { content: "\eaa9"; }
+.icon-steam:before { content: "\eaac"; }
+.icon-steam2:before { content: "\eaad"; }
+.icon-skype:before { content: "\eac5"; }
+.icon-git:before { content: "\eae7"; }
+.icon-codepen:before { content: "\eae8"; }
+.icon-home:before { content: "\e900"; }
+.icon-home2:before { content: "\e901"; }
+.icon-home3:before { content: "\e902"; }
+.icon-office:before { content: "\e903"; }
+.icon-newspaper:before { content: "\e904"; }
+.icon-pencil:before { content: "\e905"; }
+.icon-pencil2:before { content: "\e906"; }
+.icon-quill:before { content: "\e907"; }
+.icon-pen:before { content: "\e908"; }
+.icon-blog:before { content: "\e909"; }

@@ -1,38 +1,54 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 	<title>WineAgency | Wine Creative</title>
+    
 	<link rel="stylesheet" href="css/style.css" />
-	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
-	<script type="text/javascript" src="js/jquery.video-frame-animation.js"></script>
-	<script type="text/javascript">
-	$(function () {
-		$('#imgWrapper').videoFrameAnimation({
-			numImages	   : 500,
-			imgDir		   : 'videoframes/',
-			imgName		   : 'wine0',
-			upgradeHighRes : true,
-			imgDirBig	   : 'videoframes_big/',
-			preload		   : true,
-			buffer		   : 25
-		});
-	});
-	</script>
+	<link rel="stylesheet" href="css/responsive.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/icomoon.css" />
 </head>
 <body>
-	<div id="imgWrapper" class="display-flex"></div>
+    <section class="container-fluid">
+        <div class="row">
+            <div id="videoWrapper" class="video col-md-8">
+                <video id="video" class="thevideo" loop preload="true">
+                    <source src="wine.mp4""" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="col-md-4 background-black">
+                <div class="row social-wrapper">
+                    <div class="col-md-4 offset-md-7 active-video">
+                        <a href="https://www.facebook.com/wine.creative.agency" target="_blank">
+                            <span class="icon icon-facebook"></span>
+                            wine.creative.agency
+                        </a>
+                    </div>
+                </div>
+                <div class="row logo-wrapper">
+                    <div class="col-md-4 offset-md-6 active-video">
+                        <a href="#"> Logo here
+                            <img src="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="row nav-wrapper">
+                    <div class="col-md-4 active-video text-center"><a class="abtn" href="#">Home</a></div>
+                    <div class="col-md-4 active-video text-center"><a class="abtn" href="#">Works</a></div>
+                    <div class="col-md-3 active-video text-center"><a class="abtn" href="#">Us</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     
-    <script>
-        $.preloadImages = function() {
-            for (var i = 0; i < arguments.length; i++) {
-                $("<img />").attr("src", "videoframes/"+arguments[i]);
-            }
-        }
-        for (var i = 0; i < 604; i++) {
-            $.preloadImages("videoframes/wine00"+i+"jpg");
-        }
-    </script>
+    
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/videoHover.js"></script>
+    <script type="text/javascript" src="js/liga.js"></script>
 </body>
 </html>
