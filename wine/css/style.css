@@ -8,6 +8,20 @@ body {
     background-color: #000;
     font-family: "Helvetica Neue", Helvetica, Arials, sans;
 }
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  background-position: 50% 50%;
+    z-index: 5;
+}
 #videoWrapper {
     height: 100vh;
     overflow: hidden;
@@ -21,6 +35,11 @@ body {
 	top: 0%;
 	-webkit-transform: translate(-50%, 0%);
 	transform: translate(-50%, 0%);
+}
+.right-panel {
+    background: transparent;
+    position: relative;
+    z-index: 10;
 }
 .social-wrapper {
     margin-top: 3vh;
