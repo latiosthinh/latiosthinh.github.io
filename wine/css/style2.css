@@ -1,16 +1,19 @@
 /* Overlay style */
-.overlay {
+.overlay1,
+.overlay2 {
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(0,0,0,0.95);
-    z-index: 99;
+	background: #000;
+    z-index: 200;
 }
 
 /* Overlay closing cross */
-.overlay .overlay-close {
+.overlay1 .overlay-close,
+.overlay2 .overlay-close {
+    cursor: pointer;
 	width: 80px;
 	height: 80px;
 	position: absolute;
@@ -22,34 +25,38 @@
 	text-indent: 200%;
 	color: transparent;
 	outline: none;
-	z-index: 100;
+	z-index: 201;
 }
 
 /* Effects */
-.overlay-corner {
-	opacity: 0;
+.overlay-door {
 	visibility: hidden;
-	-webkit-transform: translateY(50px) translateX(50px);
-	transform: translateY(50px) translateX(50px);
-	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s, visibility 0s 0.5s;
-	transition: opacity 0.5s, transform 0.5s, visibility 0s 0.5s;
+	width: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: width 0.5s 0.3s, visibility 0s 0.8s;
+	transition: width 0.5s 0.3s, visibility 0s 0.8s;
 }
-
-.overlay-corner.open {
-	opacity: 1;
+.overlay-door.open {
 	visibility: visible;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-	transition: opacity 0.5s, transform 0.5s;
+	width: 100%;
+	-webkit-transition: width 0.5s;
+	transition: width 0.5s;
+}
+.overlay-door .overlay-close {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0.5s;
+	transition: opacity 0.3s 0.5s;
+}
+.overlay-door.open .overlay-close {
+	opacity: 1;
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+.overlay-door.close .overlay-close {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
 }
 
-@media screen and (max-height: 30.5em) {
-	.overlay nav {
-		height: 70%;
-		font-size: 34px;
-	}
-	.overlay ul li {
-		min-height: 34px;
-	}
-}
+

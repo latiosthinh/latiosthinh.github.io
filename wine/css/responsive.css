@@ -11,8 +11,19 @@
     
 }
 @media (max-width: 1399px) {
+    #videoWrapper .thevideo {
+        left: 20%;
+    }
+    .description {
+        font-size: 1.2rem;
+    }
     .abtn {
         font-size: .7rem;
         padding: 10px 35px 12px;
+    }
+}
+@media (max-width: 1599px) {
+    #videoWrapper .thevideo {
+        left: 40%;
     }
 }
