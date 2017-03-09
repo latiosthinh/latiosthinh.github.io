@@ -1,0 +1,107 @@
+/*
+Filename: rotating-heads.css
+Project: rotating heads
+Type: CSS
+Author: Jan Dellsperger
+Initial Version: 14. October 2013
+
+This is the style sheet for the rotating heads project. All UI styles are
+defined in this file.
+
+Changelog:
+12.11.2013 - Modifikationen zur leistungsverbesserung
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h3,p{
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+p{
+    font-size: 16px;
+}
+
+.certificates{
+    font-size: 14px;
+}
+
+.content-wrapper{
+    width: 1120px;
+    margin: 200px auto;
+}
+
+.row{
+    width: 100%;
+    position: relative;
+    font-size: 0;
+    height: 250px;
+}
+
+.column-1-1,.column-1-3,.column-2-3{
+    float: left;
+    min-height: 1px;
+}
+
+.column-1-1{
+    width: 100%;
+}
+
+.column-1-3{
+    width: 33.333%;
+    border-radius: 50%;
+    border: 5px solid;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+}
+
+.column-2-3{
+    width: 66.666%;
+}
+
+.text-holder{
+    display: none;
+}
+
+.image-holder{
+    position: relative;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+}
+
+.head-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+}
+
+.head-image{
+    z-index: 0;
+}
+
+.circle{
+    z-index: 2;
+}
+
+.front{
+    z-index: 1;
+}
+
+.widget{
+    padding: 30px 60px;
+    position: relative;
+    top: 0;
+}
