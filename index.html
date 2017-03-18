@@ -1,84 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Thomas Nguyen</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage full-screen backgrounds." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+	<meta name="Resource-type" content="Document" />
 
-    <link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
-    <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
-    
-    <title>Simple ThomasN</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<style>
 
-    <script>
-        var myPlayer;
-        jQuery(function () {
-            myPlayer = jQuery("#video").YTPlayer();
-        });
-    </script>
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section { text-align:center; overflow: hidden; }
+	#section0 { display: flex; align-items: center; overflow: hidden; }
+	
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	.layer {
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
 
+	/*solves problem with overflowing video in Mac with Chrome */
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+	/* Hiding video controls
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+	video::-webkit-media-controls { display:none !important; }
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script src="js/HeadImage.js"></script>
+
+	<script type="text/javascript" src="js/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: true,
+				sectionsColor: ['#1bbc9b', '#FFFFFF', '#1d1d1d']
+			});
+			
+//			$("#section1").mousemove(function(e){
+//				var relativeXPosition = (e.pageX - this.offsetLeft); //offset -> method allows you to retrieve the current position of an element 'relative' to the document
+//				var relativeYPosition = (e.pageY - this.offsetTop);
+//				$("#header").html("<p><strong>X-Position: </strong>"+relativeXPosition+" | <strong>Y-Position: </strong>"+relativeYPosition+"</p>")
+//			}).mouseout(function(){
+//				$("#header").html("<p>Move mouse on the below blue div container! :)</p>")
+//			});
+		});
+	</script>
 </head>
 <body>
-<div id="cover">
-    <div id="customElement" class="container-fluid">
-        <div id="cover-caption" class="row">
-            <div class="col-sm-12 text-xs-center">
+
+<div id="fullpage">
+	<div class="section" id="section0">
+		<div class="line-white line"></div>
+		<video id="myVideo" loop muted data-autoplay>
+			<source src="img/Black_Keys.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="img/Black_Keys.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+		</video>
+		<div class="layer">
+			<div class="col-sm-12 text-xs-left">
                 <h4 class="fly-opac">Thomas Nguyen</h4>
                 <a href="" class="logosvg">
                     <object>
                         <embed src="img/T-color.svg" type="">
                     </object>
                 </a>           
-                <h2>That moment when you take chance, and...</h2>
-                <br>
-                <h1 class="quote1 text-xs-center">
-                    <span class="fly1 fly-opac">F</span>
-                    <span class="fly2 fly-opac">L</span>
-                    <span class="fly3 fly-opac">Y</span>
-                </h1>
-            </div><!-- col -->
-        </div>
-    </div>
+                <h5>I'm just a simple guy, and...</h5>
+            </div>
+		</div>
+	</div>
+	<div class="section" id="section1">
+		<div class="line-black line"></div>
+<!--
+		<div id="header">
+			<p>Move mouse on the below blue div container! :)</p>
+		</div>
+-->
+		<div class="column-1">
+			<div class="image-holder one">
+				<img class="head-image up" src="img/up.jpg"/>
+				<img class="head-image up-left" src="img/upleft.jpg"/>
+				<img class="head-image left" src="img/left.jpg"/>
+				<img class="head-image down-left" src="img/downleft.jpg"/>
+				<img class="head-image down" src="img/down.jpg"/>
+				<img class="head-image down-right" src="img/downright.jpg"/>
+				<img class="head-image right" src="img/right.jpg"/>
+				<img class="head-image up-right" src="img/upright.jpg"/>
+				<img class="head-image front" src="img/front.jpg"/>
+			</div>
+		</div>
+		<h4><b>YES!</b><br>I like sitting in front of computer, and typing. </h4><br><br>
+		<h6><i>just check out my latest projects below...</i></h6>
+	</div>
+	<div class="section" id="section2">
+		<div class="line-white line"></div>
+        <div class="layer">
+			<div class="col-sm-12 text-xs-left">
+				<a href="http://phth.vn/" target="_blank">Cơm văn phòng Phú Thịnh</a>
+				<br><br>
+				<a href="https://reagan.vn" target="_blank">Reagan Hair Salon</a>
+				<br><br>
+				<a href="http://traagency.vn" target="_blank">Tra Agency | Digital Agency</a>
+			</div>
+		</div>
+<!--
+    	<div class="slide" id="slide1">
+			<iframe src="http://www.phth.vn" frameborder="0"></iframe>
+		</div>
+	    <div class="slide" id="slide2">
+			<iframe src="http://www.traagency.vn" frameborder="0"></iframe>
+    	</div>
+	    <div class="slide" id="slide3">
+			<iframe src="https://www.reagan.vn" frameborder="0"></iframe>
+		</div>
+-->
+	</div>
+	
+	<div class="section" id="section3">
+		<div class="line-black line"></div>
+		<video id="myVideo" loop muted data-autoplay>
+			<source src="img/fish3.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+		</video>
+		<div class="layer">
+			<div class="col-sm-12 text-xs-right">
+				<h4>contact me via - </h4> <br>
+				<a href="mailto:latiosthinh@live.com">latiosthinh@live.com</a>
+				<a href="fb.com/thomas.4542">fb.com/thomas.4542</a>
+			</div>
+		</div>
+	</div>
 </div>
-<div id="video" class="player" data-property="{videoURL:'3WWlhPmqXQI',containment:'#cover', showControls:false, autoPlay:true, loop:true, mute:false, startAt:0, opacity:1, addRaster:true, quality:'default'}">My video</div>
 
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	var divMouse = $("#section1").offset();
+	var mouseX;
+	var mouseY;
+	var imageOne;
 
-<nav id="mainNav" class="navbar navbar-fixed-top">
-    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-    &#9776;
-    </button>
-    <div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
-        <a id="logo" class="navbar-brand" href="#">
-            <!-- LOGO -->
+	$(init);
 
-            <img src="img/T-small.png" alt="">
+	$(window).load(init);
+	$(window).resize(init);
 
-        </a>
-        <ul class="nav navbar-nav pull-sm-right">
-            <li class="nav-item active">
-                <a class="nav-link" href="#cover">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Portfolio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+	$("#section1").mousemove(getMousePosition);
+	
+	function init(){
+		/* Instanciate the mouse position variables */
+		mouseX = 0;
+		mouseY = 0;
+		/* Instanciate a HeadImage class for every image */
+		imageOne = new HeadImage("one");
+	}
 
+	function getMousePosition(e){
+		mouseX = e.pageX + divMouse.left;
+		mouseY = e.pageY + divMouse.top + window.innerHeight;
+
+		imageOne.setImageDirection();
+	}
+</script>
 </body>
 </html>

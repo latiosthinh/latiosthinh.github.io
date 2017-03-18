@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
+    <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+    
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    
+    <title>Simple ThomasN</title>
+
+    <script>
+        var myPlayer;
+        jQuery(function () {
+            myPlayer = jQuery("#video").YTPlayer();
+        });
+    </script>
+
+</head>
+<body>
+<!--
+<div id="cover">
+    <div id="customElement" class="container-fluid">
+        <div id="cover-caption" class="row">
+            <div class="col-sm-12 text-xs-center">
+                <h4 class="fly-opac">Thomas Nguyen</h4>
+                <a href="" class="logosvg">
+                    <object>
+                        <embed src="img/T-color.svg" type="">
+                    </object>
+                </a>           
+                <h2>That moment when you take chance, and...</h2>
+                <br>
+                <h1 class="quote1 text-xs-center">
+                    <span class="fly1 fly-opac">F</span>
+                    <span class="fly2 fly-opac">L</span>
+                    <span class="fly3 fly-opac">Y</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<div id="container" data-XSwitch>
+	<div class="sections">
+		<div class="section" id="section0"></div>
+		<div class="section" id="section1"></div>
+		<div class="section" id="section2"></div>
+		<div class="section" id="section3"></div>
+	</div>
+</div>
+
+<div id="video" class="player" data-property="{videoURL:'3WWlhPmqXQI',containment:'#section0', showControls:false, autoPlay:true, loop:true, mute:false, startAt:0, opacity:1, addRaster:true, quality:'default'}">My video</div>
+
+<script src="http://code.jquery.com/jquery-2.2.3.min.js"></script> 
+<script src="js/XSwitch.min.js"></script>
+</body>
+</html>
