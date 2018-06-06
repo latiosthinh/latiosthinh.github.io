@@ -13,21 +13,21 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	
+
 	<style>
 
 	/* Centered texts in each section
 	* --------------------------------------- */
 	.section { text-align:center; overflow: hidden; }
 	#section0 { display: flex; align-items: center; overflow: hidden; }
-	
+
 	/* Layer with position absolute in order to have it over the video
 	* --------------------------------------- */
 	.layer {
 		position: absolute;
 		z-index: 4;
 		width: 100%;
-		
+
 		/*
 		* Preventing flicker on some browsers
 		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
@@ -82,7 +82,7 @@
 				verticalCentered: true,
 				sectionsColor: ['#1bbc9b', '#FFFFFF', '#1d1d1d']
 			});
-			
+
 //			$("#section1").mousemove(function(e){
 //				var relativeXPosition = (e.pageX - this.offsetLeft); //offset -> method allows you to retrieve the current position of an element 'relative' to the document
 //				var relativeYPosition = (e.pageY - this.offsetTop);
@@ -109,7 +109,7 @@
                     <object>
                         <embed src="img/T-color.svg" type="">
                     </object>
-                </a>           
+                </a>
                 <h5>I'm just a simple guy, and...</h5>
             </div>
 		</div>
@@ -143,7 +143,7 @@
 			<div class="col-sm-12 text-xs-left">
 				<a href="http://phth.vn/" target="_blank">Cơm văn phòng Phú Thịnh</a>
 				<br><br>
-				<a href="https://reagan.vn" target="_blank">Reagan Hair Salon</a>
+				<a href="http://wineagency.vn/" target="_blank">Công ty marketing truyền thông Wine Agency</a>
 				<br><br>
 				<a href="http://traagency.vn" target="_blank">Tra Agency | Digital Agency</a>
 			</div>
@@ -160,7 +160,7 @@
 		</div>
 -->
 	</div>
-	
+
 	<div class="section" id="section3">
 		<div class="line-black line"></div>
 		<video id="myVideo" loop muted data-autoplay>
@@ -189,7 +189,7 @@
 	$(window).resize(init);
 
 	$("#section1").mousemove(getMousePosition);
-	
+
 	function init(){
 		/* Instanciate the mouse position variables */
 		mouseX = 0;
