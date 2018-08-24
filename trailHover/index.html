@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="main.css"/>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="splash">
+      <div class="wrapper">
+        <div class="outer1"></div><span class="spl1"></span><span class="spl2"></span><span class="spl3"></span><span class="spl4"></span><span class="spl5"></span>
+      </div>
+    </div>
+    <div id="container">
+      <div class="tooltip phone">
+        <p>0129.610.1991</p>
+      </div>
+      <div class="tooltip facebook"><img src="images/profile1.jpg"/>
+        <p>fb.com/thomas.4542</p>
+      </div>
+      <div class="tooltip mail">
+        <p>thinhnq.91@gmail.com</p>
+      </div>
+      <div class="tooltip behance">
+        <p>thinh latios</p>
+      </div>
+      <div class="tooltip profile">
+        <p class="name">Name: <span>quocthinhnguyen</span></p>
+        <p class="birth">Dob: <span>October 1</span></p>
+      </div>
+      <div class="tooltip bike">
+        <p>Xe giấc mơ ( Đờ rim yêu dấu )</p>
+      </div>
+      <div class="tooltip menubar">
+        <p>Check out my portfolio</p>
+      </div>
+      <div class="tooltip github">
+        <p>latiosthinh.github.io</p>
+      </div>
+      <div class="tooltip heart"><img src="images/4746.jpg"/>
+        <p>cô người yêu of thịnh</p>
+      </div>
+      <div class="tooltip man">
+        <p class="height">Height:<span>170 Cm</span></p>
+        <p class="weight">Weight:<span>63 Kg</span></p>
+        <p class="heartbeat">68 bpm <span>(bệnh tim mạch)</span></p>
+      </div>
+      <div class="tooltip bath">
+        <p>Lifeboy + Sunsilk</p>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/chance.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      splashScreen();
+      window.addEventListener('load', function() {
+          setTimeout(function() {
+              $('#splash').css('display', 'none')
+          }, 6000);
+      });
+      CalcSize(500);
+      animate(11);
+    </script>
+  </body>
+</html>

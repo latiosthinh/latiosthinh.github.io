@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+        link(rel="stylesheet", href="css/font-awesome.min.css")
+        link(rel="stylesheet", href="main.css")
+        title Document
+    body
+        #splash
+            .wrapper
+                .outer1
+                //- .outer2
+                span.spl1
+                span.spl2
+                span.spl3
+                span.spl4
+                span.spl5
+
+        #container
+            //- span.fas.fa-star-half-alt
+            .tooltip.phone
+                p 0129.610.1991
+            .tooltip.facebook
+                img(src="images/profile1.jpg")
+                p fb.com/thomas.4542
+            .tooltip.mail
+                p thinhnq.91@gmail.com
+            .tooltip.behance
+                p thinh latios
+            .tooltip.profile
+                p.name
+                    | Name: 
+                    span quocthinhnguyen
+                p.birth
+                    | Dob: 
+                    span October 1
+            .tooltip.bike
+                p Xe giấc mơ ( Đờ rim yêu dấu )
+            .tooltip.menubar
+                p Check out my portfolio
+            .tooltip.github
+                p latiosthinh.github.io
+            .tooltip.heart
+                img(src="images/4746.jpg")
+                p cô người yêu of thịnh
+            .tooltip.man
+                p.height
+                    | Height:
+                    span 170 Cm
+                p.weight
+                    | Weight:
+                    span 63 Kg
+                p.heartbeat
+                    | 68 bpm 
+                    span (bệnh tim mạch)
+            .tooltip.bath
+                p Lifeboy + Sunsilk
+                //- p 5 ~ 20 mins
+                
+            
+
+        script(src="js/jquery.min.js")
+        script(src="js/jquery-migrate.min.js")
+        script(src="js/gsap.min.js")
+        script(src="js/chance.min.js")
+        script(src="main.js")
+        script.
+            splashScreen();
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    $('#splash').css('display', 'none')
+                }, 6000);
+            });
+            CalcSize(500);
+            animate(11);
+            
+            
