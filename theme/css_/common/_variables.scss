@@ -1,0 +1,96 @@
+ // Colors
+$brand-primary:         #dd0035;
+$brand-secondary:       #fea200;
+$color-primary:         #2e2e2e;
+$color-secondary:       #777777;
+@mixin set-line($line, $lineHeight){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    line-height: $lineHeight;
+    height: calc(#{$lineHeight} * #{$line});
+}
+@mixin set-lineMax($line, $lineHeight){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    line-height: $lineHeight;
+    max-height: calc(#{$lineHeight} * #{$line});
+}
+//Set Font
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('../fonts/SFUIDisplay/SFUIDisplay-Light.ttf') format('truetype');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('../fonts/SFUIDisplay/SFUIDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('../fonts/SFUIDisplay/SFUIDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('../fonts/SFUIDisplay/SFUIDisplay-Semibold.ttf') format('truetype');
+    font-weight: 800;
+}
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('../fonts/SFUIDisplay/SFUIDisplay-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'UVNAnhSang';
+    src: url('../fonts/UVNAnhSang.ttf') format('truetype');
+    font-weight: 400;
+}
+
+
+// Fonts
+$font-family-base:      'SFUIDisplay', sans-serif;
+$font-family-base1:      'UVNAnhSang', sans-serif;
+h1,
+h2,
+h3,
+h4 {
+    color: inherit;
+}
+input,
+select,
+textarea,
+button{
+    font-family: $font-family-base;
+    outline: none;
+    box-shadow: none;
+    vertical-align: middle;
+    color: $color-primary;
+    &:focus {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+}
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+}
+a {
+    color: inherit;
+    transition: 0.2s;
+}
+
+img {
+    max-width: 100%;
+    outline: none !important;
+}
+/* Fix modal  */
+.mm-slideout { z-index:auto !important}

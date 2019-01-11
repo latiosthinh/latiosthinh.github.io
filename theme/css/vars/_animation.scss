@@ -1,0 +1,36 @@
+@keyframes name {
+    0% {  }
+    100% {  }
+}
+
+@keyframes name {
+    0% {  }
+    100% {  }
+}
+
+@keyframes name {
+    0% {  }
+    100% {  }
+}
+
+@keyframes name {
+    0% {  }
+    100% {  }
+}
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
