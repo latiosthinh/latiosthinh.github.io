@@ -152,6 +152,65 @@
     font-size: 40px;
     margin: 15px 0 10px;
   }
+  .house-feature {
+    .more-prop {
+      font-size: 35px;
+      text-align: center;
+      margin: 30px auto 0;
+      a {
+        background: rgb(238, 68, 68);
+        padding: 5px 25px;
+        color: #ffffff;
+        transition: .3s;
+        &:hover {
+          background: $c1;
+        }
+      }
+    }
+    .item {
+      position: relative;
+      .detail {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: #ffffff;
+        font-size: 20px;
+        .interior {
+          display: flex;
+          .di {
+            margin-right: 20px;
+            .num {
+              margin-right: 5px;
+            }
+            .fa {
+            }
+          }
+        }
+      }
+      a {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+    .col-lg-4 {
+      .row {
+        align-items: stretch;
+        height: 100%;
+      }
+      .bot {
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  }
   .house-list {
     position: relative;
     .item {
@@ -256,6 +315,7 @@
 }
 
 #grid {
+  margin-top: 40px;
   .col-lg-4 {
     height: 400px;
     &:nth-child(even) {
@@ -391,7 +451,7 @@
 
 #latest-news {
   .container-fluid {
-    background: rgb(148, 148, 148);
+    background: rgb(236, 236, 236);
     padding-top: 20px;
     position: relative;
   }
@@ -421,13 +481,14 @@
     .content {
       position: relative;
       background: #ffffff;
-      box-shadow: 0 0 10px rgb(116, 116, 116);
+      box-shadow: 0 0 1px rgb(116, 116, 116);
+      overflow: hidden;
       &:hover {
+        background: $c1;
         .detail {
-          .title {
-            color: $c1;
-          }
+          color: #ffffff;
           .rm {
+            color: #ffffff;
             span {
               margin-left: 30px;
             }
@@ -447,6 +508,7 @@
     }
     .detail {
       padding: 0 10px 8px;
+      transition: .3s;
       .date {
         margin-top: 10px;
       }
@@ -455,7 +517,6 @@
         margin-top: 10px;
         font-weight: bold;
         @include set-lineMax(2, 30px);
-        transition: .3s;
       }
       .short-desc {
         font-size: 16px;

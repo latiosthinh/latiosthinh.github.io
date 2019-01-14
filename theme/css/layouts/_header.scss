@@ -64,6 +64,7 @@ header {
     }
     ul {
         display: flex;
+        position: relative;
         &.top-left-menu {
             margin-left: 110px;
         }
@@ -72,6 +73,12 @@ header {
         }
         li {
             margin: 0 10px;
+            padding: 10px 0;
+            &:hover {
+                > ul {
+                    display: flex;
+                }
+            }
         }
         a {
             display: flex;
@@ -84,6 +91,42 @@ header {
         span {
             margin-right: 5px;
             font-size: 25px;
+        }
+    }
+    .city-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: #f7f7f7;
+        top: calc(100%);
+        left: 0;
+        transform: translateX(-25%);
+        color: #000000;
+        font-weight: bold;
+        min-width: 200px;
+        box-shadow: 0 0 10px rgb(110, 110, 110);
+        &:before {
+            content: "";
+            @include css-triangle($c1, up, 7px, 7px);
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        li {
+            padding: 0;
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 10px;
+            }
+            &:first-child {
+                margin-top: 10px;
+            }
+            &:last-child {
+                margin-bottom: 15px;
+            }
         }
     }
 }

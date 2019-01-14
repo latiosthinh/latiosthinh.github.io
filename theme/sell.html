@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="simple pug template"/>
+    <meta name="author" content="latiosthinh"/>
+    <title>Home </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+  </head>
+  <body class="page-template-sell">
+    <div class="wrap">
+      <header>
+        <nav class="d-nav"><a class="slogo" href="index.html"><img src="images/slogo.png" alt=""/></a>
+          <ul class="top-left-menu">
+            <li><a href="buy.html"> <span class="fa fa-home"></span><span>buy</span></a>
+              <ul>
+                <li><a href="">Search Propertise For Sale</a><a href="">View Our Autions</a><a href="">Residential</a><a href="">Commercial</a><a href="">Open For Inspection</a><a href="">Dualigent Checklist</a><a href="">Australian buying process & Tips</a></li>
+              </ul>
+            </li>
+            <li><a href="sell.html"><span class="fa fa-dollar"></span><span>sell</span></a>
+              <ul>
+                <li><a href="">Sold Propertise</a><a href="">Why Sell With RealLink</a><a href="">Testimonial</a><a href="">Selling Process</a><a href="">Request Market Appraisel</a></li>
+              </ul>
+            </li>
+            <li><a href="company.html"><span class="fa fa-users"></span><span>company</span></a>
+              <ul>
+                <li><a href="">Our mission & Vision</a><a href="">Our Team</a><a href="">Customer Testimomial</a><a href="">Contact Us</a><a href="">Careers</a></li>
+              </ul>
+            </li>
+            <li><a href="news.html"><span class="fa fa-newspaper-o"></span><span>news</span></a>
+              <ul>
+                <li><a href="">News</a><a href="">Social Media</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="top-search-form">
+        <button type="submit"><span class="fa fa-search"></span></button>
+        <input type="text" placeholder="Search for address, suburb..."/>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6" id="map"></div>
+          <div class="col-lg-6 offset-lg-6">
+            <div id="filter">
+              <div class="tbox">
+                <div class="row">
+                  <div class="col-6">
+                    <h3>Filter your results</h3>
+                  </div>
+                  <div class="col-6 toggle-btn">
+                    <button id="tgb"><span class="fa fa-sort"></span></button>
+                  </div>
+                </div>
+              </div>
+              <div class="filter-content">
+                <div class="formField">
+                  <label>Suburb</label>
+                  <select class="js-chosen full" name="suburb[]" multiple="multiple" data-placeholder="Select suburbs...">
+                    <option value="ASHWOOD">Ashwood</option>
+                    <option value="BAYSWATER NORTH">Bayswater North</option>
+                    <option value="BENTLEIGH EAST">Bentleigh East</option>
+                    <option value="BORONIA">Boronia</option>
+                    <option value="BOX HILL NORTH">Box Hill North</option>
+                    <option value="CAULFIELD">Caulfield</option>
+                  </select>
+                </div>
+                <div class="tbox">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="formField">
+                        <label>Property Type</label>
+                        <select class="js-chosen full" name="property_type[]" multiple="multiple" data-placeholder="Select property types...">
+                          <option value="">Business</option>
+                          <option value="">Commercial</option>
+                          <option value="">Commercial Land</option>
+                          <option value="">Residential Land</option>
+                          <option value="">Residential</option>
+                          <option value="">Rural</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="formField property-category-class-filter-costom">
+                        <input type="hidden" name="property_category" id="property_category" value=""/>
+                        <label>Property Category</label>
+                        <select id="prop-category">
+                          <option value="">Any</option>
+                          <option value="Apartment">Apartment</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="hidden" name="min_price_range" id="min_price_range" value="50000"/>
+                      <input type="hidden" name="max_price_range" id="max_price_range" value="10000000"/>
+                      <input type="hidden" name="step_size" id="step_size" value="5000"/>
+                      <div class="formField sl">
+                        <label>Price Range</label>
+                        <input type="hidden" name="price_from" id="price_from" value="50000"/>
+                        <input type="hidden" name="price_to" id="price_to" value="10000000"/>
+                        <div class="slider priceSlider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                          <div class="sliderTooltip">
+                            <div class="stLabel">$50,000<span class="fa fa-arrows-h"></span>$10,000,000</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="formField">
+                        <label class="enab">Enable Price Range Filter</label>
+                        <div class="checkbox custom-checkbox price-filter-checkbox">
+                          <label>Enable Price Range Filter
+                            <input name="enable_price_filter" id="enable_price_filter" value="1" type="checkbox"/><span class="fa fa-check"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="formField">
+                        <label>Bedrooms</label>
+                        <input type="hidden" name="beds" id="beds_value" value=""/>
+                        <div class="beds-class">
+                          <div class="volume"><a class="btn btn-gray btn-round-left js-left-btn" href="#" data-element="beds_value"><span class="fa fa-angle-left"></span></a>
+                            <input class="form-control" type="text" readonly="readonly" value="Any"/><a class="btn btn-gray btn-round-right js-right-btn" href="#" data-element="beds_value"><span class="fa fa-angle-right"></span></a>
+                            <div class="clearfix"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="formField">
+                        <label>Bathrooms</label>
+                        <input type="hidden" name="beds" id="beds_value" value=""/>
+                        <div class="beds-class">
+                          <div class="volume"><a class="btn btn-gray btn-round-left js-left-btn" href="#" data-element="beds_value"><span class="fa fa-angle-left"></span></a>
+                            <input class="form-control" type="text" readonly="readonly" value="Any"/><a class="btn btn-gray btn-round-right js-right-btn" href="#" data-element="beds_value"><span class="fa fa-angle-right"></span></a>
+                            <div class="clearfix"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="formField">
+                        <label>Car Spaces</label>
+                        <input type="hidden" name="beds" id="beds_value" value=""/>
+                        <div class="beds-class">
+                          <div class="volume"><a class="btn btn-gray btn-round-left js-left-btn" href="#" data-element="beds_value"><span class="fa fa-angle-left"></span></a>
+                            <input class="form-control" type="text" readonly="readonly" value="Any"/><a class="btn btn-gray btn-round-right js-right-btn" href="#" data-element="beds_value"><span class="fa fa-angle-right"></span></a>
+                            <div class="clearfix"> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 submit-search">
+                      <button type="submit">Apply Filter</button>
+                      <button id="clear-filter">Clear Filter</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="search-results">
+              <div class="tbox">
+                <div class="row">
+                  <div class="col-6">
+                    <h3>Properties Search Results</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="search-content">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="item">
+                      <div class="photo"><img src="images/sc.jpg" alt=""/><span class="tag">sold</span><span class="fa fa-eye"></span></div>
+                      <div class="detail">
+                        <h4>Double Storey Period Charm in the Heart of Noble Park!t of Noble Park!</h4>
+                        <p><span class="fa fa-map-marker"></span>7 Baldwin Avenue, NOBLE PARK</p>
+                        <div class="interior">
+                          <div class="di"><span class="fa fa-bed"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-bathtub"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-car"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-map"></span><span class="num">720m2</span></div>
+                        </div>
+                        <div class="price">Sold for $681,111</div>
+                      </div><a href=""></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="item">
+                      <div class="photo"><img src="images/sc.jpg" alt=""/><span class="tag">sold</span><span class="fa fa-eye"></span></div>
+                      <div class="detail">
+                        <h4>Double Storey Period Charm in the Heart of Noble Park!t of Noble Park!</h4>
+                        <p><span class="fa fa-map-marker"></span>7 Baldwin Avenue, NOBLE PARK</p>
+                        <div class="interior">
+                          <div class="di"><span class="fa fa-bed"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-bathtub"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-car"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-map"></span><span class="num">720m2</span></div>
+                        </div>
+                        <div class="price">Sold for $681,111</div>
+                      </div><a href=""></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="item">
+                      <div class="photo"><img src="images/sc.jpg" alt=""/><span class="tag">sold</span><span class="fa fa-eye"></span></div>
+                      <div class="detail">
+                        <h4>Double Storey Period Charm in the Heart of Noble Park!t of Noble Park!</h4>
+                        <p><span class="fa fa-map-marker"></span>7 Baldwin Avenue, NOBLE PARK</p>
+                        <div class="interior">
+                          <div class="di"><span class="fa fa-bed"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-bathtub"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-car"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-map"></span><span class="num">720m2</span></div>
+                        </div>
+                        <div class="price">Sold for $681,111</div>
+                      </div><a href=""></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="item">
+                      <div class="photo"><img src="images/sc.jpg" alt=""/><span class="tag">sold</span><span class="fa fa-eye"></span></div>
+                      <div class="detail">
+                        <h4>Double Storey Period Charm in the Heart of Noble Park!t of Noble Park!</h4>
+                        <p><span class="fa fa-map-marker"></span>7 Baldwin Avenue, NOBLE PARK</p>
+                        <div class="interior">
+                          <div class="di"><span class="fa fa-bed"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-bathtub"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-car"></span><span class="num">1</span></div>
+                          <div class="di"><span class="fa fa-map"></span><span class="num">720m2</span></div>
+                        </div>
+                        <div class="price">Sold for $681,111</div>
+                      </div><a href=""></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/chosen.js"></script>
+    <script src="js/multiselect.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      $('#tgb').click(function(){
+          $('.filter-content').slideToggle();
+      });
+      /* for filter section start*/
+      $("#prop-category").selectmenu();
+      /* preferences page javascript start */
+      
+      $(".js-preference-dropdown").click(function() {
+          if (!($(this).parent().hasClass('disabled')))
+          {
+          $(this).prev().prop("checked", true);
+      
+          if( $(this).text() == 'Any' || ( ( $(this).text() == 'Bedrooms' || $(this).text() == 'Bathrooms' ) && $(this).closest('form').attr('id') == 'search_form_home' ) )
+              $('#'+$(this).attr('data-element')).val('');
+          else if ( $(this).attr('data-element') == 'property_type' || $(this).attr('data-element') == 'property_category' )
+              $('#'+$(this).attr('data-element')).val($(this).text());
+          else
+              $('#'+$(this).attr('data-element')).val($(this).text().replace(/[^0-9\s]/gi, '').replace(/[_\s]/g, ' '));
+      
+          $(this).parent().siblings().removeClass('active');
+          $(this).parent().addClass('active');
+          $(this).parent().parent().siblings('.dropdown-toggle').children('.dropdown-label').html($(this).text());
+          }
+      });
+      /* preferences page javascript end */
+      /* initialize chosen select */
+      $('.js-chosen').chosen({
+          allow_single_deselect: true,
+          disable_search_threshold: 32
+      });
+      
+      /* initialize multiselect */
+      $('.js-custom-multiselect').multiselect({ noneSelectedText: "Select suburb" });
+      $('.js-custom-property-type-multiselect').multiselect({ noneSelectedText: "Select property type" });
+      
+      $('.ui-multiselect').append('<span class="caret"></span>');
+      
+      // functionality for custom dropdown sort list
+      $('a.sort-link').click(function() {
+          if (!($(this).parent().hasClass('disabled')))
+          {
+          $(this).prev().prop("checked", true);
+      
+          switch($(this).prev().val())
+          {
+              case 'sort_newest':
+                  $('#sort_order_custom').val('date_listed');
+                  $('#sort_dir_custom').val('asc');
+              break;
+              case 'sort_lowest':
+                  $('#sort_order_custom').val('price_from');
+                  $('#sort_dir_custom').val('asc');
+              break;
+              case 'sort_highest':
+                  $('#sort_order_custom').val('price_from');
+                  $('#sort_dir_custom').val('desc');
+              break;
+          }
+          $(this).parent().siblings().removeClass('active');
+          $(this).parent().addClass('active');
+          $(this).parent().parent().siblings('.dropdown-toggle').children('.dropdown-label').html($(this).text());
+          
+          if(!$('#enable_price_filter').is(":checked")) {        
+              $('#price_from').val("");
+              $('#price_to').val("");          
+          }
+          
+          document.getElementById('search_form').submit();
+          }
+      });
+      
+      $('.search-filter').click(function() {
+          if(!$('#enable_price_filter').is(":checked")) {        
+              $('#price_from').val("");
+              $('#price_to').val("");          
+          }
+          document.getElementById('search_form').submit();
+      });
+      /* Price Slider */
+      var priceMin = parseInt($('#min_price_range').val(), 10);
+      var priceMax = parseInt($('#max_price_range').val(), 10);
+      var priceFrom = parseInt($('#price_from').val(), 10);
+      var priceTo = parseInt($('#price_to').val(), 10);
+      var step = parseInt($('#step_size').val(), 10);
+      
+      function priceSliderSlide(event, ui) {
+          $('.priceSlider .sliderTooltip .stLabel').html(
+          '$' + ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +
+          ' <span class="fa fa-arrows-h"></span> ' +
+          '$' + ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+          );
+      
+          $('#price_from').val(ui.values[0].toString());
+          $('#price_to').val(ui.values[1].toString());
+      
+          var priceSliderRangeLeft = parseInt($('.priceSlider .ui-slider-range').css('left'));
+          var priceSliderRangeWidth = $('.priceSlider .ui-slider-range').width();
+          var priceSliderLeft = priceSliderRangeLeft + ( priceSliderRangeWidth / 2 ) - ( $('.priceSlider .sliderTooltip').width() / 2 );
+          $('.priceSlider .sliderTooltip').css('left', Math.max(0, priceSliderLeft));
+      }
+      
+      $('.priceSlider').slider({
+          range: true,
+          min: priceMin,
+          max: priceMax,
+          values: [priceFrom, priceTo],
+          step: step,
+          slide: priceSliderSlide
+      });
+      
+      priceSliderSlide(null, {values: [priceFrom, priceTo]});
+      
+      /* Area Slider */
+      var minInitialLand= 100;
+      if($('#land_size_from').val() != '')
+          minInitialLand = $('#land_size_from').val();
+      
+      var maxInitialLand= 1000;
+      if($('#land_size_to').val() != '')
+          maxInitialLand = $('#land_size_to').val();
+      
+      $('.areaSlider').slider({
+          range: true,
+          min: 0,
+          max: 1000,
+          values: [minInitialLand, maxInitialLand],
+          step: 10,
+          slide: function(event, ui) {
+          $('.areaSlider .sliderTooltip .stLabel').html(
+              ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' ' +
+              ' <span class="fa fa-arrows-h"></span> ' +
+              ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' '
+          );
+          $('#land_size_from').val(ui.values[0].toString());
+          $('#land_size_to').val(ui.values[1].toString());
+      
+          var areaSliderRangeLeft = parseInt($('.areaSlider .ui-slider-range').css('left'));
+          var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
+          var areaSliderLeft = areaSliderRangeLeft + ( areaSliderRangeWidth / 2 ) - ( $('.areaSlider .sliderTooltip').width() / 2 );
+          $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
+          }
+      });
+      
+      var sliderValuesMinLand=0;
+      var sliderValuesMaxLand=0;
+      if($('#land_size_from').val() != '')
+          sliderValuesMinLand=$('#land_size_from').val();
+      else
+          sliderValuesMinLand=$('.areaSlider').slider('values', 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+      
+      if($('#land_size_to').val() != '')
+          sliderValuesMaxLand=$('#land_size_to').val();
+      else
+          sliderValuesMaxLand=$('.areaSlider').slider('values', 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+      
+      
+      $('.areaSlider .sliderTooltip .stLabel').html( sliderValuesMinLand + ' ' +
+          ' <span class="fa fa-arrows-h"></span> ' + sliderValuesMaxLand + ' '
+      );
+      var areaSliderRangeLeft = parseInt($('.areaSlider .ui-slider-range').css('left'));
+      var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
+      var areaSliderLeft = areaSliderRangeLeft + ( areaSliderRangeWidth / 2 ) - ( $('.areaSlider .sliderTooltip').width() / 2 );
+      $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
+      
+      // Property bed, car, bath left right buttons
+      $('.js-right-btn').click(function() {
+          var currentVal=0;
+          if($(this).siblings('input').val() == 'Any')
+          currentVal=0;
+          else
+          currentVal = parseInt($(this).siblings('input').val());
+      
+          if (currentVal < 10) {
+          $(this).siblings('input').val(currentVal + 1);
+          $('#'+$(this).attr('data-element')).val(currentVal + 1);
+          }
+      });
+      
+      $('.js-left-btn').click(function() {
+          var currentVal=0;
+          if($(this).siblings('input').val() == 'Any')
+          currentVal=0;
+          else
+          currentVal = parseInt($(this).siblings('input').val());
+      
+          if (currentVal > 1) {
+          $(this).siblings('input').val(currentVal - 1);
+          $('#'+$(this).attr('data-element')).val(currentVal - 1);
+          }else{
+          $('#'+$(this).attr('data-element')).val('');
+          $(this).siblings('input').val('Any');
+          }
+      });
+      /* for filter section end*/
+      
+      
+      /* for filter button toggel start*/
+      $('.handleFilter').click(function() {
+          $('.filterForm').slideToggle(200);
+      });
+      
+      var map;
+      function initMap() {
+          var options = {
+              center:{lat: -34.397, lng: 150.644},
+              zoom: 15
+          }
+          map = new google.maps.Map(document.getElementById('map'), options);
+      
+          var maker = new google.maps.Marker({
+              position:{lat: -34.397, lng: 150.644},
+              map:map
+          });
+      }
+    </script>
+    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlXl5VyBim6ZP9QAvBx-Dfbi-AG3kQMmY&amp;callback=initMap"></script>
+  </body>
+</html>

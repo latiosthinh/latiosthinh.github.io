@@ -1,47 +1,10 @@
 <!DOCTYPE html>
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="description", content="simple pug template")
-        meta(name="author", content="latiosthinh")
-
-        title Home 
-        //- bootstrap
-        link(rel="stylesheet", href="css/bootstrap.min.css")
-        //- font
-        link(rel="stylesheet", href="fonts/font-awesome/css/font-awesome.min.css")
-        link(rel="stylesheet", href="css/slick.css")
-        link(rel="stylesheet", href="style.css")
-
-        //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-        //- WARNING: Respond.js doesn't work if you view the page via file://
-        //- [if lt IE 9]>
-        //-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        //-     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        //- <![endif]
+    include header.pug
     body
         .wrap
-            header
-                nav.d-nav
-                    a.slogo(href=""): img(src="images/slogo.png", alt="")
-                    ul.top-left-menu
-                        li: a(href="") buy
-                        li: a(href="") rent
-                        li: a(href="") services
-                        li: a(href="") agents
-                    a.logo(href=""): img(src="images/logo.png", alt="")
-                    ul.top-right-menu
-                        li: a(href="")
-                                span.fa.fa-globe(aria-hidden="true") 
-                                | city
-                        li: a(href="")
-                                span.fa.fa-user(aria-hidden="true")
-                                | login/register
+            include nav.pug
 
-
-            
             section#banner
                 .content.col-lg-5
                     h2 Your move.
@@ -71,45 +34,109 @@ html(lang="en")
                 </div>
             
             section#feature-list
-                h2 Featured Listings
-                .house-list
-                    .item
-                        a(href="")
-                            img(src="images/l1.jpg", alt="")
-                        .detail
-                            h5
-                                span 1677 N. DOHENY DRIVE
-                                span LOS ANGELES, CA
-                                span 90069
-                            h4 
-                                span 5 BEDROOMS
-                                span 8 BATHROOMS
-                                span 11,780 SQFT
-                    .item
-                        a(href="")
-                            img(src="images/l2.jpg", alt="")
-                        .detail
-                            h5
-                                span 1677 N. DOHENY DRIVE
-                                span LOS ANGELES, CA
-                                span 90069
-                            h4 
-                                span 5 BEDROOMS
-                                span 8 BATHROOMS
-                                span 11,780 SQFT
-                    .item
-                        a(href="")
-                            img(src="images/l3.jpg", alt="")
-                        .detail
-                            h5
-                                span 1677 N. DOHENY DRIVE
-                                span LOS ANGELES, CA
-                                span 90069
-                            h4 
-                                span 5 BEDROOMS
-                                span 8 BATHROOMS
-                                span 11,780 SQFT
-                            a(href="")
+                h2 Featured Properties
+                //- .house-list
+                //-     .item
+                //-         a(href="")
+                //-             img(src="images/l1.jpg", alt="")
+                //-         .detail
+                //-             h5
+                //-                 span 1677 N. DOHENY DRIVE
+                //-                 span LOS ANGELES, CA
+                //-                 span 90069
+                //-             h4 
+                //-                 span 5 BEDROOMS
+                //-                 span 8 BATHROOMS
+                //-                 span 11,780 SQFT
+                //-     .item
+                //-         a(href="")
+                //-             img(src="images/l2.jpg", alt="")
+                //-         .detail
+                //-             h5
+                //-                 span 1677 N. DOHENY DRIVE
+                //-                 span LOS ANGELES, CA
+                //-                 span 90069
+                //-             h4 
+                //-                 span 5 BEDROOMS
+                //-                 span 8 BATHROOMS
+                //-                 span 11,780 SQFT
+                //-     .item
+                //-         a(href="")
+                //-             img(src="images/l3.jpg", alt="")
+                //-         .detail
+                //-             h5
+                //-                 span 1677 N. DOHENY DRIVE
+                //-                 span LOS ANGELES, CA
+                //-                 span 90069
+                //-             h4 
+                //-                 span 5 BEDROOMS
+                //-                 span 8 BATHROOMS
+                //-                 span 11,780 SQFT
+                //-             a(href="")
+                .house-feature
+                    .container-fluid
+                        .row
+                            .col-lg-8
+                                .item
+                                    img(src="images/l1.jpg", alt="")
+                                    .detail
+                                        .address
+                                            span 1677 N. DOHENY DRIVE
+                                            span LOS ANGELES, CA
+                                            span 90069
+                                        .interior
+                                            .di
+                                                span.num 6
+                                                span.fa.fa-bed
+                                            .di
+                                                span.num 6
+                                                span.fa.fa-bathtub
+                                            .di
+                                                span.num 6
+                                                span.fa.fa-car
+                                    a(href="")
+                            .col-lg-4
+                                .row
+                                    .col-12
+                                        .item
+                                            img(src="images/l1.jpg", alt="")
+                                            .detail
+                                                .address
+                                                    span 1677 N. DOHENY DRIVE
+                                                    span LOS ANGELES, CA
+                                                    span 90069
+                                                .interior
+                                                    .di
+                                                        span.num 6
+                                                        span.fa.fa-bed
+                                                    .di
+                                                        span.num 6
+                                                        span.fa.fa-bathtub
+                                                    .di
+                                                        span.num 6
+                                                        span.fa.fa-car
+                                            a(href="")
+                                    .col-12.bot
+                                        .item
+                                            img(src="images/l1.jpg", alt="")
+                                            .detail
+                                                .address
+                                                    span 1677 N. DOHENY DRIVE
+                                                    span LOS ANGELES, CA
+                                                    span 90069
+                                                .interior
+                                                    .di
+                                                        span.num 6
+                                                        span.fa.fa-bed
+                                                    .di
+                                                        span.num 6
+                                                        span.fa.fa-bathtub
+                                                    .di
+                                                        span.num 6
+                                                        span.fa.fa-car
+                                            a(href="")
+                        .more-prop
+                            a(href="") More Available Properties
             section#grid
                 .container-fluid
                     .row
@@ -305,17 +332,10 @@ html(lang="en")
 
 
 
-
+        include js.pug
         <script src="https://fast.wistia.com/assets/external/E-v1.js"></script>
         <script src="https://fast.wistia.com/labs/crop-fill/plugin.js"></script>
-        script(src="js/jquery.js")
-        script(src="js/bootstrap.min.js")
-        script(src="js/gsap.min.js")
-        script(src="js/scrollMagic.min.js")
-        script(src="js/animation.gsap.min.js")
-        script(src="js/scrollMagicIndicators.min.js")
         script(src="js/slick.min.js")
-        script(src="js/script.js")
         script.
             var fullScreenVideo = fullScreenVideo || {};
 
