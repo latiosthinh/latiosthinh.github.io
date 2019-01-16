@@ -6,17 +6,49 @@ html(lang="en")
             include nav.pug
 
             section#banner
-                .content.col-lg-5
+                .content.col-lg-6
                     h2 Your move.
-                    h3
-                        span BUY
-                        span RENT
+                    .tbox
+                        label
+                            input(type="radio", name="cate-type", value="buy" checked="checked")
+                            span BUY
+                        label
+                            input(type="radio", name="cate-type", value="sell")
+                            span SELL
+                        label
+                            input(type="radio", name="cate-type", value="sold")
+                            span SOLD
                     .s-line
                         input(type="text" placeholder="City, Address, Zip")
                         button(type="submit")
                             span.fa.fa-search(aria-hidden="true")
-                    h4 YOU ARE SEARCHING IN 
-                        b USTRALIA
+                    .s-line
+                        input(type="hidden", name="property_category", id="property_category", value="")
+                        select#prop-type
+                            option(value="") Property Type
+                            option(value="apartment") Apartment
+                            option(value="shop") Shop
+                            option(value="flat") Flat
+                        
+                        input(type="hidden", name="min_price", id="property_category", value="")
+                        select#min-price
+                            option(value="") Min Price
+                            option(value="50000") $50,000
+                            option(value="70000") $70,000
+                            option(value="100000") $100,000
+
+                        input(type="hidden", name="max_price", id="property_category", value="")
+                        select#max-price
+                            option(value="") Max Price
+                            option(value="150000") $150,000
+                            option(value="170000") $170,000
+                            option(value="200000") $200,000
+                        
+                        label.ss Surrounding Suburbs   
+                            input(type="checkbox", name="sur_sub")
+                            span.fa.fa-check
+                    //- h4 YOU ARE SEARCHING IN 
+                    //-     b USTRALIA
                 .feature-detail
                     h5
                         span 1677 N. DOHENY DRIVE
@@ -35,44 +67,6 @@ html(lang="en")
             
             section#feature-list
                 h2 Featured Properties
-                //- .house-list
-                //-     .item
-                //-         a(href="")
-                //-             img(src="images/l1.jpg", alt="")
-                //-         .detail
-                //-             h5
-                //-                 span 1677 N. DOHENY DRIVE
-                //-                 span LOS ANGELES, CA
-                //-                 span 90069
-                //-             h4 
-                //-                 span 5 BEDROOMS
-                //-                 span 8 BATHROOMS
-                //-                 span 11,780 SQFT
-                //-     .item
-                //-         a(href="")
-                //-             img(src="images/l2.jpg", alt="")
-                //-         .detail
-                //-             h5
-                //-                 span 1677 N. DOHENY DRIVE
-                //-                 span LOS ANGELES, CA
-                //-                 span 90069
-                //-             h4 
-                //-                 span 5 BEDROOMS
-                //-                 span 8 BATHROOMS
-                //-                 span 11,780 SQFT
-                //-     .item
-                //-         a(href="")
-                //-             img(src="images/l3.jpg", alt="")
-                //-         .detail
-                //-             h5
-                //-                 span 1677 N. DOHENY DRIVE
-                //-                 span LOS ANGELES, CA
-                //-                 span 90069
-                //-             h4 
-                //-                 span 5 BEDROOMS
-                //-                 span 8 BATHROOMS
-                //-                 span 11,780 SQFT
-                //-             a(href="")
                 .house-feature
                     .container-fluid
                         .row
@@ -94,6 +88,9 @@ html(lang="en")
                                             .di
                                                 span.num 6
                                                 span.fa.fa-car
+                                        .price
+                                            span $81,000
+
                                     a(href="")
                             .col-lg-4
                                 .row
@@ -115,6 +112,8 @@ html(lang="en")
                                                     .di
                                                         span.num 6
                                                         span.fa.fa-car
+                                                .price
+                                                    pan $81,000
                                             a(href="")
                                     .col-12.bot
                                         .item
@@ -134,6 +133,8 @@ html(lang="en")
                                                     .di
                                                         span.num 6
                                                         span.fa.fa-car
+                                                .price
+                                                    pan $81,000
                                             a(href="")
                         .more-prop
                             a(href="") More Available Properties
@@ -337,6 +338,9 @@ html(lang="en")
         <script src="https://fast.wistia.com/labs/crop-fill/plugin.js"></script>
         script(src="js/slick.min.js")
         script.
+            $("#prop-type").selectmenu();
+            $("#min-price").selectmenu();
+            $("#max-price").selectmenu();
             var fullScreenVideo = fullScreenVideo || {};
 
             fullScreenVideo = {
@@ -348,29 +352,27 @@ html(lang="en")
                 
                 embedVideo: function()
                 {
-                var videoOptions = {};
-            
-                // Add the crop fill plugin to the videoOptions
-                Wistia.obj.merge(videoOptions, {
-                    plugin: {
-                    cropFill: {
-                        src: "//fast.wistia.com/labs/crop-fill/plugin.js"
-                    }
-                    }
-                });
+                    var videoOptions = {};
+                    // Add the crop fill plugin to the videoOptions
+                    Wistia.obj.merge(videoOptions, {
+                        plugin: {
+                            cropFill: {
+                                src: "//fast.wistia.com/labs/crop-fill/plugin.js"
+                            }
+                        }
+                    });
+                    // Video in the background
+                    wistiaEmbed = Wistia.embed(fullScreenVideo.backgroundvideo, videoOptions);
+                    // Video to be shown in the overlay
+                    overlayEmbed = Wistia.embed(fullScreenVideo.overlayVideo, videoOptions);
 
-                // Video in the background
-                wistiaEmbed = Wistia.embed(fullScreenVideo.backgroundvideo, videoOptions);
-                // Video to be shown in the overlay
-                overlayEmbed = Wistia.embed(fullScreenVideo.overlayVideo, videoOptions);
-
-                wistiaEmbed.bind("play", function(){
-                    wistiaEmbed.pause();
-                    wistiaEmbed.time(0);
-                    $(fullScreenVideo.backgroundideoDiv).css('visibility', 'visible');
-                    wistiaEmbed.play();
-                    return this.unbind;
-                });
+                    wistiaEmbed.bind("play", function(){
+                        wistiaEmbed.pause();
+                        wistiaEmbed.time(0);
+                        $(fullScreenVideo.backgroundideoDiv).css('visibility', 'visible');
+                        wistiaEmbed.play();
+                        return this.unbind;
+                    });
                 },
                 /**
                 * Plays the video set as overlayEmbed
@@ -378,9 +380,9 @@ html(lang="en")
                 */
                 playVideo: function()
                 {
-                $(fullScreenVideo.overlayVideoDiv).css("left", 0).css("visibility", "visible");
-                overlayEmbed.plugin.cropFill.resize();
-                overlayEmbed.play();
+                    $(fullScreenVideo.overlayVideoDiv).css("left", 0).css("visibility", "visible");
+                    overlayEmbed.plugin.cropFill.resize();
+                    overlayEmbed.play();
                 },
                 /**
                 * Hide the overlay video and pause it. Also reshow 
@@ -389,9 +391,9 @@ html(lang="en")
                 */
                 exitVideo: function()
                 {
-                $(fullScreenVideo.overlayVideoDiv).css("left", -3000).css("visibility", "hidden");
-                overlayEmbed.pause();
-                overlayEmbed._keyBindingsActive = false;
+                    $(fullScreenVideo.overlayVideoDiv).css("left", -3000).css("visibility", "hidden");
+                    overlayEmbed.pause();
+                    overlayEmbed._keyBindingsActive = false;
                 },
                 /**
                 * Fix the size of the images and text on page
@@ -399,10 +401,9 @@ html(lang="en")
                 */
                 fixTextPosition: function()
                 {
-                var width = $( window ).width();
-                var height = $( window ).height();
-                $("#video_container").css("width", width).css("height", height);
-                $("#main-image").css("width", width).css("height", height);
+                    var width = $( window ).width();
+                    var height = $( window ).height();
+                    $("#video_container").css("width", width).css("height", height);
                 }
             }
 
@@ -412,18 +413,10 @@ html(lang="en")
             */
             $(document).ready(function() {
             fullScreenVideo.fixTextPosition();
-            $("#text").delay(200).animate({ opacity: 1 }, 650);
+                $("#text").delay(200).animate({ opacity: 1 }, 650);
             });
-
             // If the widow is resized, resize the videos
             $(window).resize(fullScreenVideo.fixTextPosition);
-
-            // When the play button is clicked, call the play function
-            $(".rectangle").click(fullScreenVideo.playVideo);
-
-            // When the "X" is clicked, exit the video
-            $("#ex").click(fullScreenVideo.exitVideo);
-
             // Start loading the video
             fullScreenVideo.embedVideo();
 

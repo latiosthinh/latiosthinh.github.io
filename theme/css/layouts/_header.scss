@@ -21,12 +21,12 @@ header {
 }
 .d-nav {
     display: flex;
-    height: 80px;
+    height: 70px;
     align-items: center;
     position: relative;
     justify-content: space-between;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 16px;
     background: rgba(#fff, 0);
     color: #ffffff;
     transition: .6s;
@@ -36,8 +36,8 @@ header {
             top: 0;
             left: -80px;
             background: #d41e34;
-            height: 80px;
-            width: 80px;
+            height: 70px;
+            width: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -50,8 +50,8 @@ header {
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,7 +90,7 @@ header {
         }
         span {
             margin-right: 5px;
-            font-size: 25px;
+            font-size: 23px;
         }
     }
     .city-list {

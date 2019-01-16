@@ -239,7 +239,7 @@
         margin-top: -3px;
         margin-left: 2px;
         top: -34px;
-        z-index: 50;
+        z-index: 6;
         .stLabel {
             background-color: $c1;
             font-size: 11px;
@@ -279,7 +279,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        z-index: 1000;
+        z-index: 6;
         display: none;
         float: left;
         min-width: 160px;
@@ -334,7 +334,6 @@
     }
     label {
         cursor: pointer;
-        user-select: none;
         &:hover {
             input {
                 ~ span {

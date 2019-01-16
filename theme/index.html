@@ -37,14 +37,49 @@
         </nav>
       </header>
       <section id="banner">
-        <div class="content col-lg-5">
+        <div class="content col-lg-6">
           <h2>Your move.</h2>
-          <h3><span>BUY</span><span>RENT</span></h3>
+          <div class="tbox">
+            <label>
+              <input type="radio" name="cate-type" value="buy" checked="checked"/><span>BUY</span>
+            </label>
+            <label>
+              <input type="radio" name="cate-type" value="sell"/><span>SELL</span>
+            </label>
+            <label>
+              <input type="radio" name="cate-type" value="sold"/><span>SOLD</span>
+            </label>
+          </div>
           <div class="s-line">
             <input type="text" placeholder="City, Address, Zip"/>
             <button type="submit"><span class="fa fa-search" aria-hidden="true"></span></button>
           </div>
-          <h4>YOU ARE SEARCHING IN <b>USTRALIA</b></h4>
+          <div class="s-line">
+            <input type="hidden" name="property_category" id="property_category" value=""/>
+            <select id="prop-type">
+              <option value="">Property Type</option>
+              <option value="apartment">Apartment</option>
+              <option value="shop">Shop</option>
+              <option value="flat">Flat</option>
+            </select>
+            <input type="hidden" name="min_price" id="property_category" value=""/>
+            <select id="min-price">
+              <option value="">Min Price</option>
+              <option value="50000">$50,000</option>
+              <option value="70000">$70,000</option>
+              <option value="100000">$100,000</option>
+            </select>
+            <input type="hidden" name="max_price" id="property_category" value=""/>
+            <select id="max-price">
+              <option value="">Max Price</option>
+              <option value="150000">$150,000</option>
+              <option value="170000">$170,000</option>
+              <option value="200000">$200,000</option>
+            </select>
+            <label class="ss">Surrounding Suburbs   
+              <input type="checkbox" name="sur_sub"/><span class="fa fa-check"></span>
+            </label>
+          </div>
         </div>
         <div class="feature-detail">
           <h5><span>1677 N. DOHENY DRIVE</span><span>LOS ANGELES, CA</span><span>90069</span></h5>
@@ -70,6 +105,7 @@
                       <div class="di"><span class="num">6</span><span class="fa fa-bathtub"></span></div>
                       <div class="di"><span class="num">6</span><span class="fa fa-car"></span></div>
                     </div>
+                    <div class="price"><span>$81,000</span></div>
                   </div><a href=""></a>
                 </div>
               </div>
@@ -84,6 +120,9 @@
                           <div class="di"><span class="num">6</span><span class="fa fa-bathtub"></span></div>
                           <div class="di"><span class="num">6</span><span class="fa fa-car"></span></div>
                         </div>
+                        <div class="price">
+                          <pan>$81,000</pan>
+                        </div>
                       </div><a href=""></a>
                     </div>
                   </div>
@@ -95,6 +134,9 @@
                           <div class="di"><span class="num">6</span><span class="fa fa-bed"></span></div>
                           <div class="di"><span class="num">6</span><span class="fa fa-bathtub"></span></div>
                           <div class="di"><span class="num">6</span><span class="fa fa-car"></span></div>
+                        </div>
+                        <div class="price">
+                          <pan>$81,000</pan>
                         </div>
                       </div><a href=""></a>
                     </div>
@@ -309,6 +351,9 @@
 <script src="https://fast.wistia.com/labs/crop-fill/plugin.js"></script>
     <script src="js/slick.min.js"></script>
     <script>
+      $("#prop-type").selectmenu();
+      $("#min-price").selectmenu();
+      $("#max-price").selectmenu();
       var fullScreenVideo = fullScreenVideo || {};
       
       fullScreenVideo = {
@@ -320,29 +365,27 @@
           
           embedVideo: function()
           {
-          var videoOptions = {};
+              var videoOptions = {};
+              // Add the crop fill plugin to the videoOptions
+              Wistia.obj.merge(videoOptions, {
+                  plugin: {
+                      cropFill: {
+                          src: "//fast.wistia.com/labs/crop-fill/plugin.js"
+                      }
+                  }
+              });
+              // Video in the background
+              wistiaEmbed = Wistia.embed(fullScreenVideo.backgroundvideo, videoOptions);
+              // Video to be shown in the overlay
+              overlayEmbed = Wistia.embed(fullScreenVideo.overlayVideo, videoOptions);
       
-          // Add the crop fill plugin to the videoOptions
-          Wistia.obj.merge(videoOptions, {
-              plugin: {
-              cropFill: {
-                  src: "//fast.wistia.com/labs/crop-fill/plugin.js"
-              }
-              }
-          });
-      
-          // Video in the background
-          wistiaEmbed = Wistia.embed(fullScreenVideo.backgroundvideo, videoOptions);
-          // Video to be shown in the overlay
-          overlayEmbed = Wistia.embed(fullScreenVideo.overlayVideo, videoOptions);
-      
-          wistiaEmbed.bind("play", function(){
-              wistiaEmbed.pause();
-              wistiaEmbed.time(0);
-              $(fullScreenVideo.backgroundideoDiv).css('visibility', 'visible');
-              wistiaEmbed.play();
-              return this.unbind;
-          });
+              wistiaEmbed.bind("play", function(){
+                  wistiaEmbed.pause();
+                  wistiaEmbed.time(0);
+                  $(fullScreenVideo.backgroundideoDiv).css('visibility', 'visible');
+                  wistiaEmbed.play();
+                  return this.unbind;
+              });
           },
           /**
           * Plays the video set as overlayEmbed
@@ -350,9 +393,9 @@
           */
           playVideo: function()
           {
-          $(fullScreenVideo.overlayVideoDiv).css("left", 0).css("visibility", "visible");
-          overlayEmbed.plugin.cropFill.resize();
-          overlayEmbed.play();
+              $(fullScreenVideo.overlayVideoDiv).css("left", 0).css("visibility", "visible");
+              overlayEmbed.plugin.cropFill.resize();
+              overlayEmbed.play();
           },
           /**
           * Hide the overlay video and pause it. Also reshow 
@@ -361,9 +404,9 @@
           */
           exitVideo: function()
           {
-          $(fullScreenVideo.overlayVideoDiv).css("left", -3000).css("visibility", "hidden");
-          overlayEmbed.pause();
-          overlayEmbed._keyBindingsActive = false;
+              $(fullScreenVideo.overlayVideoDiv).css("left", -3000).css("visibility", "hidden");
+              overlayEmbed.pause();
+              overlayEmbed._keyBindingsActive = false;
           },
           /**
           * Fix the size of the images and text on page
@@ -371,10 +414,9 @@
           */
           fixTextPosition: function()
           {
-          var width = $( window ).width();
-          var height = $( window ).height();
-          $("#video_container").css("width", width).css("height", height);
-          $("#main-image").css("width", width).css("height", height);
+              var width = $( window ).width();
+              var height = $( window ).height();
+              $("#video_container").css("width", width).css("height", height);
           }
       }
       
@@ -384,18 +426,10 @@
       */
       $(document).ready(function() {
       fullScreenVideo.fixTextPosition();
-      $("#text").delay(200).animate({ opacity: 1 }, 650);
+          $("#text").delay(200).animate({ opacity: 1 }, 650);
       });
-      
       // If the widow is resized, resize the videos
       $(window).resize(fullScreenVideo.fixTextPosition);
-      
-      // When the play button is clicked, call the play function
-      $(".rectangle").click(fullScreenVideo.playVideo);
-      
-      // When the "X" is clicked, exit the video
-      $("#ex").click(fullScreenVideo.exitVideo);
-      
       // Start loading the video
       fullScreenVideo.embedVideo();
     </script>

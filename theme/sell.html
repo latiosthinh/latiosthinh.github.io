@@ -261,7 +261,6 @@
       /* for filter section start*/
       $("#prop-category").selectmenu();
       /* preferences page javascript start */
-      
       $(".js-preference-dropdown").click(function() {
           if (!($(this).parent().hasClass('disabled')))
           {
@@ -296,33 +295,33 @@
       $('a.sort-link').click(function() {
           if (!($(this).parent().hasClass('disabled')))
           {
-          $(this).prev().prop("checked", true);
+              $(this).prev().prop("checked", true);
       
-          switch($(this).prev().val())
-          {
-              case 'sort_newest':
-                  $('#sort_order_custom').val('date_listed');
-                  $('#sort_dir_custom').val('asc');
-              break;
-              case 'sort_lowest':
-                  $('#sort_order_custom').val('price_from');
-                  $('#sort_dir_custom').val('asc');
-              break;
-              case 'sort_highest':
-                  $('#sort_order_custom').val('price_from');
-                  $('#sort_dir_custom').val('desc');
-              break;
-          }
-          $(this).parent().siblings().removeClass('active');
-          $(this).parent().addClass('active');
-          $(this).parent().parent().siblings('.dropdown-toggle').children('.dropdown-label').html($(this).text());
-          
-          if(!$('#enable_price_filter').is(":checked")) {        
-              $('#price_from').val("");
-              $('#price_to').val("");          
-          }
-          
-          document.getElementById('search_form').submit();
+              switch($(this).prev().val())
+              {
+                  case 'sort_newest':
+                      $('#sort_order_custom').val('date_listed');
+                      $('#sort_dir_custom').val('asc');
+                  break;
+                  case 'sort_lowest':
+                      $('#sort_order_custom').val('price_from');
+                      $('#sort_dir_custom').val('asc');
+                  break;
+                  case 'sort_highest':
+                      $('#sort_order_custom').val('price_from');
+                      $('#sort_dir_custom').val('desc');
+                  break;
+              }
+              $(this).parent().siblings().removeClass('active');
+              $(this).parent().addClass('active');
+              $(this).parent().parent().siblings('.dropdown-toggle').children('.dropdown-label').html($(this).text());
+              
+              if(!$('#enable_price_filter').is(":checked")) {        
+                  $('#price_from').val("");
+                  $('#price_to').val("");          
+              }
+              
+              document.getElementById('search_form').submit();
           }
       });
       

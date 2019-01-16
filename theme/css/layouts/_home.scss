@@ -36,14 +36,26 @@
       margin-bottom: 30px;
       margin-left: -3px;
     }
-    h3 {
-      font-size: 25px;
+    .tbox {
+      display: flex;
+      font-size: 28px;
       font-weight: bold;
       margin-bottom: 5px;
-      span {
-        &:first-child {
-          color: $c1;
-          margin-right: 20px;
+      label {
+        cursor: pointer;
+        font-weight: bold;
+        margin-right: 15px;
+        span {
+          cursor: pointer;
+        }
+      }
+      input[type=radio] {
+        position: absolute;
+        opacity: 0;
+        &:checked {
+          ~ span {
+            color: $c1;
+          }
         }
       }
     }
@@ -55,9 +67,12 @@
       height: 65px;
       line-height: 65px;
       width: 100%;
-      border: 2px solid #73767a;
+      border: 1px solid #fff;
       background: rgba(0,0,0,.8);
       color: #ffffff;
+      &::placeholder {
+        color: #ffffff;
+      }
     }
     button {
       position: absolute;
@@ -71,10 +86,92 @@
       align-items: center;
       font-size: 25px;
       right: 0;
-      color: #73767a;
+      color: #fff;
       transition: .3s;
       &:hover {
         color: $c1;
+      }
+    }
+    #prop-type {
+      + span {
+        width: 10em;
+        background: none;
+        color: #ffffff;
+        border: 0;
+        outline: none;
+        padding: 10px 0 10px 2px;
+        position: relative;
+        display: inline-block;
+        margin-right: 20px;
+        &::after {
+          content:'';
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          transform: translateY(-50%);
+          @include css-triangle(#fff, down, 5px, 5px);
+        }
+        span {
+          margin: 0;
+        }
+      }
+    }
+    #min-price, #max-price {
+      + span {
+        width: 7em;
+        background: none;
+        color: #ffffff;
+        border: 0;
+        outline: none;
+        padding: 10px 0 10px 2px;
+        position: relative;
+        display: inline-block;
+        &::after {
+          content:'';
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          @include css-triangle(#fff, down, 5px, 5px);
+        }
+        span {
+          margin: 0;
+        }
+      }
+    }
+    .ss {
+      position: absolute;
+      font-size: 15px;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      input[type=checkbox] {
+        position: absolute;
+        opacity: 0;
+        &:checked {
+          ~ span {
+            color: rgba(#fff,1);
+          }
+        }
+      }
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #fff;
+        font-size: 8px;
+        width: 12px;
+        height: 12px;
+        color: rgba(#fff,0);
+        border-radius: 2px;
+        position: absolute;
+        top: 57%;
+        transform: translateY(-50%);
+        left: -18px;
+        transition: .3s;
       }
     }
     h4 {
@@ -169,6 +266,14 @@
     }
     .item {
       position: relative;
+      overflow: hidden;
+      &:hover {
+        .detail {
+          .price {
+            right: 0;
+          }
+        }
+      }
       .detail {
         position: absolute;
         bottom: 20px;
@@ -186,9 +291,17 @@
             .num {
               margin-right: 5px;
             }
-            .fa {
-            }
           }
+        }
+        .price {
+          position: absolute;
+          right: -200px;
+          padding: 5px 20px;
+          font-weight: bold;
+          font-size: 25px;
+          background: $c1;
+          bottom: 0;
+          transition: .3s;
         }
       }
       a {
@@ -337,15 +450,14 @@
         content: "";
         top: 0;
         left: 0;
-        width: 100%;height: 100%;
+        width: 100%;
+        height: 100%;
         background: rgba(0,0,0, .5);
         z-index: 0;
       }
       &:hover {
         .bg {
-          &:after {
-            left: 0;
-          }
+          transform: translate(-50%, -50%) scale(1.5);
         }
       }
     }
@@ -353,21 +465,12 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(1);
       border: 1px solid #fff;
       overflow: hidden;
       width: 50%;
       height: 40%;
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: -100%;
-        display: block;
-        border-bottom: 10px solid #fff;
-        width: 100%;
-        transition: .4s;
-      }
+      transition: .3s;
     }
     .content {
       z-index: 1;
