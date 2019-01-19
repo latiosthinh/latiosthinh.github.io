@@ -20,22 +20,22 @@
           <ul class="top-left-menu">
             <li><a href="buy.html"> <span class="fa fa-home"></span><span>buy</span></a>
               <ul>
-                <li><a href="">Search Propertise For Sale</a><a href="">View Our Autions</a><a href="">Residential</a><a href="">Commercial</a><a href="">Open For Inspection</a><a href="">Dualigent Checklist</a><a href="">Australian buying process & Tips</a></li>
+                <li><a href="sell.html">Search Propertise For Sale</a><a href="sell.html">View Our Autions</a><a href="sell.html">Residential</a><a href="sell.html">Commercial</a><a href="open-for-inspection.html">Open For Inspection</a><a href="dualigent-checklist.html">Dualigent Checklist</a><a href="buying-process-tips.html">Australian buying process & Tips</a></li>
               </ul>
             </li>
             <li><a href="sell.html"><span class="fa fa-dollar"></span><span>sell</span></a>
               <ul>
-                <li><a href="">Sold Propertise</a><a href="">Why Sell With RealLink</a><a href="">Testimonial</a><a href="">Selling Process</a><a href="">Request Market Appraisel</a></li>
+                <li><a href="sell.html">Sold Propertise</a><a href="why-reallink.html">Why Sell With RealLink</a><a href="testimonial.html">Testimonial</a><a href="selling-process.html">Selling Process</a><a href="market-appraisal.html">Request Market Appraisel</a></li>
               </ul>
             </li>
             <li><a href="company.html"><span class="fa fa-users"></span><span>company</span></a>
               <ul>
-                <li><a href="">Our mission & Vision</a><a href="">Our Team</a><a href="">Customer Testimomial</a><a href="">Contact Us</a><a href="">Careers</a></li>
+                <li><a href="">Our mission & Vision</a><a href="team.html">Our Team</a><a href="customer-testimonial.html">Customer Testimomial</a><a href="contact.html">Contact Us</a><a href="">Careers</a></li>
               </ul>
             </li>
             <li><a href="news.html"><span class="fa fa-newspaper-o"></span><span>news</span></a>
               <ul>
-                <li><a href="">News</a><a href="">Social Media</a></li>
+                <li><a href="news.html">News</a><a href="social.html">Social Media</a></li>
               </ul>
             </li>
           </ul>
@@ -97,7 +97,7 @@
                         </select>
                       </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                       <input type="hidden" name="min_price_range" id="min_price_range" value="50000"/>
                       <input type="hidden" name="max_price_range" id="max_price_range" value="10000000"/>
                       <input type="hidden" name="step_size" id="step_size" value="5000"/>
@@ -112,23 +112,13 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-6">
-                      <div class="formField">
-                        <label class="enab">Enable Price Range Filter</label>
-                        <div class="checkbox custom-checkbox price-filter-checkbox">
-                          <label>Enable Price Range Filter
-                            <input name="enable_price_filter" id="enable_price_filter" value="1" type="checkbox"/><span class="fa fa-check"></span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
                     <div class="col-lg-4">
                       <div class="formField">
                         <label>Bedrooms</label>
                         <input type="hidden" name="beds" id="beds_value" value=""/>
                         <div class="beds-class">
-                          <div class="volume"><a class="btn btn-gray btn-round-left js-left-btn" href="#" data-element="beds_value"><span class="fa fa-angle-left"></span></a>
-                            <input class="form-control" type="text" readonly="readonly" value="Any"/><a class="btn btn-gray btn-round-right js-right-btn" href="#" data-element="beds_value"><span class="fa fa-angle-right"></span></a>
+                          <div class="volume"><a class="btn-gray btn-round-left js-left-btn" href="#" data-element="beds_value"><span class="fa fa-angle-left"></span></a>
+                            <input class="form-control" type="text" readonly="readonly" value="Any"/><a class="btn-gray btn-round-right js-right-btn" href="#" data-element="beds_value"><span class="fa fa-angle-right"></span></a>
                             <div class="clearfix"></div>
                           </div>
                         </div>
@@ -139,8 +129,8 @@
                         <label>Bathrooms</label>
                         <input type="hidden" name="beds" id="beds_value" value=""/>
                         <div class="beds-class">
-                          <div class="volume"><a class="btn btn-gray btn-round-left js-left-btn" href="#" data-element="beds_value"><span class="fa fa-angle-left"></span></a>
-                            <input class="form-control" type="text" readonly="readonly" value="Any"/><a class="btn btn-gray btn-round-right js-right-btn" href="#" data-element="beds_value"><span class="fa fa-angle-right"></span></a>
+                          <div class="volume"><a class="btn-gray btn-round-left js-left-btn" href="#" data-element="beds_value"><span class="fa fa-angle-left"></span></a>
+                            <input class="form-control" type="text" readonly="readonly" value="Any"/><a class="btn-gray btn-round-right js-right-btn" href="#" data-element="beds_value"><span class="fa fa-angle-right"></span></a>
                             <div class="clearfix"></div>
                           </div>
                         </div>
@@ -160,7 +150,6 @@
                     </div>
                     <div class="col-12 submit-search">
                       <button type="submit">Apply Filter</button>
-                      <button id="clear-filter">Clear Filter</button>
                     </div>
                   </div>
                 </div>
@@ -420,31 +409,31 @@
       
       // Property bed, car, bath left right buttons
       $('.js-right-btn').click(function() {
-          var currentVal=0;
+          var currentVal = 0;
           if($(this).siblings('input').val() == 'Any')
-          currentVal=0;
+              currentVal = 0;
           else
-          currentVal = parseInt($(this).siblings('input').val());
+              currentVal = parseInt($(this).siblings('input').val());
       
           if (currentVal < 10) {
-          $(this).siblings('input').val(currentVal + 1);
-          $('#'+$(this).attr('data-element')).val(currentVal + 1);
+              $(this).siblings('input').val((currentVal + 1) + '+');
+              $('#'+$(this).attr('data-element')).val(currentVal + 1);
           }
       });
       
       $('.js-left-btn').click(function() {
           var currentVal=0;
           if($(this).siblings('input').val() == 'Any')
-          currentVal=0;
+              currentVal=0;
           else
-          currentVal = parseInt($(this).siblings('input').val());
+              currentVal = parseInt($(this).siblings('input').val());
       
           if (currentVal > 1) {
-          $(this).siblings('input').val(currentVal - 1);
-          $('#'+$(this).attr('data-element')).val(currentVal - 1);
-          }else{
-          $('#'+$(this).attr('data-element')).val('');
-          $(this).siblings('input').val('Any');
+              $(this).siblings('input').val((currentVal - 1) + '+');
+              $('#'+$(this).attr('data-element')).val(currentVal - 1);
+          } else{
+              $('#'+$(this).attr('data-element')).val('');
+              $(this).siblings('input').val('Any');
           }
       });
       /* for filter section end*/

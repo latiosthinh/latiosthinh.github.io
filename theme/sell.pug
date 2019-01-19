@@ -52,7 +52,7 @@ html(lang="en")
                                                 
                                                 
 
-                                        .col-lg-6
+                                        .col-lg-12
                                             input(type="hidden", name="min_price_range", id="min_price_range", value="50000")
                                             input(type="hidden", name="max_price_range", id="max_price_range", value="10000000")
                                             input(type="hidden", name="step_size", id="step_size", value="5000")
@@ -67,13 +67,12 @@ html(lang="en")
                                                             | $50,000
                                                             span.fa.fa-arrows-h
                                                             | $10,000,000
-                                        .col-lg-6
-                                            .formField
-                                                label.enab Enable Price Range Filter
-                                                .checkbox.custom-checkbox.price-filter-checkbox
-                                                    label Enable Price Range Filter
-                                                        input(name="enable_price_filter", id="enable_price_filter", value="1", type="checkbox")
-                                                        span.fa.fa-check
+                                        //- .col-lg-6
+                                        //-     .formField
+                                        //-         .checkbox.custom-checkbox.price-filter-checkbox
+                                        //-             label Enable Price Range Filter
+                                        //-                 input(name="enable_price_filter", id="enable_price_filter", value="1", type="checkbox")
+                                        //-                 span.fa.fa-check
 
 
                                         .col-lg-4
@@ -82,10 +81,10 @@ html(lang="en")
                                                 input(type="hidden", name="beds", id="beds_value", value="")
                                                 .beds-class
                                                     .volume
-                                                        a(href="#", class="btn btn-gray btn-round-left js-left-btn", data-element="beds_value")
+                                                        a(href="#", class="btn-gray btn-round-left js-left-btn", data-element="beds_value")
                                                             span.fa.fa-angle-left
                                                         input(type="text", class="form-control", readonly="readonly", value="Any")
-                                                        a(href="#", class="btn btn-gray btn-round-right js-right-btn", data-element="beds_value")
+                                                        a(href="#", class="btn-gray btn-round-right js-right-btn", data-element="beds_value")
                                                             span.fa.fa-angle-right
                                                         .clearfix
 
@@ -95,10 +94,10 @@ html(lang="en")
                                                 input(type="hidden", name="beds", id="beds_value", value="")
                                                 .beds-class
                                                     .volume
-                                                        a(href="#", class="btn btn-gray btn-round-left js-left-btn", data-element="beds_value")
+                                                        a(href="#", class="btn-gray btn-round-left js-left-btn", data-element="beds_value")
                                                             span.fa.fa-angle-left
                                                         input(type="text", class="form-control", readonly="readonly", value="Any")
-                                                        a(href="#", class="btn btn-gray btn-round-right js-right-btn", data-element="beds_value")
+                                                        a(href="#", class="btn-gray btn-round-right js-right-btn", data-element="beds_value")
                                                             span.fa.fa-angle-right
                                                         .clearfix
 
@@ -117,7 +116,6 @@ html(lang="en")
 
                                         .col-12.submit-search
                                             button(type="submit") Apply Filter
-                                            button#clear-filter Clear Filter
                         
                         #search-results
                             .tbox
@@ -422,31 +420,31 @@ html(lang="en")
 
             // Property bed, car, bath left right buttons
             $('.js-right-btn').click(function() {
-                var currentVal=0;
+                var currentVal = 0;
                 if($(this).siblings('input').val() == 'Any')
-                currentVal=0;
+                    currentVal = 0;
                 else
-                currentVal = parseInt($(this).siblings('input').val());
+                    currentVal = parseInt($(this).siblings('input').val());
 
                 if (currentVal < 10) {
-                $(this).siblings('input').val(currentVal + 1);
-                $('#'+$(this).attr('data-element')).val(currentVal + 1);
+                    $(this).siblings('input').val((currentVal + 1) + '+');
+                    $('#'+$(this).attr('data-element')).val(currentVal + 1);
                 }
             });
 
             $('.js-left-btn').click(function() {
                 var currentVal=0;
                 if($(this).siblings('input').val() == 'Any')
-                currentVal=0;
+                    currentVal=0;
                 else
-                currentVal = parseInt($(this).siblings('input').val());
+                    currentVal = parseInt($(this).siblings('input').val());
 
                 if (currentVal > 1) {
-                $(this).siblings('input').val(currentVal - 1);
-                $('#'+$(this).attr('data-element')).val(currentVal - 1);
-                }else{
-                $('#'+$(this).attr('data-element')).val('');
-                $(this).siblings('input').val('Any');
+                    $(this).siblings('input').val((currentVal - 1) + '+');
+                    $('#'+$(this).attr('data-element')).val(currentVal - 1);
+                } else{
+                    $('#'+$(this).attr('data-element')).val('');
+                    $(this).siblings('input').val('Any');
                 }
             });
             /* for filter section end*/

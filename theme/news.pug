@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+html(lang="en")
+    include header.pug
+    body.blog-template-layout
+        .wrap
+            include nav.pug
+
+            section#news-feature
+                h1 NEWS
+                .news-feature
+                    .item
+                        img(src="images/newsf.jpg", alt="")
+                        h2 What an Average Home looks like in every State
+                        a(href="")
+                    .item
+                        img(src="images/newsf.jpg", alt="")
+                        h2 What an Average Home looks like in every State
+                        a(href="")
+                    .item
+                        img(src="images/newsf.jpg", alt="")
+                        h2 What an Average Home looks like in every State
+                        a(href="")
+                    .item
+                        img(src="images/newsf.jpg", alt="")
+                        h2 What an Average Home looks like in every State
+                        a(href="")
+                    .item
+                        img(src="images/newsf.jpg", alt="")
+                        h2 What an Average Home looks like in every State
+                        a(href="")
+                    .item
+                        img(src="images/newsf.jpg", alt="")
+                        h2 What an Average Home looks like in every State
+                        a(href="")
+            
+            section#blog
+                .container
+                    .row
+                        .col-lg-9
+                            .blog-list
+                                .row
+                                    .col-lg-4
+                                        .item
+                                            img(src="images/blog.jpg", alt="")
+                                            .detail
+                                                h3 Hottest Neiborhoods to watch in 2019
+                                                p These neiborhoods are about to take off
+                                            a(href="")
+                                            a.blog-tag(href="asd") neiborhood
+                                    .col-lg-4
+                                        .item
+                                            img(src="images/blog.jpg", alt="")
+                                            .detail
+                                                h3 Hottest Neiborhoods to watch in 2019
+                                                p These neiborhoods are about to take off
+                                            a(href="")
+                                            a.blog-tag(href="asd") neiborhood
+                                    .col-lg-4
+                                        .item
+                                            img(src="images/blog.jpg", alt="")
+                                            .detail
+                                                h3 Hottest Neiborhoods to watch in 2019
+                                                p These neiborhoods are about to take off
+                                                
+                                            a(href="")
+                                            a.blog-tag(href="asd") neiborhood
+                                    .col-lg-4
+                                        .item
+                                            img(src="images/blog.jpg", alt="")
+                                            .detail
+                                                h3 Hottest Neiborhoods to watch in 2019
+                                                p These neiborhoods are about to take off
+                                            a(href="")
+                                            a.blog-tag(href="asd") neiborhood
+                                    .col-lg-4
+                                        .item
+                                            img(src="images/blog.jpg", alt="")
+                                            .detail
+                                                h3 Hottest Neiborhoods to watch in 2019
+                                                p These neiborhoods are about to take off
+                                            a(href="")
+                                            a.blog-tag(href="asd") neiborhood
+                                    .col-lg-4
+                                        .item
+                                            img(src="images/blog.jpg", alt="")
+                                            .detail
+                                                h3 Hottest Neiborhoods to watch in 2019
+                                                p These neiborhoods are about to take off
+                                            a(href="")
+                                            a.blog-tag(href="asd") real estate
+                                button.more-blog
+                                    span MORE NEWS
+                        
+                        .col-lg-3
+                            .right-side-bar
+                                .row
+                                    .col-12
+                                        .search-field
+                                            h2 Discover a place you’ll love to live
+                                            .tbox
+                                                .s-line
+                                                    label
+                                                        input(type="radio", name="cate-type" checked)
+                                                        span Buy
+                                                    label
+                                                        input(type="radio", name="cate-type")
+                                                        span Rent
+                                                .s-line
+                                                    input(type="text", placeholder="neiborhood, city, ZIP, ...")
+                                                .s-line
+                                                    button(type="submit") Search
+
+
+            footer
+                .container
+                    h4 The Agency | 331 Foothill Road, Suite 100, Beverly Hills, CA 90210 | 424.230.3700 | Info@TheAgencyRE.com | CA DRE# 01904054
+                    .row
+                        .col-1
+                            h4.title REAL ESTATE
+                            h5: a(href="") Buy
+                            h5: a(href="") Rent
+                        .col-2
+                            h4.title ABOUT THE AGENCY
+                            h5: a(href="") Meet The Agents
+                            h5: a(href="") Development Group
+                            h5: a(href="") The Agency Creates
+                        .col-3
+                            h4.title Connect
+                            h5: a(href="") Read The Agency Daily
+                            h5: a(href="") Register An Acount
+                            h5: a(href="") Contact
+                        .col-4
+                            h1 Receive Our Newsletter
+                            .s-line
+                                input(type="email", placeholder="EMAIL ADDRESS")
+                                button(type="submit")
+                                    span.fa.fa-chevron-right
+                            .social
+                                a(href="")
+                                    span.fa.fa-facebook-f
+                                a(href="")
+                                    span.fa.fa-twitter
+                                a(href="")
+                                    span.fa.fa-pinterest-p 
+                                a(href="")
+                                    span.fa.fa-youtube 
+                                a(href="")
+                                    span.fa.fa-instagram 
+
+
+
+        include js.pug
+        <script src="https://fast.wistia.com/assets/external/E-v1.js"></script>
+        <script src="https://fast.wistia.com/labs/crop-fill/plugin.js"></script>
+        script(src="js/slick.min.js")
+        script.
+            $('.news-feature').slick({
+                speed: 300,
+                slidesToShow: 1,
+                centerMode: true,
+                variableWidth: true,
+                loop: false,
+                prevArrow: '<span class="fa fa-chevron-left" aria-hidden="true"></span>',
+                nextArrow: '<span class="fa fa-chevron-right" aria-hidden="true"></span>'
+            });

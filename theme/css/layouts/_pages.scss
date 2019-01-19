@@ -1,1 +1,343 @@
+#hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    &:before {
+        content:'';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(#000, .4);
+        z-index: 2;
+    }
+    #map {
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        position: relative !important;
+    }
+    h1 {
+        z-index: 3;
+        font-size: 45px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 30px;
+    }
+    h2 {
+        z-index: 3;
+        font-size: 30px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+    .form {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        width: 50%;
+        h1 {
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: $c1;
+            padding-left: 10px;
+            font-size: 30px;
+        }
+        label {
+            width: 100%;
+            position: relative;
+            span {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                font-size: 30px;
+                transform: translateY(-50%);
+                color: $c1;
+            }
+            input {
+                width: 100%;
+                height: 60px;
+                background: #000000;
+                border: 0;
+                color: #ffffff;
+                padding: 0 100px 0 50px;
+            }
+            button {
+                color: #ffffff;
+                background: $c1;
+                height: 100%;
+                padding: 0 30px;
+                font-weight: bold;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
 
+            }
+        }
+    }
+}
+.neighborhood-template-layout {
+    #hero {
+        height: 60vh;
+        z-index: 1;
+    }
+    #neighbor-detail {
+        position: relative;
+        z-index: 4;
+        h1 {
+            background: #ffffff;
+            font-weight: bold;
+            font-size: 40px;
+            display: inline-block;
+            margin-top: -50%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            padding: 20px 70px;
+        }
+    }
+    #neighbor-search-res {
+        margin-top: 50px;
+        h3 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 50px;
+        }
+        button {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 50px;
+            font-weight: bold;
+            background: $c1;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 20px;
+            padding: 5px 15px;
+            &:hover {
+                background: rgb(182, 48, 25);
+            }
+        }
+        .item {
+            font-size: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            &:hover {
+                a {
+                    background: rgba(#fff, .3);
+                }
+            }
+            a {
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba(#fff, 0);
+                transition: .3s;
+            }
+            .detail {
+                margin-top: 10px;
+                padding: 0 5px;
+                h4 {
+                    font-weight: bold;
+                }
+                .interior {
+                    display: flex;
+                    .di {
+                        margin-right: 15px;
+                        .num {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#suburb-search-res {
+    margin-top: 50px;
+    h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .item {
+        position: relative;
+        margin-bottom: 40px;
+        &:hover {
+            a {
+                background: rgba(#fff, .3);
+            }
+        }
+        a {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: .3s;
+            background: rgba(#fff, 0);
+        }
+        img {
+            width: 100%;
+            + p {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: $c1;
+                color: #ffffff;
+                text-transform: uppercase;
+                padding: 5px 10px;
+            }
+        }
+        .detail {
+            padding: 0 3px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            margin-top: 10px;
+            h4 {
+                font-weight: bold;
+                @include set-lineMax(1, 24px);
+            }
+            .interior {
+                display: flex;
+                margin-top: 5px;
+            }
+            .di {
+                margin-right: 15px;
+                color: $c1;
+                .num {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+    }
+}
+
+#contact {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    h4 {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 20px;
+        &:after {
+            content:"";
+            display: block;
+            height: 4px;
+            width: 40px;
+            background: $c1;
+        }
+    }
+    .form {
+        label {
+            width: 100%;
+            position: relative;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            input {
+                margin-top: 5px;
+                display: block;
+                width: 100%;
+                height: 35px;
+            }
+            textarea {
+                width: 100%;
+                margin-top: 5px;
+            }
+            span {
+                color: $c1;
+                margin-left: 5px;
+            }
+        }
+        button {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            text-transform: uppercase;
+            background: $c1;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 5px 15px;
+        }
+    }
+}
+
+#team-member-list {
+    background: #F7F7F7;
+    .item {
+        padding: 15px;
+        margin: 20px 0 30px;
+        position: relative;
+        a {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        img {
+            width: 100%;
+            border: 5px solid rgb(180, 180, 180);
+        }
+        .detail {
+            text-align: left;
+            padding-left: 1px;
+            margin-top: 10px;
+            h3 {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 20px;
+            }
+            h4 {
+            font-size: 18px;
+            text-transform: capitalize;
+            }
+            p {
+            font-size: 16px;
+            }
+        }
+    }
+}
+
+#customer-testimonial {
+    margin-top: 100px;
+    padding: 100px 0;
+    h4 {
+        font-size: 14px;
+        color: rgb(192, 192, 192);
+        text-align: center;
+    }
+    h2 {
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    .item {
+        margin: 20px 0 60px;
+        padding: 20px 15px;
+        position: relative;
+        box-shadow: 1px 1px 2px rgb(228, 228, 228);
+        img {
+            width: 100%;
+        }
+    }
+    .text {
+        font-size: 15px;
+    }
+}

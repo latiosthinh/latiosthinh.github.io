@@ -1,0 +1,110 @@
+.suburb-template-layout {
+    header {
+        .d-nav {
+            background: #000000;
+            color: #ffffff;
+        }
+    }
+}
+
+#suburb-header {
+    margin: 70px 0;
+    padding-top: 60px;
+    .name {
+        font-size: 35px;
+        width: 100%;
+        +h2 {
+            font-size: 20px;
+            color: #919191;
+        }
+    }
+}
+#suburb-hero {
+    height: 50vh;
+    background: url(images/suburb.jpg) center center / cover fixed;
+}
+#suburb-overview {
+    padding: 20px 0;
+    h1 {
+        font-size: 35px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+
+#suburb-map {
+    margin-top: 20px;
+    height: 50vh;
+    #map {
+        position: relative !important;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+}
+
+#suburb-detail {
+    margin-top: 30px;
+    h3 {
+        font-size: 25px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+
+#suburb-local-setting {
+    margin-top: 50px;
+    h1 {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+}
+
+#suburb-surrouding-profile {
+    margin-top: 50px;
+    h1 {
+        font-size: 35px;
+    }
+    .sp-list {
+        margin-top: 20px;
+    }
+    .item {
+        position: relative;
+        max-height: 280px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        &:hover {
+            h2 {
+                height: 100%;
+            }
+        }
+        img {
+            width: 100%;
+        }
+        h2 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: rgba($c1, 0.8);
+            color: #ffffff;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            text-transform: uppercase;
+            font-size: 18px;
+            transition: .3s;
+        }
+        a {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+}

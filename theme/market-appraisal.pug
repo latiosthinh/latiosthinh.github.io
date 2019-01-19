@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="en")
+    include header.pug
+    body.page-template-sell
+        .wrap
+            include sidenav.pug
+
+            .container-fluid.sellpage-content
+                #market-appraisal
+                    .row
+                        .col-lg-6
+                            h5 Market Appraisal
+                            br
+                            p If you would like our experienced sales team to contact you to make a time to inspect your property for a free market appraisal assessment, no obligation, please fill in the following details we will be in touch.
+                            br
+                            p L Leyton Real Estate Pty Ltd and its associated companies request certain personal information which includes your name, phone number, email address, address and property details, in order provide you with the services requested by you which may include a market appraisal for the sale or rental of your property or to transfer the management of your rental property to Leyton Real Estate. Without such information, we may be unable to provide the services requested by you.
+                            br
+                            p Our privacy policy contains information about how you may access the personal information we hold about you and information about how to seek correction of such information, if necessary.
+                            br
+                            br
+                            p Our privacy policy can be viewed at  
+                                a(href="") http://leytonre.com.au/privacy-policy . 
+                        
+                        .col-lg-6
+                            h5 Send message
+                            .form
+                                input(type="text", placeholder="Full name*")
+                                input(type="text", placeholder="Email address*")
+                                input(type="text", placeholder="Contact number*")
+                                input(type="text", placeholder="Address")
+                                textarea(name="", rows="10", placeholder="Comments")
+                                button(type="submit") SUBMIT
+
+
+
+
+        include js.pug
+        script(src="js/main.js")

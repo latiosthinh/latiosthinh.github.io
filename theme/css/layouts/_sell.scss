@@ -19,7 +19,7 @@
                     margin: 0;
                     position: relative;
                     &:hover {
-                        background: rgb(99, 28, 28);
+                        background: rgb(221, 38, 6);
                         > ul {
                             display: flex;
                         }
@@ -59,7 +59,7 @@
                         position: absolute;
                         left: 100%;
                         top: 0;
-                        background: rgb(48, 11, 11);
+                        background: rgb(199, 49, 3);
                         font-size: 13px;
                         li {
                             margin: 0;
@@ -141,12 +141,12 @@
                 height: 40px;
                 width: 100%;
                 border: 1px solid rgb(165, 165, 165);
-                border-radius: 3px;
+                border-radius: 0px;
             }
             input {
                 display: block;
                 border: 1px solid rgb(165, 165, 165);
-                border-radius: 3px;
+                border-radius: 0px;
                 width: 100%;
                 height: 40px;
                 &[type=checkbox] {
@@ -156,14 +156,17 @@
             }
         }
         button {
-            background: #ea3d36;
+            background: $c1;
             color: #ffffff;
             font-size: 16px;
+            font-weight: bold;
             padding: 5px 8px;
-            border-radius: 3px;
-            margin-right: 15px;
+            border-radius: 0px;
+            border: 2px solid $c1;
+            transition: .3s;
             &:hover {
-                background: $c1;
+                background: #ffffff;
+                color: $c1;
             }
         }
     }
@@ -217,7 +220,7 @@
     .chosen-container {
         width: 100% !important;
         ul {
-            border-radius: 3px;
+            border-radius: 0px;
             &.chosen-choices {
                 display: flex;
                 align-items: center;
@@ -303,6 +306,7 @@
         align-items: center;
         background: #ffffff;
         position: relative;
+        border-radius: 0;
         &:after {
             position: absolute;
             content: "";
@@ -380,19 +384,7 @@
             box-shadow: 0 0 0 0;
         }
         &:hover {
-            background: rgba(#e9ecef,1);
-        }
-        &.btn-round-left {
-            border-top-left-radius: 50px;
-            border-bottom-left-radius: 50px;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        &.btn-round-right {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-top-right-radius: 50px;
-            border-bottom-right-radius: 50px;
+            background: rgba($c1,1);
         }
     }
 }

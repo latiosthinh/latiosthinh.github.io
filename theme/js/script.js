@@ -52,6 +52,25 @@ jQuery(function($) {
 				dots: true,
 				fade: true
 			});
+
+			$('.neighbor-spotlight').slick({
+				nextArrow: false,
+				prevArrow: false,
+				dots:true,
+				appendDots: $('.neighbor-dot'),
+				fade: true,
+				customPaging : function(slider, i) {
+					var title = $(slider.$slides[i]).data('title');
+					return '<a class="pager__item"> '+title+' </a>';
+				}
+			});
+
+			$('.from-blog').slick({
+				nextArrow: false,
+				prevArrow: false,
+				dots: true,
+				fade: true
+			});
 		},
 
 		init: function(){

@@ -1,3 +1,13 @@
+.team-template-layout {
+    .d-nav {
+        color: #000;
+    }
+}
+.inspection-template-layout {
+    .d-nav {
+        background: #000000;
+    }
+}
 header {
     position: fixed;
     top: 0;
@@ -35,7 +45,7 @@ header {
         &.slogo {
             top: 0;
             left: -80px;
-            background: #d41e34;
+            background: $c1;
             height: 70px;
             width: 70px;
             display: flex;
@@ -43,7 +53,7 @@ header {
             align-items: center;
             transition: .6s;
             img {
-                width: 60%;
+                width: 70%;
             }
         }
         &.logo {
@@ -55,7 +65,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #d41e34;
+            background: $c1;
             transition: .6s;
             img {
                 width: 90%;
