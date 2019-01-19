@@ -341,3 +341,14 @@
         font-size: 15px;
     }
 }
+
+#twitter {
+    margin-top: 50px;
+    .col-lg-6 {
+        display: flex;
+        justify-content: center;
+    }
+    .fb-page, .fb-page iframe[style], .fb-page span {
+
+    }
+}
