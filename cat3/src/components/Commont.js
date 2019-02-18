@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import ReactSVG from 'react-svg'
 import LineTo from 'react-lineto'
-import { decorate, observable, flow, computed, action, toJS } from 'mobx'
-import { observer, inject } from 'mobx-react'
+import { decorate, observable, toJS } from 'mobx'
+import { observer } from 'mobx-react'
 import axios from 'axios'
 import classNames from 'classnames'
 import matchingData from './../data/matching.json'
@@ -28,7 +28,7 @@ const Commont = observer(
 				i < this.numberOfQuestion(this.data[this.currentQuestionIndex]);
 				i++
 			) {
-				a[i] = { from: null, to: null }
+				a[i] = { from: '', to: '' }
 			}
 
 			if (!redrawMode) {
@@ -63,10 +63,10 @@ const Commont = observer(
 			}
 
 			return (
-				<p className="questionLeft">
+				<div className="questionLeft">
 					Bạn đã trả lời đúng {socaudung} trên tổng số{' '}
 					{this.data.length} câu!
-				</p>
+				</div>
 			)
 		}
 		numberOfImageOfCurrentQuestion() {
@@ -153,7 +153,7 @@ const Commont = observer(
 			let a = this.lineData[this.currentQuestionIndex]
 			// neu van con anh chua noi het, khong check nua
 			for (let i = 0; i < a.length; i++) {
-				if (a[i].from === null || a[i].to === null) {
+				if (!a[i].from || !a[i].to) {
 					return
 				}
 			}
@@ -161,7 +161,7 @@ const Commont = observer(
 			let acf = this.data[this.currentQuestionIndex].acf
 
 			for (let i = 0; i < this.numberOfImageOfCurrentQuestion(); i++) {
-				let y = i + 1
+			
 
 				let questionName = remove_character(a[i].from, 9)
 				let answerName = remove_character(a[i].to, 7)
@@ -186,11 +186,10 @@ const Commont = observer(
 				this.resultList.push(null)
 
 				for (let j = 0; j < this.numberOfQuestion(this.data[i]); j++) {
-					this.lineData[i].push({ from: null, to: null })
+					this.lineData[i].push({ from: '', to: '' })
 				}
 			}
 
-			console.log(toJS(this.lineData))
 
 			// NEU DUNG AXIOS THI DUNG DOAN CODE DUOI VA COMMENT DOAN CODE TREN
 			// axios.get("http://khoi.catopiana.com/wp-json/acf/v3/matching?fbclid=IwAR1F4CnA83XLTVrONGyjWHP-gq_v_HS9_wF7FRoHjUmMo0GCd9NvOI9-eww")
@@ -465,7 +464,7 @@ const Commont = observer(
 										this.currentQuestionIndex
 									] === null ? null : (
 										<div>
-											<p> {this.ketquaCuthe()} </p>
+											<div> {this.ketquaCuthe()} </div>
 											{this.resultList[
 												this.currentQuestionIndex
 											] === true ? (
