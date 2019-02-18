@@ -1,0 +1,274 @@
+[
+    {
+    "id": 248,
+    "acf": {
+    "question": "http://khoi.catopiana.com/wp-content/uploads/2019/02/8.jpg",
+    "answer": {
+    "answer_a": {
+    "imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/8a.jpg",
+    "ta": ""
+    },
+    "answer_b": {
+    "imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/8b.jpg",
+    "tb": ""
+    },
+    "answer_c": {
+    "imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/8c.jpg",
+    "tc": [
+    "t"
+    ]
+    },
+    "answer_d": {
+    "imgd": false,
+    "td": ""
+    },
+    "answer_e": {
+    "imge": false,
+    "te": ""
+    },
+    "answer_f": {
+    "imgf": false,
+    "tf": ""
+    }
+    }
+    }
+    },
+    {
+    "id": 247,
+    "acf": {
+    "question": "http://khoi.catopiana.com/wp-content/uploads/2019/02/7.jpg",
+    "answer": {
+    "answer_a": {
+    "imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/7a.jpg",
+    "ta": [
+    "t"
+    ]
+    },
+    "answer_b": {
+    "imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/7b.jpg",
+    "tb": ""
+    },
+    "answer_c": {
+    "imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/7c.jpg",
+    "tc": ""
+    },
+    "answer_d": {
+    "imgd": false,
+    "td": ""
+    },
+    "answer_e": {
+    "imge": false,
+    "te": ""
+    },
+    "answer_f": {
+    "imgf": false,
+    "tf": ""
+    }
+    }
+    }
+    },
+    {
+    "id": 246,
+    "acf": {
+    "question": "http://khoi.catopiana.com/wp-content/uploads/2019/02/6.jpg",
+    "answer": {
+    "answer_a": {
+    "imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/6a.jpg",
+    "ta": ""
+    },
+    "answer_b": {
+    "imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/6b.jpg",
+    "tb": ""
+    },
+    "answer_c": {
+    "imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/6c.jpg",
+    "tc": [
+    "t"
+    ]
+    },
+    "answer_d": {
+    "imgd": false,
+    "td": ""
+    },
+    "answer_e": {
+    "imge": false,
+    "te": ""
+    },
+    "answer_f": {
+    "imgf": false,
+    "tf": ""
+    }
+    }
+    }
+    },
+    {
+    "id": 162,
+    "acf": {
+    "question": "http://khoi.catopiana.com/wp-content/uploads/2019/02/5.jpg",
+    "answer": {
+    "answer_a": {
+    "imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/5a.jpg",
+    "ta": ""
+    },
+    "answer_b": {
+    "imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/5b.jpg",
+    "tb": [
+    "t"
+    ]
+    },
+    "answer_c": {
+    "imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/5c.jpg",
+    "tc": ""
+    },
+    "answer_d": {
+    "imgd": false,
+    "td": ""
+    },
+    "answer_e": {
+    "imge": false,
+    "te": ""
+    },
+    "answer_f": {
+    "imgf": false,
+    "tf": ""
+    }
+    }
+    }
+    },
+    {
+    "id": 161,
+    "acf": {
+    "question": "http://khoi.catopiana.com/wp-content/uploads/2019/02/4.jpg",
+    "answer": {
+    "answer_a": {
+    "imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/4a.jpg",
+    "ta": ""
+    },
+    "answer_b": {
+    "imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/4b.jpg",
+    "tb": [
+    "t"
+    ]
+    },
+    "answer_c": {
+    "imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/4c.jpg",
+    "tc": ""
+    },
+    "answer_d": {
+    "imgd": false,
+    "td": ""
+    },
+    "answer_e": {
+    "imge": false,
+    "te": ""
+    },
+    "answer_f": {
+    "imgf": false,
+    "tf": ""
+    }
+    }
+    }
+    },
+    {
+    "id": 160,
+    "acf": {
+    "question": "http://khoi.catopiana.com/wp-content/uploads/2019/02/3.jpg",
+    "answer": {
+    "answer_a": {
+    "imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/3a.jpg",
+    "ta": ""
+    },
+    "answer_b": {
+    "imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/3b.jpg",
+    "tb": [
+    "t"
+    ]
+    },
+    "answer_c": {
+    "imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/3c.jpg",
+    "tc": ""
+    },
+    "answer_d": {
+    "imgd": false,
+    "td": ""
+    },
+    "answer_e": {
+    "imge": false,
+    "te": ""
+    },
+    "answer_f": {
+    "imgf": false,
+    "tf": ""
+    }
+    }
+    }
+    },
+    {
+    "id": 159,
+    "acf": {
+    "question": "http://khoi.catopiana.com/wp-content/uploads/2019/02/2-1.jpg",
+    "answer": {
+    "answer_a": {
+    "imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/2a-1.jpg",
+    "ta": ""
+    },
+    "answer_b": {
+    "imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/2c-1.jpg",
+    "tb": [
+    "t"
+    ]
+    },
+    "answer_c": {
+    "imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/2b-1.jpg",
+    "tc": ""
+    },
+    "answer_d": {
+    "imgd": false,
+    "td": ""
+    },
+    "answer_e": {
+    "imge": false,
+    "te": ""
+    },
+    "answer_f": {
+    "imgf": false,
+    "tf": ""
+    }
+    }
+    }
+    },
+    {
+    "id": 108,
+    "acf": {
+    "question": "http://khoi.catopiana.com/wp-content/uploads/2019/02/1-1.jpg",
+    "answer": {
+    "answer_a": {
+    "imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/1a-1.jpg",
+    "ta": [
+    "t"
+    ]
+    },
+    "answer_b": {
+    "imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/1b-1.jpg",
+    "tb": ""
+    },
+    "answer_c": {
+    "imgc": false,
+    "tc": ""
+    },
+    "answer_d": {
+    "imgd": false,
+    "td": ""
+    },
+    "answer_e": {
+    "imge": false,
+    "te": ""
+    },
+    "answer_f": {
+    "imgf": false,
+    "tf": ""
+    }
+    }
+    }
+    }
+    ]
