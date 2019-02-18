@@ -25,7 +25,7 @@ const TuanAnhLine = observer(
 		reset= ( redrawMode = false )=>{
 			let a = this.lineData[this.currentQuestionIndex]
 			for(let i = 0; i < this.numberOfQuestion(this.data[this.currentQuestionIndex]); i++){
-			  a[i] = {from: null, to: null}
+				a[i] = {from: null, to: null}
 			}
 
 			if(!redrawMode){
@@ -42,9 +42,9 @@ const TuanAnhLine = observer(
 			this.reset(true)
 
 			for(let i = 0; i < b.length; i++){
-			  setTimeout(() => {
+				setTimeout(() => {
 					a[i] = {from: b[i].from, to: b[i].to}
-			  },800)
+				},800)
 			}
 			
 		}
@@ -117,12 +117,12 @@ const TuanAnhLine = observer(
 			let a = this.lineData[this.currentQuestionIndex] 
 
 			for(let i = 0; i < a.length; i++){
-			  if(a[i].from){
+				if(a[i].from){
 
-			  }else{
-			  	a[i].from = from
-			  	break
-			  }
+				}else{
+					a[i].from = from
+					break
+				}
 			}	
 
 			this.checkAnswer()
@@ -134,12 +134,12 @@ const TuanAnhLine = observer(
 			let a = this.lineData[this.currentQuestionIndex] 
 
 			for(let i = 0; i < a.length; i++){
-			  if(a[i].to){
+				if(a[i].to){
 
-			  }else{
-			  	a[i].to = to
-			  	break
-			  }
+				}else{
+					a[i].to = to
+					break
+				}
 			}	
 
 			this.checkAnswer()
@@ -151,9 +151,9 @@ const TuanAnhLine = observer(
 			let a = this.lineData[this.currentQuestionIndex]
 			// neu van con anh chua noi het, khong check nua
 			for(let i = 0; i < a.length; i++){
-                if(a[i].from === null || a[i].to === null) {
-                    return
-                }
+								if(a[i].from === null || a[i].to === null) {
+										return
+								}
 			}
 			// nguoi dung noi tat ca cac anh, tiep tuc
 			let acf = this.data[this.currentQuestionIndex].acf
@@ -181,7 +181,7 @@ const TuanAnhLine = observer(
 					this.resultList.push(null)
 
 					for(let j = 0; j < this.numberOfQuestion(this.data[i]); j++){
-					    this.lineData[i].push({from: null, to: null})
+							this.lineData[i].push({from: null, to: null})
 					}
 			}
 
@@ -207,13 +207,13 @@ const TuanAnhLine = observer(
 				let a = this.lineData[this.currentQuestionIndex]
 				return a.map((item, index)=> (
 						<LineTo key={index} 
-                                from={item.from}
-                                to={item.to} 
-                                fromAnchor="middle right" 
-                                toAnchor="middle left"  
-                                borderWidth={3} 
-                                borderColor="#006699" 
-                                />
+																from={item.from}
+																to={item.to} 
+																fromAnchor="middle right" 
+																toAnchor="middle left"  
+																borderWidth={3} 
+																borderColor="#006699" 
+																/>
 				))
 				
 		}
@@ -383,8 +383,8 @@ const TuanAnhLine = observer(
 								</a>
 							</div>
 						</div>
-                    <img className="f6" src="./images/SVG/f6.svg" alt=""/>
-                    <img className="f7" src="./images/SVG/f7.svg" alt=""/>
+										<img className="f6" src="./images/SVG/f6.svg" alt=""/>
+										<img className="f7" src="./images/SVG/f7.svg" alt=""/>
 					</div>
 				</section>
 				<style> {` 
