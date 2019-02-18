@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import TestTriNho from './components/Memory';
 import Testposition from './components/Position';
-import Commont from './components/Commont'
+import Commont from './components/Commont/'
 import './css/bootstrap.min.css'
 import Creative from './components/Creative';
 

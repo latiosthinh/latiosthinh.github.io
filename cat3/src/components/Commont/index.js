@@ -5,8 +5,10 @@ import { decorate, observable, toJS } from 'mobx'
 import { observer } from 'mobx-react'
 import axios from 'axios'
 import classNames from 'classnames'
-import matchingData from './../data/matching.json'
-import { remove_character } from './../helpers/index.js'
+import matchingData from './../../data/matching.json'
+import { remove_character } from './../../helpers/index.js'
+import './Commont.css'
+
 var audioUrl =
 	'https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-18146/zapsplat_multimedia_click_003_19369.mp3?_=1'
 var audio = new Audio(audioUrl)
@@ -161,8 +163,6 @@ const Commont = observer(
 			let acf = this.data[this.currentQuestionIndex].acf
 
 			for (let i = 0; i < this.numberOfImageOfCurrentQuestion(); i++) {
-			
-
 				let questionName = remove_character(a[i].from, 9)
 				let answerName = remove_character(a[i].to, 7)
 
@@ -189,7 +189,6 @@ const Commont = observer(
 					this.lineData[i].push({ from: '', to: '' })
 				}
 			}
-
 
 			// NEU DUNG AXIOS THI DUNG DOAN CODE DUOI VA COMMENT DOAN CODE TREN
 			// axios.get("http://khoi.catopiana.com/wp-json/acf/v3/matching?fbclid=IwAR1F4CnA83XLTVrONGyjWHP-gq_v_HS9_wF7FRoHjUmMo0GCd9NvOI9-eww")
@@ -241,7 +240,7 @@ const Commont = observer(
 							<div className="row tn">
 								<div className="col-lg-12">
 									<div className="bigwhale">
-										<h1>TEST IQ</h1>
+										<h1>General knowledge test</h1>
 										<a
 											className="test-item brain"
 											href="/iq"
@@ -540,230 +539,11 @@ const Commont = observer(
 							/>
 						</div>
 					</section>
-					<style>
-						{' '}
-						{` 
-				#id2 {
-					margin-top: 150px;
-				}
-				#id2 .container {
-					position: relative;
-				}
-				.girl {
-					width: 300px;
-					position: absolute;
-					top: 0;
-					left:0;
-					z-index: 5;
-				}
-				.test-content {
-					position: relative;
-					z-index: 5;
-				}
-				.bigwhale {
-					margin:300px 0 150px;
-					text-align: center;
-				}
-				#id2 .container .row.tn h3 {
-					margin-top: 120px;
-					margin-bottom: 200px;
-					font-size: 16px;
-					font-weight: lighter;
-				}
-				.tn {
-					position: relative;
-					z-index: 5;
-				}
-				.whale {
-					position: absolute;
-					top:0;
-					left:30px;
-					z-index: 2;
-					width: 100%;
-				}
-				.list-test {
-					position: relative;
-					z-index: 5;
-					background: rgba(112,90,237, .5);
-					width: 50%;
-					padding: 30px;
-					border-radius: 50px;
-				}
-				#id2 .container .bot,
-					#id2 .container .top {
-					display: -webkit-box;
-					display: -ms-flexbox;
-					display: flex;
-					-webkit-box-align: center;
-					-ms-flex-align: center;
-					align-items: center;
-					-webkit-box-pack: center;
-					-ms-flex-pack: center;
-					justify-content: center;
-					width: 100%
-				}
-				
-				#id2 .container .test-item {
-					display: block;
-					width: 100px;
-					margin: 20px 50px;
-					position: relative;
-					z-index: 5
-				}	
-				.test-item:hover {
-					transform: scale(1.3);
-					transition: .3s;
-				}
-				#id2 .bigwhale .test-item {
-					display: block;
-					width: 200px;
-					margin: 0 auto;
-				}
-				
-				.left{  
-					float: left;  
-					width: 400px; 
-					text-align: right;  
-				} 
-				
-				.right{ 
-					float: right; 
-					width: 400px; 
-					text-align: left; 
-				} 
-				
-				.left-right-wr{  
-					width: 100%;  
-				} 
-				.left-right-wr img {  
-					max-width: 100%;  
-					height: auto; 
-					display: block; 
-				} 
-				
-				.left img{  
-					margin-left: auto;  
-				} 
-				.dot-wr {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-				}
-				span.dot-navigation{
-				width: 20px;
-				height: 20px;
-				border: 1px solid #ddd;
-				display: inline-block;
-				border-radius: 50%;
-				margin-right: 15px;
-				cursor: pointer;
-				background-color: white;
-			}
-
-			.is-active{
-				background-color: green!important;
-			}
-
-			.xemkq{
-				position: absolute;
-				bottom: 10px;
-				right: 0;
-				width: 150px;
-				height: 40px;
-				border: 2px solid green;
-				border-radius: 5px;
-				cursor: pointer;
-				transition: all 0.2s ease;
-				font-size: 16px;
-				color: green;
-				font-weight: bold;
-				text-transform: uppercase;
-			}
-
-			.xemkq:hover{
-				background: green;
-				color: white;
-			}
-
-			.left img, .right img {
-				margin-bottom: 15px;
-				cursor: pointer;
-				position: relative;
-				display: block!important;
-				transition: all 0.1s ease;
-			}
-
-			.left img:after, .right img:after{
-				content: "";
-				width: 100px;
-				height: 100%;
-				border: 1px solid red;
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 100!important;
-				background-color: red;
-			}
-
-
-
-
-			.left img:hover, .right img:hover {
-				transform: scale(1.01, 1.01);
-			}
-
-			.left img, .right img{
-				height: 150px;
-				border: 1px solid #efefef;
-				margin-bottom: 20px;
-				width: auto;
-			}
-			.left-right-wr{
-				padding: 15px;
-				margin-bottom: 40px;
-				height: 600px;
-			}
-
-			.xemkq {
-				position: absolute;
-				bottom: -70px;
-				right: 0px;
-			}
-
-			.left-right-wr{
-				position: relative;
-			}
-
-			.lamlai-btn{
-				width: 100px;
-				font-weight: bold;
-				text-transform: uppercase;
-				padding: 5px 10px;
-				border-radius: 5px;
-				border: 1px solid green;
-				color: green;
-				cursor: pointer;
-				transition: all 0.1s ease;
-			}
-
-			.lamlai-btn:hover{
-				background: green;
-				color: white;
-			}
-			.questionLeft, .result{
-				text-align: center;
-				margin-top: 20px;
-			}
-
-					`}
-					</style>
 				</div>
 			)
 		}
 	}
 )
-
-export default Commont
 
 decorate(Commont, {
 	data: observable,
@@ -773,3 +553,5 @@ decorate(Commont, {
 	showAnswer: observable,
 	isClickXemKetQua: observable,
 })
+
+export default Commont
