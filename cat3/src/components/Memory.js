@@ -4,7 +4,7 @@ import ReactSVG from 'react-svg'
 import { decorate, observable } from "mobx"
 import { observer } from "mobx-react"
 import classNames from 'classnames'
-var counterTime = 5
+var counterTime = 10
 
 const TestTriNho = observer(
 	class TestTriNho extends Component{ 
@@ -222,8 +222,8 @@ const TestTriNho = observer(
 								</a>
 							</div>
 						</div>
-                    <img className="f6" src="./images/SVG/f6.svg" alt=""/>
-                    <img className="f7" src="./images/SVG/f7.svg" alt=""/>
+										<img className="f6" src="./images/SVG/f6.svg" alt=""/>
+										<img className="f7" src="./images/SVG/f7.svg" alt=""/>
 					</div>
 				</section>
 					<style> {`
