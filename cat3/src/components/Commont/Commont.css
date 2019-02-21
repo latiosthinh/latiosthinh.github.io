@@ -162,18 +162,27 @@ span.dot-navigation {
 	background-color: red;
 }
 
-.left img:hover,
-.right img:hover {
-	transform: scale(1.01, 1.01);
-}
-
 .left img,
 .right img {
 	height: 150px;
 	border: 1px solid #efefef;
 	margin-bottom: 20px;
 	width: auto;
+	border-radius: 20px;
 }
+
+.right img {
+	-webkit-box-shadow: 13px 11px 7px -4px rgba(155, 22, 76, 0.7);
+	-moz-box-shadow: 13px 11px 7px -4px rgba(155, 22, 76, 0.7);
+	box-shadow: 13px 11px 7px -4px rgba(155, 22, 76, 0.7);
+}
+
+.left img {
+	-webkit-box-shadow: -13px 11px 7px -4px rgba(155, 22, 76, 0.7);
+	-moz-box-shadow: -13px 11px 7px -4px rgba(155, 22, 76, 0.7);
+	box-shadow: -13px 11px 7px -4px rgba(155, 22, 76, 0.7);
+}
+
 .left-right-wr {
 	padding: 15px;
 	margin-bottom: 40px;
@@ -191,15 +200,17 @@ span.dot-navigation {
 }
 
 .lamlai-btn {
-	width: 100px;
+	width: 170px;
 	font-weight: bold;
 	text-transform: uppercase;
-	padding: 5px 10px;
+	padding: 10px 10px;
 	border-radius: 5px;
-	border: 1px solid green;
+	border: 3px solid green;
 	color: green;
 	cursor: pointer;
 	transition: all 0.1s ease;
+	background-color: white;
+	user-select: none;
 }
 
 .lamlai-btn:hover {
@@ -211,3 +222,70 @@ span.dot-navigation {
 	text-align: center;
 	margin-top: 20px;
 }
+
+.currentQuestion {
+	margin: 0 auto;
+	text-align: center;
+	width: 138px;
+	height: 138px;
+	background-image: url('./../../images/background-sothutu-cauhoi.png');
+	font-family: 'Hobo Std Medium';
+	color: white;
+	font-size: 75px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 138px; /* the same as your div height */
+	margin-bottom: 30px;
+	user-select: none;
+}
+
+.dot-wr {
+	margin-bottom: 160px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between; /* rat quan trong */
+	flex-wrap: wrap;
+	max-width: 860px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.prev-btn,
+.next-btn {
+	width: 218px;
+	height: 66px;
+	background-image: url('./../../images/background-btn-prev-next.png');
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Hobo Std Medium';
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 66px; /* the same as your div height */
+	font-size: 32px;
+	user-select: none;
+	-webkit-box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.61);
+	-moz-box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.61);
+	box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.61);
+	border-radius: 10px;
+}
+
+.prev-btn.disabled,
+.next-btn.disabled {
+	cursor: auto !important;
+}
+
+.lamlai-btn {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-bottom: 30px;
+}
+
+.questionLeft {
+	font-family: 'Hobo Std Medium';
+}
+
+

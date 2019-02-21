@@ -38,8 +38,8 @@ const Creative = observer(
 			}
 
 			return (
-                <p className="result">You've got ${socaudung} / {this.data.length}</p>
-            )
+								<p className="result">You've got ${socaudung} / {this.data.length}</p>
+						)
 		}
 
 		componentDidMount(){ 
@@ -82,9 +82,9 @@ const Creative = observer(
 							<div className="col-lg-12">
 								<div className="bigwhale">
 									<h1>TEST CREATIVE</h1>
-                                    <a className="test-item lightball" href="/creative">
-                                        <ReactSVG src="./images/SVG/creative.svg" />
-                                    </a>
+																		<a className="test-item lightball" href="/creative">
+																				<ReactSVG src="./images/SVG/creative.svg" />
+																		</a>
 								</div>
 							</div>
 							<div className="col-lg-6 offset-lg-3">
@@ -106,43 +106,43 @@ const Creative = observer(
 						</div>  
 					)}
 						<div>
-                            <div className="noidungcauhoi-wr">  
-                                <img src={question.question} alt=""/> 
-                            </div>  
-                            <div className="noidung-dapan-wr">  
-                                {!!this.isClickXemKetQua && (
-                                    <div className="showimage">
-                                        <img className="question-image-in-show-result" src={question.question} alt=""/>
-                                    </div>
-                                )}
-                                {!!question.answer.answer_a.imga && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
-                                )}  
-                                {!!question.answer.answer_b.imgb && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}}  src={question.answer.answer_b.imgb} alt=""/>   
-                                )}  
-                                {!!question.answer.answer_c.imgc && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}}  src={question.answer.answer_c.imgc} alt=""/>   
-                                )}  
-                                {!!question.answer.answer_d.imgd && ( 
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}}  src={question.answer.answer_d.imgd} alt=""/>    
-                                )}  
-                                {!!question.answer.answer_e.imge && ( 
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}}  src={question.answer.answer_e.imge} alt=""/>    
-                                )} 
-                                {!!question.answer.answer_f.imgf && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}   onClick={e=> { this.handleClick("f")}}  src={question.answer.answer_f.imgf} alt=""/>    
-                                )}
-                                {!!question.answer.answer_g.imgg && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "g"})}   onClick={e=> { this.handleClick("g")}}  src={question.answer.answer_g.imgg} alt=""/>    
-                                )}
-                                {!!question.answer.answer_h.imgh && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "h"})}   onClick={e=> { this.handleClick("h")}}  src={question.answer.answer_h.imgh} alt=""/>    
-                                )}
-                                {!!question.answer.answer_i.imgi && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "i"})}   onClick={e=> { this.handleClick("i")}}  src={question.answer.answer_i.imgi} alt=""/>    
-                                )}  
-                            </div>  
+														<div className="noidungcauhoi-wr">  
+																<img src={question.question} alt=""/> 
+														</div>  
+														<div className="noidung-dapan-wr">  
+																{!!this.isClickXemKetQua && (
+																		<div className="showimage">
+																				<img className="question-image-in-show-result" src={question.question} alt=""/>
+																		</div>
+																)}
+																{!!question.answer.answer_a.imga && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
+																)}  
+																{!!question.answer.answer_b.imgb && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}}  src={question.answer.answer_b.imgb} alt=""/>   
+																)}  
+																{!!question.answer.answer_c.imgc && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}}  src={question.answer.answer_c.imgc} alt=""/>   
+																)}  
+																{!!question.answer.answer_d.imgd && ( 
+																		<img  className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}}  src={question.answer.answer_d.imgd} alt=""/>    
+																)}  
+																{!!question.answer.answer_e.imge && ( 
+																		<img  className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}}  src={question.answer.answer_e.imge} alt=""/>    
+																)} 
+																{!!question.answer.answer_f.imgf && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}   onClick={e=> { this.handleClick("f")}}  src={question.answer.answer_f.imgf} alt=""/>    
+																)}
+																{!!question.answer.answer_g.imgg && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "g"})}   onClick={e=> { this.handleClick("g")}}  src={question.answer.answer_g.imgg} alt=""/>    
+																)}
+																{!!question.answer.answer_h.imgh && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "h"})}   onClick={e=> { this.handleClick("h")}}  src={question.answer.answer_h.imgh} alt=""/>    
+																)}
+																{!!question.answer.answer_i.imgi && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "i"})}   onClick={e=> { this.handleClick("i")}}  src={question.answer.answer_i.imgi} alt=""/>    
+																)}  
+														</div>  
 						</div>
 
 						<div className="dot-wr">
@@ -193,8 +193,8 @@ const Creative = observer(
 									<ReactSVG src="./images/SVG/music.svg" />
 								</a>
 								<a className="test-item global" href="/position">
-                                    <ReactSVG src="./images/SVG/position.svg" />
-                                </a>
+																		<ReactSVG src="./images/SVG/position.svg" />
+																</a>
 							</div>
 							<div className="bot">
 								<a className="test-item zoom" href="/memory">
@@ -204,12 +204,12 @@ const Creative = observer(
 									<ReactSVG src="./images/SVG/language.svg" />
 								</a>
 								<a className="test-item brain" href="/iq">
-                                    <ReactSVG src="./images/SVG/iq.svg" />
-                                </a>
+																		<ReactSVG src="./images/SVG/iq.svg" />
+																</a>
 							</div>
 						</div>
-                    <img className="f6" src="./images/SVG/f6.svg" alt=""/>
-                    <img className="f7" src="./images/SVG/f7.svg" alt=""/>
+										<img className="f6" src="./images/SVG/f6.svg" alt=""/>
+										<img className="f7" src="./images/SVG/f7.svg" alt=""/>
 					</div>
 				</section>
 					<style> {`
@@ -317,12 +317,12 @@ const Creative = observer(
 					}
 					.answer-list li img {
 						width:100px;
-                    }
-                    .dot-wr {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
+										}
+										.dot-wr {
+												display: flex;
+												justify-content: center;
+												align-items: center;
+										}
 					span.dot-navigation{
 						width: 20px;
 						height: 20px;
@@ -339,8 +339,8 @@ const Creative = observer(
 						width: 300px;
 					}
 					.noidungcauhoi-wr, .noidung-dapan-wr{
-                        display:flex;
-                        flex-wrap: wrap;
+												display:flex;
+												flex-wrap: wrap;
 						justify-content:center;
 						align-items: center;
 						padding: 15px;
@@ -348,10 +348,10 @@ const Creative = observer(
 						margin-bottom: 30px;
 					}
 
-                    .noidung-dapan-wr {
-                        padding: 0 230px 0 200px;
-                        justify-content: space-around;
-                    }
+										.noidung-dapan-wr {
+												padding: 0 230px 0 200px;
+												justify-content: space-around;
+										}
 
 					button.time-left{
 						border-radius: 50%;
@@ -375,8 +375,8 @@ const Creative = observer(
 					}
 
 					.noidung-dapan-wr img{
-                        width: 33.33%;
-                        padding: 50px;
+												width: 33.33%;
+												padding: 50px;
 						border: 1px solid #efefef;
 						border-radius: 4px;
 						cursor: pointer;
@@ -405,13 +405,13 @@ const Creative = observer(
 						background: green;
 						color: white;
 					}
-                    .questionNo {
-                        padding-left: 100px;
-                    }
-                    .questionLeft, .result{
-                        text-align: center;
-                        margin-top: 20px;
-                    }
+										.questionNo {
+												padding-left: 100px;
+										}
+										.questionLeft, .result{
+												text-align: center;
+												margin-top: 20px;
+										}
 					`}
 					</style>
 				</div>  

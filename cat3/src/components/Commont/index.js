@@ -8,7 +8,6 @@ import classNames from 'classnames'
 import matchingData from './../../data/matching.json'
 import { remove_character } from './../../helpers/index.js'
 import './Commont.css'
-
 var audioUrl =
 	'https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-18146/zapsplat_multimedia_click_003_19369.mp3?_=1'
 var audio = new Audio(audioUrl)
@@ -48,7 +47,7 @@ const Commont = observer(
 			for (let i = 0; i < b.length; i++) {
 				setTimeout(() => {
 					a[i] = { from: b[i].from, to: b[i].to }
-				}, 800)
+				}, 600)
 			}
 		}
 
@@ -287,7 +286,7 @@ const Commont = observer(
 											className="xemkq"
 										>
 											{' '}
-											Xem Ket qua{' '}
+											See result!{' '}
 										</button>
 									</div>
 								)}
@@ -295,8 +294,8 @@ const Commont = observer(
 								true && (
 									<p className="questionLeft">
 										{' '}
-										Bạn còn: {this.numberOfQuestionLeft()}{' '}
-										câu hỏi chưa trả lời!{' '}
+										You have: {this.numberOfQuestionLeft()}{' '}
+										questions left!{' '}
 									</p>
 								)}
 								{!this.isClickXemKetQua && (
@@ -308,7 +307,7 @@ const Commont = observer(
 											}}
 											className="lamlai-btn"
 										>
-											Lam lai!
+											Start over!
 										</button>{' '}
 									</div>
 								)}
@@ -430,31 +429,71 @@ const Commont = observer(
 								</div>
 							</div>
 
+							<div className="currentQuestion">
+								{' '}
+								{this.currentQuestionIndex + 1}{' '}
+							</div>
+
 							<div className="dot-wr">
-								{this.data.length && this.data
-									? this.data.map((item, i) => (
-											<span
-												key={item.id}
-												className={classNames(
-													'dot-navigation',
-													{
-														'is-active':
-															this
-																.currentQuestionIndex ===
-															i,
-													}
-												)}
-												onClick={e => {
-													this.currentQuestionIndex = i
-													setTimeout(() => {
-														this.reDrawLines()
-													}, 100)
-												}}
-											>
-												{' '}
-											</span>
-									  ))
-									: null}
+								<div
+									onClick={e => {
+										if (this.currentQuestionIndex === 0)
+											return
+										this.currentQuestionIndex--
+									}}
+									className={classNames('prev-btn', {
+										disabled:
+											this.currentQuestionIndex === 0,
+									})}
+								>
+									{' '}
+									Previous
+								</div>
+
+								<div className="dots">
+									{this.data.length && this.data
+										? this.data.map((item, i) => (
+												<span
+													key={item.id}
+													className={classNames(
+														'dot-navigation',
+														{
+															'is-active':
+																this
+																	.currentQuestionIndex ===
+																i,
+														}
+													)}
+													onClick={e => {
+														this.currentQuestionIndex = i
+														setTimeout(() => {
+															this.reDrawLines()
+														}, 100)
+													}}
+												/>
+										  ))
+										: null}
+								</div>
+								<div
+									onClick={e => {
+										if (
+											this.currentQuestionIndex ===
+											this.data.length - 1
+										) {
+										
+											return
+										}
+										this.currentQuestionIndex++
+									}}
+									className={classNames('next-btn', {
+										disabled:
+											this.currentQuestionIndex ===
+											this.data.length - 1,
+									})}
+								>
+									{' '}
+									Next{' '}
+								</div>
 							</div>
 
 							{this.isClickXemKetQua && (

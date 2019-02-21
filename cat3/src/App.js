@@ -6,11 +6,12 @@ import Language from './components/Language';
 import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import TestTriNho from './components/Memory';
+import TestTriNho from './components/Memory/';
 import Testposition from './components/Position';
 import Commont from './components/Commont/'
 import './css/bootstrap.min.css'
 import Creative from './components/Creative';
+import './App.css'
 
 class App extends Component {
 	render() {
