@@ -241,7 +241,7 @@ span.dot-navigation {
 }
 
 .dot-wr {
-	margin-bottom: 160px;
+	margin-bottom: 10px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between; /* rat quan trong */

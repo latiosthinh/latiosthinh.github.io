@@ -465,6 +465,7 @@ const Commont = observer(
 														}
 													)}
 													onClick={e => {
+														
 														this.currentQuestionIndex = i
 														setTimeout(() => {
 															this.reDrawLines()

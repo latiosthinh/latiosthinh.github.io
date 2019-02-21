@@ -7,15 +7,20 @@ import { observer } from 'mobx-react'
 import classNames from 'classnames'
 import './memory.css'
 import FadeIn from 'react-lazyload-fadein'
+import { CauhoiWrapper } from '../../stylesComponent/CauhoiWrapper'
 
-var counterTime = 6
+
+
+
+var counterTime = 1
 const TestTriNho = observer(
 	class TestTriNho extends Component {
+		isStart = false
 		data = data
 		index = 0
 		counter = counterTime
 		resultsOfUser = []
-		resultOfUserRaw = []
+		resultRaw = []
 		isClickXemKetQua = false
 		lengthh = () => this.data.length
 		currentItem = () => this.data[this.index]
@@ -50,7 +55,7 @@ const TestTriNho = observer(
 		componentDidMount() {
 			for (let i = 0; i < this.data.length; i++) {
 				this.resultsOfUser.push(null)
-				this.resultOfUserRaw.push(null)
+				this.resultRaw.push(null)
 			}
 			this.interval = setInterval(() => this.tick(), 1000)
 		}
@@ -69,27 +74,263 @@ const TestTriNho = observer(
 			// console.log('prevState', prevState)
 			// console.log('cdu')
 		}
-		handleClick(answer) {
+		handleClick = answer => {
 			if (this.isClickXemKetQua) {
 				return
 			}
-			let result = false
+			let result
 			let answerName = 'answer_' + answer
 			let tName = 't' + answer
 
 			if (
 				typeof this.currentItem().acf.answer[answerName][tName] === 'string'
 			) {
+				result = false
 			} else {
 				result = true
 			}
+
+			console.log(1)
+			this.resultRaw[this.index] = answer
+			console.log(2)
 			this.resultsOfUser[this.index] = result
-			this.resultOfUserRaw[this.index] = answer
-			console.log('result', result)
+			console.log(3)
+
+			// console.log('result', result)
+			// console.log(
+			// 	'this.resultRaw[this.index] ',
+			// 	this.resultRaw[this.index]
+			// )
+		}
+
+		renderContent() {
+			if (!this.isStart) {
+				return (
+					<div className="container test-content">
+						Nhan nut start de bat dau
+						<button onClick={e => (this.isStart = true)}> Start! </button>
+					</div>
+				)
+			} else {
+				const question = this.currentItem().acf
+				return (
+					<div className="container test-content">
+						{!!this.showKetQua() && (
+							<div className="show-kg-button-wr">
+								<button
+									onClick={e => {
+										this.isClickXemKetQua = true
+										this.counter = 0
+										this.index = 0
+									}}
+									className="xemkq"
+								>
+									{' '}
+									Xem Ket qua{' '}
+								</button>
+							</div>
+						)}
+						<div>
+							{!this.isHetGio() && (
+								<div className="noidungcauhoi-wr">
+									<p>
+										{' '}
+										<button className="time-left"> {this.counter} </button>{' '}
+									</p>
+									<FadeIn height={300} duration={150} easing={'ease-in-out'}>
+										{onload => (
+											<img
+												onLoad={onload}
+												style={{ height: 300 }}
+												src={question.question}
+												alt=""
+											/>
+										)}
+									</FadeIn>
+								</div>
+							)}
+
+							{!!this.isHetGio() && (
+								<div className="noidung-dapan-wr">
+									{!!this.isClickXemKetQua && (
+										<div className="showimage">
+											<p> Show Original Image </p>
+											<FadeIn height={300} duration={150}>
+												{onload => (
+													<img
+														className="question-image-in-show-result"
+														src={question.question}
+														alt=""
+														onLoad={onload}
+														style={{ height: 300 }}
+													/>
+												)}
+											</FadeIn>
+											/>
+										</div>
+									)}
+									{!!question.answer.answer_a.imga && (
+										<FadeIn height={300} duration={150}>
+											{onload => (
+												<img
+													className={classNames({
+														active: this.resultRaw[this.index] === 'a',
+													})}
+													onClick={e => {
+														this.handleClick('a')
+													}}
+													src={question.answer.answer_a.imga}
+													alt=""
+													onLoad={onload}
+													style={{ height: 300 }}
+												/>
+											)}
+										</FadeIn>
+									)}
+									{!!question.answer.answer_b.imgb && (
+										<FadeIn height={300} duration={150}>
+											{onload => (
+												<img
+													className={classNames({
+														active: this.resultRaw[this.index] === 'b',
+													})}
+													onClick={e => {
+														this.handleClick('b')
+													}}
+													src={question.answer.answer_b.imgb}
+													alt=""
+													onLoad={onload}
+													style={{ height: 300 }}
+												/>
+											)}
+										</FadeIn>
+									)}
+									{!!question.answer.answer_c.imgc && (
+										<FadeIn height={300} duration={150}>
+											{onload => (
+												<img
+													className={classNames({
+														active: this.resultRaw[this.index] === 'c',
+													})}
+													onClick={e => {
+														this.handleClick('c')
+													}}
+													src={question.answer.answer_c.imgc}
+													alt=""
+													onLoad={onload}
+													style={{ height: 300 }}
+												/>
+											)}
+										</FadeIn>
+									)}
+								</div>
+							)}
+						</div>
+
+						<div className="currentQuestion"> {this.index + 1} </div>
+						<div className="hidden"> hidden {this.resultRaw[this.index]} </div>
+						<div className="dot-wr">
+							<div
+								onClick={e => {
+									if (this.index === 0) return
+									this.index--
+									if (this.isClickXemKetQua) {
+									} else {
+										this.counter = counterTime
+									}
+								}}
+								className={classNames('prev-btn', {
+									disabled: this.index === 0,
+								})}
+							>
+								{' '}
+								Previous
+							</div>
+							<div className="dots">
+								{this.data.length && this.data
+									? this.data.map((item, i) => (
+											<span
+												key={item.id}
+												className={classNames('dot-navigation', {
+													'is-active': this.index === i,
+												})}
+												onClick={e => {
+													this.index = i
+													if (this.isClickXemKetQua) {
+													} else {
+														this.counter = counterTime
+													}
+												}}
+											>
+												{' '}
+											</span>
+									  ))
+									: null}
+							</div>
+
+							<div
+								onClick={e => {
+									if (this.index === this.data.length - 1) {
+										return
+									}
+
+									this.index++
+									if (this.isClickXemKetQua) {
+									} else {
+										this.counter = counterTime
+									}
+								}}
+								className={classNames('next-btn', {
+									disabled: this.index === this.data.length - 1,
+								})}
+							>
+								{' '}
+								Next{' '}
+							</div>
+						</div>
+
+						{!this.isClickXemKetQua && (
+							<div>
+							
+								<p className="questionLeft">
+								
+									{this.numberOfQuestionLeft()} questions left!
+								</p>
+							</div>
+						)}
+
+						{!!this.isClickXemKetQua && (
+							<div>
+								{' '}
+								<p> {this.ketquaCuthe()} </p>{' '}
+							</div>
+						)}
+
+						{this.resultsOfUser[this.index] === null ? null : (
+							<React.Fragment>
+								{!!this.isClickXemKetQua && (
+									<div>
+										{this.resultsOfUser[this.index] ? (
+											<div className="text-success">
+												{' '}
+												<i className="fa fa-check" /> Đúng{' '}
+											</div>
+										) : (
+											<div className="text-danger">
+												{' '}
+												<i className="fa fa-times" /> Sai{' '}
+											</div>
+										)}
+									</div>
+								)}
+							</React.Fragment>
+						)}
+					</div>
+				)
+			}
 		}
 
 		render() {
-			const question = this.currentItem().acf
 			return (
 				<div>
 					<section className="psy-section" id="id2">
@@ -116,266 +357,9 @@ const TestTriNho = observer(
 							<img className="girl" src="./images/girl.png" alt="" />
 							<img className="whale" src="./images/wavems.png" alt="" />
 						</div>
-						<div className="container test-content">
-							{!!this.showKetQua() && (
-								<div className="show-kg-button-wr">
-									<button
-										onClick={e => {
-											this.isClickXemKetQua = true
-											this.counter = 0
-											this.index = 0
-										}}
-										className="xemkq"
-									>
-										{' '}
-										Xem Ket qua{' '}
-									</button>
-								</div>
-							)}
-							<div>
-								{!this.isHetGio() && (
-									<div className="noidungcauhoi-wr">
-										<p>
-											{' '}
-											<button className="time-left">
-												{' '}
-												{this.counter}{' '}
-											</button>{' '}
-										</p>
-										<FadeIn height={300} duration={150} easing={'ease-in-out'}>
-											{onload => (
-												<img
-													onLoad={onload}
-													style={{ height: 300 }}
-													src={question.question}
-													alt=""
-												/>
-											)}
-										</FadeIn>
-									</div>
-								)}
 
-								{!!this.isHetGio() && (
-									<div className="noidung-dapan-wr">
-										{!!this.isClickXemKetQua && (
-											<div className="showimage">
-												<p> Show Original Image </p>
-												<FadeIn height={300} duration={150}>
-													{onload => (
-														<img
-															className="question-image-in-show-result"
-															src={question.question}
-															alt=""
-															onLoad={onload}
-															style={{ height: 300 }}
-														/>
-													)}
-												</FadeIn>
-												/>
-											</div>
-										)}
-										{!!question.answer.answer_a.imga && (
-											<FadeIn height={300} duration={150}>
-												{onload => (
-													<img
-														className={classNames({
-															active: this.resultOfUserRaw[this.index] === 'a',
-														})}
-														onClick={e => {
-															this.handleClick('a')
-														}}
-														src={question.answer.answer_a.imga}
-														alt=""
-														onLoad={onload}
-														style={{ height: 300 }}
-													/>
-												)}
-											</FadeIn>
-										)}
-										{!!question.answer.answer_b.imgb && (
-											<FadeIn height={300} duration={150}>
-												{onload => (
-													<img
-														className={classNames({
-															active: this.resultOfUserRaw[this.index] === 'b',
-														})}
-														onClick={e => {
-															this.handleClick('b')
-														}}
-														src={question.answer.answer_b.imgb}
-														alt=""
-														onLoad={onload}
-														style={{ height: 300 }}
-													/>
-												)}
-											</FadeIn>
-										)}
-										{!!question.answer.answer_c.imgc && (
-											<FadeIn height={300} duration={150}>
-												{onload => (
-													<img
-														className={classNames({
-															active: this.resultOfUserRaw[this.index] === 'c',
-														})}
-														onClick={e => {
-															this.handleClick('c')
-														}}
-														src={question.answer.answer_c.imgc}
-														alt=""
-														onLoad={onload}
-														style={{ height: 300 }}
-													/>
-												)}
-											</FadeIn>
-										)}
-										{!!question.answer.answer_d.imgd && (
-											<FadeIn height={300} duration={150}>
-												{onload => (
-													<img
-														className={classNames({
-															active: this.resultOfUserRaw[this.index] === 'd',
-														})}
-														onClick={e => {
-															this.handleClick('d')
-														}}
-														src={question.answer.answer_d.imgd}
-														alt=""
-														onLoad={onload}
-														style={{ height: 300 }}
-													/>
-												)}
-											</FadeIn>
-										)}
-										{!!question.answer.answer_e.imge && (
-											<FadeIn height={300} duration={150}>
-												{onload => (
-													<img
-														className={classNames({
-															active: this.resultOfUserRaw[this.index] === 'e',
-														})}
-														onClick={e => {
-															this.handleClick('e')
-														}}
-														src={question.answer.answer_e.imge}
-														alt=""
-														onLoad={onload}
-														style={{ height: 300 }}
-													/>
-												)}
-											</FadeIn>
-										)}
-										{!!question.answer.answer_f.imgf && (
-											<FadeIn height={300} duration={150}>
-												{onload => (
-													<img
-														className={classNames({
-															active: this.resultOfUserRaw[this.index] === 'f',
-														})}
-														onClick={e => {
-															this.handleClick('f')
-														}}
-														src={question.answer.answer_f.imgf}
-														alt=""
-														onLoad={onload}
-														style={{ height: 300 }}
-													/>
-												)}
-											</FadeIn>
-										)}
-									</div>
-								)}
-							</div>
+						<CauhoiWrapper>{this.renderContent()}</CauhoiWrapper>
 
-							<div className="currentQuestion"> {this.index + 1} </div>
-
-							<div className="dot-wr">
-								<div
-									onClick={e => {
-										if (this.index === 0) return
-										this.index--
-									}}
-									className={classNames('prev-btn', {
-										disabled: this.index === 0,
-									})}
-								>
-									{' '}
-									Previous
-								</div>
-								<div className="dots">
-									{this.data.length && this.data
-										? this.data.map((item, i) => (
-												<span
-													key={item.id}
-													className={classNames('dot-navigation', {
-														'is-active': this.index === i,
-													})}
-													onClick={e => {
-														this.index = i
-														if (this.isClickXemKetQua) {
-														} else {
-															this.counter = counterTime
-														}
-													}}
-												>
-													{' '}
-												</span>
-										  ))
-										: null}
-								</div>
-
-								<div
-									onClick={e => {
-										if (this.index === this.data.length - 1) {
-											return
-										}
-										this.index++
-									}}
-									className={classNames('next-btn', {
-										disabled: this.index === this.data.length - 1,
-									})}
-								>
-									{' '}
-									Next{' '}
-								</div>
-							</div>
-
-							{!this.isClickXemKetQua && (
-								<div>
-									{' '}
-									<p>
-										{' '}
-										Bạn còn {this.numberOfQuestionLeft()} câu hỏi chưa trả lời!{' '}
-									</p>{' '}
-								</div>
-							)}
-
-							{!!this.isClickXemKetQua && (
-								<div>
-									{' '}
-									<p> {this.ketquaCuthe()} </p>{' '}
-								</div>
-							)}
-
-							{this.resultsOfUser[this.index] === null ? null : (
-								<React.Fragment>
-									{!!this.isClickXemKetQua && (
-										<div>
-											{this.resultsOfUser[this.index] ? (
-												<div className="text-success">
-													{' '}
-													<i className="fa fa-check" /> Đúng{' '}
-												</div>
-											) : (
-												<div className="text-danger">
-													{' '}
-													<i className="fa fa-times" /> Sai{' '}
-												</div>
-											)}
-										</div>
-									)}
-								</React.Fragment>
-							)}
-						</div>
 						<div className="container list-test">
 							<div className="row">
 								<div className="top">
@@ -412,13 +396,15 @@ const TestTriNho = observer(
 )
 
 decorate(TestTriNho, {
+	resultRaw: observable,
 	data: observable,
 	index: observable,
 	counter: observable,
 	resultsOfUser: observable,
-	resultsOfUserRaw: observable,
+
 	showKetQua: observable,
 	isClickXemKetQua: observable,
+	isStart: observable,
 })
 
 export default TestTriNho
