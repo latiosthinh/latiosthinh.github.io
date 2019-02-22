@@ -36,7 +36,7 @@ const Creative = observer(
 					socaudung ++
 				}
 			}
-
+			localStorage.setItem('Creative', socaudung)
 			return (
                 <p className="result">You've got ${socaudung} / {this.data.length}</p>
             )
@@ -70,6 +70,9 @@ const Creative = observer(
 			this.resultsOfUser[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
+			if(this.index < this.data.length-1) {
+				this.index += 1
+			}
 		}
 
 		render(){ 
@@ -185,28 +188,57 @@ const Creative = observer(
 					</div>
 					<div className="container list-test">
 						<div className="row">
-							<div className="top">
-								<a className="test-item atom" href="/common">
-									<ReactSVG src="./images/SVG/common.svg" />
-								</a>
+						<div className="top">
+							{/* <a className={`test-item ghitar 
+								${!localStorage.getItem('Music') && (
+									"`done`"
+								)}
+											`} href="/music">
+								<ReactSVG src="./images/SVG/music.svg" />
+							</a> */}
+							{!localStorage.getItem('Music') && (
 								<a className="test-item ghitar" href="/music">
 									<ReactSVG src="./images/SVG/music.svg" />
 								</a>
-								<a className="test-item global" href="/position">
-                                    <ReactSVG src="./images/SVG/position.svg" />
-                                </a>
-							</div>
-							<div className="bot">
+							)}
+							{!localStorage.getItem('IQ') && (
+								<a className="test-item brain" href="/iq">
+									<ReactSVG src="./images/SVG/iq.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('Creative') && (
+							<a className="test-item lightball" href="/creative">
+								<ReactSVG src="./images/SVG/creative.svg" />
+							</a>
+							)}
+							{!localStorage.getItem('Differ') && (
+							<a className="test-item squid" href="/difference">
+								<ReactSVG src="./images/SVG/differ2.svg" />
+							</a>
+							)}
+						</div>
+						<div className="bot">
+							{!localStorage.getItem('Common') && (
+								<a className="test-item atom" href="/common">
+									<ReactSVG src="./images/SVG/common.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('Memory') && (
 								<a className="test-item zoom" href="/memory">
 									<ReactSVG src="./images/SVG/memory.svg" />
 								</a>
+							)}
+							{!localStorage.getItem('Language') && (
 								<a className="test-item chat" href="/language">
 									<ReactSVG src="./images/SVG/language.svg" />
 								</a>
-								<a className="test-item brain" href="/iq">
-                                    <ReactSVG src="./images/SVG/iq.svg" />
-                                </a>
-							</div>
+							)}
+							{!localStorage.getItem('Position') && (
+								<a className="test-item global" href="/position">
+									<ReactSVG src="./images/SVG/position.svg" />
+								</a>
+							)}
+						</div>
 						</div>
                     <img className="f6" src="./images/SVG/f6.svg" alt=""/>
                     <img className="f7" src="./images/SVG/f7.svg" alt=""/>

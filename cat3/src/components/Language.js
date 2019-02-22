@@ -5,6 +5,10 @@ import { decorate, observable } from "mobx"
 import { observer } from "mobx-react"
 import classNames from 'classnames'
 import $ from 'jquery';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVolumeDown } from '@fortawesome/free-solid-svg-icons'
+library.add(faVolumeDown)
 
 const Language = observer(
 	class Language extends Component{ 
@@ -37,7 +41,7 @@ const Language = observer(
 					socaudung ++
 				}
 			}
-
+			localStorage.setItem('Language', socaudung)
 			return (
                 <p className="result">You've got ${socaudung} / {this.data.length}</p>
             )
@@ -48,7 +52,7 @@ const Language = observer(
 				this.resultsOfUser.push(null)
 				this.resultOfUserRaw.push(null)
             }
-            $('body').on('click', '.q', function(){
+            $('body').on('hover', '.q', function(){
                 $(this).children('audio')[0].play();
             });
 		} 
@@ -74,9 +78,13 @@ const Language = observer(
 			this.resultsOfUser[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
+			if(this.index < this.data.length-1) {
+				this.index += 1
+			}
 		}
 
 		render(){ 
+			const qname = this.currentItem()
 			const question = this.currentItem().acf
 			return (
 				<div>
@@ -110,7 +118,8 @@ const Language = observer(
 						</div>  
 					)}
 						<div>
-                            <div className="noidungcauhoi-wr q">  
+                            <div className="noidungcauhoi-wr q"> 
+								<FontAwesomeIcon icon="volume-down" /> 
                                 <img src={question.question.img} alt=""/> 
                                 <audio src={!!question.question.sound ? question.question.sound : null}></audio>
                             </div>  
@@ -121,40 +130,52 @@ const Language = observer(
                                     </div>
                                 )}
                                 {!!question.answer.answer_a.imga && (
-                                    <div className="q">
-                                        <img className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
-                                        <audio src={!!question.answer.answer_a.sounda ? question.answer.answer_a.sounda : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}} />
+										<img onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
+										<audio src={!!question.answer.answer_a.sounda ? question.answer.answer_a.sounda : null}></audio>
+									</label>
                                 )}  
                                 {!!question.answer.answer_b.imgb && ( 
-                                    <div className="q">
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}}  src={question.answer.answer_b.imgb} alt=""/>   
-                                    <audio src={!!question.answer.answer_b.soundb ? question.answer.answer_b.soundb : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}} />
+										<img src={question.answer.answer_b.imgb} alt=""/>   
+										<audio src={!!question.answer.answer_b.soundb ? question.answer.answer_b.soundb : null}></audio>
+									</label>
                                 )}  
                                 {!!question.answer.answer_c.imgc && ( 
-                                    <div className="q">
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}}  src={question.answer.answer_c.imgc} alt=""/>   
-                                    <audio src={!!question.answer.answer_c.soundc ? question.answer.answer_c.soundc : null}></audio>
-                                    </div>
+									<label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}} />
+										<img src={question.answer.answer_c.imgc} alt=""/>   
+										<audio src={!!question.answer.answer_c.soundc ? question.answer.answer_c.soundc : null}></audio>
+									</label>
                                 )}  
                                 {!!question.answer.answer_d.imgd && ( 
-                                    <div className="q">
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}}  src={question.answer.answer_d.imgd} alt=""/>    
-                                    <audio src={!!question.answer.answer_d.soundd ? question.answer.answer_d.soundd : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}} />
+										<img src={question.answer.answer_d.imgd} alt=""/>    
+										<audio src={!!question.answer.answer_d.soundd ? question.answer.answer_d.soundd : null}></audio>
+									</label>
                                 )}  
                                 {!!question.answer.answer_e.imge && ( 
-                                    <div className="q">
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}}  src={question.answer.answer_e.imge} alt=""/>    
-                                    <audio src={!!question.answer.answer_e.sounde ? question.answer.answer_e.sounde : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}} />
+										<img src={question.answer.answer_e.imge} alt=""/>    
+										<audio src={!!question.answer.answer_e.sounde ? question.answer.answer_e.sounde : null}></audio>
+									</label>
                                 )} 
                                 {!!question.answer.answer_f.imgf && ( 
-                                    <div className="q">
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}   onClick={e=> { this.handleClick("f")}}  src={question.answer.answer_f.imgf} alt=""/>    
-                                    <audio src={!!question.answer.answer_f.soundf ? question.answer.answer_f.soundf : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}  onClick={e=> { this.handleClick("f")}} />
+										<img src={question.answer.answer_f.imgf} alt=""/>    
+										<audio src={!!question.answer.answer_f.soundf ? question.answer.answer_f.soundf : null}></audio>
+									</label>
                                 )}  
                             </div>  
 						</div>
@@ -199,28 +220,57 @@ const Language = observer(
 					</div>
 					<div className="container list-test">
 						<div className="row">
-							<div className="top">
-								<a className="test-item atom" href="/common">
-									<ReactSVG src="./images/SVG/common.svg" />
-								</a>
+						<div className="top">
+							{/* <a className={`test-item ghitar 
+								${!localStorage.getItem('Music') && (
+									"`done`"
+								)}
+											`} href="/music">
+								<ReactSVG src="./images/SVG/music.svg" />
+							</a> */}
+							{!localStorage.getItem('Music') && (
 								<a className="test-item ghitar" href="/music">
 									<ReactSVG src="./images/SVG/music.svg" />
 								</a>
-								<a className="test-item lightball" href="/creative">
-									<ReactSVG src="./images/SVG/creative.svg" />
+							)}
+							{!localStorage.getItem('IQ') && (
+								<a className="test-item brain" href="/iq">
+									<ReactSVG src="./images/SVG/iq.svg" />
 								</a>
-							</div>
-							<div className="bot">
+							)}
+							{!localStorage.getItem('Creative') && (
+							<a className="test-item lightball" href="/creative">
+								<ReactSVG src="./images/SVG/creative.svg" />
+							</a>
+							)}
+							{!localStorage.getItem('Differ') && (
+							<a className="test-item squid" href="/difference">
+								<ReactSVG src="./images/SVG/differ2.svg" />
+							</a>
+							)}
+						</div>
+						<div className="bot">
+							{!localStorage.getItem('Common') && (
+								<a className="test-item atom" href="/common">
+									<ReactSVG src="./images/SVG/common.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('Memory') && (
 								<a className="test-item zoom" href="/memory">
 									<ReactSVG src="./images/SVG/memory.svg" />
 								</a>
-                                <a className="test-item brain" href="/iq">
-                                    <ReactSVG src="./images/SVG/iq.svg" />
-                                </a>
+							)}
+							{!localStorage.getItem('Language') && (
+								<a className="test-item chat" href="/language">
+									<ReactSVG src="./images/SVG/language.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('Position') && (
 								<a className="test-item global" href="/position">
 									<ReactSVG src="./images/SVG/position.svg" />
 								</a>
-							</div>
+							)}
+						</div>
 						</div>
                     <img className="f6" src="./images/SVG/f6.svg" alt=""/>
                     <img className="f7" src="./images/SVG/f7.svg" alt=""/>
@@ -249,6 +299,14 @@ const Language = observer(
 						justify-content: center;
 						align-items: center;
 						cursor:pointer;
+						position: relative;
+					}
+					.q svg {
+						position: absolute;
+						bottom: 5px;
+						left: 5px;
+						width:25px !important;
+						height:25px !important;
 					}
 					.q img {
 						width: 150px;
@@ -349,10 +407,13 @@ const Language = observer(
 					.is-active{
 						background-color: green!important;
 					}
-					.noidungcauhoi-wr img {
-						width: 300px;
+					.noidungcauhoi-wr {
+						width: 250px;
+						margin:0 auto;
 					}
-					.noidungcauhoi-wr, .noidung-dapan-wr{
+					.noidungcauhoi-wr img {
+						width: 100%;
+					}.noidung-dapan-wr{
                         display:flex;
                         flex-wrap: wrap;
 						justify-content:center;
@@ -366,7 +427,10 @@ const Language = observer(
                         padding-right: 35px;
                         justify-content: space-around;
                     }
-
+					input[type=radio] {
+						position: absolute;
+						opacity:0;
+					}
 					button.time-left{
 						border-radius: 50%;
 						border: 5px solid green;

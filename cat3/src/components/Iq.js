@@ -36,9 +36,9 @@ const Iq = observer(
 					socaudung ++
 				}
 			}
-
+			localStorage.setItem('IQ', socaudung)
 			return (
-                <p className="result">You've got ${socaudung} / {this.data.length}</p>
+                <p className="result">You've got {socaudung} / {this.data.length}</p>
             )
 		}
 
@@ -53,8 +53,10 @@ const Iq = observer(
 				// console.log('prevProps', prevProps)
 				// console.log('prevState', prevState)
 				// console.log('cdu')
+				console.log(localStorage.getItem('answerRes'))
 		}
-		handleClick(answer){
+
+		handleClick = (answer) => {
 			if( this.isClickXemKetQua){
 				return
 			}
@@ -70,10 +72,17 @@ const Iq = observer(
 			this.resultsOfUser[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
+			setTimeout(function() { //Start the timer
+				if(this.index < this.data.length-1) {
+					this.index += 1
+				}
+			}.bind(this), 3000)
 		}
 
-		render(){ 
+		render(){
+			const qname = this.currentItem()
 			const question = this.currentItem().acf
+			
 			return (
 				<div>
 				<section className="psy-section" id="id2">
@@ -105,7 +114,7 @@ const Iq = observer(
 							}} className="xemkq"> Check Results </button> 
 						</div>  
 					)}
-						<div>
+						<div className="test-detail">
                             <div className="noidungcauhoi-wr">  
                                 <img src={question.question} alt=""/> 
                             </div>  
@@ -115,23 +124,41 @@ const Iq = observer(
                                         <img className="question-image-in-show-result" src={question.question} alt=""/>
                                     </div>
                                 )}
-                                {!!question.answer.answer_a.imga && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
+                                {!!question.answer.answer_a.imga && (
+									<label className="col-lg-4">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}} />
+										<img src={question.answer.answer_a.imga} alt=""/>
+									</label>
                                 )}  
-                                {!!question.answer.answer_b.imgb && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}}  src={question.answer.answer_b.imgb} alt=""/>   
+                                {!!question.answer.answer_b.imgb && (
+                                    <label className="col-lg-4">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})} onClick={e=> { this.handleClick("b")}} />
+										<img src={question.answer.answer_b.imgb} alt=""/>
+									</label>
                                 )}  
                                 {!!question.answer.answer_c.imgc && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}}  src={question.answer.answer_c.imgc} alt=""/>   
+                                    <label className="col-lg-4">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})} onClick={e=> { this.handleClick("c")}} />
+										<img src={question.answer.answer_c.imgc} alt=""/>
+									</label>
                                 )}  
-                                {!!question.answer.answer_d.imgd && ( 
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}}  src={question.answer.answer_d.imgd} alt=""/>    
+                                {!!question.answer.answer_d.imgd && (
+                                    <label className="col-lg-4">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})} onClick={e=> { this.handleClick("d")}} />
+										<img src={question.answer.answer_d.imgd} alt=""/>
+									</label>
                                 )}  
-                                {!!question.answer.answer_e.imge && ( 
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}}  src={question.answer.answer_e.imge} alt=""/>    
+                                {!!question.answer.answer_e.imge && (
+                                    <label className="col-lg-4">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})} onClick={e=> { this.handleClick("e")}} />
+										<img src={question.answer.answer_e.imge} alt=""/>
+									</label>
                                 )} 
-                                {!!question.answer.answer_f.imgf && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}   onClick={e=> { this.handleClick("f")}}  src={question.answer.answer_f.imgf} alt=""/>    
+                                {!!question.answer.answer_f.imgf && (
+									<label className="col-lg-4">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})} onClick={e=> { this.handleClick("f")}} />
+										<img src={question.answer.answer_f.imgf} alt=""/>
+									</label>
                                 )}  
                             </div>  
 						</div>
@@ -177,26 +204,55 @@ const Iq = observer(
 					<div className="container list-test">
 						<div className="row">
 							<div className="top">
-								<a className="test-item atom" href="/common">
-									<ReactSVG src="./images/SVG/common.svg" />
-								</a>
-								<a className="test-item ghitar" href="/music">
+								{/* <a className={`test-item ghitar 
+									${!localStorage.getItem('Music') && (
+										"`done`"
+									)}
+												`} href="/music">
 									<ReactSVG src="./images/SVG/music.svg" />
-								</a>
+								</a> */}
+								{!localStorage.getItem('Music') && (
+									<a className="test-item ghitar" href="/music">
+										<ReactSVG src="./images/SVG/music.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('IQ') && (
+									<a className="test-item brain" href="/iq">
+										<ReactSVG src="./images/SVG/iq.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Creative') && (
 								<a className="test-item lightball" href="/creative">
 									<ReactSVG src="./images/SVG/creative.svg" />
 								</a>
+								)}
+								{!localStorage.getItem('Differ') && (
+								<a className="test-item squid" href="/difference">
+									<ReactSVG src="./images/SVG/differ2.svg" />
+								</a>
+								)}
 							</div>
 							<div className="bot">
-								<a className="test-item zoom" href="/memory">
-									<ReactSVG src="./images/SVG/memory.svg" />
-								</a>
-								<a className="test-item chat" href="/language">
-									<ReactSVG src="./images/SVG/language.svg" />
-								</a>
-								<a className="test-item global" href="/position">
-									<ReactSVG src="./images/SVG/position.svg" />
-								</a>
+								{!localStorage.getItem('Common') && (
+									<a className="test-item atom" href="/common">
+										<ReactSVG src="./images/SVG/common.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Memory') && (
+									<a className="test-item zoom" href="/memory">
+										<ReactSVG src="./images/SVG/memory.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Language') && (
+									<a className="test-item chat" href="/language">
+										<ReactSVG src="./images/SVG/language.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Position') && (
+									<a className="test-item global" href="/position">
+										<ReactSVG src="./images/SVG/position.svg" />
+									</a>
+								)}
 							</div>
 						</div>
                     <img className="f6" src="./images/SVG/f6.svg" alt=""/>
@@ -326,24 +382,10 @@ const Iq = observer(
 					.is-active{
 						background-color: green!important;
 					}
-					.noidungcauhoi-wr img {
-						width: 300px;
-					}
-					.noidungcauhoi-wr, .noidung-dapan-wr{
-                        display:flex;
-                        flex-wrap: wrap;
-						justify-content:center;
+					.test-detail {
 						align-items: center;
-						padding: 15px;
-						width: 100%;
-						margin-bottom: 30px;
 					}
-
-                    .noidung-dapan-wr {
-                        padding-right: 35px;
-                        justify-content: space-around;
-                    }
-
+					
 					button.time-left{
 						border-radius: 50%;
 						border: 5px solid green;
@@ -364,15 +406,37 @@ const Iq = observer(
 					.TestTriNho-wrapper{
 						position: relative;
 					}
-
+					.noidungcauhoi-wr{
+                        display:flex;
+                        flex-wrap: wrap;
+						justify-content:center;
+						align-items: center;
+						padding: 15px;
+						margin-bottom: 30px;
+					}
+					.noidungcauhoi-wr img {
+						width: 400px;
+					}
+                    .noidung-dapan-wr {
+						flex-wrap: wrap;
+						display: flex;
+                        padding-right: 35px;
+                        justify-content: space-around;
+					}
+					.noidung-dapan-wr label {
+						display: block;
+					}
 					.noidung-dapan-wr img{
 						width: 130px;
-						border: 1px solid #efefef;
-						border-radius: 4px;
 						cursor: pointer;
+						box-shadow: 5px 5px 5px rgb(77, 141, 173);
+						border-radius: 10px;
+						display: block;
+						margin: 0 auto;
 					}
-
-					.noidung-dapan-wr img.active{
+					label{position:relative}
+					label input {position:absolute; opacity:0;}
+					input.active ~ img{
 						border: 3px solid green;
 					}
 					.xemkq{
@@ -401,7 +465,17 @@ const Iq = observer(
                     .questionLeft, .result{
                         text-align: center;
                         margin-top: 20px;
-                    }
+					}
+					@media all and (max-width:1440px) {
+						.noidungcauhoi-wr img {
+							width: 250px;
+						}
+						.noidung-dapan-wr img{
+							width: 85px;
+							box-shadow: 5px 5px 5px rgb(77, 141, 173);
+							border-radius: 8px;
+						}
+					}
 					`}
 					</style>
 				</div>  

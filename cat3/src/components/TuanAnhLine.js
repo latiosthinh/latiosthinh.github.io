@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import ReactSVG from 'react-svg'
 import LineTo from 'react-lineto'
 import { decorate, observable, flow, computed, action, toJS } from "mobx"
 import { observer, inject } from "mobx-react"
@@ -61,9 +60,7 @@ const TuanAnhLine = observer(
 				}
 			}
 
-			return (
-				<p className="questionLeft">Bạn đã trả lời đúng ${socaudung} trên tổng số ${this.data.length} câu!</p>
-			)
+			return `Bạn đã trả lời đúng ${socaudung} trên tổng số ${this.data.length} câu!`
 		}
 		numberOfImageOfCurrentQuestion(){
 			let number = 0
@@ -151,9 +148,9 @@ const TuanAnhLine = observer(
 			let a = this.lineData[this.currentQuestionIndex]
 			// neu van con anh chua noi het, khong check nua
 			for(let i = 0; i < a.length; i++){
-                if(a[i].from === null || a[i].to === null) {
-                    return
-                }
+			  if(a[i].from === null || a[i].to === null) {
+			  	return
+			  }
 			}
 			// nguoi dung noi tat ca cac anh, tiep tuc
 			let acf = this.data[this.currentQuestionIndex].acf
@@ -181,7 +178,7 @@ const TuanAnhLine = observer(
 					this.resultList.push(null)
 
 					for(let j = 0; j < this.numberOfQuestion(this.data[i]); j++){
-					    this.lineData[i].push({from: null, to: null})
+					  this.lineData[i].push({from: null, to: null})
 					}
 			}
 
@@ -207,13 +204,13 @@ const TuanAnhLine = observer(
 				let a = this.lineData[this.currentQuestionIndex]
 				return a.map((item, index)=> (
 						<LineTo key={index} 
-                                from={item.from}
-                                to={item.to} 
-                                fromAnchor="middle right" 
-                                toAnchor="middle left"  
-                                borderWidth={3} 
-                                borderColor="#006699" 
-                                />
+									from={item.from}
+								  to={item.to} 
+								  fromAnchor="middle right" 
+									toAnchor="middle left"  
+									borderWidth={3} 
+									borderColor="#006699" 
+								  />
 				))
 				
 		}
@@ -229,27 +226,9 @@ const TuanAnhLine = observer(
 		} = currentQuestion
 
 
-			return (
-				<div>
-				<section className="psy-section" id="id2">
-					<div className="container">
-						<div className="row tn">
-							<div className="col-lg-12">
-								<div className="bigwhale">
-									<h1>TEST IQ</h1>
-									<a className="test-item brain" href="/iq">
-										<ReactSVG src="./images/SVG/iq.svg" />
-									</a>
-								</div>
-							</div>
-							<div className="col-lg-6 offset-lg-3">
-								<h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur iste sunt explicabo? Doloremque, odio. Quos totam corrupti dignissimos? Consequuntur impedit quaerat non dolorum autem tenetur! Impedit deserunt dignissimos facilis odio.</h3>
-							</div>
-						</div>
-						<img className="girl" src="./images/girl.png" alt=""/>
-						<img className="whale" src="./images/wavems.png" alt=""/>
-					</div> 
-				<div className="TuanAnhLine-wrapper container test-content"> 
+			return (  
+				<div className="TuanAnhLine-wrapper"> 
+
 
 				{this.renderLines()}
 
@@ -269,7 +248,7 @@ const TuanAnhLine = observer(
 						true
 
 						 && (
-						<p className="questionLeft">  Bạn còn: {this.numberOfQuestionLeft()} câu hỏi chưa trả lời! </p>  
+						<p>  Bạn còn: {this.numberOfQuestionLeft()} câu hỏi chưa trả lời! </p>  
 					
 					)}
 						{!this.isClickXemKetQua && (
@@ -357,252 +336,140 @@ const TuanAnhLine = observer(
 						</div>    
 					
 					)}
-					</div>
-					<div className="container list-test">
-						<div className="row">
-							<div className="top">
-								<a className="test-item atom" href="/common">
-									<ReactSVG src="./images/SVG/common.svg" />
-								</a>
-								<a className="test-item ghitar" href="/music">
-									<ReactSVG src="./images/SVG/music.svg" />
-								</a>
-								<a className="test-item lightball" href="/creative">
-									<ReactSVG src="./images/SVG/creative.svg" />
-								</a>
-							</div>
-							<div className="bot">
-								<a className="test-item zoom" href="/memory">
-									<ReactSVG src="./images/SVG/memory.svg" />
-								</a>
-								<a className="test-item chat" href="/language">
-									<ReactSVG src="./images/SVG/language.svg" />
-								</a>
-								<a className="test-item global" href="/position">
-									<ReactSVG src="./images/SVG/position.svg" />
-								</a>
-							</div>
-						</div>
-                    <img className="f6" src="./images/SVG/f6.svg" alt=""/>
-                    <img className="f7" src="./images/SVG/f7.svg" alt=""/>
-					</div>
-				</section>
-				<style> {` 
-				#id2 {
-					margin-top: 150px;
-				}
-				#id2 .container {
-					position: relative;
-				}
-				.girl {
-					width: 300px;
-					position: absolute;
-					top: 0;
-					left:0;
-					z-index: 5;
-				}
-				.test-content {
-					position: relative;
-					z-index: 5;
-				}
-				.bigwhale {
-					margin:300px 0 150px;
-					text-align: center;
-				}
-				#id2 .container .row.tn h3 {
-					margin-top: 120px;
-					margin-bottom: 200px;
-					font-size: 16px;
-					font-weight: lighter;
-				}
-				.tn {
-					position: relative;
-					z-index: 5;
-				}
-				.whale {
-					position: absolute;
-					top:0;
-					left:30px;
-					z-index: 2;
-					width: 100%;
-				}
-				.list-test {
-					position: relative;
-					z-index: 5;
-					background: rgba(112,90,237, .5);
-					width: 50%;
-					padding: 30px;
-					border-radius: 50px;
-				}
-				#id2 .container .bot,
-					#id2 .container .top {
-					display: -webkit-box;
-					display: -ms-flexbox;
-					display: flex;
-					-webkit-box-align: center;
-					-ms-flex-align: center;
-					align-items: center;
-					-webkit-box-pack: center;
-					-ms-flex-pack: center;
-					justify-content: center;
-					width: 100%
-				}
-				
-				#id2 .container .test-item {
-					display: block;
-					width: 100px;
-					margin: 20px 50px;
-					position: relative;
-					z-index: 5
-				}	
-				.test-item:hover {
-					transform: scale(1.3);
-					transition: .3s;
-				}
-				#id2 .bigwhale .test-item {
-					display: block;
-					width: 200px;
-					margin: 0 auto;
-				}
-				
-				.left{  
-					float: left;  
-					width: 400px; 
-					text-align: right;  
-				} 
-				
-				.right{ 
-					float: right; 
-					width: 400px; 
-					text-align: left; 
-				} 
-				
-				.left-right-wr{  
-					width: 100%;  
-				} 
-				.left-right-wr img {  
-					max-width: 100%;  
-					height: auto; 
-					display: block; 
-				} 
-				
-				.left img{  
-					margin-left: auto;  
-				} 
-				.dot-wr {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-				}
-				span.dot-navigation{
-				width: 20px;
-				height: 20px;
-				border: 1px solid #ddd;
-				display: inline-block;
-				border-radius: 50%;
-				margin-right: 15px;
-				cursor: pointer;
-				background-color: white;
-			}
+				<style jsx global> {`   
+	.left{  
+		float: left;  
+		width: 400px; 
+		text-align: right;  
+	} 
+	
+	.right{ 
+		float: right; 
+		width: 400px; 
+		text-align: left; 
+	} 
+	
+	.left-right-wr{ 
+		float: left;  
+		width: 100%;  
+			
+	} 
+	.left-right-wr img {  
+		max-width: 100%;  
+		height: auto; 
+		display: block; 
+	} 
+	
+	.left img{  
+		margin-left: auto;  
+	} 
 
-			.is-active{
-				background-color: green!important;
-			}
 
-			.xemkq{
-				position: absolute;
-				bottom: 10px;
-				right: 0;
-				width: 150px;
-				height: 40px;
-				border: 2px solid green;
-				border-radius: 5px;
-				cursor: pointer;
-				transition: all 0.2s ease;
-				font-size: 16px;
-				color: green;
-				font-weight: bold;
-				text-transform: uppercase;
-			}
+	span.dot-navigation{
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ddd;
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: 15px;
+	cursor: pointer;
+	background-color: white;
+}
 
-			.xemkq:hover{
-				background: green;
-				color: white;
-			}
+.is-active{
+	background-color: green!important;
+}
 
-			.left img, .right img {
-				margin-bottom: 15px;
-				cursor: pointer;
-				position: relative;
-				display: block!important;
-				transition: all 0.1s ease;
-			}
+.xemkq{
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+	width: 150px;
+	height: 40px;
+	border: 2px solid green;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-size: 16px;
+	color: green;
+	font-weight: bold;
+	text-transform: uppercase;
+}
 
-			.left img:after, .right img:after{
-				content: "";
-				width: 100px;
-				height: 100%;
-				border: 1px solid red;
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 100!important;
-				background-color: red;
-			}
+.xemkq:hover{
+	background: green;
+	color: white;
+}
+
+.left img, .right img {
+	margin-bottom: 15px;
+	cursor: pointer;
+	position: relative;
+	display: block!important;
+	transition: all 0.1s ease;
+}
+
+.left img:after, .right img:after{
+	content: "";
+	width: 100px;
+	height: 100%;
+	border: 1px solid red;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100!important;
+	background-color: red;
+}
 
 
 
+.left img:hover, .right img:hover {
+	 transform: scale(1.01, 1.01);
+}
 
-			.left img:hover, .right img:hover {
-				transform: scale(1.01, 1.01);
-			}
+.left img, .right img{
+  height: 150px;
+  border: 1px solid #efefef;
+  margin-bottom: 20px;
+  width: auto;
+}
+.left-right-wr{
+  // background: #ddd;
+  padding: 15px;
+  margin-bottom: 40px;
+  height: 600px;
+}
 
-			.left img, .right img{
-				height: 150px;
-				border: 1px solid #efefef;
-				margin-bottom: 20px;
-				width: auto;
-			}
-			.left-right-wr{
-				padding: 15px;
-				margin-bottom: 40px;
-				height: 600px;
-			}
+.xemkq {
+  position: absolute;
+  bottom: -70px;
+  right: 0px;
+}
 
-			.xemkq {
-				position: absolute;
-				bottom: -70px;
-				right: 0px;
-			}
+.left-right-wr{
+  position: relative;
+}
 
-			.left-right-wr{
-				position: relative;
-			}
+.lamlai-btn{
+  width: 100px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid green;
+  color: green;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
 
-			.lamlai-btn{
-				width: 100px;
-				font-weight: bold;
-				text-transform: uppercase;
-				padding: 5px 10px;
-				border-radius: 5px;
-				border: 1px solid green;
-				color: green;
-				cursor: pointer;
-				transition: all 0.1s ease;
-			}
-
-			.lamlai-btn:hover{
-				background: green;
-				color: white;
-			}
-			.questionLeft, .result{
-				text-align: center;
-				margin-top: 20px;
-			}
+.lamlai-btn:hover{
+  background: green;
+  color: white;
+}
 
 					`}  
 					</style>  
-				</div>
+				</div>  
 			) 
 		} 
 	} 

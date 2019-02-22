@@ -89,7 +89,7 @@ jQuery(function($) {
 				e.preventDefault();
 				$(this).closest(pane).find(btn).removeClass('active');
 				$(this).addClass('active');
-				$("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top - 40 }, 600 );
+				$("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top - 200 }, 600 );
 			});
 
 			var section_act = function(){

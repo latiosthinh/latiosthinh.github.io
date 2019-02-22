@@ -1,22 +1,21 @@
 import React, {Component} from 'react'
-import data from './../data/memory.json'
+import data from './../data/diff.json'
 import ReactSVG from 'react-svg'
 import { decorate, observable } from "mobx"
 import { observer } from "mobx-react"
 import classNames from 'classnames'
-var counterTime = 5
+import $ from 'jquery';
 
-const TestTriNho = observer(
-	class TestTriNho extends Component{ 
+const Diff = observer(
+	class Diff extends Component{ 
 		data = data 
 		index = 0
-		counter = counterTime
 		resultsOfUser = []
 		resultOfUserRaw = []
 		isClickXemKetQua = false
 		lengthh = () => this.data.length  
 		currentItem = () => this.data[this.index]
-		isHetGio = () => this.counter <= 0
+		
 		numberOfQuestionLeft = () => {
 			let number = 0
 			for(let i = 0; i < this.resultsOfUser.length; i++){
@@ -38,8 +37,10 @@ const TestTriNho = observer(
 					socaudung ++
 				}
 			}
-			localStorage.setItem('Memory', socaudung)
-			return `Bạn đã trả lời đúng ${socaudung} trên tổng số ${this.data.length} câu!`
+			localStorage.setItem('IQ', socaudung)
+			return (
+                <p className="result">You've got {socaudung} / {this.data.length}</p>
+            )
 		}
 
 		componentDidMount(){ 
@@ -47,24 +48,20 @@ const TestTriNho = observer(
 				this.resultsOfUser.push(null)
 				this.resultOfUserRaw.push(null)
 			}
-			this.interval = setInterval(() => this.tick(), 1000);
+			$('label').on('click', function() {
+				$(this).css('opacity', '1');
+				$(this).siblings('label').css('opacity', '0.3');
+			});
 		} 
-
-		componentWillUnmount() {
-			clearInterval(this.interval);
-		}
-		tick() {
-			if(this.counter > 0){
-				this.counter--
-			}
-		}
 
 		componentDidUpdate(prevProps, prevState) {
 				// console.log('prevProps', prevProps)
 				// console.log('prevState', prevState)
 				// console.log('cdu')
+				console.log(localStorage.getItem('answerRes'))
 		}
-		handleClick(answer){
+
+		handleClick = (answer) => {
 			if( this.isClickXemKetQua){
 				return
 			}
@@ -80,13 +77,18 @@ const TestTriNho = observer(
 			this.resultsOfUser[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
-			if(this.index < this.data.length-1) {
-				this.index += 1
-			}
+			setTimeout(function() { //Start the timer
+				if(this.index < this.data.length-1) {
+					this.index += 1
+					$('label').css('opacity', '1');
+				}
+			}.bind(this), 2000)
 		}
 
-		render(){ 
+		render(){
+			const qname = this.currentItem()
 			const question = this.currentItem().acf
+			
 			return (
 				<div>
 				<section className="psy-section" id="id2">
@@ -94,9 +96,9 @@ const TestTriNho = observer(
 						<div className="row tn">
 							<div className="col-lg-12">
 								<div className="bigwhale">
-									<h1>TEST MEMORY</h1>
-									<a className="test-item cam" href="/memory">
-										<ReactSVG src="./images/SVG/memory.svg" />
+									<h1>TEST DIFFERENCE</h1>
+									<a className="test-item squid" href="/iq">
+										<ReactSVG src="./images/SVG/differ2.svg" />
 									</a>
 								</div>
 							</div>
@@ -108,52 +110,48 @@ const TestTriNho = observer(
 						<img className="whale" src="./images/wavems.png" alt=""/>
 					</div> 
 					<div className="container test-content">  
-					<p> index: {this.index} </p>
+					<p className="questionNo"> Question number: {this.index + 1} </p>
 					{!!this.showKetQua() && (
 						<div className="show-kg-button-wr"> 
 							<button onClick={e=> {
 								this.isClickXemKetQua = true
 								this.counter = 0
 								this.index = 0
-							}} className="xemkq"> Xem Ket qua </button> 
+							}} className="xemkq"> Check Results </button> 
 						</div>  
 					)}
-						<div>
-							{!this.isHetGio() && (
-								<div className="noidungcauhoi-wr">  
-									<p> <button className="time-left"> {this.counter} </button> </p>  
-									<img src={question.question} alt=""/> 
-								</div>  
-							)}
-
-							{!!this.isHetGio() && (
-								<div className="noidung-dapan-wr">  
-									{!!this.isClickXemKetQua && (
-										<div className="showimage">
-											<p> Show Original Image </p>  
-											<img className="question-image-in-show-result" src={question.question} alt=""/>
-										</div>
-									)}
-									{!!question.answer.answer_a.imga && ( 
-										<img className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
-									)}  
-									{!!question.answer.answer_b.imgb && ( 
-										<img className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}}  src={question.answer.answer_b.imgb} alt=""/>   
-									)}  
-									{!!question.answer.answer_c.imgc && ( 
-										<img className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}}  src={question.answer.answer_c.imgc} alt=""/>   
-									)}  
-									{!!question.answer.answer_d.imgd && ( 
-										<img  className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}}  src={question.answer.answer_d.imgd} alt=""/>    
-									)}  
-									{!!question.answer.answer_e.imge && ( 
-										<img  className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}}  src={question.answer.answer_e.imge} alt=""/>    
-									)} 
-									{!!question.answer.answer_f.imgf && ( 
-										<img className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}   onClick={e=> { this.handleClick("f")}}  src={question.answer.answer_f.imgf} alt=""/>    
-									)}  
-								</div>  
-							)}
+						<div className="test-detail">
+                            <div className="noidung-dapan-wr">  
+                                {!!this.isClickXemKetQua && (
+                                    <div className="showimage">
+                                        <img className="question-image-in-show-result" src={question.question} alt=""/>
+                                    </div>
+                                )}
+                                {!!question.answer.answer_a.imga && (
+									<label className="col-lg-6">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}} />
+										<img src={question.answer.answer_a.imga} alt=""/>
+									</label>
+                                )}  
+                                {!!question.answer.answer_b.imgb && (
+                                    <label className="col-lg-6">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})} onClick={e=> { this.handleClick("b")}} />
+										<img src={question.answer.answer_b.imgb} alt=""/>
+									</label>
+                                )}  
+                                {!!question.answer.answer_c.imgc && ( 
+                                    <label className="col-lg-6">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})} onClick={e=> { this.handleClick("c")}} />
+										<img src={question.answer.answer_c.imgc} alt=""/>
+									</label>
+                                )}  
+                                {!!question.answer.answer_d.imgd && (
+                                    <label className="col-lg-6">
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})} onClick={e=> { this.handleClick("d")}} />
+										<img src={question.answer.answer_d.imgd} alt=""/>
+									</label>
+                                )} 
+                            </div>  
 						</div>
 
 						<div className="dot-wr">
@@ -161,20 +159,14 @@ const TestTriNho = observer(
 								? this.data.map((item, i) => (
 										<span key={item.id} className={classNames('dot-navigation', {'is-active': this.index === i})} onClick={e => {
 											this.index = i
-											if(this.isClickXemKetQua){
-
-											}else{
-												this.counter = counterTime
-											}
-											
 										}}> </span>
 									))
 								: null
 							}
-						</div>
+						</div>  
 
 						{!this.isClickXemKetQua && (
-							<div> <p> Bạn còn {this.numberOfQuestionLeft()} câu hỏi chưa trả lời! </p> </div> 
+							<p className="questionLeft"> You have {this.numberOfQuestionLeft()} questions left! </p>
 						)}
 
 						{!!this.isClickXemKetQua && (
@@ -202,57 +194,57 @@ const TestTriNho = observer(
 					</div>
 					<div className="container list-test">
 						<div className="row">
-						<div className="top">
-							{/* <a className={`test-item ghitar 
-								${!localStorage.getItem('Music') && (
-									"`done`"
-								)}
-											`} href="/music">
-								<ReactSVG src="./images/SVG/music.svg" />
-							</a> */}
-							{!localStorage.getItem('Music') && (
-								<a className="test-item ghitar" href="/music">
+							<div className="top">
+								{/* <a className={`test-item ghitar 
+									${!localStorage.getItem('Music') && (
+										"`done`"
+									)}
+												`} href="/music">
 									<ReactSVG src="./images/SVG/music.svg" />
+								</a> */}
+								{!localStorage.getItem('Music') && (
+									<a className="test-item ghitar" href="/music">
+										<ReactSVG src="./images/SVG/music.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('IQ') && (
+									<a className="test-item brain" href="/iq">
+										<ReactSVG src="./images/SVG/iq.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Creative') && (
+								<a className="test-item lightball" href="/creative">
+									<ReactSVG src="./images/SVG/creative.svg" />
 								</a>
-							)}
-							{!localStorage.getItem('IQ') && (
-								<a className="test-item brain" href="/iq">
-									<ReactSVG src="./images/SVG/iq.svg" />
+								)}
+								{!localStorage.getItem('Differ') && (
+								<a className="test-item squid" href="/difference">
+									<ReactSVG src="./images/SVG/differ2.svg" />
 								</a>
-							)}
-							{!localStorage.getItem('Creative') && (
-							<a className="test-item lightball" href="/creative">
-								<ReactSVG src="./images/SVG/creative.svg" />
-							</a>
-							)}
-							{!localStorage.getItem('Differ') && (
-							<a className="test-item squid" href="/difference">
-								<ReactSVG src="./images/SVG/differ2.svg" />
-							</a>
-							)}
-						</div>
-						<div className="bot">
-							{!localStorage.getItem('Common') && (
-								<a className="test-item atom" href="/common">
-									<ReactSVG src="./images/SVG/common.svg" />
-								</a>
-							)}
-							{!localStorage.getItem('Memory') && (
-								<a className="test-item zoom" href="/memory">
-									<ReactSVG src="./images/SVG/memory.svg" />
-								</a>
-							)}
-							{!localStorage.getItem('Language') && (
-								<a className="test-item chat" href="/language">
-									<ReactSVG src="./images/SVG/language.svg" />
-								</a>
-							)}
-							{!localStorage.getItem('Position') && (
-								<a className="test-item global" href="/position">
-									<ReactSVG src="./images/SVG/position.svg" />
-								</a>
-							)}
-						</div>
+								)}
+							</div>
+							<div className="bot">
+								{!localStorage.getItem('Common') && (
+									<a className="test-item atom" href="/common">
+										<ReactSVG src="./images/SVG/common.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Memory') && (
+									<a className="test-item zoom" href="/memory">
+										<ReactSVG src="./images/SVG/memory.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Language') && (
+									<a className="test-item chat" href="/language">
+										<ReactSVG src="./images/SVG/language.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Position') && (
+									<a className="test-item global" href="/position">
+										<ReactSVG src="./images/SVG/position.svg" />
+									</a>
+								)}
+							</div>
 						</div>
                     <img className="f6" src="./images/SVG/f6.svg" alt=""/>
                     <img className="f7" src="./images/SVG/f7.svg" alt=""/>
@@ -343,7 +335,7 @@ const TestTriNho = observer(
 					#id2 .container .test-item {
 						display: block;
 						width: 100px;
-						margin: 20px 50px;
+						padding: 10px;
 						position: relative;
 						z-index: 5
 					}	
@@ -363,12 +355,16 @@ const TestTriNho = observer(
 					}
 					.answer-list li img {
 						width:100px;
-					}
+                    }
+                    .dot-wr {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
 					span.dot-navigation{
 						width: 20px;
 						height: 20px;
 						border: 1px solid #ddd;
-						display: inline-block;
 						border-radius: 50%;
 						margin-right: 15px;
 						cursor: pointer;
@@ -377,19 +373,10 @@ const TestTriNho = observer(
 					.is-active{
 						background-color: green!important;
 					}
-					.noidungcauhoi-wr img {
-						width: 400px;
-					}
-					.noidungcauhoi-wr, .noidung-dapan-wr{
-						display:flex;
-						justify-content:center;
+					.test-detail {
 						align-items: center;
-						padding: 15px;
-						width: 100%;
-						min-height: 400px;
-						margin-bottom: 30px;
 					}
-
+					
 					button.time-left{
 						border-radius: 50%;
 						border: 5px solid green;
@@ -410,16 +397,38 @@ const TestTriNho = observer(
 					.TestTriNho-wrapper{
 						position: relative;
 					}
-
-					.noidung-dapan-wr img{
-						width: 200px;
-						margin: auto 20px;
-						border: 1px solid #efefef;
-						border-radius: 4px;
-						cursor: pointer;
+					.noidungcauhoi-wr{
+                        display:flex;
+                        flex-wrap: wrap;
+						justify-content:center;
+						align-items: center;
+						padding: 15px;
+						margin-bottom: 30px;
 					}
-
-					.noidung-dapan-wr img.active{
+					.noidungcauhoi-wr img {
+						width: 400px;
+					}
+                    .noidung-dapan-wr {
+						flex-wrap: wrap;
+						display: flex;
+                        padding-right: 35px;
+                        justify-content: space-around;
+					}
+					.noidung-dapan-wr label {
+						display: block;
+					}
+					.noidung-dapan-wr img{
+						width: 250px;
+						cursor: pointer;
+						box-shadow: 5px 5px 5px rgb(77, 141, 173);
+						border-radius: 10px;
+						display: block;
+						margin: 0 auto;
+						border: 2px solid #fff;
+					}
+					label{position:relative}
+					label input {position:absolute; opacity:0;}
+					input.active ~ img{
 						border: 3px solid green;
 					}
 					.xemkq{
@@ -442,7 +451,23 @@ const TestTriNho = observer(
 						background: green;
 						color: white;
 					}
-
+                    .questionNo {
+                        padding-left: 100px;
+                    }
+                    .questionLeft, .result{
+                        text-align: center;
+                        margin-top: 20px;
+					}
+					@media all and (max-width:1440px) {
+						.noidungcauhoi-wr img {
+							width: 250px;
+						}
+						.noidung-dapan-wr img{
+							box-shadow: 5px 5px 5px rgb(77, 141, 173);
+							border-radius: 8px;
+							border: 2px solid #fff;
+						}
+					}
 					`}
 					</style>
 				</div>  
@@ -452,14 +477,13 @@ const TestTriNho = observer(
 )
 
 
-decorate(TestTriNho, {
+decorate(Diff, {
 	data: observable,
 	index: observable,
-	counter: observable,
 	resultsOfUser: observable,
 	resultsOfUserRaw: observable,
 	showKetQua: observable,
 	isClickXemKetQua: observable
 })
 
-export default TestTriNho
+export default Diff

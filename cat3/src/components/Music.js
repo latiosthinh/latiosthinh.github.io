@@ -5,9 +5,20 @@ import { decorate, observable } from "mobx"
 import { observer } from "mobx-react"
 import classNames from 'classnames'
 import $ from 'jquery';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 
-const Language = observer(
-	class Language extends Component{ 
+library.add(faVolumeDown)
+const Music = observer(
+	class Music extends Component{ 
+		constructor(props) {
+			super(props);
+			this.state = {
+				answerRes: []
+			};
+		}
+		ures = 0
 		data = data 
 		index = 0
 		resultsOfUser = []
@@ -30,16 +41,16 @@ const Language = observer(
 			return this.numberOfQuestionLeft() === 0
 		}
 
-		ketquaCuthe = ()=> {
+		ketquaCuthe = () => {
 			let socaudung = 0
 			for(let i = 0; i < this.resultsOfUser.length; i++){
 				if(this.resultsOfUser[i]){
 					socaudung ++
 				}
 			}
-
+			localStorage.setItem('Music', socaudung)
 			return (
-                <p className="result">You've got ${socaudung} / {this.data.length}</p>
+                <p className="result">You've got {socaudung} / {this.data.length}</p>
             )
 		}
 
@@ -48,7 +59,8 @@ const Language = observer(
 				this.resultsOfUser.push(null)
 				this.resultOfUserRaw.push(null)
             }
-            $('body').on('click', '.q', function(){
+            $('body').on('mouseenter', '.q', function(){
+				console.log('123')
                 $(this).children('audio')[0].play();
             });
 		} 
@@ -58,6 +70,10 @@ const Language = observer(
 				// console.log('prevState', prevState)
 				// console.log('cdu')
 		}
+		componentWillUpdate(nextProps, nextState) {
+			// localStorage.setItem('Music', '10/10')
+		}
+		
 		handleClick(answer){
 			if( this.isClickXemKetQua){
 				return
@@ -74,9 +90,13 @@ const Language = observer(
 			this.resultsOfUser[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
+			if(this.index < this.data.length-1) {
+				this.index += 1
+			}
 		}
 
-		render(){ 
+		render(){
+			const qname = this.currentItem()
 			const question = this.currentItem().acf
 			return (
 				<div>
@@ -110,7 +130,8 @@ const Language = observer(
 						</div>  
 					)}
 						<div>
-                            <div className="noidungcauhoi-wr q">  
+                            <div className="noidungcauhoi-wr q">
+								<FontAwesomeIcon icon="volume-down" />
                                 <img src={question.question.img} alt=""/> 
                                 <audio src={!!question.question.sound ? question.question.sound : null}></audio>
                             </div>  
@@ -121,40 +142,52 @@ const Language = observer(
                                     </div>
                                 )}
                                 {!!question.answer.answer_a.imga && (
-                                    <div className="q">
-                                        <img className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}} />
+                                        <img onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
                                         <audio src={!!question.answer.answer_a.sounda ? question.answer.answer_a.sounda : null}></audio>
-                                    </div>
+                                    </label>
                                 )}  
                                 {!!question.answer.answer_b.imgb && ( 
-                                    <div className="q">
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}}  src={question.answer.answer_b.imgb} alt=""/>   
-                                    <audio src={!!question.answer.answer_b.soundb ? question.answer.answer_b.soundb : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}} />
+										<img src={question.answer.answer_b.imgb} alt=""/>   
+										<audio src={!!question.answer.answer_b.soundb ? question.answer.answer_b.soundb : null}></audio>
+                                    </label>
                                 )}  
                                 {!!question.answer.answer_c.imgc && ( 
-                                    <div className="q">
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}}  src={question.answer.answer_c.imgc} alt=""/>   
-                                    <audio src={!!question.answer.answer_c.soundc ? question.answer.answer_c.soundc : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}} />
+										<img src={question.answer.answer_c.imgc} alt=""/>   
+										<audio src={!!question.answer.answer_c.soundc ? question.answer.answer_c.soundc : null}></audio>
+                                    </label>
                                 )}  
                                 {!!question.answer.answer_d.imgd && ( 
-                                    <div className="q">
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}}  src={question.answer.answer_d.imgd} alt=""/>    
-                                    <audio src={!!question.answer.answer_d.soundd ? question.answer.answer_d.soundd : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}} />
+										<img src={question.answer.answer_d.imgd} alt=""/>    
+										<audio src={!!question.answer.answer_d.soundd ? question.answer.answer_d.soundd : null}></audio>
+                                    </label>
                                 )}  
                                 {!!question.answer.answer_e.imge && ( 
-                                    <div className="q">
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}}  src={question.answer.answer_e.imge} alt=""/>    
-                                    <audio src={!!question.answer.answer_e.sounde ? question.answer.answer_e.sounde : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}} />
+										<img src={question.answer.answer_e.imge} alt=""/>    
+										<audio src={!!question.answer.answer_e.sounde ? question.answer.answer_e.sounde : null}></audio>
+                                    </label>
                                 )} 
                                 {!!question.answer.answer_f.imgf && ( 
-                                    <div className="q">
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}   onClick={e=> { this.handleClick("f")}}  src={question.answer.answer_f.imgf} alt=""/>    
-                                    <audio src={!!question.answer.answer_f.soundf ? question.answer.answer_f.soundf : null}></audio>
-                                    </div>
+                                    <label className="q">
+										<FontAwesomeIcon icon="volume-down" />
+										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}  onClick={e=> { this.handleClick("f")}} />
+										<img src={question.answer.answer_f.imgf} alt=""/>    
+										<audio src={!!question.answer.answer_f.soundf ? question.answer.answer_f.soundf : null}></audio>
+                                    </label>
                                 )}  
                             </div>  
 						</div>
@@ -175,7 +208,7 @@ const Language = observer(
 						)}
 
 						{!!this.isClickXemKetQua && (
-							<div> <p> {this.ketquaCuthe()} </p> </div>  
+							<div> <p> {this.ketquaCuthe()} </p> </div>
 						)}
 
 						{
@@ -200,26 +233,55 @@ const Language = observer(
 					<div className="container list-test">
 						<div className="row">
 							<div className="top">
-								<a className="test-item atom" href="/common">
-									<ReactSVG src="./images/SVG/common.svg" />
-								</a>
-                                <a className="test-item chat" href="/language">
-                                    <ReactSVG src="./images/SVG/language.svg" />
-                                </a>
+								{/* <a className={`test-item ghitar 
+									${!localStorage.getItem('Music') && (
+										"`done`"
+									)}
+												`} href="/music">
+									<ReactSVG src="./images/SVG/music.svg" />
+								</a> */}
+								{!localStorage.getItem('Music') && (
+									<a className="test-item ghitar" href="/music">
+										<ReactSVG src="./images/SVG/music.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('IQ') && (
+									<a className="test-item brain" href="/iq">
+										<ReactSVG src="./images/SVG/iq.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Creative') && (
 								<a className="test-item lightball" href="/creative">
 									<ReactSVG src="./images/SVG/creative.svg" />
 								</a>
+								)}
+								{!localStorage.getItem('Differ') && (
+								<a className="test-item squid" href="/difference">
+									<ReactSVG src="./images/SVG/differ2.svg" />
+								</a>
+								)}
 							</div>
 							<div className="bot">
-								<a className="test-item zoom" href="/memory">
-									<ReactSVG src="./images/SVG/memory.svg" />
-								</a>
-                                <a className="test-item brain" href="/iq">
-                                    <ReactSVG src="./images/SVG/iq.svg" />
-                                </a>
-								<a className="test-item global" href="/position">
-									<ReactSVG src="./images/SVG/position.svg" />
-								</a>
+								{!localStorage.getItem('Common') && (
+									<a className="test-item atom" href="/common">
+										<ReactSVG src="./images/SVG/common.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Memory') && (
+									<a className="test-item zoom" href="/memory">
+										<ReactSVG src="./images/SVG/memory.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Language') && (
+									<a className="test-item chat" href="/language">
+										<ReactSVG src="./images/SVG/language.svg" />
+									</a>
+								)}
+								{!localStorage.getItem('Position') && (
+									<a className="test-item global" href="/position">
+										<ReactSVG src="./images/SVG/position.svg" />
+									</a>
+								)}
 							</div>
 						</div>
                     <img className="f6" src="./images/SVG/f6.svg" alt=""/>
@@ -249,6 +311,12 @@ const Language = observer(
 						justify-content: center;
 						align-items: center;
 						cursor:pointer;
+						position: relative;
+					}
+					.q svg {
+						position: absolute;
+						bottom: 5px;
+						left: 5px;
 					}
 					.q img {
 						width: 150px;
@@ -307,14 +375,18 @@ const Language = observer(
 						justify-content: center;
 						width: 100%
 					}
-					
+					.false {
+						pointer-events: none;
+						// filter:grayscale(1);
+						position: relative;
+					}
 					#id2 .container .test-item {
 						display: block;
 						width: 100px;
-						margin: 20px 50px;
+						margin:0 10px;
 						position: relative;
 						z-index: 5
-					}	
+					}
 					.test-item:hover {
 						transform: scale(1.3);
 						transition: .3s;
@@ -349,10 +421,14 @@ const Language = observer(
 					.is-active{
 						background-color: green!important;
 					}
+					.noidungcauhoi-wr {
+						width: 300px;
+						margin:0 auto;
+					}
 					.noidungcauhoi-wr img {
 						width: 300px;
 					}
-					.noidungcauhoi-wr, .noidung-dapan-wr{
+					.noidung-dapan-wr{
                         display:flex;
                         flex-wrap: wrap;
 						justify-content:center;
@@ -361,7 +437,10 @@ const Language = observer(
 						width: 100%;
 						margin-bottom: 30px;
 					}
-
+					input[type=radio] {
+						position: absolute;
+						opacity:0;
+					}
                     .noidung-dapan-wr {
                         padding-right: 35px;
                         justify-content: space-around;
@@ -395,7 +474,7 @@ const Language = observer(
 						cursor: pointer;
 					}
 
-					.noidung-dapan-wr img.active{
+					input:checked ~ img {
 						border: 3px solid green;
 					}
 					.xemkq{
@@ -434,7 +513,7 @@ const Language = observer(
 )
 
 
-decorate(Language, {
+decorate(Music, {
 	data: observable,
 	index: observable,
 	resultsOfUser: observable,
@@ -443,4 +522,4 @@ decorate(Language, {
 	isClickXemKetQua: observable
 })
 
-export default Language
+export default Music

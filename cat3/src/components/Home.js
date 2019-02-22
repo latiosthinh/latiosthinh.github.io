@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactSVG from 'react-svg'
+import Popup from "reactjs-popup";
 import './Home.css'
 import './css/slick.css'
 
@@ -17,7 +18,10 @@ class Home extends Component {
                     <div className="col-lg-7 item">
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In aliquam dolore pariatur odit repellendus perspiciatis corrupti dolorem, porro est voluptatibus quo, eum unde rerum enim et animi nisi temporibus necessitatibus debitis! Quis molestias sint quaerat.</p>
                     </div>
-                    </div><img id="sub1" src="./images/2x/sub1.png" alt=""/><img id="sub2" src="./images/2x/sub2.png" alt=""/><img id="sub3" src="./images/2x/sub3.png" alt=""/>
+                    </div>
+					<img id="sub1" src="./images/2x/sub1.png" alt=""/>
+					<img id="sub2" src="./images/2x/sub2.png" alt=""/>
+					<img id="sub3" src="./images/2x/sub3.png" alt=""/>
                 </div>
                 <div className="cta">
                     <div className="item-cta"><a className="psy-btn" href="#for-parent">Parents</a></div>
@@ -32,7 +36,8 @@ class Home extends Component {
                         <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur iste sunt explicabo? Doloremque, odio. Quos totam corrupti dignissimos? Consequuntur impedit quaerat non dolorum autem tenetur! Impedit deserunt dignissimos facilis odio.</h3>
                         </div>
                         <div className="col-lg-12">
-                            <div className="bigwhale"><a className="test-now">
+                            <div className="bigwhale">
+								<a className="test-now psy-btn" href="#id4">
                                 <img src="./images/2x/whale.png" alt=""/></a>
                                 <div className="bg"></div>
                             </div>
@@ -42,33 +47,59 @@ class Home extends Component {
                     <img className="boy" src="./images/boy.png" alt=""/>
                     <img className="whale" src="./images/wavebg.png" alt=""/>
                 </div>
-                <div className="container list-test">
+                <div className="container list-test psy-section" id="id4">
                     <div className="row">
-                        <div className="top">
-                            <a className="test-item ghitar" href="/music">
-                                <ReactSVG src="./images/SVG/music.svg" />
-                            </a>
-                            <a className="test-item brain" href="/iq">
-                                <ReactSVG src="./images/SVG/iq.svg" />
-                            </a>
-                            <a className="test-item lightball" href="/creative">
-                                <ReactSVG src="./images/SVG/creative.svg" />
-                            </a>
-                        </div>
-                        <div className="bot">
-                            <a className="test-item atom" href="/common">
-                                <ReactSVG src="./images/SVG/common.svg" />
-                            </a>
-                            <a className="test-item zoom" href="/memory">
-                                <ReactSVG src="./images/SVG/memory.svg" />
-                            </a>
-                            <a className="test-item chat" href="/language">
-                                <ReactSVG src="./images/SVG/language.svg" />
-                            </a>
-                            <a className="test-item global" href="/position">
-                                <ReactSVG src="./images/SVG/position.svg" />
-                            </a>
-                        </div>
+						<div className="top">
+							{/* <a className={`test-item ghitar 
+								${!localStorage.getItem('Music') && (
+									"`done`"
+								)}
+											`} href="/music">
+								<ReactSVG src="./images/SVG/music.svg" />
+							</a> */}
+							{!localStorage.getItem('Music') && (
+								<a className="test-item ghitar" href="/music">
+									<ReactSVG src="./images/SVG/music.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('IQ') && (
+								<a className="test-item brain" href="/iq">
+									<ReactSVG src="./images/SVG/iq.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('Creative') && (
+							<a className="test-item lightball" href="/creative">
+								<ReactSVG src="./images/SVG/creative.svg" />
+							</a>
+							)}
+							{!localStorage.getItem('Differ') && (
+							<a className="test-item squid" href="/difference">
+								<ReactSVG src="./images/SVG/differ2.svg" />
+							</a>
+							)}
+						</div>
+						<div className="bot">
+							{!localStorage.getItem('Common') && (
+								<a className="test-item atom" href="/common">
+									<ReactSVG src="./images/SVG/common.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('Memory') && (
+								<a className="test-item zoom" href="/memory">
+									<ReactSVG src="./images/SVG/memory.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('Language') && (
+								<a className="test-item chat" href="/language">
+									<ReactSVG src="./images/SVG/language.svg" />
+								</a>
+							)}
+							{!localStorage.getItem('Position') && (
+								<a className="test-item global" href="/position">
+									<ReactSVG src="./images/SVG/position.svg" />
+								</a>
+							)}
+						</div>
                     </div>
                     <img className="f6" src="./images/SVG/f6.svg" alt=""/>
                     <img className="f7" src="./images/SVG/f7.svg" alt=""/>
@@ -411,7 +442,7 @@ class Home extends Component {
 				#id1 .board #sub3 {
 					width: 200px;
 					position: absolute;
-					top: -5%;
+					top: -100px;
 					left: 90%;
 					z-index: 1
 				}
