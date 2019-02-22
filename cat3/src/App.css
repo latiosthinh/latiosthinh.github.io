@@ -159,11 +159,10 @@ button.time-left {
 	right: 10px;
 	z-index: 10;
 }
-
+.show-kg-button-wr {
+	text-align: center;
+}
 .xemkq {
-	position: absolute;
-	bottom: 10px;
-	right: 0;
 	width: 150px;
 	height: 40px;
 	border: 2px solid green;
@@ -174,6 +173,7 @@ button.time-left {
 	color: green;
 	font-weight: 700;
 	text-transform: uppercase;
+	margin-bottom: 20px;
 }
 
 .prev-btn,
@@ -225,65 +225,16 @@ img.active {
 	z-index: 100 !important;
 }
 
-.left {
-	float: left;
-	width: 400px;
-	text-align: right;
-}
-
-.right {
-	float: right;
-	width: 400px;
-	text-align: left;
-}
-
-.left-right-wr {
-	float: left;
-	width: 100%;
-	background: #ddd;
-	margin-bottom: 40px;
-	height: 600px;
-	position: relative;
-	padding: 15px;
-}
-
 .left img {
 	-webkit-box-shadow: -13px 11px 7px -4px rgba(155, 22, 76, 0.7);
 	-moz-box-shadow: -13px 11px 7px -4px rgba(155, 22, 76, 0.7);
 	box-shadow: -13px 11px 7px -4px rgba(155, 22, 76, 0.7);
-	margin-left: auto;
 }
 
 .dot-wr {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.left img,
-.right img {
-	cursor: pointer;
-	position: relative;
-	display: block !important;
-	transition: all 0.1s ease;
-	border-radius: 20px;
-	height: 150px;
-	border: 1px solid #efefef;
-	margin-bottom: 20px;
-	width: auto;
-}
-
-.left img:after,
-.right img:after {
-	content: '';
-	width: 100px;
-	height: 100%;
-	border: 1px solid red;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 100 !important;
-	background-color: red;
 }
 
 .right img {
@@ -367,11 +318,6 @@ img.active {
 	z-index: 100 !important;
 }
 
-.left img:hover,
-.right img:hover {
-	transform: scale(1.01, 1.01);
-}
-
 .questionNo {
 	padding-left: 100px;
 }
@@ -398,7 +344,6 @@ img.active {
 	position: relative;
 }
 
-.left-right-wr img,
 .left-right-wr label {
 	max-width: 100%;
 	height: auto;
@@ -478,6 +423,41 @@ input[type='radio'] {
 	text-align: center;
 	flex: 1 1 200px;
 	margin: 5px;
+}
+
+/* commont (matching test) */
+.left-right-wr {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	padding: 0 !important;
+	justify-content: space-around;
+}
+
+.left-right-wr > div {
+	text-align: center;
+}
+
+.left {
+	margin-right: 15px;
+}
+
+.left-right-wr > div > img {
+	margin-bottom: 25px;
+	max-width: 200px;
+	display: block;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.traloisai,
+.traloidung {
+	text-align: center;
+}
+
+.currentQuestion {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 @media screen and (min-width: 0px) and (max-width: 575.9999px) {
