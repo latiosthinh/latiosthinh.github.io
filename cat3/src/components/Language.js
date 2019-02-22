@@ -11,28 +11,28 @@ import { faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 library.add(faVolumeDown)
 
 const Language = observer(
-	class Language extends Component{ 
-		data = data 
-		index = 0
-		resultsOfUser = []
-		resultOfUserRaw = []
-		isClickXemKetQua = false
-		lengthh = () => this.data.length  
-		currentItem = () => this.data[this.index]
-		
-		numberOfQuestionLeft = () => {
-			let number = 0
-			for(let i = 0; i < this.resultsOfUser.length; i++){
-				if(this.resultsOfUser[i] === null){
-					number ++
-				}
-			}
-			return number
-		}
+  class Language extends Component{ 
+    data = data 
+    index = 0
+    resultsOfUser = []
+    resultOfUserRaw = []
+    isClickXemKetQua = false
+    lengthh = () => this.data.length  
+    currentItem = () => this.data[this.index]
+    
+    numberOfQuestionLeft = () => {
+      let number = 0
+      for(let i = 0; i < this.resultsOfUser.length; i++){
+        if(this.resultsOfUser[i] === null){
+          number ++
+        }
+      }
+      return number
+    }
 
-		showKetQua = () => {
-			return this.numberOfQuestionLeft() === 0
-		}
+    showKetQua = () => {
+      return this.numberOfQuestionLeft() === 0
+    }
 
 		ketquaCuthe = ()=> {
 			let socaudung = 0
@@ -45,32 +45,32 @@ const Language = observer(
 			return (
                 <p className="result">You've got ${socaudung} / {this.data.length}</p>
             )
-		}
+    }
 
-		componentDidMount(){ 
-			for(let i = 0; i < this.data.length; i++){
-				this.resultsOfUser.push(null)
-				this.resultOfUserRaw.push(null)
+    componentDidMount(){ 
+      for(let i = 0; i < this.data.length; i++){
+        this.resultsOfUser.push(null)
+        this.resultOfUserRaw.push(null)
             }
             $('body').on('hover', '.q', function(){
                 $(this).children('audio')[0].play();
             });
-		} 
+    } 
 
-		componentDidUpdate(prevProps, prevState) {
-				// console.log('prevProps', prevProps)
-				// console.log('prevState', prevState)
-				// console.log('cdu')
-		}
-		handleClick(answer){
-			if( this.isClickXemKetQua){
-				return
-			}
-			let result = false
-			let answerName = "answer_" + answer
-			let tName = "t" + answer
+    componentDidUpdate(prevProps, prevState) {
+        // console.log('prevProps', prevProps)
+        // console.log('prevState', prevState)
+        // console.log('cdu')
+    }
+    handleClick(answer){
+      if( this.isClickXemKetQua){
+        return
+      }
+      let result = false
+      let answerName = "answer_" + answer
+      let tName = "t" + answer
 
-			if(typeof this.currentItem().acf.answer[answerName][tName] === "string"){
+      if(typeof this.currentItem().acf.answer[answerName][tName] === "string"){
 
 			} else{
 				result = true
@@ -178,26 +178,26 @@ const Language = observer(
 									</label>
                                 )}  
                             </div>  
-						</div>
+            </div>
 
-						<div className="dot-wr">
-							{this.data.length && this.data
-								? this.data.map((item, i) => (
-										<span key={item.id} className={classNames('dot-navigation', {'is-active': this.index === i})} onClick={e => {
-											this.index = i
-										}}> </span>
-									))
-								: null
-							}
-						</div>
+            <div className="dot-wr">
+              {this.data.length && this.data
+                ? this.data.map((item, i) => (
+                    <span key={item.id} className={classNames('dot-navigation', {'is-active': this.index === i})} onClick={e => {
+                      this.index = i
+                    }}> </span>
+                  ))
+                : null
+              }
+            </div>
 
-						{!this.isClickXemKetQua && (
-							<p className="questionLeft"> You have {this.numberOfQuestionLeft()} questions left! </p>
-						)}
+            {!this.isClickXemKetQua && (
+              <p className="questionLeft"> You have {this.numberOfQuestionLeft()} questions left! </p>
+            )}
 
-						{!!this.isClickXemKetQua && (
-							<div> <p> {this.ketquaCuthe()} </p> </div>  
-						)}
+            {!!this.isClickXemKetQua && (
+              <div> <p> {this.ketquaCuthe()} </p> </div>  
+            )}
 
 						{
 							this.resultsOfUser[this.index] === null ? 
@@ -441,47 +441,47 @@ const Language = observer(
 						font-size: 30px;
 					}
 
-					button.time-left{
-						position: absolute;
-						top: 10px;
-						right: 10px;
-						z-index: 10;
-					}
+          button.time-left{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+          }
 
-					.TestTriNho-wrapper{
-						position: relative;
-					}
+          .TestTriNho-wrapper{
+            position: relative;
+          }
 
-					.noidung-dapan-wr img{
-						width: 130px;
-						border: 1px solid #efefef;
-						border-radius: 4px;
-						cursor: pointer;
-					}
+          .noidung-dapan-wr img{
+            width: 130px;
+            border: 1px solid #efefef;
+            border-radius: 4px;
+            cursor: pointer;
+          }
 
-					.noidung-dapan-wr img.active{
-						border: 3px solid green;
-					}
-					.xemkq{
-						position: absolute;
-						bottom: 10px;
-						right: 0;
-						width: 150px;
-						height: 40px;
-						border: 2px solid green;
-						border-radius: 5px;
-						cursor: pointer;
-						transition: all 0.2s ease;
-						font-size: 16px;
-						color: green;
-						font-weight: bold;
-						text-transform: uppercase;
-					}
+          .noidung-dapan-wr img.active{
+            border: 3px solid green;
+          }
+          .xemkq{
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            width: 150px;
+            height: 40px;
+            border: 2px solid green;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 16px;
+            color: green;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
 
-					.xemkq:hover{
-						background: green;
-						color: white;
-					}
+          .xemkq:hover{
+            background: green;
+            color: white;
+          }
                     .questionNo {
                         padding-left: 100px;
                     }
@@ -489,22 +489,22 @@ const Language = observer(
                         text-align: center;
                         margin-top: 20px;
                     }
-					`}
-					</style>
-				</div>  
-			) 
-		} 
-	} 
+          `}
+          </style>
+        </div>  
+      ) 
+    } 
+  } 
 )
 
 
 decorate(Language, {
-	data: observable,
-	index: observable,
-	resultsOfUser: observable,
-	resultsOfUserRaw: observable,
-	showKetQua: observable,
-	isClickXemKetQua: observable
+  data: observable,
+  index: observable,
+  resultsOfUser: observable,
+  resultsOfUserRaw: observable,
+  showKetQua: observable,
+  isClickXemKetQua: observable
 })
 
 export default Language

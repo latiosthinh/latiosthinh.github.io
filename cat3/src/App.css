@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'Hobo Std Medium';
+	src: url('./fonts/Hobo Std Medium.ttf');
+}
+
+@font-face {
+	font-family: 'myryadpro';
+	src: url('./fonts/MYRIADPRO-REGULAR.woff');
+}
+
+header.fixed {
+	height: 130px !important;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+	text-decoration: none;
+}
+
+li.sign {
+	margin-left: 15px;  
+
+}
+
+

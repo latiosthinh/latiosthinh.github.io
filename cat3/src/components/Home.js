@@ -4,6 +4,7 @@ import Popup from "reactjs-popup";
 import './Home.css'
 import './css/slick.css'
 
+
 class Home extends Component {
     render() {    
         return (
@@ -107,203 +108,203 @@ class Home extends Component {
                 <img id="island" src="./images/island.png" alt=""/>
             </section>
             <section id="for-parent">
-				<div className="container">
-					<div className="for-parent-title">
-						<img src="./images/for-parent.png" alt="" />
-					</div>
+        <div className="container">
+          <div className="for-parent-title">
+            <img src="./images/for-parent.png" alt="" />
+          </div>
 
-					<div className="for-parent-content">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-							veniam consequatur provident laudantium voluptates ad blanditiis
-							illo doloremque optio, consectetur veritatis officiis deleniti.
-							Magni impedit, totam odio non exercitationem ut!
-						</p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed,
-							vero aut amet quae inventore fugiat in praesentium natus cumque
-							quidem.
-						</p>
-					</div>
+          <div className="for-parent-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+              veniam consequatur provident laudantium voluptates ad blanditiis
+              illo doloremque optio, consectetur veritatis officiis deleniti.
+              Magni impedit, totam odio non exercitationem ut!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed,
+              vero aut amet quae inventore fugiat in praesentium natus cumque
+              quidem.
+            </p>
+          </div>
 
-					<div className="testnow-tailieu-wr">
-						<button className="testnow">Test now</button>
-						<button className="tailieu">Tai Lieu</button>
-					</div>
-					<div className="above-trynow">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ex in
-							itaque qui tempore minus ducimus magni, quam et consequatur cum
-							sed exercitationem fugit iusto a quasi culpa, enim necessitatibus.
-							Molestiae fuga, placeat quasi eum. Corporis, adipisci facilis in
-							quod.
-						</p>
+          <div className="testnow-tailieu-wr">
+            <button className="testnow">Test now</button>
+            <button className="tailieu">Tai Lieu</button>
+          </div>
+          <div className="above-trynow">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ex in
+              itaque qui tempore minus ducimus magni, quam et consequatur cum
+              sed exercitationem fugit iusto a quasi culpa, enim necessitatibus.
+              Molestiae fuga, placeat quasi eum. Corporis, adipisci facilis in
+              quod.
+            </p>
 
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Reiciendis, soluta.
-						</p>
-					</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Reiciendis, soluta.
+            </p>
+          </div>
 
-					<div className="trynow-btn-wr">
-						<button>Try now</button>
-					</div>
+          <div className="trynow-btn-wr">
+            <button>Try now</button>
+          </div>
 
-					<div className="article-slide-wr">
-						<div className="article-slide">
-							<div className="one-article">
-								<div className="img-slide-wr">
-									<a href="#" 
-										><img
-											id="img-1"
-											src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
-											alt=""
-									/></a>
-								</div>
+          <div className="article-slide-wr">
+            <div className="article-slide">
+              <div className="one-article">
+                <div className="img-slide-wr">
+                  <a href="#" 
+                    ><img
+                      id="img-1"
+                      src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
+                      alt=""
+                  /></a>
+                </div>
 
-								<a href="#" >
-									<p className="slide-content">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Ratione porro quia facere commodi laboriosam eius est
-										obcaecati, incidunt nemo, atque aliquid fugiat delectus,
-										accusantium quas.
-									</p>
-								</a>
-							</div>
+                <a href="#" >
+                  <p className="slide-content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione porro quia facere commodi laboriosam eius est
+                    obcaecati, incidunt nemo, atque aliquid fugiat delectus,
+                    accusantium quas.
+                  </p>
+                </a>
+              </div>
 
-							<div className="one-article">
-								<div className="img-slide-wr">
-									<a href="#" 
-										><img
-											id="img-1"
-											src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
-											alt=""
-									/></a>
-								</div>
+              <div className="one-article">
+                <div className="img-slide-wr">
+                  <a href="#" 
+                    ><img
+                      id="img-1"
+                      src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
+                      alt=""
+                  /></a>
+                </div>
 
-								<a href="#" >
-									<p className="slide-content">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Ratione porro quia facere commodi laboriosam eius est
-										obcaecati, incidunt nemo, atque aliquid fugiat delectus,
-										accusantium quas.
-									</p>
-								</a>
-							</div>
+                <a href="#" >
+                  <p className="slide-content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione porro quia facere commodi laboriosam eius est
+                    obcaecati, incidunt nemo, atque aliquid fugiat delectus,
+                    accusantium quas.
+                  </p>
+                </a>
+              </div>
 
-							<div className="one-article">
-								<div className="img-slide-wr">
-									<a href="#" 
-										><img
-											id="img-1"
-											src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
-											alt=""
-									/></a>
-								</div>
+              <div className="one-article">
+                <div className="img-slide-wr">
+                  <a href="#" 
+                    ><img
+                      id="img-1"
+                      src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
+                      alt=""
+                  /></a>
+                </div>
 
-								<a href="#" >
-									<p className="slide-content">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Ratione porro quia facere commodi laboriosam eius est
-										obcaecati, incidunt nemo, atque aliquid fugiat delectus,
-										accusantium quas.
-									</p>
-								</a>
-							</div>
+                <a href="#" >
+                  <p className="slide-content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione porro quia facere commodi laboriosam eius est
+                    obcaecati, incidunt nemo, atque aliquid fugiat delectus,
+                    accusantium quas.
+                  </p>
+                </a>
+              </div>
 
-							<div className="one-article">
-								<div className="img-slide-wr">
-									<a href="#" 
-										><img
-											id="img-1"
-											src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
-											alt=""
-									/></a>
-								</div>
+              <div className="one-article">
+                <div className="img-slide-wr">
+                  <a href="#" 
+                    ><img
+                      id="img-1"
+                      src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
+                      alt=""
+                  /></a>
+                </div>
 
-								<a href="#" >
-									<p className="slide-content">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Ratione porro quia facere commodi laboriosam eius est
-										obcaecati, incidunt nemo, atque aliquid fugiat delectus,
-										accusantium quas.
-									</p>
-								</a>
-							</div>
+                <a href="#" >
+                  <p className="slide-content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione porro quia facere commodi laboriosam eius est
+                    obcaecati, incidunt nemo, atque aliquid fugiat delectus,
+                    accusantium quas.
+                  </p>
+                </a>
+              </div>
 
-							<div className="one-article">
-								<div className="img-slide-wr">
-									<a href="#" 
-										><img
-											id="img-1"
-											src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
-											alt=""
-									/></a>
-								</div>
+              <div className="one-article">
+                <div className="img-slide-wr">
+                  <a href="#" 
+                    ><img
+                      id="img-1"
+                      src="https://404store.com/2017/12/08/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"
+                      alt=""
+                  /></a>
+                </div>
 
-								<a href="#" >
-									<p className="slide-content">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Ratione porro quia facere commodi laboriosam eius est
-										obcaecati, incidunt nemo, atque aliquid fugiat delectus,
-										accusantium quas.
-									</p>
-								</a>
-							</div>
-						</div>
-					</div>
+                <a href="#" >
+                  <p className="slide-content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione porro quia facere commodi laboriosam eius est
+                    obcaecati, incidunt nemo, atque aliquid fugiat delectus,
+                    accusantium quas.
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
 
-					<div className="ultilities-wr">
-						<div className="ult-slide">
-							<div className="one-ult">
-								<div className="img-ult-wr">
-									<img src="images/icon1.png" alt="" />
-								</div>
+          <div className="ultilities-wr">
+            <div className="ult-slide">
+              <div className="one-ult">
+                <div className="img-ult-wr">
+                  <img src="images/icon1.png" alt="" />
+                </div>
 
-								<div className="ult-content">
-									<p>Lorem ipsum dolor sit amet.</p>
-								</div>
-							</div>
-							<div className="one-ult">
-								<div className="img-ult-wr">
-									<img src="images/icon2.png" alt="" />
-								</div>
+                <div className="ult-content">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+              <div className="one-ult">
+                <div className="img-ult-wr">
+                  <img src="images/icon2.png" alt="" />
+                </div>
 
-								<div className="ult-content">
-									<p>Lorem ipsum dolor sit amet.</p>
-								</div>
-							</div>
-							<div className="one-ult">
-								<div className="img-ult-wr">
-									<img src="images/icon3.png" alt="" />
-								</div>
+                <div className="ult-content">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+              <div className="one-ult">
+                <div className="img-ult-wr">
+                  <img src="images/icon3.png" alt="" />
+                </div>
 
-								<div className="ult-content">
-									<p>Lorem ipsum dolor sit amet.</p>
-								</div>
-							</div>
-							<div className="one-ult">
-								<div className="img-ult-wr">
-									<img src="images/icon2.png" alt="" />
-								</div>
+                <div className="ult-content">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+              <div className="one-ult">
+                <div className="img-ult-wr">
+                  <img src="images/icon2.png" alt="" />
+                </div>
 
-								<div className="ult-content">
-									<p>Lorem ipsum dolor sit amet.</p>
-								</div>
-							</div>
-							<div className="one-ult">
-								<div className="img-ult-wr">
-									<img src="images/icon1.png" alt="" />
-								</div>
+                <div className="ult-content">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+              <div className="one-ult">
+                <div className="img-ult-wr">
+                  <img src="images/icon1.png" alt="" />
+                </div>
 
-								<div className="ult-content">
-									<p>Lorem ipsum dolor sit amet.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+                <div className="ult-content">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 			
 			<style>

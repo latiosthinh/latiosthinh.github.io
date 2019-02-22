@@ -8,11 +8,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import TestTriNho from './components/Memory';
 import Testposition from './components/Position';
-import MatchingTest from './components/Commont'
+import Commont from './components/Commont/'
 import './css/bootstrap.min.css'
 import Creative from './components/Creative';
 import Diff from './components/Diff';
-import { withCookies  } from 'react-cookie';
+import './App.css'
 
 class App extends Component {
   render() {
@@ -29,8 +29,9 @@ class App extends Component {
               <Route path="/position" component={Testposition} />
               <Route path="/memory" component={TestTriNho} />
               <Route path="/creative" component={Creative} />
-              <Route path="/common" component={MatchingTest} />
               <Route path="/difference" component={Diff} />
+              <Route path="/common" component={Commont} />
+
             </Switch>
             <Footer></Footer>
           </div>
