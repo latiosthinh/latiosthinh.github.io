@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './css/slick.css'
 
 class Footer extends Component {
-    render() {    
-        return (
-            <footer>
+		render() {    
+				return (
+						<footer>
 				<div className="container">
 					<div className="row">
 						<div className="col-md-4 col-xs-12">
@@ -58,8 +58,8 @@ class Footer extends Component {
 					</div>
 				</div>
 			</footer>
-        );
-    }
+				);
+		}
 }
-    
+		
 export default Footer;

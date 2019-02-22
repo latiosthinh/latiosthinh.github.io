@@ -38,8 +38,8 @@ const Position = observer(
 			}
 			localStorage.setItem('Position', socaudung)
 			return (
-                <p className="result">You've got ${socaudung} / {this.data.length}</p>
-            )
+								<p className="result">You've got ${socaudung} / {this.data.length}</p>
+						)
 		}
 
 		componentDidMount(){ 
@@ -85,9 +85,9 @@ const Position = observer(
 							<div className="col-lg-12">
 								<div className="bigwhale">
 									<h1>TEST POSITION</h1>
-                                    <a className="test-item global" href="/position">
-                                        <ReactSVG src="./images/SVG/position.svg" />
-                                    </a>
+																		<a className="test-item global" href="/position">
+																				<ReactSVG src="./images/SVG/position.svg" />
+																		</a>
 								</div>
 							</div>
 							<div className="col-lg-6 offset-lg-3">
@@ -109,34 +109,34 @@ const Position = observer(
 						</div>  
 					)}
 						<div>
-                            <div className="noidungcauhoi-wr">  
-                                <img src={question.question} alt=""/> 
-                            </div>  
-                            <div className="noidung-dapan-wr">  
-                                {!!this.isClickXemKetQua && (
-                                    <div className="showimage">
-                                        <img className="question-image-in-show-result" src={question.question} alt=""/>
-                                    </div>
-                                )}
-                                {!!question.answer.answer_a.imga && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
-                                )}  
-                                {!!question.answer.answer_b.imgb && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}}  src={question.answer.answer_b.imgb} alt=""/>   
-                                )}  
-                                {!!question.answer.answer_c.imgc && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}}  src={question.answer.answer_c.imgc} alt=""/>   
-                                )}  
-                                {!!question.answer.answer_d.imgd && ( 
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}}  src={question.answer.answer_d.imgd} alt=""/>    
-                                )}  
-                                {!!question.answer.answer_e.imge && ( 
-                                    <img  className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}}  src={question.answer.answer_e.imge} alt=""/>    
-                                )} 
-                                {!!question.answer.answer_f.imgf && ( 
-                                    <img className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}   onClick={e=> { this.handleClick("f")}}  src={question.answer.answer_f.imgf} alt=""/>    
-                                )}  
-                            </div>  
+														<div className="noidungcauhoi-wr">  
+																<img src={question.question} alt=""/> 
+														</div>  
+														<div className="noidung-dapan-wr">  
+																{!!this.isClickXemKetQua && (
+																		<div className="showimage">
+																				<img className="question-image-in-show-result" src={question.question} alt=""/>
+																		</div>
+																)}
+																{!!question.answer.answer_a.imga && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
+																)}  
+																{!!question.answer.answer_b.imgb && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}}  src={question.answer.answer_b.imgb} alt=""/>   
+																)}  
+																{!!question.answer.answer_c.imgc && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}}  src={question.answer.answer_c.imgc} alt=""/>   
+																)}  
+																{!!question.answer.answer_d.imgd && ( 
+																		<img  className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}}  src={question.answer.answer_d.imgd} alt=""/>    
+																)}  
+																{!!question.answer.answer_e.imge && ( 
+																		<img  className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}}  src={question.answer.answer_e.imge} alt=""/>    
+																)} 
+																{!!question.answer.answer_f.imgf && ( 
+																		<img className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}   onClick={e=> { this.handleClick("f")}}  src={question.answer.answer_f.imgf} alt=""/>    
+																)}  
+														</div>  
 						</div>
 
 						<div className="dot-wr">
@@ -231,8 +231,8 @@ const Position = observer(
 							)}
 						</div>
 						</div>
-                    <img className="f6" src="./images/SVG/f6.svg" alt=""/>
-                    <img className="f7" src="./images/SVG/f7.svg" alt=""/>
+										<img className="f6" src="./images/SVG/f6.svg" alt=""/>
+										<img className="f7" src="./images/SVG/f7.svg" alt=""/>
 					</div>
 				</section>
 					<style> {`
@@ -340,12 +340,12 @@ const Position = observer(
 					}
 					.answer-list li img {
 						width:100px;
-                    }
-                    .dot-wr {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
+										}
+										.dot-wr {
+												display: flex;
+												justify-content: center;
+												align-items: center;
+										}
 					span.dot-navigation{
 						width: 20px;
 						height: 20px;
@@ -362,8 +362,8 @@ const Position = observer(
 						width: 300px;
 					}
 					.noidungcauhoi-wr, .noidung-dapan-wr{
-                        display:flex;
-                        flex-wrap: wrap;
+												display:flex;
+												flex-wrap: wrap;
 						justify-content:center;
 						align-items: center;
 						padding: 15px;
@@ -371,10 +371,10 @@ const Position = observer(
 						margin-bottom: 30px;
 					}
 
-                    .noidung-dapan-wr {
-                        padding-right: 35px;
-                        justify-content: space-around;
-                    }
+										.noidung-dapan-wr {
+												padding-right: 35px;
+												justify-content: space-around;
+										}
 
 					button.time-left{
 						border-radius: 50%;
@@ -427,13 +427,13 @@ const Position = observer(
 						background: green;
 						color: white;
 					}
-                    .questionNo {
-                        padding-left: 100px;
-                    }
-                    .questionLeft, .result{
-                        text-align: center;
-                        margin-top: 20px;
-                    }
+										.questionNo {
+												padding-left: 100px;
+										}
+										.questionLeft, .result{
+												text-align: center;
+												margin-top: 20px;
+										}
 					`}
 					</style>
 				</div>  

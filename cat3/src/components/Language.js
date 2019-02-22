@@ -11,28 +11,28 @@ import { faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 library.add(faVolumeDown)
 
 const Language = observer(
-  class Language extends Component{ 
-    data = data 
-    index = 0
-    resultsOfUser = []
-    resultOfUserRaw = []
-    isClickXemKetQua = false
-    lengthh = () => this.data.length  
-    currentItem = () => this.data[this.index]
-    
-    numberOfQuestionLeft = () => {
-      let number = 0
-      for(let i = 0; i < this.resultsOfUser.length; i++){
-        if(this.resultsOfUser[i] === null){
-          number ++
-        }
-      }
-      return number
-    }
+	class Language extends Component{ 
+		data = data 
+		index = 0
+		resultsOfUser = []
+		resultOfUserRaw = []
+		isClickXemKetQua = false
+		lengthh = () => this.data.length  
+		currentItem = () => this.data[this.index]
+		
+		numberOfQuestionLeft = () => {
+			let number = 0
+			for(let i = 0; i < this.resultsOfUser.length; i++){
+				if(this.resultsOfUser[i] === null){
+					number ++
+				}
+			}
+			return number
+		}
 
-    showKetQua = () => {
-      return this.numberOfQuestionLeft() === 0
-    }
+		showKetQua = () => {
+			return this.numberOfQuestionLeft() === 0
+		}
 
 		ketquaCuthe = ()=> {
 			let socaudung = 0
@@ -43,34 +43,34 @@ const Language = observer(
 			}
 			localStorage.setItem('Language', socaudung)
 			return (
-                <p className="result">You've got ${socaudung} / {this.data.length}</p>
-            )
-    }
+								<p className="result">You've got ${socaudung} / {this.data.length}</p>
+						)
+		}
 
-    componentDidMount(){ 
-      for(let i = 0; i < this.data.length; i++){
-        this.resultsOfUser.push(null)
-        this.resultOfUserRaw.push(null)
-            }
-            $('body').on('hover', '.q', function(){
-                $(this).children('audio')[0].play();
-            });
-    } 
+		componentDidMount(){ 
+			for(let i = 0; i < this.data.length; i++){
+				this.resultsOfUser.push(null)
+				this.resultOfUserRaw.push(null)
+						}
+						$('body').on('hover', '.q', function(){
+								$(this).children('audio')[0].play();
+						});
+		} 
 
-    componentDidUpdate(prevProps, prevState) {
-        // console.log('prevProps', prevProps)
-        // console.log('prevState', prevState)
-        // console.log('cdu')
-    }
-    handleClick(answer){
-      if( this.isClickXemKetQua){
-        return
-      }
-      let result = false
-      let answerName = "answer_" + answer
-      let tName = "t" + answer
+		componentDidUpdate(prevProps, prevState) {
+				// console.log('prevProps', prevProps)
+				// console.log('prevState', prevState)
+				// console.log('cdu')
+		}
+		handleClick(answer){
+			if( this.isClickXemKetQua){
+				return
+			}
+			let result = false
+			let answerName = "answer_" + answer
+			let tName = "t" + answer
 
-      if(typeof this.currentItem().acf.answer[answerName][tName] === "string"){
+			if(typeof this.currentItem().acf.answer[answerName][tName] === "string"){
 
 			} else{
 				result = true
@@ -95,8 +95,8 @@ const Language = observer(
 								<div className="bigwhale">
 									<h1>TEST LANGUAGE</h1>
 									<a className="test-item chat" href="/language">
-                                        <ReactSVG src="./images/SVG/language.svg" />
-                                    </a>
+																				<ReactSVG src="./images/SVG/language.svg" />
+																		</a>
 								</div>
 							</div>
 							<div className="col-lg-6 offset-lg-3">
@@ -118,86 +118,86 @@ const Language = observer(
 						</div>  
 					)}
 						<div>
-                            <div className="noidungcauhoi-wr q"> 
+														<div className="noidungcauhoi-wr q"> 
 								<FontAwesomeIcon icon="volume-down" /> 
-                                <img src={question.question.img} alt=""/> 
-                                <audio src={!!question.question.sound ? question.question.sound : null}></audio>
-                            </div>  
-                            <div className="noidung-dapan-wr">  
-                                {!!this.isClickXemKetQua && (
-                                    <div className="showimage">
-                                        <img className="question-image-in-show-result" src={question.question} alt=""/>
-                                    </div>
-                                )}
-                                {!!question.answer.answer_a.imga && (
-                                    <label className="q">
+																<img src={question.question.img} alt=""/> 
+																<audio src={!!question.question.sound ? question.question.sound : null}></audio>
+														</div>  
+														<div className="noidung-dapan-wr">  
+																{!!this.isClickXemKetQua && (
+																		<div className="showimage">
+																				<img className="question-image-in-show-result" src={question.question} alt=""/>
+																		</div>
+																)}
+																{!!question.answer.answer_a.imga && (
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}} />
 										<img onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
 										<audio src={!!question.answer.answer_a.sounda ? question.answer.answer_a.sounda : null}></audio>
 									</label>
-                                )}  
-                                {!!question.answer.answer_b.imgb && ( 
-                                    <label className="q">
+																)}  
+																{!!question.answer.answer_b.imgb && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}} />
 										<img src={question.answer.answer_b.imgb} alt=""/>   
 										<audio src={!!question.answer.answer_b.soundb ? question.answer.answer_b.soundb : null}></audio>
 									</label>
-                                )}  
-                                {!!question.answer.answer_c.imgc && ( 
+																)}  
+																{!!question.answer.answer_c.imgc && ( 
 									<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}} />
 										<img src={question.answer.answer_c.imgc} alt=""/>   
 										<audio src={!!question.answer.answer_c.soundc ? question.answer.answer_c.soundc : null}></audio>
 									</label>
-                                )}  
-                                {!!question.answer.answer_d.imgd && ( 
-                                    <label className="q">
+																)}  
+																{!!question.answer.answer_d.imgd && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}} />
 										<img src={question.answer.answer_d.imgd} alt=""/>    
 										<audio src={!!question.answer.answer_d.soundd ? question.answer.answer_d.soundd : null}></audio>
 									</label>
-                                )}  
-                                {!!question.answer.answer_e.imge && ( 
-                                    <label className="q">
+																)}  
+																{!!question.answer.answer_e.imge && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}} />
 										<img src={question.answer.answer_e.imge} alt=""/>    
 										<audio src={!!question.answer.answer_e.sounde ? question.answer.answer_e.sounde : null}></audio>
 									</label>
-                                )} 
-                                {!!question.answer.answer_f.imgf && ( 
-                                    <label className="q">
+																)} 
+																{!!question.answer.answer_f.imgf && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}  onClick={e=> { this.handleClick("f")}} />
 										<img src={question.answer.answer_f.imgf} alt=""/>    
 										<audio src={!!question.answer.answer_f.soundf ? question.answer.answer_f.soundf : null}></audio>
 									</label>
-                                )}  
-                            </div>  
-            </div>
+																)}  
+														</div>  
+						</div>
 
-            <div className="dot-wr">
-              {this.data.length && this.data
-                ? this.data.map((item, i) => (
-                    <span key={item.id} className={classNames('dot-navigation', {'is-active': this.index === i})} onClick={e => {
-                      this.index = i
-                    }}> </span>
-                  ))
-                : null
-              }
-            </div>
+						<div className="dot-wr">
+							{this.data.length && this.data
+								? this.data.map((item, i) => (
+										<span key={item.id} className={classNames('dot-navigation', {'is-active': this.index === i})} onClick={e => {
+											this.index = i
+										}}> </span>
+									))
+								: null
+							}
+						</div>
 
-            {!this.isClickXemKetQua && (
-              <p className="questionLeft"> You have {this.numberOfQuestionLeft()} questions left! </p>
-            )}
+						{!this.isClickXemKetQua && (
+							<p className="questionLeft"> You have {this.numberOfQuestionLeft()} questions left! </p>
+						)}
 
-            {!!this.isClickXemKetQua && (
-              <div> <p> {this.ketquaCuthe()} </p> </div>  
-            )}
+						{!!this.isClickXemKetQua && (
+							<div> <p> {this.ketquaCuthe()} </p> </div>  
+						)}
 
 						{
 							this.resultsOfUser[this.index] === null ? 
@@ -272,8 +272,8 @@ const Language = observer(
 							)}
 						</div>
 						</div>
-                    <img className="f6" src="./images/SVG/f6.svg" alt=""/>
-                    <img className="f7" src="./images/SVG/f7.svg" alt=""/>
+										<img className="f6" src="./images/SVG/f6.svg" alt=""/>
+										<img className="f7" src="./images/SVG/f7.svg" alt=""/>
 					</div>
 				</section>
 					<style> {`
@@ -389,12 +389,12 @@ const Language = observer(
 					}
 					.answer-list li img {
 						width:100px;
-                    }
-                    .dot-wr {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
+										}
+										.dot-wr {
+												display: flex;
+												justify-content: center;
+												align-items: center;
+										}
 					span.dot-navigation{
 						width: 20px;
 						height: 20px;
@@ -414,8 +414,8 @@ const Language = observer(
 					.noidungcauhoi-wr img {
 						width: 100%;
 					}.noidung-dapan-wr{
-                        display:flex;
-                        flex-wrap: wrap;
+												display:flex;
+												flex-wrap: wrap;
 						justify-content:center;
 						align-items: center;
 						padding: 15px;
@@ -423,10 +423,10 @@ const Language = observer(
 						margin-bottom: 30px;
 					}
 
-                    .noidung-dapan-wr {
-                        padding-right: 35px;
-                        justify-content: space-around;
-                    }
+										.noidung-dapan-wr {
+												padding-right: 35px;
+												justify-content: space-around;
+										}
 					input[type=radio] {
 						position: absolute;
 						opacity:0;
@@ -441,70 +441,70 @@ const Language = observer(
 						font-size: 30px;
 					}
 
-          button.time-left{
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-          }
+					button.time-left{
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						z-index: 10;
+					}
 
-          .TestTriNho-wrapper{
-            position: relative;
-          }
+					.TestTriNho-wrapper{
+						position: relative;
+					}
 
-          .noidung-dapan-wr img{
-            width: 130px;
-            border: 1px solid #efefef;
-            border-radius: 4px;
-            cursor: pointer;
-          }
+					.noidung-dapan-wr img{
+						width: 130px;
+						border: 1px solid #efefef;
+						border-radius: 4px;
+						cursor: pointer;
+					}
 
-          .noidung-dapan-wr img.active{
-            border: 3px solid green;
-          }
-          .xemkq{
-            position: absolute;
-            bottom: 10px;
-            right: 0;
-            width: 150px;
-            height: 40px;
-            border: 2px solid green;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 16px;
-            color: green;
-            font-weight: bold;
-            text-transform: uppercase;
-          }
+					.noidung-dapan-wr img.active{
+						border: 3px solid green;
+					}
+					.xemkq{
+						position: absolute;
+						bottom: 10px;
+						right: 0;
+						width: 150px;
+						height: 40px;
+						border: 2px solid green;
+						border-radius: 5px;
+						cursor: pointer;
+						transition: all 0.2s ease;
+						font-size: 16px;
+						color: green;
+						font-weight: bold;
+						text-transform: uppercase;
+					}
 
-          .xemkq:hover{
-            background: green;
-            color: white;
-          }
-                    .questionNo {
-                        padding-left: 100px;
-                    }
-                    .questionLeft, .result{
-                        text-align: center;
-                        margin-top: 20px;
-                    }
-          `}
-          </style>
-        </div>  
-      ) 
-    } 
-  } 
+					.xemkq:hover{
+						background: green;
+						color: white;
+					}
+										.questionNo {
+												padding-left: 100px;
+										}
+										.questionLeft, .result{
+												text-align: center;
+												margin-top: 20px;
+										}
+					`}
+					</style>
+				</div>  
+			) 
+		} 
+	} 
 )
 
 
 decorate(Language, {
-  data: observable,
-  index: observable,
-  resultsOfUser: observable,
-  resultsOfUserRaw: observable,
-  showKetQua: observable,
-  isClickXemKetQua: observable
+	data: observable,
+	index: observable,
+	resultsOfUser: observable,
+	resultsOfUserRaw: observable,
+	showKetQua: observable,
+	isClickXemKetQua: observable
 })
 
 export default Language

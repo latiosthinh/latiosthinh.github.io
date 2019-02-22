@@ -5,7 +5,6 @@ import ReactSVG from 'react-svg'
 import { decorate, observable } from 'mobx'
 import { observer } from 'mobx-react'
 import classNames from 'classnames'
-import './memory.css'
 import FadeIn from 'react-lazyload-fadein'
 import { CauhoiWrapper } from '../../stylesComponent/CauhoiWrapper'
 
@@ -98,8 +97,8 @@ const TestTriNho = observer(
 
 			// console.log('result', result)
 			// console.log(
-			// 	'this.resultRaw[this.index] ',
-			// 	this.resultRaw[this.index]
+			//  'this.resultRaw[this.index] ',
+			//  this.resultRaw[this.index]
 			// )
 		}
 
@@ -264,7 +263,7 @@ const TestTriNho = observer(
 											>
 												{' '}
 											</span>
-									  ))
+										))
 									: null}
 							</div>
 

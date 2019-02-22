@@ -50,19 +50,19 @@ const Music = observer(
 			}
 			localStorage.setItem('Music', socaudung)
 			return (
-                <p className="result">You've got {socaudung} / {this.data.length}</p>
-            )
+								<p className="result">You've got {socaudung} / {this.data.length}</p>
+						)
 		}
 
 		componentDidMount(){ 
 			for(let i = 0; i < this.data.length; i++){
 				this.resultsOfUser.push(null)
 				this.resultOfUserRaw.push(null)
-            }
-            $('body').on('mouseenter', '.q', function(){
+						}
+						$('body').on('mouseenter', '.q', function(){
 				console.log('123')
-                $(this).children('audio')[0].play();
-            });
+								$(this).children('audio')[0].play();
+						});
 		} 
 
 		componentDidUpdate(prevProps, prevState) {
@@ -107,8 +107,8 @@ const Music = observer(
 								<div className="bigwhale">
 									<h1>TEST MUSIC</h1>
 									<a className="test-item ghitar" href="/music">
-                                        <ReactSVG src="./images/SVG/music.svg" />
-                                    </a>
+																				<ReactSVG src="./images/SVG/music.svg" />
+																		</a>
 								</div>
 							</div>
 							<div className="col-lg-6 offset-lg-3">
@@ -130,66 +130,66 @@ const Music = observer(
 						</div>  
 					)}
 						<div>
-                            <div className="noidungcauhoi-wr q">
+														<div className="noidungcauhoi-wr q">
 								<FontAwesomeIcon icon="volume-down" />
-                                <img src={question.question.img} alt=""/> 
-                                <audio src={!!question.question.sound ? question.question.sound : null}></audio>
-                            </div>  
-                            <div className="noidung-dapan-wr">  
-                                {!!this.isClickXemKetQua && (
-                                    <div className="showimage">
-                                        <img className="question-image-in-show-result" src={question.question} alt=""/>
-                                    </div>
-                                )}
-                                {!!question.answer.answer_a.imga && (
-                                    <label className="q">
+																<img src={question.question.img} alt=""/> 
+																<audio src={!!question.question.sound ? question.question.sound : null}></audio>
+														</div>  
+														<div className="noidung-dapan-wr">  
+																{!!this.isClickXemKetQua && (
+																		<div className="showimage">
+																				<img className="question-image-in-show-result" src={question.question} alt=""/>
+																		</div>
+																)}
+																{!!question.answer.answer_a.imga && (
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}} />
-                                        <img onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
-                                        <audio src={!!question.answer.answer_a.sounda ? question.answer.answer_a.sounda : null}></audio>
-                                    </label>
-                                )}  
-                                {!!question.answer.answer_b.imgb && ( 
-                                    <label className="q">
+																				<img onClick={e=> { this.handleClick("a")}}   src={question.answer.answer_a.imga} alt=""/>   
+																				<audio src={!!question.answer.answer_a.sounda ? question.answer.answer_a.sounda : null}></audio>
+																		</label>
+																)}  
+																{!!question.answer.answer_b.imgb && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})}  onClick={e=> { this.handleClick("b")}} />
 										<img src={question.answer.answer_b.imgb} alt=""/>   
 										<audio src={!!question.answer.answer_b.soundb ? question.answer.answer_b.soundb : null}></audio>
-                                    </label>
-                                )}  
-                                {!!question.answer.answer_c.imgc && ( 
-                                    <label className="q">
+																		</label>
+																)}  
+																{!!question.answer.answer_c.imgc && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})}  onClick={e=> { this.handleClick("c")}} />
 										<img src={question.answer.answer_c.imgc} alt=""/>   
 										<audio src={!!question.answer.answer_c.soundc ? question.answer.answer_c.soundc : null}></audio>
-                                    </label>
-                                )}  
-                                {!!question.answer.answer_d.imgd && ( 
-                                    <label className="q">
+																		</label>
+																)}  
+																{!!question.answer.answer_d.imgd && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})}  onClick={e=> { this.handleClick("d")}} />
 										<img src={question.answer.answer_d.imgd} alt=""/>    
 										<audio src={!!question.answer.answer_d.soundd ? question.answer.answer_d.soundd : null}></audio>
-                                    </label>
-                                )}  
-                                {!!question.answer.answer_e.imge && ( 
-                                    <label className="q">
+																		</label>
+																)}  
+																{!!question.answer.answer_e.imge && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "e"})}  onClick={e=> { this.handleClick("e")}} />
 										<img src={question.answer.answer_e.imge} alt=""/>    
 										<audio src={!!question.answer.answer_e.sounde ? question.answer.answer_e.sounde : null}></audio>
-                                    </label>
-                                )} 
-                                {!!question.answer.answer_f.imgf && ( 
-                                    <label className="q">
+																		</label>
+																)} 
+																{!!question.answer.answer_f.imgf && ( 
+																		<label className="q">
 										<FontAwesomeIcon icon="volume-down" />
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "f"})}  onClick={e=> { this.handleClick("f")}} />
 										<img src={question.answer.answer_f.imgf} alt=""/>    
 										<audio src={!!question.answer.answer_f.soundf ? question.answer.answer_f.soundf : null}></audio>
-                                    </label>
-                                )}  
-                            </div>  
+																		</label>
+																)}  
+														</div>  
 						</div>
 
 						<div className="dot-wr">
@@ -284,8 +284,8 @@ const Music = observer(
 								)}
 							</div>
 						</div>
-                    <img className="f6" src="./images/SVG/f6.svg" alt=""/>
-                    <img className="f7" src="./images/SVG/f7.svg" alt=""/>
+										<img className="f6" src="./images/SVG/f6.svg" alt=""/>
+										<img className="f7" src="./images/SVG/f7.svg" alt=""/>
 					</div>
 				</section>
 					<style> {`
@@ -403,12 +403,12 @@ const Music = observer(
 					}
 					.answer-list li img {
 						width:100px;
-                    }
-                    .dot-wr {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
+										}
+										.dot-wr {
+												display: flex;
+												justify-content: center;
+												align-items: center;
+										}
 					span.dot-navigation{
 						width: 20px;
 						height: 20px;
@@ -429,8 +429,8 @@ const Music = observer(
 						width: 300px;
 					}
 					.noidung-dapan-wr{
-                        display:flex;
-                        flex-wrap: wrap;
+												display:flex;
+												flex-wrap: wrap;
 						justify-content:center;
 						align-items: center;
 						padding: 15px;
@@ -441,10 +441,10 @@ const Music = observer(
 						position: absolute;
 						opacity:0;
 					}
-                    .noidung-dapan-wr {
-                        padding-right: 35px;
-                        justify-content: space-around;
-                    }
+										.noidung-dapan-wr {
+												padding-right: 35px;
+												justify-content: space-around;
+										}
 
 					button.time-left{
 						border-radius: 50%;
@@ -497,13 +497,13 @@ const Music = observer(
 						background: green;
 						color: white;
 					}
-                    .questionNo {
-                        padding-left: 100px;
-                    }
-                    .questionLeft, .result{
-                        text-align: center;
-                        margin-top: 20px;
-                    }
+										.questionNo {
+												padding-left: 100px;
+										}
+										.questionLeft, .result{
+												text-align: center;
+												margin-top: 20px;
+										}
 					`}
 					</style>
 				</div>  

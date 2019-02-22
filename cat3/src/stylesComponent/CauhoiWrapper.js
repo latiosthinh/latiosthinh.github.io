@@ -21,5 +21,22 @@ export const CauhoiWrapper = styled.div`
 	.questionLeft {
 		font-family: 'Hobo Std Medium';
 	}
-	
+
+	.noidung-dapan-wr {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		/*   grid-auto-rows: 300px!important; */
+		align-items: center;
+		grid-gap: 2rem;
+	}
+
+	.noidung-dapan-wr img {
+		width: 100% !important;
+		height: auto !important;
+	}
+
+	.noidung-dapan-wr > div {
+		border: 1px solid #ddd;
+		text-align: center;
+	}
 `
