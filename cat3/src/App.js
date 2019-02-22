@@ -16,28 +16,28 @@ import './App.css'
 import { withCookies } from 'react-cookie'
 
 class App extends Component {
-	render() {
-		return (
-			<Router>
-				<div className="wrap">
-					<img src="./images/bg-02.png" alt="" />
-					<Header />
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/iq" component={Iq} />
-						<Route path="/music" component={Music} />
-						<Route path="/language" component={Language} />
-						<Route path="/position" component={Testposition} />
-						<Route path="/memory" component={TestTriNho} />
-						<Route path="/creative" component={Creative} />
-						<Route path="/difference" component={Diff} />
-						<Route path="/common" component={Commont} />
-					</Switch>
-					<Footer />
-				</div>
-			</Router>
-		)
-	}
+  render() {
+    return (
+      <Router>
+        <div className="wrap">
+          <img src="./images/bg-02.png" alt="" />
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/iq" component={Iq} />
+            <Route path="/music" component={Music} />
+            <Route path="/language" component={Language} />
+            <Route path="/position" component={Testposition} />
+            <Route path="/memory" component={TestTriNho} />
+            <Route path="/creative" component={Creative} />
+            <Route path="/difference" component={Diff} />
+            <Route path="/common" component={Commont} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    )
+  }
 }
 
 export default withCookies(App)

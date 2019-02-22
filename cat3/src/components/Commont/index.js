@@ -7,7 +7,7 @@ import axios from 'axios'
 import classNames from 'classnames'
 import matchingData from './../../data/matching.json'
 import { remove_character } from './../../helpers/index.js'
-import './Commont.css'
+
 var audioUrl =
 	'https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-18146/zapsplat_multimedia_click_003_19369.mp3?_=1'
 var audio = new Audio(audioUrl)

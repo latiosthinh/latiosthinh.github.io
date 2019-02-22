@@ -307,11 +307,7 @@ class Home extends Component {
 			</section>
 
 			
-			<style>
-			{`
-		
-			`}
-			</style>
+
 						</div>
 				);
 		}
