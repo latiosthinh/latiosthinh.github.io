@@ -488,7 +488,9 @@ const Commont = observer(
 							<img className="whale" src="./images/wavems.png" alt="" />
 						</div>
 
-						<div className="cauhoi-wr">{this.renderContent()}</div>
+						<div className="cauhoi-wr cauhoi-common">
+							{this.renderContent()}
+						</div>
 
 						<div className="container list-test">
 							<div className="row">

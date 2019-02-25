@@ -15,9 +15,7 @@
 				"answer_b": {
 					"imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/3b-1.jpg",
 					"soundb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/B-2.mp3",
-					"tb": [
-						"t"
-					]
+					"tb": ["t"]
 				},
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/3c-1.jpg",
@@ -63,9 +61,7 @@
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/4c-1.jpg",
 					"soundc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/Câu-mẫu-1-1.mp3",
-					"tc": [
-						"t"
-					]
+					"tc": ["t"]
 				},
 				"answer_d": {
 					"imgd": false,
@@ -101,9 +97,7 @@
 				"answer_b": {
 					"imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/5b-1.jpg",
 					"soundb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/Câu-mẫu-2.mp3",
-					"tb": [
-						"t"
-					]
+					"tb": ["t"]
 				},
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/5c-1.jpg",
@@ -149,9 +143,7 @@
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/6c-1.jpg",
 					"soundc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/câu-mẫu-1.mp3",
-					"tc": [
-						"t"
-					]
+					"tc": ["t"]
 				},
 				"answer_d": {
 					"imgd": false,
@@ -187,9 +179,7 @@
 				"answer_b": {
 					"imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/7b-2.jpg",
 					"soundb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/B-5.mp3",
-					"tb": [
-						"t"
-					]
+					"tb": ["t"]
 				},
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/7c-2.jpg",
@@ -225,9 +215,7 @@
 				"answer_a": {
 					"imga": "http://khoi.catopiana.com/wp-content/uploads/2019/02/8a-2.jpg",
 					"sounda": "http://khoi.catopiana.com/wp-content/uploads/2019/02/A-7.mp3",
-					"ta": [
-						"t"
-					]
+					"ta": ["t"]
 				},
 				"answer_b": {
 					"imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/8b-2.jpg",
@@ -278,9 +266,7 @@
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/9c-2.jpg",
 					"soundc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/C-6.mp3",
-					"tc": [
-						"t"
-					]
+					"tc": ["t"]
 				},
 				"answer_d": {
 					"imgd": false,
@@ -321,9 +307,7 @@
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/10c-2.jpg",
 					"soundc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/C-7.mp3",
-					"tc": [
-						"t"
-					]
+					"tc": ["t"]
 				},
 				"answer_d": {
 					"imgd": false,
@@ -359,9 +343,7 @@
 				"answer_b": {
 					"imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/11b-2.jpg",
 					"soundb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/B-10.mp3",
-					"tb": [
-						"t"
-					]
+					"tb": ["t"]
 				},
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/11c-2.jpg",
@@ -402,9 +384,7 @@
 				"answer_b": {
 					"imgb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/12b-2.jpg",
 					"soundb": "http://khoi.catopiana.com/wp-content/uploads/2019/02/B-11.mp3",
-					"tb": [
-						"t"
-					]
+					"tb": ["t"]
 				},
 				"answer_c": {
 					"imgc": "http://khoi.catopiana.com/wp-content/uploads/2019/02/12c-2.jpg",
