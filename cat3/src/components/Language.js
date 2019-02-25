@@ -54,7 +54,7 @@ const Language = observer(
 				this.resultsOfUser.push(null)
 				this.resultOfUserRaw.push(null)
 			}
-			$('body').on('hover', '.q', function() {
+			$('body').on('mouseenter', '.q', function() {
 				$(this)
 					.children('audio')[0]
 					.play()
@@ -84,7 +84,9 @@ const Language = observer(
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
 			if (this.index < this.data.length - 1) {
-				this.index += 1
+				setTimeout(() => {
+					this.index += 1
+				}, 400)
 			}
 		}
 
@@ -117,232 +119,264 @@ const Language = observer(
 							<img className="girl" src="./images/girl.png" alt="" />
 							<img className="whale" src="./images/wavems.png" alt="" />
 						</div>
-						<div className="container test-content">
-							<p className="questionNo"> Question number: {this.index + 1} </p>
-							{!!this.showKetQua() && (
-								<div className="show-kg-button-wr">
-									<button
+						<div className="cauhoi-wr cauhoi-language">
+							<div className="container test-content">
+								{!!this.showKetQua() && (
+									<div className="show-kg-button-wr">
+										<button
+											onClick={e => {
+												this.isClickXemKetQua = true
+												this.counter = 0
+												this.index = 0
+											}}
+											className="xemkq"
+										>
+											{' '}
+											Check Results{' '}
+										</button>
+									</div>
+								)}
+								<div>
+									<div className="noidungcauhoi-wr q">
+										<FontAwesomeIcon icon="volume-down" />
+										<img src={question.question.img} alt="" />
+										<audio
+											src={
+												!!question.question.sound
+													? question.question.sound
+													: null
+											}
+										/>
+									</div>
+									<div className="noidung-dapan-wr">
+										{!!question.answer.answer_a.imga && (
+											<label className="q">
+												<FontAwesomeIcon icon="volume-down" />
+												<input
+													type="radio"
+													name={qname.id}
+													className={classNames({
+														active: this.resultOfUserRaw[this.index] === 'a',
+													})}
+													onClick={e => {
+														this.handleClick('a')
+													}}
+												/>
+												<img
+													onClick={e => {
+														this.handleClick('a')
+													}}
+													src={question.answer.answer_a.imga}
+													alt=""
+												/>
+												<audio
+													src={
+														!!question.answer.answer_a.sounda
+															? question.answer.answer_a.sounda
+															: null
+													}
+												/>
+											</label>
+										)}
+										{!!question.answer.answer_b.imgb && (
+											<label className="q">
+												<FontAwesomeIcon icon="volume-down" />
+												<input
+													type="radio"
+													name={qname.id}
+													className={classNames({
+														active: this.resultOfUserRaw[this.index] === 'b',
+													})}
+													onClick={e => {
+														this.handleClick('b')
+													}}
+												/>
+												<img src={question.answer.answer_b.imgb} alt="" />
+												<audio
+													src={
+														!!question.answer.answer_b.soundb
+															? question.answer.answer_b.soundb
+															: null
+													}
+												/>
+											</label>
+										)}
+										{!!question.answer.answer_c.imgc && (
+											<label className="q">
+												<FontAwesomeIcon icon="volume-down" />
+												<input
+													type="radio"
+													name={qname.id}
+													className={classNames({
+														active: this.resultOfUserRaw[this.index] === 'c',
+													})}
+													onClick={e => {
+														this.handleClick('c')
+													}}
+												/>
+												<img src={question.answer.answer_c.imgc} alt="" />
+												<audio
+													src={
+														!!question.answer.answer_c.soundc
+															? question.answer.answer_c.soundc
+															: null
+													}
+												/>
+											</label>
+										)}
+										{!!question.answer.answer_d.imgd && (
+											<label className="q">
+												<FontAwesomeIcon icon="volume-down" />
+												<input
+													type="radio"
+													name={qname.id}
+													className={classNames({
+														active: this.resultOfUserRaw[this.index] === 'd',
+													})}
+													onClick={e => {
+														this.handleClick('d')
+													}}
+												/>
+												<img src={question.answer.answer_d.imgd} alt="" />
+												<audio
+													src={
+														!!question.answer.answer_d.soundd
+															? question.answer.answer_d.soundd
+															: null
+													}
+												/>
+											</label>
+										)}
+										{!!question.answer.answer_e.imge && (
+											<label className="q">
+												<FontAwesomeIcon icon="volume-down" />
+												<input
+													type="radio"
+													name={qname.id}
+													className={classNames({
+														active: this.resultOfUserRaw[this.index] === 'e',
+													})}
+													onClick={e => {
+														this.handleClick('e')
+													}}
+												/>
+												<img src={question.answer.answer_e.imge} alt="" />
+												<audio
+													src={
+														!!question.answer.answer_e.sounde
+															? question.answer.answer_e.sounde
+															: null
+													}
+												/>
+											</label>
+										)}
+										{!!question.answer.answer_f.imgf && (
+											<label className="q">
+												<FontAwesomeIcon icon="volume-down" />
+												<input
+													type="radio"
+													name={qname.id}
+													className={classNames({
+														active: this.resultOfUserRaw[this.index] === 'f',
+													})}
+													onClick={e => {
+														this.handleClick('f')
+													}}
+												/>
+												<img src={question.answer.answer_f.imgf} alt="" />
+												<audio
+													src={
+														!!question.answer.answer_f.soundf
+															? question.answer.answer_f.soundf
+															: null
+													}
+												/>
+											</label>
+										)}
+									</div>
+								</div>
+								<div className="currentQuestion"> {this.index + 1} </div>
+								<div className="dot-wr">
+									<div
 										onClick={e => {
-											this.isClickXemKetQua = true
-											this.counter = 0
-											this.index = 0
+											if (this.index === 0) return
+											this.index--
 										}}
-										className="xemkq"
+										className={classNames('prev-btn', {
+											disabled: this.index === 0,
+										})}
 									>
 										{' '}
-										Check Results{' '}
-									</button>
+										Previous
+									</div>
+									<div className="dots">
+										{this.data.length && this.data
+											? this.data.map((item, i) => (
+													<span
+														key={item.id}
+														className={classNames('dot-navigation', {
+															'is-active': this.index === i,
+														})}
+														onClick={e => {
+															this.index = i
+														}}
+													>
+														{' '}
+													</span>
+											  ))
+											: null}
+									</div>
+
+									<div
+										onClick={e => {
+											if (this.index === this.data.length - 1) {
+												return
+											}
+											this.index++
+										}}
+										className={classNames('next-btn', {
+											disabled: this.index === this.data.length - 1,
+										})}
+									>
+										{' '}
+										Next{' '}
+									</div>
 								</div>
-							)}
-							<div>
-								<div className="noidungcauhoi-wr q">
-									<FontAwesomeIcon icon="volume-down" />
-									<img src={question.question.img} alt="" />
-									<audio
-										src={
-											!!question.question.sound ? question.question.sound : null
-										}
-									/>
-								</div>
-								<div className="noidung-dapan-wr">
-									{!!question.answer.answer_a.imga && (
-										<label className="q">
-											<FontAwesomeIcon icon="volume-down" />
-											<input
-												type="radio"
-												name={qname.id}
-												className={classNames({
-													active: this.resultOfUserRaw[this.index] === 'a',
-												})}
-												onClick={e => {
-													this.handleClick('a')
-												}}
-											/>
-											<img
-												onClick={e => {
-													this.handleClick('a')
-												}}
-												src={question.answer.answer_a.imga}
-												alt=""
-											/>
-											<audio
-												src={
-													!!question.answer.answer_a.sounda
-														? question.answer.answer_a.sounda
-														: null
-												}
-											/>
-										</label>
-									)}
-									{!!question.answer.answer_b.imgb && (
-										<label className="q">
-											<FontAwesomeIcon icon="volume-down" />
-											<input
-												type="radio"
-												name={qname.id}
-												className={classNames({
-													active: this.resultOfUserRaw[this.index] === 'b',
-												})}
-												onClick={e => {
-													this.handleClick('b')
-												}}
-											/>
-											<img src={question.answer.answer_b.imgb} alt="" />
-											<audio
-												src={
-													!!question.answer.answer_b.soundb
-														? question.answer.answer_b.soundb
-														: null
-												}
-											/>
-										</label>
-									)}
-									{!!question.answer.answer_c.imgc && (
-										<label className="q">
-											<FontAwesomeIcon icon="volume-down" />
-											<input
-												type="radio"
-												name={qname.id}
-												className={classNames({
-													active: this.resultOfUserRaw[this.index] === 'c',
-												})}
-												onClick={e => {
-													this.handleClick('c')
-												}}
-											/>
-											<img src={question.answer.answer_c.imgc} alt="" />
-											<audio
-												src={
-													!!question.answer.answer_c.soundc
-														? question.answer.answer_c.soundc
-														: null
-												}
-											/>
-										</label>
-									)}
-									{!!question.answer.answer_d.imgd && (
-										<label className="q">
-											<FontAwesomeIcon icon="volume-down" />
-											<input
-												type="radio"
-												name={qname.id}
-												className={classNames({
-													active: this.resultOfUserRaw[this.index] === 'd',
-												})}
-												onClick={e => {
-													this.handleClick('d')
-												}}
-											/>
-											<img src={question.answer.answer_d.imgd} alt="" />
-											<audio
-												src={
-													!!question.answer.answer_d.soundd
-														? question.answer.answer_d.soundd
-														: null
-												}
-											/>
-										</label>
-									)}
-									{!!question.answer.answer_e.imge && (
-										<label className="q">
-											<FontAwesomeIcon icon="volume-down" />
-											<input
-												type="radio"
-												name={qname.id}
-												className={classNames({
-													active: this.resultOfUserRaw[this.index] === 'e',
-												})}
-												onClick={e => {
-													this.handleClick('e')
-												}}
-											/>
-											<img src={question.answer.answer_e.imge} alt="" />
-											<audio
-												src={
-													!!question.answer.answer_e.sounde
-														? question.answer.answer_e.sounde
-														: null
-												}
-											/>
-										</label>
-									)}
-									{!!question.answer.answer_f.imgf && (
-										<label className="q">
-											<FontAwesomeIcon icon="volume-down" />
-											<input
-												type="radio"
-												name={qname.id}
-												className={classNames({
-													active: this.resultOfUserRaw[this.index] === 'f',
-												})}
-												onClick={e => {
-													this.handleClick('f')
-												}}
-											/>
-											<img src={question.answer.answer_f.imgf} alt="" />
-											<audio
-												src={
-													!!question.answer.answer_f.soundf
-														? question.answer.answer_f.soundf
-														: null
-												}
-											/>
-										</label>
-									)}
-								</div>
+
+								{!this.isClickXemKetQua && (
+									<p className="questionLeft">
+										{' '}
+										You have {this.numberOfQuestionLeft()} questions left!{' '}
+									</p>
+								)}
+
+								{!!this.isClickXemKetQua && (
+									<div>
+										{' '}
+										<p> {this.ketquaCuthe()} </p>{' '}
+									</div>
+								)}
+
+								{this.resultsOfUser[this.index] === null ? null : (
+									<React.Fragment>
+										{!!this.isClickXemKetQua && (
+											<div>
+												{this.resultsOfUser[this.index] ? (
+													<div className="text-success">
+														{' '}
+														<i className="fa fa-check" /> Đúng{' '}
+													</div>
+												) : (
+													<div className="text-danger">
+														{' '}
+														<i className="fa fa-times" /> Sai{' '}
+													</div>
+												)}
+											</div>
+										)}
+									</React.Fragment>
+								)}
 							</div>
-
-							<div className="dot-wr">
-								{this.data.length && this.data
-									? this.data.map((item, i) => (
-											<span
-												key={item.id}
-												className={classNames('dot-navigation', {
-													'is-active': this.index === i,
-												})}
-												onClick={e => {
-													this.index = i
-												}}
-											>
-												{' '}
-											</span>
-									  ))
-									: null}
-							</div>
-
-							{!this.isClickXemKetQua && (
-								<p className="questionLeft">
-									{' '}
-									You have {this.numberOfQuestionLeft()} questions left!{' '}
-								</p>
-							)}
-
-							{!!this.isClickXemKetQua && (
-								<div>
-									{' '}
-									<p> {this.ketquaCuthe()} </p>{' '}
-								</div>
-							)}
-
-							{this.resultsOfUser[this.index] === null ? null : (
-								<React.Fragment>
-									{!!this.isClickXemKetQua && (
-										<div>
-											{this.resultsOfUser[this.index] ? (
-												<div className="text-success">
-													{' '}
-													<i className="fa fa-check" /> Đúng{' '}
-												</div>
-											) : (
-												<div className="text-danger">
-													{' '}
-													<i className="fa fa-times" /> Sai{' '}
-												</div>
-											)}
-										</div>
-									)}
-								</React.Fragment>
-							)}
 						</div>
 						<div className="container list-test">
 							<div className="row">
