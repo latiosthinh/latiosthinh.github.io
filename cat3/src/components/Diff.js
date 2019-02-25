@@ -13,9 +13,19 @@ const Diff = observer(
 		resultsOfUser = []
 		resultOfUserRaw = []
 		isClickXemKetQua = false
-		lengthh = () => this.data.length  
+		lengthh = () => this.data.length
 		currentItem = () => this.data[this.index]
-		
+		nextItem = () => this.data[this.index + 1]
+
+		constructor(){
+			super();
+	
+			this.state = {
+				isHidden: false
+			}
+		}
+	
+
 		numberOfQuestionLeft = () => {
 			let number = 0
 			for(let i = 0; i < this.resultsOfUser.length; i++){
@@ -37,10 +47,7 @@ const Diff = observer(
 					socaudung ++
 				}
 			}
-			localStorage.setItem('IQ', socaudung)
-			return (
-                <p className="result">You've got {socaudung} / {this.data.length}</p>
-            )
+			localStorage.setItem('Differ', socaudung)
 		}
 
 		componentDidMount(){ 
@@ -52,7 +59,7 @@ const Diff = observer(
 				$(this).css('opacity', '1');
 				$(this).siblings('label').css('opacity', '0.3');
 			});
-		} 
+		}
 
 		componentDidUpdate(prevProps, prevState) {
 				// console.log('prevProps', prevProps)
@@ -82,15 +89,48 @@ const Diff = observer(
 					this.index += 1
 					$('label').css('opacity', '1');
 				}
-			}.bind(this), 2000)
+			}.bind(this), 1000)
+		}
+
+		cont = () => {
+			console.log('123')
+			this.setState({isHidden: !this.state.isHidden})
+		}
+
+		next = () => {
+			if(this.index < this.data.length - 1) {
+				this.index += 1
+			}
+		}
+		prev = () => {
+			if(this.index > 0) {
+				this.index -= 1
+			}
 		}
 
 		render(){
 			const qname = this.currentItem()
 			const question = this.currentItem().acf
-			
+			// const preload = this.nextItem().acf
+			let divHidden = this.state.isHidden ? "hiddenDiv" : "visiDiv";
 			return (
 				<div>
+				{/* {!!(typeof preload !== 'undefined') && (
+				<div className="preload">	
+					{!!question.answer.answer_a.imga && (
+						<img src={preload.answer.answer_a.imga} alt=""/>
+					)}
+					{!!question.answer.answer_a.imga && (
+						<img src={preload.answer.answer_b.imgb} alt=""/>
+					)}
+					{!!question.answer.answer_a.imga && (
+						<img src={preload.answer.answer_c.imgc} alt=""/>
+					)}
+					{!!question.answer.answer_a.imga && (
+						<img src={preload.answer.answer_d.imgd} alt=""/>
+					)}
+				</div>
+				)} */}
 				<section className="psy-section" id="id2">
 					<div className="container">
 						<div className="row tn">
@@ -110,23 +150,24 @@ const Diff = observer(
 						<img className="whale" src="./images/wavems.png" alt=""/>
 					</div> 
 					<div className="container test-content">  
-					<p className="questionNo"> Question number: {this.index + 1} </p>
+					<p className="questionNo"> {this.index + 1} </p>
 					{!!this.showKetQua() && (
-						<div className="show-kg-button-wr"> 
+						<div className={`show-kg-button-wr ${divHidden}`}> 
 							<button onClick={e=> {
 								this.isClickXemKetQua = true
 								this.counter = 0
 								this.index = 0
-							}} className="xemkq"> Check Results </button> 
-						</div>  
+							}} className="xemkq"> Submit Results </button> 
+						</div>
+					)}
+					{!!this.isClickXemKetQua && (
+						<div id="thanks" className={divHidden}>
+							<h3>THANSK FOR SUBMITTING</h3>
+							<a href="#lt" onClick={e => {this.cont()}} className="psy-btn">Continue...</a>
+						</div>
 					)}
 						<div className="test-detail">
                             <div className="noidung-dapan-wr">  
-                                {!!this.isClickXemKetQua && (
-                                    <div className="showimage">
-                                        <img className="question-image-in-show-result" src={question.question} alt=""/>
-                                    </div>
-                                )}
                                 {!!question.answer.answer_a.imga && (
 									<label className="col-lg-6">
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}} />
@@ -151,7 +192,9 @@ const Diff = observer(
 										<img src={question.answer.answer_d.imgd} alt=""/>
 									</label>
                                 )} 
-                            </div>  
+                            </div>
+							<button className="prev" onClick={e=> { this.prev()}}>PREV</button>
+							<button className="next" onClick={e=> { this.next()}}>NEXT</button>
 						</div>
 
 						<div className="dot-wr">
@@ -172,27 +215,8 @@ const Diff = observer(
 						{!!this.isClickXemKetQua && (
 							<div> <p> {this.ketquaCuthe()} </p> </div>  
 						)}
-
-						{
-							this.resultsOfUser[this.index] === null ? 
-							( null ):
-							( 
-								<React.Fragment>
-									{!!this.isClickXemKetQua && (
-										<div> 
-										{ 
-											this.resultsOfUser[this.index] ?  
-											( <div className="text-success"> <i className="fa fa-check"></i> Đúng </div> ): 
-											( <div className="text-danger"> <i className="fa fa-times"></i> Sai </div> )  
-										}   
-										</div>    
-									
-									)}        
-								</React.Fragment>
-							)
-					}
 					</div>
-					<div className="container list-test">
+					<div id="lt" className="container list-test">
 						<div className="row">
 							<div className="top">
 								{/* <a className={`test-item ghitar 
@@ -251,6 +275,9 @@ const Diff = observer(
 					</div>
 				</section>
 					<style> {`
+					.preload {
+						display: none;
+					}
 					#id2 {
 						margin-top: 150px;
 					}
@@ -289,14 +316,15 @@ const Diff = observer(
 						display: none;
 					}
 					.bigwhale {
-						margin:300px 0 150px;
+						margin:170px 0 0;
 						text-align: center;
 					}
 					#id2 .container .row.tn h3 {
-						margin-top: 120px;
+						margin-top: 40px;
 						margin-bottom: 200px;
 						font-size: 16px;
 						font-weight: lighter;
+						text-align: center;
 					}
 					.tn {
 						position: relative;
@@ -370,8 +398,8 @@ const Diff = observer(
 						cursor: pointer;
 						background-color: white;
 					}
-					.is-active{
-						background-color: green!important;
+					.is-active {
+						background: linear-gradient(to right, rgba(229,113,47,1) 0%,rgba(255,210,106,1) 36%,rgba(255,210,106,1) 67%,rgba(229,113,47,1) 100%);
 					}
 					.test-detail {
 						align-items: center;
@@ -409,10 +437,12 @@ const Diff = observer(
 						width: 400px;
 					}
                     .noidung-dapan-wr {
+						width: 65%;
+						margin: 0 auto;
 						flex-wrap: wrap;
 						display: flex;
-                        padding-right: 35px;
-                        justify-content: space-around;
+						justify-content: space-around;
+						position: relative;
 					}
 					.noidung-dapan-wr label {
 						display: block;
@@ -426,33 +456,88 @@ const Diff = observer(
 						margin: 0 auto;
 						border: 2px solid #fff;
 					}
+					.noidung-dapan-wr img:hover {
+						box-shadow: 0 0 0 #000;
+					}
+					.next {
+						position: absolute;
+						bottom: 100px;
+						right: 100px;
+						background: linear-gradient(to right, rgba(229,113,47,1) 0%,rgba(255,210,106,1) 36%,rgba(255,210,106,1) 67%,rgba(229,113,47,1) 100%);
+						padding: 5px 20px;
+						border-radius: 8px;
+						box-shadow: 4px 4px 4px rgba(0,0,0,0.4);
+					}
+					.prev {
+						position: absolute;
+						bottom: 100px;
+						left: 100px;
+						background: linear-gradient(to right, rgba(229,113,47,1) 0%,rgba(255,210,106,1) 36%,rgba(255,210,106,1) 67%,rgba(229,113,47,1) 100%);
+						padding: 5px 20px;
+						border-radius: 8px;
+						box-shadow: 4px 4px 4px rgba(0,0,0,0.4);
+					}
+					.next:hover , .prev:hover {
+						box-shadow: 0 0 0 #000;
+					}
 					label{position:relative}
 					label input {position:absolute; opacity:0;}
 					input.active ~ img{
 						border: 3px solid green;
 					}
+					.show-kg-button-wr {
+						position: fixed;
+						top: 0;
+						left: 0;
+						background: rgba(0,0,0,.5);
+						width: 100%;
+						height: 100%;
+						z-index: 13;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
 					.xemkq{
-						position: absolute;
-						bottom: 10px;
-						right: 0;
-						width: 150px;
-						height: 40px;
-						border: 2px solid green;
+						padding: 15px 30px;
+						background: #9ADBF9;
 						border-radius: 5px;
 						cursor: pointer;
 						transition: all 0.2s ease;
 						font-size: 16px;
-						color: green;
+						color: #000;
 						font-weight: bold;
 						text-transform: uppercase;
 					}
-
 					.xemkq:hover{
-						background: green;
+						background: #9ADBF9;
 						color: white;
 					}
+					#thanks {
+						position: fixed;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						background: #9ADBF9;
+						color: #000;
+						padding: 20px 40px;
+						z-index: 14;
+						border-radius: 10px;
+					}
+					.hiddenDiv {
+						display:none;
+					}
                     .questionNo {
-                        padding-left: 100px;
+						margin: 0 auto;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font-size: 2.3em;
+						color: #fff;
+						width:70px;
+						height:70px;
+						box-shadow: 4px 4px 4px rgba(0,0,0,0.4);
+						border-radius: 50%;
+                        background: url(./../images/number.png) center center / 100% no-repeat;
                     }
                     .questionLeft, .result{
                         text-align: center;
@@ -462,10 +547,20 @@ const Diff = observer(
 						.noidungcauhoi-wr img {
 							width: 250px;
 						}
+						.noidung-dapan-wr {
+							width: 500px;
+						}
 						.noidung-dapan-wr img{
 							box-shadow: 5px 5px 5px rgb(77, 141, 173);
 							border-radius: 8px;
 							border: 2px solid #fff;
+							width: 200px;
+						}
+						.next {
+							right: 220px;
+						}
+						.prev {
+							left: 220px;
 						}
 					}
 					`}
