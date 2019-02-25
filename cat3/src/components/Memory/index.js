@@ -5,14 +5,13 @@ import ReactSVG from 'react-svg'
 import { decorate, observable } from 'mobx'
 import { observer } from 'mobx-react'
 import classNames from 'classnames'
-import './memory.css'
 import FadeIn from 'react-lazyload-fadein'
 import { CauhoiWrapper } from '../../stylesComponent/CauhoiWrapper'
 
 
 
 
-var counterTime = 1
+var counterTime = 10
 const TestTriNho = observer(
 	class TestTriNho extends Component {
 		isStart = false
@@ -98,8 +97,8 @@ const TestTriNho = observer(
 
 			// console.log('result', result)
 			// console.log(
-			// 	'this.resultRaw[this.index] ',
-			// 	this.resultRaw[this.index]
+			//  'this.resultRaw[this.index] ',
+			//  this.resultRaw[this.index]
 			// )
 		}
 
@@ -152,23 +151,7 @@ const TestTriNho = observer(
 
 							{!!this.isHetGio() && (
 								<div className="noidung-dapan-wr">
-									{!!this.isClickXemKetQua && (
-										<div className="showimage">
-											<p> Show Original Image </p>
-											<FadeIn height={300} duration={150}>
-												{onload => (
-													<img
-														className="question-image-in-show-result"
-														src={question.question}
-														alt=""
-														onLoad={onload}
-														style={{ height: 300 }}
-													/>
-												)}
-											</FadeIn>
-											/>
-										</div>
-									)}
+								
 									{!!question.answer.answer_a.imga && (
 										<FadeIn height={300} duration={150}>
 											{onload => (
@@ -182,7 +165,7 @@ const TestTriNho = observer(
 													src={question.answer.answer_a.imga}
 													alt=""
 													onLoad={onload}
-													style={{ height: 300 }}
+											
 												/>
 											)}
 										</FadeIn>
@@ -200,7 +183,7 @@ const TestTriNho = observer(
 													src={question.answer.answer_b.imgb}
 													alt=""
 													onLoad={onload}
-													style={{ height: 300 }}
+											
 												/>
 											)}
 										</FadeIn>
@@ -218,7 +201,7 @@ const TestTriNho = observer(
 													src={question.answer.answer_c.imgc}
 													alt=""
 													onLoad={onload}
-													style={{ height: 300 }}
+										
 												/>
 											)}
 										</FadeIn>
@@ -264,7 +247,7 @@ const TestTriNho = observer(
 											>
 												{' '}
 											</span>
-									  ))
+										))
 									: null}
 							</div>
 
@@ -358,7 +341,7 @@ const TestTriNho = observer(
 							<img className="whale" src="./images/wavems.png" alt="" />
 						</div>
 
-						<CauhoiWrapper>{this.renderContent()}</CauhoiWrapper>
+						<div className="cauhoi-wr">{this.renderContent()}</div>
 
 						<div className="container list-test">
 							<div className="row">
@@ -408,3 +391,6 @@ decorate(TestTriNho, {
 })
 
 export default TestTriNho
+
+
+

@@ -173,21 +173,21 @@ const Diff = observer(
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "a"})} onClick={e=> { this.handleClick("a")}} />
 										<img src={question.answer.answer_a.imga} alt=""/>
 									</label>
-                                )}  
-                                {!!question.answer.answer_b.imgb && (
-                                    <label className="col-lg-6">
+																)}  
+																{!!question.answer.answer_b.imgb && (
+																		<label className="col-lg-6">
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "b"})} onClick={e=> { this.handleClick("b")}} />
 										<img src={question.answer.answer_b.imgb} alt=""/>
 									</label>
-                                )}  
-                                {!!question.answer.answer_c.imgc && ( 
-                                    <label className="col-lg-6">
+																)}  
+																{!!question.answer.answer_c.imgc && ( 
+																		<label className="col-lg-6">
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "c"})} onClick={e=> { this.handleClick("c")}} />
 										<img src={question.answer.answer_c.imgc} alt=""/>
 									</label>
-                                )}  
-                                {!!question.answer.answer_d.imgd && (
-                                    <label className="col-lg-6">
+																)}  
+																{!!question.answer.answer_d.imgd && (
+																		<label className="col-lg-6">
 										<input type="radio" name={qname.id} className={classNames({'active': this.resultOfUserRaw[this.index] === "d"})} onClick={e=> { this.handleClick("d")}} />
 										<img src={question.answer.answer_d.imgd} alt=""/>
 									</label>
@@ -270,8 +270,8 @@ const Diff = observer(
 								)}
 							</div>
 						</div>
-                    <img className="f6" src="./images/SVG/f6.svg" alt=""/>
-                    <img className="f7" src="./images/SVG/f7.svg" alt=""/>
+										<img className="f6" src="./images/SVG/f6.svg" alt=""/>
+										<img className="f7" src="./images/SVG/f7.svg" alt=""/>
 					</div>
 				</section>
 					<style> {`

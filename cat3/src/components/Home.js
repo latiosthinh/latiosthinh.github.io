@@ -151,17 +151,17 @@ class Home extends Component {
                         <div className="col-lg-12">
                             <div className="bigwhale">
 								<a className="test-now psy-btn" href="#id4">
-                                <img src="./images/2x/whale.png" alt=""/></a>
-                                <div className="bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <img className="girl" src="./images/girl.png" alt=""/>
-                    <img className="boy" src="./images/boy.png" alt=""/>
-                    <img className="whale" src="./images/wavebg.png" alt=""/>
-                </div>
-                <div className="container list-test psy-section" id="id4">
-                    <div className="row">
+																<img src="./images/2x/whale.png" alt=""/></a>
+																<div className="bg"></div>
+														</div>
+												</div>
+										</div>
+										<img className="girl" src="./images/girl.png" alt=""/>
+										<img className="boy" src="./images/boy.png" alt=""/>
+										<img className="whale" src="./images/wavebg.png" alt=""/>
+								</div>
+								<div className="container list-test psy-section" id="id4">
+										<div className="row">
 						<div className="top">
 							{/* <a className={`test-item ghitar 
 								${!localStorage.getItem('Music') && (
@@ -1209,5 +1209,5 @@ class Home extends Component {
         );
     }
 }
-    
+		
 export default Home;
