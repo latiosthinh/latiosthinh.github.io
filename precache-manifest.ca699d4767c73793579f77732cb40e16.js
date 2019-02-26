@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/cat-test/static/media/footer-bg.79295acb.png"
   },
   {
-    "revision": "1e55721dfb826f6502b41218e979cbb2",
-    "url": "/cat-test/static/media/wave.1e55721d.png"
-  },
-  {
     "revision": "ea090dd5bb63809b52e7b06d1b20cadb",
     "url": "/cat-test/static/media/HoboStdMedium.ea090dd5.ttf"
+  },
+  {
+    "revision": "1e55721dfb826f6502b41218e979cbb2",
+    "url": "/cat-test/static/media/wave.1e55721d.png"
   },
   {
     "revision": "45d8b517871a6913c74cdd20a7c9b726",
