@@ -141,14 +141,7 @@ span.dot-navigation {
 	background-color: green !important;
 }
 
-.noidungcauhoi-wr img,
-.noidung-dapan-wr img {
-	border: 1px solid #ddd !important;
-	border-radius: 6px;
-	-webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.53);
-	-moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.53);
-	box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.53);
-}
+
 
 button.time-left {
 	border-radius: 50%;
@@ -423,6 +416,16 @@ input[type='radio'] {
 	/* rat quan trong */
 	flex-wrap: wrap;
 }
+.noidungcauhoi-wr img,
+.noidung-dapan-wr img {
+	border: 1px solid #ddd !important;
+	border-radius: 6px;
+	-webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.53);
+	-moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.53);
+	box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.53);
+}
+
+
 
 .noidungcauhoi-wr {
 	text-align: center;
@@ -431,7 +434,7 @@ input[type='radio'] {
 .noidung-dapan-wr > div {
 	text-align: center;
 	flex: 1 1 200px;
-	margin: 5px;
+	margin: 35px;
 }
 
 /* commont (matching test) */
@@ -632,4 +635,9 @@ button:focus {
 .cauhoi-wr.closed:after {
 	width: 50%;
 	transition: all 0.5s ease;
+}
+
+
+img.active {
+	border: 10px solid pink!important;
 }

@@ -7,19 +7,20 @@ import { observer } from 'mobx-react'
 import classNames from 'classnames'
 import FadeIn from 'react-lazyload-fadein'
 import { CauhoiWrapper } from '../../stylesComponent/CauhoiWrapper'
+import _ from 'lodash'
 
 var counterTime = 10
 const TestTriNho = observer(
 	class TestTriNho extends Component {
 		isStart = false
 		data = data
-		index = 0
+		currentQuestionIndex = 0
 		counter = counterTime
 		resultsOfUser = []
 		resultRaw = []
 		isClickXemKetQua = false
 		lengthh = () => this.data.length
-		currentItem = () => this.data[this.index]
+		currentItem = () => this.data[this.currentQuestionIndex]
 		isHetGio = () => this.counter <= 0
 		numberOfQuestionLeft = () => {
 			let number = 0
@@ -53,7 +54,6 @@ const TestTriNho = observer(
 				this.resultsOfUser.push(null)
 				this.resultRaw.push(null)
 			}
-			this.interval = setInterval(() => this.tick(), 1000)
 		}
 
 		componentWillUnmount() {
@@ -86,16 +86,13 @@ const TestTriNho = observer(
 				result = true
 			}
 
-			console.log(1)
-			this.resultRaw[this.index] = answer
-			console.log(2)
-			this.resultsOfUser[this.index] = result
-			console.log(3)
+			this.resultRaw[this.currentQuestionIndex] = answer
+			this.resultsOfUser[this.currentQuestionIndex] = result
 
 			// console.log('result', result)
 			// console.log(
-			//  'this.resultRaw[this.index] ',
-			//  this.resultRaw[this.index]
+			//  'this.resultRaw[this.currentQuestionIndex] ',
+			//  this.resultRaw[this.currentQuestionIndex]
 			// )
 		}
 
@@ -107,7 +104,10 @@ const TestTriNho = observer(
 						<button
 							className="start-btn"
 							onClick={e => {
-								setTimeout(() => (this.isStart = true), 300)
+								setTimeout(() => {
+									this.isStart = true
+									this.interval = setInterval(() => this.tick(), 1000)
+								}, 300)
 							}}
 						>
 							{' '}
@@ -125,7 +125,7 @@ const TestTriNho = observer(
 									onClick={e => {
 										this.isClickXemKetQua = true
 										this.counter = 0
-										this.index = 0
+										this.currentQuestionIndex = 0
 									}}
 									className="xemkq"
 								>
@@ -161,7 +161,10 @@ const TestTriNho = observer(
 											{onload => (
 												<img
 													className={classNames({
-														active: this.resultRaw[this.index] === 'a',
+														active: _.isEqual(
+															this.resultRaw[this.currentQuestionIndex],
+															'a'
+														),
 													})}
 													onClick={e => {
 														this.handleClick('a')
@@ -178,7 +181,10 @@ const TestTriNho = observer(
 											{onload => (
 												<img
 													className={classNames({
-														active: this.resultRaw[this.index] === 'b',
+														active: _.isEqual(
+															this.resultRaw[this.currentQuestionIndex],
+															'b'
+														),
 													})}
 													onClick={e => {
 														this.handleClick('b')
@@ -195,7 +201,10 @@ const TestTriNho = observer(
 											{onload => (
 												<img
 													className={classNames({
-														active: this.resultRaw[this.index] === 'c',
+														active: _.isEqual(
+															this.resultRaw[this.currentQuestionIndex],
+															'c'
+														),
 													})}
 													onClick={e => {
 														this.handleClick('c')
@@ -211,20 +220,26 @@ const TestTriNho = observer(
 							)}
 						</div>
 
-						<div className="currentQuestion"> {this.index + 1} </div>
-						<div className="hidden"> hidden {this.resultRaw[this.index]} </div>
+						<div className="currentQuestion">
+							{' '}
+							{this.currentQuestionIndex + 1}{' '}
+						</div>
+						<div className="hidden">
+							{' '}
+							hidden {this.resultRaw[this.currentQuestionIndex]}{' '}
+						</div>
 						<div className="dot-wr">
 							<div
 								onClick={e => {
-									if (this.index === 0) return
-									this.index--
+									if (this.currentQuestionIndex === 0) return
+									this.currentQuestionIndex--
 									if (this.isClickXemKetQua) {
 									} else {
 										this.counter = counterTime
 									}
 								}}
 								className={classNames('prev-btn', {
-									disabled: this.index === 0,
+									disabled: this.currentQuestionIndex === 0,
 								})}
 							>
 								{' '}
@@ -236,10 +251,10 @@ const TestTriNho = observer(
 											<span
 												key={item.id}
 												className={classNames('dot-navigation', {
-													'is-active': this.index === i,
+													'is-active': this.currentQuestionIndex === i,
 												})}
 												onClick={e => {
-													this.index = i
+													this.currentQuestionIndex = i
 													if (this.isClickXemKetQua) {
 													} else {
 														this.counter = counterTime
@@ -254,18 +269,18 @@ const TestTriNho = observer(
 
 							<div
 								onClick={e => {
-									if (this.index === this.data.length - 1) {
+									if (this.currentQuestionIndex === this.data.length - 1) {
 										return
 									}
 
-									this.index++
+									this.currentQuestionIndex++
 									if (this.isClickXemKetQua) {
 									} else {
 										this.counter = counterTime
 									}
 								}}
 								className={classNames('next-btn', {
-									disabled: this.index === this.data.length - 1,
+									disabled: this.currentQuestionIndex === this.data.length - 1,
 								})}
 							>
 								{' '}
@@ -288,11 +303,11 @@ const TestTriNho = observer(
 							</div>
 						)}
 
-						{this.resultsOfUser[this.index] === null ? null : (
+						{this.resultsOfUser[this.currentQuestionIndex] === null ? null : (
 							<React.Fragment>
 								{!!this.isClickXemKetQua && (
 									<div>
-										{this.resultsOfUser[this.index] ? (
+										{this.resultsOfUser[this.currentQuestionIndex] ? (
 											<div className="text-success">
 												{' '}
 												<i className="fa fa-check" /> Đúng{' '}
@@ -380,10 +395,9 @@ const TestTriNho = observer(
 decorate(TestTriNho, {
 	resultRaw: observable,
 	data: observable,
-	index: observable,
+	currentQuestionIndex: observable,
 	counter: observable,
 	resultsOfUser: observable,
-
 	showKetQua: observable,
 	isClickXemKetQua: observable,
 	isStart: observable,

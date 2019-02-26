@@ -59,15 +59,8 @@ const Commont = observer(
 
 		nextQuestion = () => {
 			if (this.currentQuestionIndex >= this.data.length - 1) return
-
-			// var node = ReactDOM.findDOMNode(this.refs.btn);
-			// node.classList.toggle('btn-menu-open');
-			//
-
 			setTimeout(() => this.myEl.classList.toggle('closed'), 200)
-
 			setTimeout(() => this.myEl.classList.toggle('closed'), 800)
-
 			setTimeout(() => {
 				this.currentQuestionIndex++
 			}, 500)
@@ -565,3 +558,4 @@ decorate(Commont, {
 })
 
 export default Commont
+
