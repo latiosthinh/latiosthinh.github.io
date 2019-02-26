@@ -9,7 +9,7 @@ const Position = observer(
 	class Position extends Component {
 		data = data
 		index = 0
-		resultsOfUser = []
+		resultTrueOrFalse = []
 		resultOfUserRaw = []
 		isClickXemKetQua = false
 		lengthh = () => this.data.length
@@ -17,8 +17,8 @@ const Position = observer(
 
 		numberOfQuestionLeft = () => {
 			let number = 0
-			for (let i = 0; i < this.resultsOfUser.length; i++) {
-				if (this.resultsOfUser[i] === null) {
+			for (let i = 0; i < this.resultTrueOrFalse.length; i++) {
+				if (this.resultTrueOrFalse[i] === null) {
 					number++
 				}
 			}
@@ -31,8 +31,8 @@ const Position = observer(
 
 		ketquaCuthe = () => {
 			let socaudung = 0
-			for (let i = 0; i < this.resultsOfUser.length; i++) {
-				if (this.resultsOfUser[i]) {
+			for (let i = 0; i < this.resultTrueOrFalse.length; i++) {
+				if (this.resultTrueOrFalse[i]) {
 					socaudung++
 				}
 			}
@@ -46,7 +46,7 @@ const Position = observer(
 
 		componentDidMount() {
 			for (let i = 0; i < this.data.length; i++) {
-				this.resultsOfUser.push(null)
+				this.resultTrueOrFalse.push(null)
 				this.resultOfUserRaw.push(null)
 			}
 		}
@@ -70,7 +70,7 @@ const Position = observer(
 			} else {
 				result = true
 			}
-			this.resultsOfUser[this.index] = result
+			this.resultTrueOrFalse[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
 			if (this.index < this.data.length - 1) {
@@ -106,154 +106,162 @@ const Position = observer(
 							<img className="girl" src="./images/girl.png" alt="" />
 							<img className="whale" src="./images/wavems.png" alt="" />
 						</div>
-						<div className="container test-content">
-							<p className="questionNo"> Question number: {this.index + 1} </p>
-							{!!this.showKetQua() && (
-								<div className="show-kg-button-wr">
-									<button
-										onClick={e => {
-											this.isClickXemKetQua = true
-											this.counter = 0
-											this.index = 0
-										}}
-										className="xemkq"
-									>
-										{' '}
-										Check Results{' '}
-									</button>
-								</div>
-							)}
-							<div>
-								<div className="noidungcauhoi-wr">
-									<img src={question.question} alt="" />
-								</div>
-								<div className="noidung-dapan-wr">
-									{!!question.answer.answer_a.imga && (
-										<img
-											className={classNames({
-												active: this.resultOfUserRaw[this.index] === 'a',
-											})}
+						<div
+							ref={myEl => (this.myEl = myEl)}
+							className="cauhoi-wr cauhoi-position"
+						>
+							<div className="container test-content">
+								<p className="questionNo">
+									{' '}
+									Question number: {this.index + 1}{' '}
+								</p>
+								{!!this.showKetQua() && (
+									<div className="show-kg-button-wr">
+										<button
 											onClick={e => {
-												this.handleClick('a')
+												this.isClickXemKetQua = true
+												this.counter = 0
+												this.index = 0
 											}}
-											src={question.answer.answer_a.imga}
-											alt=""
-										/>
-									)}
-									{!!question.answer.answer_b.imgb && (
-										<img
-											className={classNames({
-												active: this.resultOfUserRaw[this.index] === 'b',
-											})}
-											onClick={e => {
-												this.handleClick('b')
-											}}
-											src={question.answer.answer_b.imgb}
-											alt=""
-										/>
-									)}
-									{!!question.answer.answer_c.imgc && (
-										<img
-											className={classNames({
-												active: this.resultOfUserRaw[this.index] === 'c',
-											})}
-											onClick={e => {
-												this.handleClick('c')
-											}}
-											src={question.answer.answer_c.imgc}
-											alt=""
-										/>
-									)}
-									{!!question.answer.answer_d.imgd && (
-										<img
-											className={classNames({
-												active: this.resultOfUserRaw[this.index] === 'd',
-											})}
-											onClick={e => {
-												this.handleClick('d')
-											}}
-											src={question.answer.answer_d.imgd}
-											alt=""
-										/>
-									)}
-									{!!question.answer.answer_e.imge && (
-										<img
-											className={classNames({
-												active: this.resultOfUserRaw[this.index] === 'e',
-											})}
-											onClick={e => {
-												this.handleClick('e')
-											}}
-											src={question.answer.answer_e.imge}
-											alt=""
-										/>
-									)}
-									{!!question.answer.answer_f.imgf && (
-										<img
-											className={classNames({
-												active: this.resultOfUserRaw[this.index] === 'f',
-											})}
-											onClick={e => {
-												this.handleClick('f')
-											}}
-											src={question.answer.answer_f.imgf}
-											alt=""
-										/>
-									)}
-								</div>
-							</div>
-
-							<div className="dot-wr">
-								{this.data.length && this.data
-									? this.data.map((item, i) => (
-											<span
-												key={item.id}
-												className={classNames('dot-navigation', {
-													'is-active': this.index === i,
+											className="xemkq"
+										>
+											{' '}
+											Check Results{' '}
+										</button>
+									</div>
+								)}
+								<div>
+									<div className="noidungcauhoi-wr">
+										<img src={question.question} alt="" />
+									</div>
+									<div className="noidung-dapan-wr">
+										{!!question.answer.answer_a.imga && (
+											<img
+												className={classNames({
+													active: this.resultOfUserRaw[this.index] === 'a',
 												})}
 												onClick={e => {
-													this.index = i
+													this.handleClick('a')
 												}}
-											>
-												{' '}
-											</span>
-									  ))
-									: null}
-							</div>
-
-							{!this.isClickXemKetQua && (
-								<p className="questionLeft">
-									{' '}
-									You have {this.numberOfQuestionLeft()} questions left!{' '}
-								</p>
-							)}
-
-							{!!this.isClickXemKetQua && (
-								<div>
-									{' '}
-									<p> {this.ketquaCuthe()} </p>{' '}
+												src={question.answer.answer_a.imga}
+												alt=""
+											/>
+										)}
+										{!!question.answer.answer_b.imgb && (
+											<img
+												className={classNames({
+													active: this.resultOfUserRaw[this.index] === 'b',
+												})}
+												onClick={e => {
+													this.handleClick('b')
+												}}
+												src={question.answer.answer_b.imgb}
+												alt=""
+											/>
+										)}
+										{!!question.answer.answer_c.imgc && (
+											<img
+												className={classNames({
+													active: this.resultOfUserRaw[this.index] === 'c',
+												})}
+												onClick={e => {
+													this.handleClick('c')
+												}}
+												src={question.answer.answer_c.imgc}
+												alt=""
+											/>
+										)}
+										{!!question.answer.answer_d.imgd && (
+											<img
+												className={classNames({
+													active: this.resultOfUserRaw[this.index] === 'd',
+												})}
+												onClick={e => {
+													this.handleClick('d')
+												}}
+												src={question.answer.answer_d.imgd}
+												alt=""
+											/>
+										)}
+										{!!question.answer.answer_e.imge && (
+											<img
+												className={classNames({
+													active: this.resultOfUserRaw[this.index] === 'e',
+												})}
+												onClick={e => {
+													this.handleClick('e')
+												}}
+												src={question.answer.answer_e.imge}
+												alt=""
+											/>
+										)}
+										{!!question.answer.answer_f.imgf && (
+											<img
+												className={classNames({
+													active: this.resultOfUserRaw[this.index] === 'f',
+												})}
+												onClick={e => {
+													this.handleClick('f')
+												}}
+												src={question.answer.answer_f.imgf}
+												alt=""
+											/>
+										)}
+									</div>
 								</div>
-							)}
 
-							{this.resultsOfUser[this.index] === null ? null : (
-								<React.Fragment>
-									{!!this.isClickXemKetQua && (
-										<div>
-											{this.resultsOfUser[this.index] ? (
-												<div className="text-success">
+								<div className="dot-wr">
+									{this.data.length && this.data
+										? this.data.map((item, i) => (
+												<span
+													key={item.id}
+													className={classNames('dot-navigation', {
+														'is-active': this.index === i,
+													})}
+													onClick={e => {
+														this.index = i
+													}}
+												>
 													{' '}
-													<i className="fa fa-check" /> Đúng{' '}
-												</div>
-											) : (
-												<div className="text-danger">
-													{' '}
-													<i className="fa fa-times" /> Sai{' '}
-												</div>
-											)}
-										</div>
-									)}
-								</React.Fragment>
-							)}
+												</span>
+										  ))
+										: null}
+								</div>
+
+								{!this.isClickXemKetQua && (
+									<p className="questionLeft">
+										{' '}
+										You have {this.numberOfQuestionLeft()} questions left!{' '}
+									</p>
+								)}
+
+								{!!this.isClickXemKetQua && (
+									<div>
+										{' '}
+										<p> {this.ketquaCuthe()} </p>{' '}
+									</div>
+								)}
+
+								{this.resultTrueOrFalse[this.index] === null ? null : (
+									<React.Fragment>
+										{!!this.isClickXemKetQua && (
+											<div>
+												{this.resultTrueOrFalse[this.index] ? (
+													<div className="text-success">
+														{' '}
+														<i className="fa fa-check" /> Đúng{' '}
+													</div>
+												) : (
+													<div className="text-danger">
+														{' '}
+														<i className="fa fa-times" /> Sai{' '}
+													</div>
+												)}
+											</div>
+										)}
+									</React.Fragment>
+								)}
+							</div>
 						</div>
 						<div className="container list-test">
 							<div className="row">
@@ -322,8 +330,8 @@ const Position = observer(
 decorate(Position, {
 	data: observable,
 	index: observable,
-	resultsOfUser: observable,
-	resultsOfUserRaw: observable,
+	resultTrueOrFalse: observable,
+	resultTrueOrFalseRaw: observable,
 	showKetQua: observable,
 	isClickXemKetQua: observable,
 })

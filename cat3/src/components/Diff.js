@@ -10,7 +10,7 @@ const Diff = observer(
 	class Diff extends Component {
 		data = data
 		index = 0
-		resultsOfUser = []
+		resultTrueOrFalse = []
 		resultOfUserRaw = []
 		isClickXemKetQua = false
 		lengthh = () => this.data.length
@@ -27,8 +27,8 @@ const Diff = observer(
 
 		numberOfQuestionLeft = () => {
 			let number = 0
-			for (let i = 0; i < this.resultsOfUser.length; i++) {
-				if (this.resultsOfUser[i] === null) {
+			for (let i = 0; i < this.resultTrueOrFalse.length; i++) {
+				if (this.resultTrueOrFalse[i] === null) {
 					number++
 				}
 			}
@@ -41,8 +41,8 @@ const Diff = observer(
 
 		ketquaCuthe = () => {
 			let socaudung = 0
-			for (let i = 0; i < this.resultsOfUser.length; i++) {
-				if (this.resultsOfUser[i]) {
+			for (let i = 0; i < this.resultTrueOrFalse.length; i++) {
+				if (this.resultTrueOrFalse[i]) {
 					socaudung++
 				}
 			}
@@ -51,7 +51,7 @@ const Diff = observer(
 
 		componentDidMount() {
 			for (let i = 0; i < this.data.length; i++) {
-				this.resultsOfUser.push(null)
+				this.resultTrueOrFalse.push(null)
 				this.resultOfUserRaw.push(null)
 			}
 			$('label').on('click', function() {
@@ -83,7 +83,7 @@ const Diff = observer(
 			} else {
 				result = true
 			}
-			this.resultsOfUser[this.index] = result
+			this.resultTrueOrFalse[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
 			setTimeout(
@@ -665,8 +665,8 @@ const Diff = observer(
 decorate(Diff, {
 	data: observable,
 	index: observable,
-	resultsOfUser: observable,
-	resultsOfUserRaw: observable,
+	resultTrueOrFalse: observable,
+	resultTrueOrFalseRaw: observable,
 	showKetQua: observable,
 	isClickXemKetQua: observable,
 })
