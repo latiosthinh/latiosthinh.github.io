@@ -9,6 +9,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 
+import FadeIn from 'react-lazyload-fadein'
+
 library.add(faVolumeDown)
 
 const Music = observer(
@@ -19,6 +21,7 @@ const Music = observer(
 				answerRes: [],
 			}
 		}
+		isStart = false
 		ures = 0
 		data = data
 		index = 0
@@ -152,13 +155,16 @@ const Music = observer(
 								<div>
 									<div className="noidungcauhoi-wr q">
 										<FontAwesomeIcon icon="volume-down" />
-										<img
-											onMouseEnter={() => {
-												console.log(1)
-											}}
-											src={question.question.img}
-											alt=""
-										/>
+										<FadeIn height={300} duration={100}>
+											{onload => (
+												<img
+													src={question.question.img}
+													alt=""
+													onLoad={onload}
+												/>
+											)}
+										</FadeIn>
+
 										<audio
 											src={
 												!!question.question.sound
@@ -181,16 +187,24 @@ const Music = observer(
 														this.handleClick('a')
 													}}
 												/>
-												<img
-													onMouseEnter={() => {
-														console.log(2)
-													}}
-													onClick={e => {
-														this.handleClick('a')
-													}}
-													src={question.answer.answer_a.imga}
-													alt=""
-												/>
+												<FadeIn height={300} duration={100}>
+													{onload => (
+														<img
+															onClick={e => {
+																this.handleClick('a')
+															}}
+															src={question.answer.answer_a.imga}
+															alt=""
+															onLoad={onload}
+															style={
+																{
+																	/* height: 300 */
+																}
+															}
+														/>
+													)}
+												</FadeIn>
+
 												<audio
 													src={
 														!!question.answer.answer_a.sounda
@@ -213,13 +227,21 @@ const Music = observer(
 														this.handleClick('b')
 													}}
 												/>
-												<img
-													onMouseEnter={() => {
-														console.log(3)
-													}}
-													src={question.answer.answer_b.imgb}
-													alt=""
-												/>
+												<FadeIn height={300} duration={100}>
+													{onload => (
+														<img
+															src={question.answer.answer_b.imgb}
+															alt=""
+															onLoad={onload}
+															style={
+																{
+																	/* height: 300 */
+																}
+															}
+														/>
+													)}
+												</FadeIn>
+
 												<audio
 													src={
 														!!question.answer.answer_b.soundb
@@ -242,86 +264,25 @@ const Music = observer(
 														this.handleClick('c')
 													}}
 												/>
-												<img
-													onMouseEnter={() => {
-														console.log(4)
-													}}
-													src={question.answer.answer_c.imgc}
-													alt=""
-												/>
+												<FadeIn height={300} duration={100}>
+													{onload => (
+														<img
+															src={question.answer.answer_c.imgc}
+															alt=""
+															onLoad={onload}
+															style={
+																{
+																	/* height: 300 */
+																}
+															}
+														/>
+													)}
+												</FadeIn>
+
 												<audio
 													src={
 														!!question.answer.answer_c.soundc
 															? question.answer.answer_c.soundc
-															: null
-													}
-												/>
-											</label>
-										)}
-										{!!question.answer.answer_d.imgd && (
-											<label className="q">
-												<FontAwesomeIcon icon="volume-down" />
-												<input
-													type="radio"
-													name={qname.id}
-													className={classNames({
-														active: this.resultOfUserRaw[this.index] === 'd',
-													})}
-													onClick={e => {
-														this.handleClick('d')
-													}}
-												/>
-												<img src={question.answer.answer_d.imgd} alt="" />
-												<audio
-													src={
-														!!question.answer.answer_d.soundd
-															? question.answer.answer_d.soundd
-															: null
-													}
-												/>
-											</label>
-										)}
-										{!!question.answer.answer_e.imge && (
-											<label className="q">
-												<FontAwesomeIcon icon="volume-down" />
-												<input
-													type="radio"
-													name={qname.id}
-													className={classNames({
-														active: this.resultOfUserRaw[this.index] === 'e',
-													})}
-													onClick={e => {
-														this.handleClick('e')
-													}}
-												/>
-												<img src={question.answer.answer_e.imge} alt="" />
-												<audio
-													src={
-														!!question.answer.answer_e.sounde
-															? question.answer.answer_e.sounde
-															: null
-													}
-												/>
-											</label>
-										)}
-										{!!question.answer.answer_f.imgf && (
-											<label className="q">
-												<FontAwesomeIcon icon="volume-down" />
-												<input
-													type="radio"
-													name={qname.id}
-													className={classNames({
-														active: this.resultOfUserRaw[this.index] === 'f',
-													})}
-													onClick={e => {
-														this.handleClick('f')
-													}}
-												/>
-												<img src={question.answer.answer_f.imgf} alt="" />
-												<audio
-													src={
-														!!question.answer.answer_f.soundf
-															? question.answer.answer_f.soundf
 															: null
 													}
 												/>
@@ -484,6 +445,7 @@ decorate(Music, {
 	resultsOfUserRaw: observable,
 	showKetQua: observable,
 	isClickXemKetQua: observable,
+	isStart: observable,
 })
 
 export default Music

@@ -23,6 +23,11 @@ a:active {
 img {
 	max-width: 100%;
 	height: auto;
+	transition: all 0.2s;
+}
+img:hover {
+	transform: scale(1.1, 1.1);
+	transition: all 0.2s;
 }
 
 li.sign {
@@ -65,12 +70,11 @@ li.sign {
 
 .bigwhale {
 	text-align: center;
-	margin: 300px 0 150px;
 }
 
 #id2 .container .row.tn h3 {
 	margin-top: 120px;
-	margin-bottom: 200px;
+	margin-bottom: 60px;
 	font-size: 16px;
 	font-weight: lighter;
 }
@@ -159,9 +163,11 @@ button.time-left {
 	right: 10px;
 	z-index: 10;
 }
+
 .show-kg-button-wr {
 	text-align: center;
 }
+
 .xemkq {
 	width: 150px;
 	height: 40px;
@@ -413,7 +419,8 @@ input[type='radio'] {
 .noidung-dapan-wr {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around; /* rat quan trong */
+	justify-content: space-around;
+	/* rat quan trong */
 	flex-wrap: wrap;
 }
 
@@ -457,14 +464,46 @@ input[type='radio'] {
 	text-align: center;
 }
 
-
 .left-right-wr > div > img {
 	cursor: pointer;
 }
 
 .cauhoi-language .noidungcauhoi-wr,
-.cauhoi-music .noidungcauhoi-wr{
+.cauhoi-music .noidungcauhoi-wr {
 	margin-bottom: 50px;
+}
+
+button:focus {
+	outline: none;
+}
+
+.start-btn {
+	box-shadow: 0 9px #999;
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 6px;
+	background: green;
+	color: white;
+	outline: none;
+	text-align: center;
+	width: 200px;
+	font-family: 'Hobo Std Medium';
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.nhannutstart {
+	font-family: 'Hobo Std Medium';
+	text-align: center;
+}
+
+.start-btn:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+	outline: none;
 }
 
 @media screen and (min-width: 0px) and (max-width: 575.9999px) {
@@ -472,6 +511,7 @@ input[type='radio'] {
 		max-width: 190px !important;
 		height: auto !important;
 	}
+
 	.noidung-dapan-wr img {
 		max-width: 190px;
 	}
@@ -483,6 +523,7 @@ input[type='radio'] {
 		border-width: 4px !important;
 		font-weight: bold !important;
 	}
+
 	.currentQuestion {
 		transform: scale(0.4, 0.4);
 		margin-top: -30px;
@@ -497,9 +538,11 @@ input[type='radio'] {
 		height: 30px;
 		line-height: 30px;
 	}
+
 	.cauhoi-wr {
 		padding: 0;
 	}
+
 	.dots {
 		margin-left: 20px;
 		margin-right: 20px;
@@ -514,9 +557,11 @@ input[type='radio'] {
 	.left-right-wr > div > img {
 		max-width: 130px;
 	}
+
 	.left {
 		margin-right: 30px;
 	}
+
 	.cauhoi-wr {
 		min-width: 320px;
 		padding-top: 15px;
@@ -547,6 +592,7 @@ input[type='radio'] {
 		padding: 5px;
 		flex: 1 1 400px;
 	}
+
 	.dot-wr .dots span {
 		margin: 5px 3px;
 	}
@@ -561,5 +607,29 @@ input[type='radio'] {
 @media screen and (min-width: 1200.0001px) and (max-width: 10000px) {
 }
 
+.cauhoi-wr:before,
+.cauhoi-wr:after {
+	position: absolute;
+	content: '';
+	width: 0%;
+	height: 100%;
+	border: 1px solid #ddd;
+	top: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 10;
+	transition: all 0.5s ease;
+}
 
+.cauhoi-wr:after {
+	left: 0px;
+}
 
+.cauhoi-wr:before {
+	right: 0px;
+}
+
+.cauhoi-wr.closed:before,
+.cauhoi-wr.closed:after {
+	width: 50%;
+	transition: all 0.5s ease;
+}

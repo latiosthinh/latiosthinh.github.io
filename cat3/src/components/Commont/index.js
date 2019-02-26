@@ -59,6 +59,15 @@ const Commont = observer(
 
 		nextQuestion = () => {
 			if (this.currentQuestionIndex >= this.data.length - 1) return
+
+			// var node = ReactDOM.findDOMNode(this.refs.btn);
+			// node.classList.toggle('btn-menu-open');
+			//
+
+			setTimeout(() => this.myEl.classList.toggle('closed'), 200)
+
+			setTimeout(() => this.myEl.classList.toggle('closed'), 800)
+
 			setTimeout(() => {
 				this.currentQuestionIndex++
 			}, 500)
@@ -236,8 +245,16 @@ const Commont = observer(
 			if (!this.isStart) {
 				return (
 					<div className="container test-content">
-						Nhan nut start de bat dau
-						<button onClick={e => (this.isStart = true)}> Start! </button>
+						<p className="nhannutstart"> Press Start to begin the test! </p>
+						<button
+							className="start-btn"
+							onClick={e => {
+								setTimeout(() => (this.isStart = true), 300)
+							}}
+						>
+							{' '}
+							Start!{' '}
+						</button>
 					</div>
 				)
 			} else {
@@ -357,6 +374,9 @@ const Commont = observer(
 								onClick={e => {
 									if (this.currentQuestionIndex === 0) return
 									this.currentQuestionIndex--
+									setTimeout(() => {
+										this.reDrawLines()
+									}, 100)
 								}}
 								className={classNames('prev-btn', {
 									disabled: this.currentQuestionIndex === 0,
@@ -390,6 +410,9 @@ const Commont = observer(
 										return
 									}
 									this.currentQuestionIndex++
+									setTimeout(() => {
+										this.reDrawLines()
+									}, 100)
 								}}
 								className={classNames('next-btn', {
 									disabled: this.currentQuestionIndex === this.data.length - 1,
@@ -488,7 +511,10 @@ const Commont = observer(
 							<img className="whale" src="./images/wavems.png" alt="" />
 						</div>
 
-						<div className="cauhoi-wr cauhoi-common">
+						<div
+							ref={myEl => (this.myEl = myEl)}
+							className={classNames('cauhoi-wr cauhoi-common')}
+						>
 							{this.renderContent()}
 						</div>
 
