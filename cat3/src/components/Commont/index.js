@@ -70,7 +70,7 @@ const Commont = observer(
 					socaudung++
 				}
 			}
-
+			localStorage.setItem('common', socaudung)
 			return (
 				<div className="questionLeft">
 					Your score is: {socaudung} / {this.data.length}!

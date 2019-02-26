@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 
 import FadeIn from 'react-lazyload-fadein'
+import { nextQuestionMusicOrLanguage } from '../helpers'
 
 library.add(faVolumeDown)
 
@@ -65,11 +66,11 @@ const Music = observer(
 				this.resultTrueOrFalse.push(null)
 				this.resultOfUserRaw.push(null)
 			}
-			$('body').on('mouseenter', '.q', function() {
-				$(this)
-					.children('audio')[0]
-					.play()
-			})
+			// $('body').on('mouseenter', '.q', function() {
+			//  $(this)
+			//    .children('audio')[0]
+			//    .play()
+			// })
 		}
 
 		componentDidUpdate(prevProps, prevState) {
@@ -98,12 +99,14 @@ const Music = observer(
 			}
 			this.resultTrueOrFalse[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
-			console.log('result', result)
-			if (this.index < this.data.length - 1) {
-				setTimeout(() => {
+			nextQuestionMusicOrLanguage(
+				this.index,
+				this.data.length,
+				this.myEl,
+				() => {
 					this.index++
-				}, 400)
-			}
+				}
+			)
 		}
 
 		render() {
@@ -161,6 +164,10 @@ const Music = observer(
 										<FadeIn height={300} duration={100}>
 											{onload => (
 												<img
+													onMouseEnter={e => {
+														this.audioQuestionRef.play()
+														return
+													}}
 													src={question.question.img}
 													alt=""
 													onLoad={onload}
@@ -169,6 +176,9 @@ const Music = observer(
 										</FadeIn>
 
 										<audio
+											ref={audioQuestionRef =>
+												(this.audioQuestionRef = audioQuestionRef)
+											}
 											src={
 												!!question.question.sound
 													? question.question.sound
@@ -187,14 +197,16 @@ const Music = observer(
 														active: this.resultOfUserRaw[this.index] === 'a',
 													})}
 													onClick={e => {
+														console.log('input')
 														this.handleClick('a')
 													}}
 												/>
 												<FadeIn height={300} duration={100}>
 													{onload => (
 														<img
-															onClick={e => {
-																this.handleClick('a')
+															onMouseEnter={e => {
+																this.audioARef.play()
+																return
 															}}
 															src={question.answer.answer_a.imga}
 															alt=""
@@ -209,6 +221,7 @@ const Music = observer(
 												</FadeIn>
 
 												<audio
+													ref={audioARef => (this.audioARef = audioARef)}
 													src={
 														!!question.answer.answer_a.sounda
 															? question.answer.answer_a.sounda
@@ -233,6 +246,10 @@ const Music = observer(
 												<FadeIn height={300} duration={100}>
 													{onload => (
 														<img
+															onMouseEnter={e => {
+																this.audioBRef.play()
+																return
+															}}
 															src={question.answer.answer_b.imgb}
 															alt=""
 															onLoad={onload}
@@ -246,6 +263,7 @@ const Music = observer(
 												</FadeIn>
 
 												<audio
+													ref={audioBRef => (this.audioBRef = audioBRef)}
 													src={
 														!!question.answer.answer_b.soundb
 															? question.answer.answer_b.soundb
@@ -270,6 +288,10 @@ const Music = observer(
 												<FadeIn height={300} duration={100}>
 													{onload => (
 														<img
+															onMouseEnter={e => {
+																this.audioCRef.play()
+																return
+															}}
 															src={question.answer.answer_c.imgc}
 															alt=""
 															onLoad={onload}
@@ -283,6 +305,7 @@ const Music = observer(
 												</FadeIn>
 
 												<audio
+													ref={audioCRef => (this.audioCRef = audioCRef)}
 													src={
 														!!question.answer.answer_c.soundc
 															? question.answer.answer_c.soundc
@@ -381,12 +404,12 @@ const Music = observer(
 							<div className="row">
 								<div className="top">
 									{/* <a className={`test-item ghitar 
-									${!localStorage.getItem('Music') && (
-										"`done`"
-									)}
-												`} href="/music">
-									<ReactSVG src="./images/SVG/music.svg" />
-								</a> */}
+                  ${!localStorage.getItem('Music') && (
+                    "`done`"
+                  )}
+                        `} href="/music">
+                  <ReactSVG src="./images/SVG/music.svg" />
+                </a> */}
 									{!localStorage.getItem('Music') && (
 										<a className="test-item ghitar" href="/music">
 											<ReactSVG src="./images/SVG/music.svg" />

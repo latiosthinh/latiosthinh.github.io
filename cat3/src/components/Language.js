@@ -8,6 +8,8 @@ import $ from 'jquery'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeDown } from '@fortawesome/free-solid-svg-icons'
+import { nextQuestionMusicOrLanguage } from '../helpers'
+
 library.add(faVolumeDown)
 
 const Language = observer(
@@ -83,11 +85,14 @@ const Language = observer(
 			this.resultTrueOrFalse[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
-			if (this.index < this.data.length - 1) {
-				setTimeout(() => {
-					this.index += 1
-				}, 400)
-			}
+			nextQuestionMusicOrLanguage(
+				this.index,
+				this.data.length,
+				this.myEl,
+				() => {
+					this.index++
+				}
+			)
 		}
 
 		render() {
@@ -385,12 +390,12 @@ const Language = observer(
 							<div className="row">
 								<div className="top">
 									{/* <a className={`test-item ghitar 
-								${!localStorage.getItem('Music') && (
-									"`done`"
-								)}
-											`} href="/music">
-								<ReactSVG src="./images/SVG/music.svg" />
-							</a> */}
+                ${!localStorage.getItem('Music') && (
+                  "`done`"
+                )}
+                      `} href="/music">
+                <ReactSVG src="./images/SVG/music.svg" />
+              </a> */}
 									{!localStorage.getItem('Music') && (
 										<a className="test-item ghitar" href="/music">
 											<ReactSVG src="./images/SVG/music.svg" />

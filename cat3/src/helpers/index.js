@@ -16,3 +16,12 @@ export function nextQuestion(index, dataLength, ref, callback) {
 		callback()
 	}, 800)
 }
+
+export function nextQuestionMusicOrLanguage(index, dataLength, ref, callback) {
+	if (index >= dataLength - 1) return
+	ref.classList.toggle('closed')
+	setTimeout(() => ref.classList.toggle('closed'), 800)
+	setTimeout(() => {
+		callback()
+	}, 800)
+}

@@ -303,12 +303,12 @@ const Creative = observer(
 							<div className="row">
 								<div className="top">
 									{/* <a className={`test-item ghitar 
-								${!localStorage.getItem('Music') && (
-									"`done`"
-								)}
-											`} href="/music">
-								<ReactSVG src="./images/SVG/music.svg" />
-							</a> */}
+                ${!localStorage.getItem('Music') && (
+                  "`done`"
+                )}
+                      `} href="/music">
+                <ReactSVG src="./images/SVG/music.svg" />
+              </a> */}
 									{!localStorage.getItem('Music') && (
 										<a className="test-item ghitar" href="/music">
 											<ReactSVG src="./images/SVG/music.svg" />

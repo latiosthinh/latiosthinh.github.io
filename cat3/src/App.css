@@ -73,8 +73,8 @@ li.sign {
 }
 
 #id2 .container .row.tn h3 {
-  margin-top: 120px;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-bottom: 140px;
   font-size: 16px;
   font-weight: lighter;
 }
@@ -401,7 +401,7 @@ input[type='radio'] {
   background-color: #fff;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 180px;
+  margin-bottom: 80px;
   z-index: 1000;
   max-width: 960px;
   min-height: 510px;
@@ -639,4 +639,8 @@ button:focus {
 
 img.active {
   border: 10px solid pink!important;
+}
+
+.container.list-test{
+  margin-bottom: 30px;
 }

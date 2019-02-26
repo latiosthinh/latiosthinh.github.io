@@ -44,7 +44,7 @@ const TestTriNho = observer(
 					socaudung++
 				}
 			}
-
+			localStorage.setItem('memory', socaudung)
 			return `Bạn đã trả lời đúng ${socaudung} trên tổng số ${
 				this.data.length
 			} câu!`
