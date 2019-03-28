@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+html(lang="en")
+    include header.pug
+    body
+        .wrap
+            include nav.pug
+
+            include banner.pug
+
+            include booking.pug
+
+            section.home-content
+                .container-fluid
+                    .row
+                        .col-lg-6
+                            img(src="images/watermark.jpg", alt="")
+                            .content
+                                h2 Thuốc nam gia truyền
+                                p Các sản phẩm thuốc nam Đại Phú An được sản xuất trên nền tảng các bài thuốc quý được truyền qua 06 thế hệ của dòng họ Đỗ, khởi nguồn từ quê hương Phủ Lý, Hà Nam. Với quy trình sản xuất khép kín từ nguồn nguyên liệu, sản xuất và phân phối, các sản phẩm của nhà thuốc đã được khách hàng trong và ngoài nước biết đến và sử dụng rộng rãi. Một số sản phẩm tiêu biểu như:
+                                ul
+                                    li Tinh dầu thực vật tổng hợp Đại Phú An
+                                    li Cao thực vật tổng hợp Đại Phú An
+                                    li Cao gan Đại Phú An
+                                    li Phú nữ cao
+                                    li An đường cao
+                                    li Dmorin
+                                    li Các sản phẩm thực phẩm bổ sung: siro trái nhàu, siro hồng hoa, rượu cao
+                                    li Sản phẩm phụ: tinh dầu cam, tinh dầu quế, tinh dầu sả, chiếu gỗ, bồn gỗ, vòng tay, tràng hạt…
+                                
+
+                        .col-lg-6.pad-0
+                            .img-slider
+                                .item
+                                    img(src="images/d1.jpg", alt="")
+                                .item
+                                    img(src="images/d2.jpg", alt="")
+                                .item
+                                    img(src="images/d3.jpg", alt="")
+            
+            section.home-content
+                .container-fluid
+                    .row
+                        .col-lg-6
+                            img(src="images/watermark.jpg", alt="")
+                            .content
+                                h2 Quy trình
+                                    br
+                                    | chăm sóc sức khỏe
+                                    br
+                                    | chuyên sâu
+                                ul
+                                    li Thăm khám y học cổ truyền
+                                    li Uống cao thuốc nam giải độc cơ thể
+                                    li Ngâm tắm thảo dược
+                                    li Xông thuốc nam thải độc
+                                    li Massage trị liệu
+
+                        .col-lg-6.pad-0
+                            .img-slider
+                                .item
+                                    img(src="images/d1.jpg", alt="")
+                                .item
+                                    img(src="images/d2.jpg", alt="")
+                                .item
+                                    img(src="images/d3.jpg", alt="")
+            
+            section.home-content
+                .container-fluid
+                    .row
+                        .col-lg-6
+                            img(src="images/watermark.jpg", alt="")
+                            .content
+                                h2 Chăm sóc sức khỏe
+                                    br
+                                    | đa phương diện
+                                ul
+                                    li Chế độ ăn uống: hoàn toàn sử dụng thực phẩm hữu cơ, có thiết kế riêng cho từng đối tượng cụ thể theo nhu cầu
+                                    li Không gian nghỉ ngơi: trong lành, xanh mát, cao cấp và đầy đủ tiện ích
+                                    li Chế độ tập luyện: hoạt động thể dục thể thao đa dạng: Yoga, Thiền, đi bộ, đạp xe, vịnh xuân quyền, khí công cơ bản, đánh cờ, câu cá, chèo thuyền….
+                                    li Liệu pháp tinh thần: gần gũi thiên nhiên, được tư vấn, tâm sự, sẻ chia hàng ngày bởi đội ngũ nhân viên điều dưỡng.
+                                    li Phương pháp trị liệu y học cổ truyền gồm 06 bước, chuyên sâu và hiệu quả
+                                
+                        .col-lg-6.pad-0
+                            .img-slider
+                                .item
+                                    img(src="images/d1.jpg", alt="")
+                                .item
+                                    img(src="images/d2.jpg", alt="")
+                                .item
+                                    img(src="images/d3.jpg", alt="")
+            
+            section.home-content
+                .container-fluid
+                    .row
+                        .col-lg-6
+                            img(src="images/watermark.jpg", alt="")
+                            .content
+                                h2 Một số gói
+                                    br
+                                    | dịch vụ cơ bản
+                                ul
+                                    li Thư giãn
+                                    li Giải độc
+                                    li Phục hồi
+                                    li Dưỡng lão
+                                    li Điều dưỡng
+
+                        .col-lg-6.pad-0
+                            .img-slider
+                                .item
+                                    img(src="images/d1.jpg", alt="")
+                                .item
+                                    img(src="images/d2.jpg", alt="")
+                                .item
+                                    img(src="images/d3.jpg", alt="")
+
+            include footer.pug
+                
+
+
+
+        include js.pug
+        script.
+            //- new WOW().init();
+            $('.d-nav').hc_menu({
+                open: '.open-mnav',
+            });
+            $('#room').selectmenu();
+            $("#in").datepicker({minDate: new Date()});
+            $("#out").datepicker({minDate: new Date()});
+
+

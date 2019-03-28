@@ -8,9 +8,6 @@ import classNames from 'classnames'
 import FadeIn from 'react-lazyload-fadein'
 import { CauhoiWrapper } from '../../stylesComponent/CauhoiWrapper'
 
-
-
-
 var counterTime = 10
 const TestTriNho = observer(
   class TestTriNho extends Component {

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+html(lang="en")
+    include header.pug
+    body
+        .wrap
+            include nav.pug
+
+            include banner.pug
+
+            include booking.pug
+
+            section.img-slide#tienich
+                h2 khu vui chơi trẻ em
+                .img-slider
+                    .item
+                        .container-fluid
+                            .row
+                                .col-lg-6
+                                    img(src="images/t1.jpg", alt="")
+                                .col-lg-6
+                                    img(src="images/t2.jpg", alt="")
+                    .item
+                        .container-fluid
+                            .row
+                                .col-lg-6  
+                                    img(src="images/t1.jpg", alt="")
+                                .col-lg-6  
+                                    img(src="images/t2.jpg", alt="")
+                    .item
+                        .container-fluid
+                            .row
+                                .col-lg-6  
+                                    img(src="images/t1.jpg", alt="")
+                                .col-lg-6  
+                                    img(src="images/t2.jpg", alt="")
+                    .item
+                        .container-fluid
+                            .row
+                                .col-lg-6  
+                                    img(src="images/t1.jpg", alt="")
+                                .col-lg-6  
+                                    img(src="images/t2.jpg", alt="")
+                
+                h2 khu vui chơi trẻ em
+                .img-slider
+                    .item
+                        .container-fluid
+                            .row
+                                .col-lg-6
+                                    img(src="images/t1.jpg", alt="")
+                                .col-lg-6
+                                    img(src="images/t2.jpg", alt="")
+                    .item
+                        .container-fluid
+                            .row
+                                .col-lg-6  
+                                    img(src="images/t1.jpg", alt="")
+                                .col-lg-6  
+                                    img(src="images/t2.jpg", alt="")
+                    .item
+                        .container-fluid
+                            .row
+                                .col-lg-6  
+                                    img(src="images/t1.jpg", alt="")
+                                .col-lg-6  
+                                    img(src="images/t2.jpg", alt="")
+                    .item
+                        .container-fluid
+                            .row
+                                .col-lg-6  
+                                    img(src="images/t1.jpg", alt="")
+                                .col-lg-6  
+                                    img(src="images/t2.jpg", alt="")
+
+            include footer.pug
+                
+
+
+
+        include js.pug
+        script.
+            //- new WOW().init();
+            $('.d-nav').hc_menu({
+                open: '.open-mnav',
+            });
+            $('#room').selectmenu();
+            $("#in").datepicker({minDate: new Date()});
+            $("#out").datepicker({minDate: new Date()});

@@ -1,0 +1,26 @@
+body{
+	font-size: 14px;
+	font-family: $f1;
+	line-height: 1.5;
+	color: $ct1;
+	font-weight: normal;
+}
+
+::selection {
+	background: $ct2; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	background: $ct2; /* Gecko Browsers */
+}
+
+.wrap {
+	overflow: hidden;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+	background: $ct2 !important;
+	border: 1px solid $ct2 !important;
+}
+.ui-selectmenu-menu {
+	margin-top: 10px !important;
+}

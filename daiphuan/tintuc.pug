@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+html(lang="en")
+    include header.pug
+    body
+        .wrap
+            include nav.pug
+
+            include banner.pug
+
+            include booking.pug
+
+            section.news-slide
+                .news-slider
+                    .item
+                        img(src="images/news.jpg", alt="")
+                        a(href="")
+                        .content.container
+                            .row
+                                .col-12
+                                    h2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, rem.
+                                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis repellat dolorem similique, omnis beatae nihil impedit aut optio assumenda quasi voluptas debitis dignissimos velit magni, amet voluptatibus expedita ipsum. Iste hic autem fugit debitis necessitatibus quaerat amet numquam obcaecati vel.
+                    .item
+                        img(src="images/news.jpg", alt="")
+                        a(href="")
+                        .content.container
+                            .row
+                                .col-12
+                                    h2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, rem.
+                                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis repellat dolorem similique, omnis beatae nihil impedit aut optio assumenda quasi voluptas debitis dignissimos velit magni, amet voluptatibus expedita ipsum. Iste hic autem fugit debitis necessitatibus quaerat amet numquam obcaecati vel.
+            
+            section.news
+                .container
+                    .item
+                        .row
+                            .col-lg-6
+                                a(href="")
+                                    img(src="images/post.jpg", alt="")
+                            .col-lg-6
+                                a(href="")
+                                    h2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, rem.
+                                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis repellat dolorem similique, omnis beatae nihil impedit aut optio assumenda quasi voluptas debitis dignissimos velit magni, amet voluptatibus expedita ipsum. Iste hic autem fugit debitis necessitatibus quaerat amet numquam obcaecati vel.
+                    .item
+                        .row
+                            .col-lg-6
+                                a(href="")
+                                    img(src="images/post.jpg", alt="")
+                            .col-lg-6
+                                a(href="")
+                                    h2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, rem.
+                                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis repellat dolorem similique, omnis beatae nihil impedit aut optio assumenda quasi voluptas debitis dignissimos velit magni, amet voluptatibus expedita ipsum. Iste hic autem fugit debitis necessitatibus quaerat amet numquam obcaecati vel.
+                    .item
+                        .row
+                            .col-lg-6
+                                a(href="")
+                                    img(src="images/post.jpg", alt="")
+                            .col-lg-6
+                                a(href="")
+                                    h2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, rem.
+                                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis repellat dolorem similique, omnis beatae nihil impedit aut optio assumenda quasi voluptas debitis dignissimos velit magni, amet voluptatibus expedita ipsum. Iste hic autem fugit debitis necessitatibus quaerat amet numquam obcaecati vel.
+                    .item
+                        .row
+                            .col-lg-6
+                                a(href="")
+                                    img(src="images/post.jpg", alt="")
+                            .col-lg-6
+                                a(href="")
+                                    h2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, rem.
+                                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis repellat dolorem similique, omnis beatae nihil impedit aut optio assumenda quasi voluptas debitis dignissimos velit magni, amet voluptatibus expedita ipsum. Iste hic autem fugit debitis necessitatibus quaerat amet numquam obcaecati vel.
+
+                    .row
+                        .container
+                            .col-12
+                                a.more XEM THÊM
+                                    span.fa.fa-chevron-down
+
+            include footer.pug
+                
+
+
+
+        include js.pug
+        script.
+            //- new WOW().init();
+            $('.d-nav').hc_menu({
+                open: '.open-mnav',
+            });
+            $('#room').selectmenu();
+            $("#in").datepicker({minDate: new Date()});
+            $("#out").datepicker({minDate: new Date()});

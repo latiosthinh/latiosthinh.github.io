@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'Googlesan';
+	src: url('fonts/GOOGLESANS-REGULAR.OTF') format('opentype');
+}
+@font-face {
+	font-family: 'Googlesan';
+	src: url('fonts/GOOGLESANS-ITALIC.OTF') format('opentype');
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Googlesan';
+	src: url('fonts/GOOGLESANS-MEDIUM.OTF') format('opentype');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Googlesan';
+	src: url('fonts/GOOGLESANS-MEDIUMITALIC.OTF') format('opentype');
+	font-style: italic;
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Googlesan';
+	src: url('fonts/GOOGLESANS-BOLD.OTF') format('opentype');
+	font-weight: bolder;
+}
+@font-face {
+	font-family: 'Googlesan';
+	src: url('fonts/GOOGLESANS-BOLDITALIC.OTF') format('opentype');
+	font-style: italic;
+	font-weight: bolder;
+}
+
+$font-family-base: 'Googlesan', sans-serif;
+// ..........
+$f1: $font-family-base;
