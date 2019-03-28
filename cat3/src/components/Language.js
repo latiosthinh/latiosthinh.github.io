@@ -8,13 +8,15 @@ import $ from 'jquery'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeDown } from '@fortawesome/free-solid-svg-icons'
+import { nextQuestionMusicOrLanguage } from '../helpers'
+
 library.add(faVolumeDown)
 
 const Language = observer(
 	class Language extends Component {
 		data = data
 		index = 0
-		resultsOfUser = []
+		resultTrueOrFalse = []
 		resultOfUserRaw = []
 		isClickXemKetQua = false
 		lengthh = () => this.data.length
@@ -28,8 +30,8 @@ const Language = observer(
 		}
 		numberOfQuestionLeft = () => {
 			let number = 0
-			for (let i = 0; i < this.resultsOfUser.length; i++) {
-				if (this.resultsOfUser[i] === null) {
+			for (let i = 0; i < this.resultTrueOrFalse.length; i++) {
+				if (this.resultTrueOrFalse[i] === null) {
 					number++
 				}
 			}
@@ -42,8 +44,8 @@ const Language = observer(
 
 		ketquaCuthe = () => {
 			let socaudung = 0
-			for (let i = 0; i < this.resultsOfUser.length; i++) {
-				if (this.resultsOfUser[i]) {
+			for (let i = 0; i < this.resultTrueOrFalse.length; i++) {
+				if (this.resultTrueOrFalse[i]) {
 					socaudung++
 				}
 			}
@@ -59,7 +61,7 @@ const Language = observer(
 
 		componentDidMount() {
 			for (let i = 0; i < this.data.length; i++) {
-				this.resultsOfUser.push(null)
+				this.resultTrueOrFalse.push(null)
 				this.resultOfUserRaw.push(null)
 			}
 			$('body').on('mouseenter', '.q', function() {
@@ -92,7 +94,7 @@ const Language = observer(
 			} else {
 				result = true
 			}
-			this.resultsOfUser[this.index] = result
+			this.resultTrueOrFalse[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
 			setTimeout(function() { //Start the timer
@@ -149,7 +151,10 @@ const Language = observer(
 							<img className="girl" src="./images/girl.png" alt="" />
 							<img className="whale" src="./images/wavems.png" alt="" />
 						</div>
-						<div className="cauhoi-wr cauhoi-language">
+						<div
+							ref={myEl => (this.myEl = myEl)}
+							className="cauhoi-wr cauhoi-language"
+						>
 							<div className="container test-content">
 							<p className="questionNo">{this.index + 1} </p>
 								{!!this.showKetQua() && (
@@ -367,7 +372,7 @@ const Language = observer(
 									<React.Fragment>
 										{!!this.isClickXemKetQua && (
 											<div>
-												{this.resultsOfUser[this.index] ? (
+												{this.resultTrueOrFalse[this.index] ? (
 													<div className="text-success">
 														{' '}
 														<i className="fa fa-check" /> Đúng{' '}
@@ -752,8 +757,8 @@ const Language = observer(
 decorate(Language, {
 	data: observable,
 	index: observable,
-	resultsOfUser: observable,
-	resultsOfUserRaw: observable,
+	resultTrueOrFalse: observable,
+	resultTrueOrFalseRaw: observable,
 	showKetQua: observable,
 	isClickXemKetQua: observable,
 })

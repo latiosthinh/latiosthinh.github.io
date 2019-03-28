@@ -7,6 +7,7 @@ import axios from 'axios'
 import classNames from 'classnames'
 import matchingData from './../../data/matching.json'
 import { remove_character } from './../../helpers/index.js'
+import { scrollToMyRef, nextQuestion } from '../../helpers'
 
 var audioUrl =
 	'https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-18146/zapsplat_multimedia_click_003_19369.mp3?_=1'
@@ -19,30 +20,26 @@ const Commont = observer(
 		lineData = []
 		resultList = [] // [true, false, null] cau dau tien dung, cau thu hai sai, cau thu ba chua tra loi
 		currentIndex = 1
-		currentQuestionIndex = 0
+		index = 0
 		showAnswer = false
 		isClickXemKetQua = false
 		modalIsOpen = false
 
 		reset = (redrawMode = false) => {
-			let a = this.lineData[this.currentQuestionIndex]
-			for (
-				let i = 0;
-				i < this.numberOfQuestion(this.data[this.currentQuestionIndex]);
-				i++
-			) {
+			let a = this.lineData[this.index]
+			for (let i = 0; i < this.numberOfQuestion(this.data[this.index]); i++) {
 				a[i] = { from: '', to: '' }
 			}
 
 			if (!redrawMode) {
-				this.resultList[this.currentQuestionIndex] = null
+				this.resultList[this.index] = null
 			} else {
 			}
 			console.log('this.lineData', toJS(this.lineData))
 		}
 
 		reDrawLines = () => {
-			let a = this.lineData[this.currentQuestionIndex]
+			let a = this.lineData[this.index]
 			let b = [...a]
 			this.reset(true)
 
@@ -57,12 +54,14 @@ const Commont = observer(
 			return this.numberOfQuestionLeft() === 0
 		}
 
-		nextQuestion = () => {
-			if (this.currentQuestionIndex >= this.data.length - 1) return
-			setTimeout(() => {
-				this.currentQuestionIndex++
-			}, 500)
-		}
+		// nextQuestion = () => {
+		//  if (this.index >= this.data.length - 1) return
+		//  setTimeout(() => this.myEl.classList.toggle('closed'), 200)
+		//  setTimeout(() => this.myEl.classList.toggle('closed'), 800)
+		//  setTimeout(() => {
+		//    this.index++
+		//  }, 500)
+		// }
 
 		ketquaCuthe = () => {
 			let socaudung = 0
@@ -71,7 +70,7 @@ const Commont = observer(
 					socaudung++
 				}
 			}
-
+			localStorage.setItem('common', socaudung)
 			return (
 				<div className="questionLeft">
 					Your score is: {socaudung} / {this.data.length}!
@@ -80,7 +79,7 @@ const Commont = observer(
 		}
 		numberOfImageOfCurrentQuestion() {
 			let number = 0
-			let question = this.data[this.currentQuestionIndex].acf.question
+			let question = this.data[this.index].acf.question
 			if (question.question_1 && question.question_1.image) {
 				number++
 			}
@@ -128,7 +127,7 @@ const Commont = observer(
 			console.log('handleleftclik')
 			console.log('from', from)
 
-			let a = this.lineData[this.currentQuestionIndex]
+			let a = this.lineData[this.index]
 
 			for (let i = 0; i < a.length; i++) {
 				if (a[i].from) {
@@ -144,7 +143,7 @@ const Commont = observer(
 
 		handleRightImageClick(to) {
 			console.log('to', to)
-			let a = this.lineData[this.currentQuestionIndex]
+			let a = this.lineData[this.index]
 
 			for (let i = 0; i < a.length; i++) {
 				if (a[i].to) {
@@ -162,10 +161,10 @@ const Commont = observer(
 			if (this.isClickXemKetQua) {
 				return (
 					<div>
-						{this.resultList[this.currentQuestionIndex] === null ? null : (
+						{this.resultList[this.index] === null ? null : (
 							<div>
 								<div> {this.ketquaCuthe()} </div>
-								{this.resultList[this.currentQuestionIndex] === true ? (
+								{this.resultList[this.index] === true ? (
 									<div className="text-success traloidung">
 										<i className="fa fa-check" /> Correct
 									</div>
@@ -183,7 +182,7 @@ const Commont = observer(
 			}
 		}
 		checkAnswer() {
-			let a = this.lineData[this.currentQuestionIndex]
+			let a = this.lineData[this.index]
 			// neu van con anh chua noi het, khong check nua
 			for (let i = 0; i < a.length; i++) {
 				if (!a[i].from || !a[i].to) {
@@ -191,20 +190,24 @@ const Commont = observer(
 				}
 			}
 			// nguoi dung noi tat ca cac anh, tiep tuc
-			let acf = this.data[this.currentQuestionIndex].acf
+			let acf = this.data[this.index].acf
 
 			for (let i = 0; i < this.numberOfImageOfCurrentQuestion(); i++) {
 				let questionName = remove_character(a[i].from, 9)
 				let answerName = remove_character(a[i].to, 7)
 
 				if (acf.question[questionName].tag !== acf.answer[answerName].tag) {
-					this.resultList[this.currentQuestionIndex] = false
-					this.nextQuestion()
+					this.resultList[this.index] = false
+					nextQuestion(this.index, this.data.length, this.myEl, () => {
+						this.index++
+					})
 					return
 				}
 			}
-			this.resultList[this.currentQuestionIndex] = true
-			this.nextQuestion()
+			this.resultList[this.index] = true
+			nextQuestion(this.index, this.data.length, this.myEl, () => {
+				this.index++
+			})
 		}
 
 		componentDidMount() {
@@ -236,16 +239,24 @@ const Commont = observer(
 			if (!this.isStart) {
 				return (
 					<div className="container test-content">
-						Nhan nut start de bat dau
-						<button onClick={e => (this.isStart = true)}> Start! </button>
+						<p className="nhannutstart"> Press Start to begin the test! </p>
+						<button
+							className="start-btn"
+							onClick={e => {
+								setTimeout(() => (this.isStart = true), 300)
+							}}
+						>
+							{' '}
+							Start!{' '}
+						</button>
 					</div>
 				)
 			} else {
-				let a = this.lineData[this.currentQuestionIndex]
+				let a = this.lineData[this.index]
 				if (!this.data || !this.data.length) {
 					return <div> Loading... </div>
 				}
-				const currentQuestion = this.data[this.currentQuestionIndex]
+				const currentQuestion = this.data[this.index]
 				const {
 					acf: {
 						answer: { answer_1, answer_2, answer_3 },
@@ -262,12 +273,10 @@ const Commont = observer(
 								{!!question_1.image && (
 									<img
 										onClick={e => {
-											this.handleLeftImageClick(
-												`question_${this.currentQuestionIndex}1`
-											)
+											this.handleLeftImageClick(`question_${this.index}1`)
 											audio.play()
 										}}
-										className={`question_${this.currentQuestionIndex}1`}
+										className={`question_${this.index}1`}
 										src={question_1.image}
 										alt=""
 									/>
@@ -276,12 +285,10 @@ const Commont = observer(
 								{!!question_2.image && (
 									<img
 										onClick={e => {
-											this.handleLeftImageClick(
-												`question_${this.currentQuestionIndex}2`
-											)
+											this.handleLeftImageClick(`question_${this.index}2`)
 											audio.play()
 										}}
-										className={`question_${this.currentQuestionIndex}2`}
+										className={`question_${this.index}2`}
 										src={question_2.image}
 										alt=""
 									/>
@@ -290,12 +297,10 @@ const Commont = observer(
 								{!!question_3.image && (
 									<img
 										onClick={e => {
-											this.handleLeftImageClick(
-												`question_${this.currentQuestionIndex}3`
-											)
+											this.handleLeftImageClick(`question_${this.index}3`)
 											audio.play()
 										}}
-										className={`question_${this.currentQuestionIndex}3`}
+										className={`question_${this.index}3`}
 										src={question_3.image}
 										alt=""
 									/>
@@ -305,12 +310,10 @@ const Commont = observer(
 								{!!answer_1.image && (
 									<img
 										onClick={e => {
-											this.handleRightImageClick(
-												`answer_${this.currentQuestionIndex}1`
-											)
+											this.handleRightImageClick(`answer_${this.index}1`)
 											audio.play()
 										}}
-										className={`answer_${this.currentQuestionIndex}1`}
+										className={`answer_${this.index}1`}
 										src={answer_1.image}
 										alt=""
 									/>
@@ -319,12 +322,10 @@ const Commont = observer(
 								{!!answer_2.image && (
 									<img
 										onClick={e => {
-											this.handleRightImageClick(
-												`answer_${this.currentQuestionIndex}2`
-											)
+											this.handleRightImageClick(`answer_${this.index}2`)
 											audio.play()
 										}}
-										className={`answer_${this.currentQuestionIndex}2`}
+										className={`answer_${this.index}2`}
 										src={answer_2.image}
 										alt=""
 									/>
@@ -333,12 +334,10 @@ const Commont = observer(
 								{!!answer_3.image && (
 									<img
 										onClick={e => {
-											this.handleRightImageClick(
-												`answer_${this.currentQuestionIndex}3`
-											)
+											this.handleRightImageClick(`answer_${this.index}3`)
 											audio.play()
 										}}
-										className={`answer_${this.currentQuestionIndex}3`}
+										className={`answer_${this.index}3`}
 										src={answer_3.image}
 										alt=""
 									/>
@@ -347,19 +346,19 @@ const Commont = observer(
 						</div>
 
 						<div> {this.renderKetQua()} </div>
-						<div className="currentQuestion">
-							{' '}
-							{this.currentQuestionIndex + 1}{' '}
-						</div>
+						<div className="currentQuestion"> {this.index + 1} </div>
 
 						<div className="dot-wr">
 							<div
 								onClick={e => {
-									if (this.currentQuestionIndex === 0) return
-									this.currentQuestionIndex--
+									if (this.index === 0) return
+									this.index--
+									setTimeout(() => {
+										this.reDrawLines()
+									}, 100)
 								}}
 								className={classNames('prev-btn', {
-									disabled: this.currentQuestionIndex === 0,
+									disabled: this.index === 0,
 								})}
 							>
 								{' '}
@@ -372,10 +371,10 @@ const Commont = observer(
 											<span
 												key={item.id}
 												className={classNames('dot-navigation', {
-													'is-active': this.currentQuestionIndex === i,
+													'is-active': this.index === i,
 												})}
 												onClick={e => {
-													this.currentQuestionIndex = i
+													this.index = i
 													setTimeout(() => {
 														this.reDrawLines()
 													}, 100)
@@ -386,13 +385,16 @@ const Commont = observer(
 							</div>
 							<div
 								onClick={e => {
-									if (this.currentQuestionIndex === this.data.length - 1) {
+									if (this.index === this.data.length - 1) {
 										return
 									}
-									this.currentQuestionIndex++
+									this.index++
+									setTimeout(() => {
+										this.reDrawLines()
+									}, 100)
 								}}
 								className={classNames('next-btn', {
-									disabled: this.currentQuestionIndex === this.data.length - 1,
+									disabled: this.index === this.data.length - 1,
 								})}
 							>
 								{' '}
@@ -414,7 +416,7 @@ const Commont = observer(
 									<button
 										onClick={e => {
 											this.isClickXemKetQua = true
-											// this.currentQuestionIndex = 0
+											// this.index = 0
 											// this.reDrawLines()
 										}}
 										className="xemkq"
@@ -445,7 +447,7 @@ const Commont = observer(
 		}
 
 		renderLines() {
-			let a = this.lineData[this.currentQuestionIndex]
+			let a = this.lineData[this.index]
 			return a.map((item, index) => (
 				<LineTo
 					key={index}
@@ -469,7 +471,13 @@ const Commont = observer(
 								<div className="col-lg-12">
 									<div className="bigwhale">
 										<h1>General knowledge test</h1>
-										<a className="test-item brain" href="/iq">
+										<a
+											className="test-item brain"
+											onClick={e => {
+												e.preventDefault()
+												scrollToMyRef(this.myEl)
+											}}
+										>
 											<ReactSVG src="./images/SVG/iq.svg" />
 										</a>
 									</div>
@@ -488,7 +496,10 @@ const Commont = observer(
 							<img className="whale" src="./images/wavems.png" alt="" />
 						</div>
 
-						<div className="cauhoi-wr cauhoi-common">
+						<div
+							ref={myEl => (this.myEl = myEl)}
+							className="cauhoi-wr cauhoi-common"
+						>
 							{this.renderContent()}
 						</div>
 
@@ -531,7 +542,7 @@ decorate(Commont, {
 	isStart: observable,
 	data: observable,
 	lineData: observable,
-	currentQuestionIndex: observable,
+	index: observable,
 	resultList: observable,
 	showAnswer: observable,
 	isClickXemKetQua: observable,

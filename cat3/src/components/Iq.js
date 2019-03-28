@@ -9,7 +9,7 @@ const Iq = observer(
 	class Iq extends Component {
 		data = data
 		index = 0
-		resultsOfUser = []
+		resultTrueOrFalse = []
 		resultOfUserRaw = []
 		isClickXemKetQua = false
 		lengthh = () => this.data.length
@@ -17,8 +17,8 @@ const Iq = observer(
 
 		numberOfQuestionLeft = () => {
 			let number = 0
-			for (let i = 0; i < this.resultsOfUser.length; i++) {
-				if (this.resultsOfUser[i] === null) {
+			for (let i = 0; i < this.resultTrueOrFalse.length; i++) {
+				if (this.resultTrueOrFalse[i] === null) {
 					number++
 				}
 			}
@@ -31,8 +31,8 @@ const Iq = observer(
 
 		ketquaCuthe = () => {
 			let socaudung = 0
-			for (let i = 0; i < this.resultsOfUser.length; i++) {
-				if (this.resultsOfUser[i]) {
+			for (let i = 0; i < this.resultTrueOrFalse.length; i++) {
+				if (this.resultTrueOrFalse[i]) {
 					socaudung++
 				}
 			}
@@ -46,7 +46,7 @@ const Iq = observer(
 
 		componentDidMount() {
 			for (let i = 0; i < this.data.length; i++) {
-				this.resultsOfUser.push(null)
+				this.resultTrueOrFalse.push(null)
 				this.resultOfUserRaw.push(null)
 			}
 		}
@@ -72,7 +72,7 @@ const Iq = observer(
 			} else {
 				result = true
 			}
-			this.resultsOfUser[this.index] = result
+			this.resultTrueOrFalse[this.index] = result
 			this.resultOfUserRaw[this.index] = answer
 			console.log('result', result)
 			setTimeout(
@@ -263,11 +263,11 @@ const Iq = observer(
 								</div>
 							)}
 
-							{this.resultsOfUser[this.index] === null ? null : (
+							{this.resultTrueOrFalse[this.index] === null ? null : (
 								<React.Fragment>
 									{!!this.isClickXemKetQua && (
 										<div>
-											{this.resultsOfUser[this.index] ? (
+											{this.resultTrueOrFalse[this.index] ? (
 												<div className="text-success">
 													{' '}
 													<i className="fa fa-check" /> Đúng{' '}
@@ -350,8 +350,8 @@ const Iq = observer(
 decorate(Iq, {
 	data: observable,
 	index: observable,
-	resultsOfUser: observable,
-	resultsOfUserRaw: observable,
+	resultTrueOrFalse: observable,
+	resultTrueOrFalseRaw: observable,
 	showKetQua: observable,
 	isClickXemKetQua: observable,
 })
