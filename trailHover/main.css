@@ -206,6 +206,55 @@
       border: 1px solid #bf9b30;
       opacity: 0; }
 
+#project {
+  position: fixed;
+  z-index: 100;
+  width: 40vw;
+  right: -40vw;
+  height: 100%;
+  background: #292929;
+  top: 0;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  #project.open {
+    right: 0; }
+  #project > .close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: Tahoma; }
+  #project ul {
+    list-style: none; }
+    #project ul li {
+      text-align: center;
+      margin: 30px 0; }
+      #project ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: Tahoma;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s; }
+        #project ul li a:hover {
+          letter-spacing: 3px; }
+
 @-webkit-keyframes blink {
   0% {
     opacity: 1; }
