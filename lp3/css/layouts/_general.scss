@@ -1,0 +1,29 @@
+body{
+	font-size: 14px;
+	font-family: $f2;
+	line-height: 1.5;
+	color: $color_text;
+}
+
+::selection {
+	background: $c1; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+background: $c1; /* Gecko Browsers */
+}
+
+.wrap {
+	overflow: hidden;
+}
+
+%h3 {
+	font-size: 35px;
+	line-height: 43px;
+	margin-bottom: 35px;
+	color: $blue;
+	@media all and (max-width:1366px) {
+		font-size: 30px;
+		line-height: 40px;
+		margin-bottom: 25px;
+    }
+}
