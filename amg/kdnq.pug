@@ -72,10 +72,10 @@ html(lang="en")
                             input(type="text", placeholder="Điền tên đầy đủ của bạn")
 
                             label Số điện thoại*
-                            input(type="text", placeholder="Điền số điện thoại của bạn")
+                            input(type="text", placeholder="Điền số điện thoại của bạn để chúng tôi có thể phản hồi")
 
                             label Email*
-                            input(type="text", placeholder="Điền email của bạn")
+                            input(type="text", placeholder="Điền email của bạn để chúng tôi có thể phản hồi")
 
                             label Địa chỉ liên hệ*
                             input(type="text", placeholder="Điền địa chỉ của bạn")
@@ -83,21 +83,21 @@ html(lang="en")
                                 h3 Bạn có đang làm việc trong một tổ chức, công ty nào không?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option Có
                                         option Không
                             .b
                                 h3 Bạn đã từng kinh doanh dịch vụ nhà hàng bao giờ chưa?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option Có
                                         option Không
                             .b
                                 h3 Bạn biết tới chúng tôi qua kênh thông tin nào?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option Bạn bè, gia đình hoặc đồng nghiệp
                                         option Social media (Facebook, Zalo, Instagram)
                                         option Địa điểm kinh doanh của Anh Minh Group
@@ -110,7 +110,7 @@ html(lang="en")
                                 h3 Bạn mong muốn nhượng quyền thương hiệu nào?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option Kampong Chicken House
                                         option COCA Restaurant
                                         option Duck Plus
@@ -118,7 +118,7 @@ html(lang="en")
                                 h3 Bạn dự định khi nào có thể bắt đầu tham gia nhượng quyền?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option Càng sớm càng tốt
                                         option 3-6 tháng
                                         option 6-12 tháng
@@ -130,7 +130,7 @@ html(lang="en")
                                 h3 Bạn đã chọn được địa điểm kinh doanh chưa?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option Đã chọn
                                         option Chưa chọn
                             
@@ -138,7 +138,7 @@ html(lang="en")
                                 h3 Bạn dự định đầu tư ngân sách bao nhiêu cho chi phí nhượng quyền?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option 500 triệu - 1 tỷ
                                         option 1 tỷ - 1.5 tỷ
                                         option 1.5 tỷ - 2 tỷ
@@ -148,43 +148,22 @@ html(lang="en")
                                 h3 Có bao nhiêu cổ đông tham gia góp vốn với bạn?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option Một
                                         option Từ hai trở lên
                             .b
                                 h3 Bạn mong muốn nhượng quyền theo quy mô nào?
                                 .custom-select
                                     select
-                                        option Lựa Chọn
+                                        option Chọn
                                         option Nhượng quyền theo điểm
                                         option Nhượng quyền theo khu vực
                                         option Nhượng quyền độc quyền
 
                         .col-12
                             input(type="submit", value="Gửi")
-            footer
-                .container
-                    .row
-                        .col-lg-2
-                            a(href="").logo
-                                img(src="images/logo.png", alt="")
-                        .col-lg-7
-                            h2 CÔNG TY TNHH XUẤT NHẬP KHẨU & DỊCH VỤ ANH MINH
-                            p Tel: 024 6251 5355 
-                            p Fax : 024 6251 5356
-                            p Email: info@anhminhgroup.vn 
-                            //- p sales@mactech.vn
-                            p Văn phòng giao dịch : Tầng 2, Tòa nhà Petrowaco, 97-99 Láng Hạ, Đống Đa, Hà Nội
-                        .col-lg-3
-                            h3 LIÊN HỆ VỚI CHÚNG TÔI
-                            .soc
-                                a(href="")
-                                    span.ion-social-facebook
-                                a(href="")
-                                    span.ion-social-linkedin-outline
-                                a(href="")
-                                    span.ion-social-youtube-outline
-                            p.copy Copyright - All rights reserved.
+
+            include footer.pug
 
             .fb-root
 script(src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js")

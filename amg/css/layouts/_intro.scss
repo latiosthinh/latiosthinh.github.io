@@ -1,122 +1,108 @@
 #intro1 {
     margin-top: 90px;
-    padding-top: 7%;
+    padding: 80px 0;
     @media all and (max-width: 1366px) {
         margin-top: 70px;
-        padding-top: 3%;
+        padding: 40px 0;
     }
     h1 {
         font-size: 40px;
         font-weight: bold;
         position: relative;
-        margin-bottom: 45px;
+        color: #ffffff;
         @media all and (max-width: 1366px) {
             font-size: 30px;
-            margin-bottom: 25px;
-        }
-        // &:before {
-        //     content: "01.";
-        //     position: absolute;
-        //     font-size: 40px;
-        //     color: $c1;
-        //     bottom: 0;
-        //     left: -85px;
-        //     @media all and (max-width: 1366px) {
-        //         font-size: 30px;
-        //         left: -45px;
-        //     }
-        // }
-    }
-    p {
-        margin-bottom: 20px;
-    }
-    .intro-slider {
-        margin-top: 70px;
-        .slick-arrow {
-            bottom: 50px;
-            left: 20%;
-            &[name=ios-arrow-forward] {
-                left: 40%;
-            }
-        }
-    }
-    .slick-dots {
-        left: 30.5%;
-        transform: translateX(-50%);
-        bottom: 60px;
-        @media all and (max-width: 1024px) {
-            display: none !important;
         }
     }
 }
 
-#intro2 {
-    margin-top: 90px;
-    @media all and (max-width: 1366px) {
-        margin-top: 30px;
+#intro1-1 {
+    padding-top: 60px;
+    .row {
+        justify-content: center;
     }
-    h1 {
-        font-size: 40px;
-        font-weight: bold;
-        position: relative;
-        margin-bottom: 45px;
-        @media all and (max-width: 1366px) {
-            font-size: 30px;
-            margin-bottom: 25px;
+    .col-lg-6 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 35px 0;
+        @media all and (max-width: 1440px) {
+            margin: 25px 0;
         }
-        // &:before {
-        //     content: "02.";
-        //     position: absolute;
-        //     font-size: 40px;
-        //     color: $c1;
-        //     bottom: 0;
-        //     left: -85px;
-        //     @media all and (max-width: 1366px) {
-        //         font-size: 30px;
-        //         left: -45px;
-        //     }
-        // }
+        @media all and (max-width: 767px) {
+            flex-direction: column;
+            a {
+                margin: 20px 0;
+            }
+        }
+    }
+    h3 {
+        font-size: 24px;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+}
+
+#intro2 {
+    .row {
+        position: relative;
+        margin: 70px auto;
+        justify-content: center;
+        &::before {
+            content:"";
+            position: absolute;
+            display: block;
+            width: 50%;
+            height: 1px;
+            background: #000000;
+            left: 50%;
+            top: -35px;
+            transform: translateX(-50%);
+        }
+        &:last-child {
+            margin-top: 0px;
+            &:before {
+                display: none;
+            }
+        }
+    }
+    .col-md-2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        p {
+            text-align: center;
+        }
     }
     h3 {
         font-size: 30px;
         font-weight: bold;
         font-family: $fr;
         margin: 45px 0 25px;
+        text-align: center;
         position: relative;
         @media all and (max-width: 1366px) {
             font-size: 25px;
             margin: 25px 0 15px;
         }
-        &:before {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: $c1;
-            top: 50%;
-            transform: translateY(-50%);
-            left: -25px;
-            border-radius: 50%;
-        }
     }
     h4 {
-        text-transform: capitalize;
-        font-size: 22px;
-        @media all and (max-width: 1366px) {
-            font-size: 18px;
-        }
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0px 10px;
     }
-    .detail {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 40px;
-        .col-left {
-            flex: 0 0 15%;
-            font-weight: bold;
+    img {
+        &.w {
+            width: 100%;
+            margin: 15px 0;
+            height: auto;
         }
-        .col-right {
-            flex: 0 0 85%;
-        }
+        height: 90px;
+    }
+    p {
+        text-align: justify;
     }
 }
 

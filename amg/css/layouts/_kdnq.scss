@@ -1,10 +1,10 @@
 #kdnq {
     margin-top: 90px;
-    padding: 100px 0 180px;
-    background: url(images/nhuongquyen.jpg) center center / cover no-repeat;
+    padding: 100px 0 70px;
+    // background: url(images/nhuongquyen.jpg) center center / cover no-repeat;
     @media all and (max-width: 1366px) {
         margin-top: 70px;
-        padding: 40px 0 80px;
+        padding: 40px 0 50px;
     }
     h1 {
         font-size: 48px;
@@ -24,12 +24,12 @@
     p {
         font-size: 14px;
         margin-top: 20px;
-        color: #ffffff;
+        color: $c2;
         display: block;
         text-align: center;
         padding: 0 25% 30px;
         width: 100%;
-        border-bottom: 1px solid #fff;
+        // border-bottom: 1px solid $c1;
         @media all and (max-width: 1024px) {
             padding: 0 20px 30px;
         }
@@ -61,7 +61,7 @@
         font-family: $fl;
         font-weight: bold;
         font-size: 18px;
-        color: #ffffff;
+        color: $c2;
         @media all and (max-width: 1366px) {
             font-size: 16px;
         }
@@ -91,7 +91,7 @@
         position: relative;
         user-select: none;
         cursor: pointer;
-        color: #ffffff;
+        color: $c2;
         @media all and (max-width: 1366px) {
             font-size: 16px;
         }
