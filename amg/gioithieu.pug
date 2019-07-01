@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content="simple pug template")
+        meta(name="author", content="latiosthinh")
+
+        title Home
+        //- bootstrap
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        //- font
+        //- link(rel="stylesheet", href="fonts/font-awesome/css/font-awesome.min.css")
+        //- link(rel="stylesheet", href="fonts/elegantIcon/elegantIcon.css")
+        link(rel="stylesheet", href="css/slick.css")
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
+
+        //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+        //- WARNING: Respond.js doesn't work if you view the page via file://
+        //- [if lt IE 9]>
+        //-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        //-     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        //- <![endif]
+    body
+        .wrap
+            header
+                a.logo(href="index.html"): img(src="images/logo.png", alt="")
+                nav.d-nav.container
+                    ul
+                        li
+                            a(href="") sản phẩm - dịch vụ
+                            <ion-icon name="arrow-dropdown"></ion-icon>
+                            ul
+                                li: a.smooth(href="http://mactech.vn") thiết bị đo lường
+                                li: a.smooth(href="service.html") dịch vụ nhà hàng
+                                li: a.smooth(href="kdnq.html") kinh doanh nhượng quyền
+                        li
+                            a(href="gioithieu.html") giới thiệu
+                        li
+                            a.smooth(href="news.html", title="") tin tức - sự kiện
+                            //- <ion-icon name="arrow-dropdown"></ion-icon>
+                            //- ul
+                            //-     li: a.smooth(href="tintuc.html") tin tức
+                            //-     li: a.smooth(href="sukien.html") sự kiện
+                        li: a(href="tuyendung.html") tuyển dụng
+                        li: a(href="contact.html") liên hệ
+                .s-form
+                    button.search
+                        <ion-icon name="search"></ion-icon>
+                    input(type="text")
+                    
+
+                button.open-mnav MENU OPEN
+
+            
+            section#intro1
+                .container
+                    h1 Giới Thiệu Chung
+                    p Thành lập năm 2012, Anh Minh Group là công ty thương mại chuyên về cung cấp máy móc, dụng cụ đo lường chính xác của các thương hiệu nổi tiếng trên thế giới: Mitutoyo, Carl Zeiss, Niigata Seiki, Nikon, Adcole, Osaka Seimitsu Kikai…
+
+                    p Năm 2015, Anh Minh Group mở rộng hoạt động kinh doanh sang lĩnh vực nhà hàng với thương hiệu đầu tiên mang tên Kampong Chicken House.
+
+                    p Tới năm 2018, Anh Minh đã ra mắt thêm hai thương hiệu mới Coca Restaurant và Duck Plus. Tổng số nhà hàng được vận hành bởi Anh Minh Group tại Hà Nội là 7 nhà hàng và dự kiến sẽ tăng lên 20 nhà hàng trong năm 2020.
+                
+                .container-fluid
+                    .row.intro-slider
+                        .item
+                            img(src="images/gioithieu.jpg", alt="")
+                        .item
+                            img(src="images/gioithieu.jpg", alt="")
+                        .item
+                            img(src="images/gioithieu.jpg", alt="")
+
+            section#intro2
+                .container
+                    h1 Tầm Nhìn, Sứ Mệnh & Giá Trị Cốt Lõi
+                    h3 TẦM NHÌN
+                    p Phát triển hệ sinh thái ẩm thực đặc biệt với nét văn hóa Á Châu, mục tiêu trở thành doanh nghiệp F&B chuyên nghiệp tại Việt Nam song hành trở thành Nhà phân phối hàng đầu với các doanh nghiệp sản xuất máy móc đo lường chính xác tại Việt Nam.
+                    h3 SỨ MỆNH
+                    p Tận tậm, không ngừng nỗ lực để mang tới cho khách hàng sự thỏa mãn tốt nhất từ các sản phẩm và dịch vụ mà Anh Minh cung cấp và góp một phần vào sự phát triển của đất nước. 
+                        br
+                        | Anh Minh Group sẽ không chỉ tận tâm phục vụ khách hàng mà còn góp phần hỗ trợ, nâng cao năng lực và hiệu quả sản xuất nông sản Việt Nam.
+                        br
+                        | Cung cấp các sản phẩm, dịch vụ ăn uống theo mô hình khép kín từ trang trại đến bàn ăn.
+                        br
+                        | Chúng tôi luôn chủ động, không ngừng đổi mới, sáng tạo để mang lại những giá trị trọn vẹn từ sự tận tâm cho khách hàng, cộng đồng và cho mỗi thành viên của chúng tôi. 
+
+                    h3 GIÁ TRỊ CỐT LÕI
+                    p Chủ động - Sáng tạo - Chuyên nghiệp - Uy tín - Tận tâm
+                    .detail
+                        .col-left
+                            | Chủ động: 		
+                        .col-right
+                            | Làm chủ quy trình sản xuất, chủ động có các giải pháp kinh doanh.
+                        .col-left
+                            | Sáng tạo: 	
+                        .col-right
+                            | Nhạy bén,nắm bắt xu thế, thay đổi kịp thời, hòa nhịp phát triển.
+                        .col-left
+                            | Chuyên nghiệp: 		
+                        .col-right
+                            | Luôn học hỏi và hoàn thiện để nâng cao tính chuyên nghiệp trong quy trình sản xuất, kinh doanh.
+                        .col-left
+                            | Uy tín: 	
+                        .col-right
+                            | Cam kết mang lại cho khách hàng và đối tác những sản phẩm và dịch vụ, chất lượng hoàn hảo.
+                        .col-left
+                            | Tận tâm: 		
+                        .col-right
+                            | Gửi trọn tâm ý để xây dựng giá trị cho khách hàng, tận tâm với người lao động, với xã hội
+            
+            section#intro3
+                .container-fluid
+                    h1 Đối Tác Của Anh Minh Group
+                    .row
+                        .col-lg-3
+                            img(src="images/partner.png", alt="")
+                        .col-lg-3
+                            img(src="images/partner.png", alt="")
+                        .col-lg-3
+                            img(src="images/partner.png", alt="")
+                        .col-lg-3
+                            img(src="images/partner.png", alt="")
+                            
+
+            section#contact.intro4
+                .container
+                    h1 liên hệ
+                    .row
+                        .col-lg-6
+                            <ion-icon name="home"></ion-icon>
+                            p Tầng 2, Tòa nhà Petrowaco, 97-99 Láng Hạ, Đống Đa, Hà Nội
+                        .col-lg-6
+                            <ion-icon name="call"></ion-icon>
+                            p 024 6251 5355
+
+            section#map
+                .detail
+                    .title
+                        <ion-icon name="pin"></ion-icon>
+                        h3 Trụ sở
+                            br
+                            | Anh Minh Group
+                    p Tầng 2, Tòa nhà Petrowaco, 97-99 Láng Hạ, Đống Đa, Hà Nội
+                    a(href="https://www.google.com/maps/place/T%C3%B2a+nh%C3%A0+97-99+L%C3%A1ng+H%E1%BA%A1/@21.0143412,105.8117341,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ab63baab0d6d:0x6c01e4981a4e6941!8m2!3d21.0143412!4d105.8139228", target="_blank")
+                        | see on google maps
+
+            footer
+                .container
+                    .row
+                        .col-lg-2
+                            a(href="").logo
+                                img(src="images/logo.png", alt="")
+                        .col-lg-7
+                            h2 CÔNG TY TNHH XUẤT NHẬP KHẨU & DỊCH VỤ ANH MINH
+                            p Tel: 024 6251 5355 
+                            p Fax : 024 6251 5356
+                            p Email: info@anhminhgroup.vn 
+                            //- p sales@mactech.vn
+                            p Văn phòng giao dịch : Tầng 2, Tòa nhà Petrowaco, 97-99 Láng Hạ, Đống Đa, Hà Nội
+                        .col-lg-3
+                            h3 LIÊN HỆ VỚI CHÚNG TÔI
+                            .soc
+                                a(href="")
+                                    span.ion-social-facebook
+                                a(href="")
+                                    span.ion-social-linkedin-outline
+                                a(href="")
+                                    span.ion-social-youtube-outline
+                            p.copy Copyright - All rights reserved.
+
+            .fb-root
+script(src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js")
+script(src="js/jquery.js")
+script(src="js/gsap.min.js")
+script(src="js/scrollMagic.min.js")
+script(src="js/debug.addIndicators.min.js")
+script(src="js/bootstrap.min.js")
+script(src="js/slick.min.js")
+script(src="js/slide.js")
+script(src="js/script.js")
+script.
+    $('.d-nav').hc_menu({
+        open: '.open-mnav',
+    });
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));

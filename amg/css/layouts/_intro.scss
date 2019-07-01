@@ -1,0 +1,193 @@
+#intro1 {
+    margin-top: 90px;
+    padding-top: 7%;
+    @media all and (max-width: 1366px) {
+        margin-top: 70px;
+        padding-top: 3%;
+    }
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        position: relative;
+        margin-bottom: 45px;
+        @media all and (max-width: 1366px) {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+        // &:before {
+        //     content: "01.";
+        //     position: absolute;
+        //     font-size: 40px;
+        //     color: $c1;
+        //     bottom: 0;
+        //     left: -85px;
+        //     @media all and (max-width: 1366px) {
+        //         font-size: 30px;
+        //         left: -45px;
+        //     }
+        // }
+    }
+    p {
+        margin-bottom: 20px;
+    }
+    .intro-slider {
+        margin-top: 70px;
+        .slick-arrow {
+            bottom: 50px;
+            left: 20%;
+            &[name=ios-arrow-forward] {
+                left: 40%;
+            }
+        }
+    }
+    .slick-dots {
+        left: 30.5%;
+        transform: translateX(-50%);
+        bottom: 60px;
+        @media all and (max-width: 1024px) {
+            display: none !important;
+        }
+    }
+}
+
+#intro2 {
+    margin-top: 90px;
+    @media all and (max-width: 1366px) {
+        margin-top: 30px;
+    }
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        position: relative;
+        margin-bottom: 45px;
+        @media all and (max-width: 1366px) {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+        // &:before {
+        //     content: "02.";
+        //     position: absolute;
+        //     font-size: 40px;
+        //     color: $c1;
+        //     bottom: 0;
+        //     left: -85px;
+        //     @media all and (max-width: 1366px) {
+        //         font-size: 30px;
+        //         left: -45px;
+        //     }
+        // }
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: $fr;
+        margin: 45px 0 25px;
+        position: relative;
+        @media all and (max-width: 1366px) {
+            font-size: 25px;
+            margin: 25px 0 15px;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: $c1;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -25px;
+            border-radius: 50%;
+        }
+    }
+    h4 {
+        text-transform: capitalize;
+        font-size: 22px;
+        @media all and (max-width: 1366px) {
+            font-size: 18px;
+        }
+    }
+    .detail {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        .col-left {
+            flex: 0 0 15%;
+            font-weight: bold;
+        }
+        .col-right {
+            flex: 0 0 85%;
+        }
+    }
+}
+
+#intro3 {
+    margin-top: 55px;
+    background: #f2f2f2;
+    padding: 70px 0;
+    @media all and (max-width: 1366px) {
+        margin-top: 25px;
+        padding: 30px 0;
+    }
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 35px;
+        @media all and (max-width: 1366px) {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+    }
+    .col-lg-3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 70px 0;
+        @media all and (max-width: 1366px) {
+            margin: 35px 0;
+        }
+    }
+    img {
+        opacity: .55;
+        max-width: 290px;
+        transition: .3s;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+#contact {
+    &.intro4 {
+        margin-top: 90px;
+        @media all and (max-width: 1366px) {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            position: relative;
+            margin-bottom: 45px;
+            text-align: left;
+            text-transform: capitalize;
+            @media all and (max-width: 1366px) {
+                font-size: 30px;
+                margin-bottom: 25px;
+            }
+            // &:before {
+            //     content: "03.";
+            //     position: absolute;
+            //     font-size: 40px;
+            //     color: $c1;
+            //     bottom: 0;
+            //     left: -85px;
+            //     @media all and (max-width: 1366px) {
+            //         font-size: 30px;
+            //         left: -45px;
+            //     }
+            // }
+        }
+        
+    }
+}

@@ -1,0 +1,132 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 20;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @media all and (max-width: 1366px) {
+        height: 70px;
+    }
+    @media all and (max-width: 1024px) {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .logo {
+        display: block;
+        width: 55px;
+        @media all and (max-width: 1366px) {
+            width: 40px;
+        }
+    }
+    nav {
+        height: 100%;
+        margin: 0 !important;
+        @media all and (max-width: 1366px) {
+            max-width: 900px !important;
+        }
+        @media all and (max-width: 1024px) {
+            display: none;
+        }
+        ul {
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            @media all and (max-width: 1440px) {
+                justify-content: center;
+            }
+            li {
+                margin-left: 5%;
+                position: relative;
+                a {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    padding: 10px;
+                }
+                &:hover {
+                    ul {
+                        display: block;
+                    }
+                    >a {
+                        color: $c1;
+                    }
+                    > .hydrated {
+                        color: $c1;
+                    }
+                }
+                ul {
+                    display: none;
+                    position: absolute;
+                    top: calc(100% + 8px);;
+                    left: 0;
+                    li {
+                        margin:0;
+                        &:hover {
+                            a {
+                                background: $c1;
+                                color: #ffffff;
+                            }
+                        }
+                        a {
+                            background: #ffffff;
+                            display: block;
+                            padding: 10px;
+                            white-space: nowrap;
+                            min-width: 150px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .s-form {
+        display: flex;
+        align-items: center;
+        position: relative;
+        @media all and (max-width: 1024px) {
+            display:none;
+        }
+        input {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: $c2;
+            border: 0;
+            outline: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            z-index: 0;
+            color: #fff;
+            width: 0;
+            opacity: 0;
+            transition: .2s;
+        }
+    }
+    .search {
+        font-size: 26px;
+        color: $c2;
+        transition: .3s;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media all and (max-width: 1024px) {
+            display:none;
+        }
+        &:hover {
+            color: $c1;
+        }
+        &.active {
+            color: $c1;
+            + input {
+                opacity: 1;
+                width: 180px;
+            }
+        }
+    }
+}

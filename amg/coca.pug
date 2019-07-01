@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content="simple pug template")
+        meta(name="author", content="latiosthinh")
+
+        title Home
+        //- bootstrap
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        //- font
+        //- link(rel="stylesheet", href="fonts/font-awesome/css/font-awesome.min.css")
+        //- link(rel="stylesheet", href="fonts/elegantIcon/elegantIcon.css")
+        link(rel="stylesheet", href="css/slick.css")
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
+
+        //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+        //- WARNING: Respond.js doesn't work if you view the page via file://
+        //- [if lt IE 9]>
+        //-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        //-     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        //- <![endif]
+    body
+        .wrap
+            header
+                a.logo(href="index.html"): img(src="images/logo.png", alt="")
+                nav.d-nav.container
+                    ul
+                        li
+                            a(href="") sản phẩm - dịch vụ
+                            <ion-icon name="arrow-dropdown"></ion-icon>
+                            ul
+                                li: a.smooth(href="http://mactech.vn") thiết bị đo lường
+                                li: a.smooth(href="service.html") dịch vụ nhà hàng
+                                li: a.smooth(href="kdnq.html") kinh doanh nhượng quyền
+                        li
+                            a(href="gioithieu.html") giới thiệu
+                        li
+                            a.smooth(href="news.html", title="") tin tức - sự kiện
+                            //- <ion-icon name="arrow-dropdown"></ion-icon>
+                            //- ul
+                            //-     li: a.smooth(href="tintuc.html") tin tức
+                            //-     li: a.smooth(href="sukien.html") sự kiện
+                        li: a(href="tuyendung.html") tuyển dụng
+                        li: a(href="contact.html") liên hệ
+                .s-form
+                    button.search
+                        <ion-icon name="search"></ion-icon>
+                    input(type="text")
+                    
+
+                button.open-mnav MENU OPEN
+
+            
+            section#coca1
+                img(src="images/cbanner.jpg", alt="")
+                .container
+                    img(src="images/clogo.png", alt="")
+                    p Từ 1 nhà hàng gia đình chỉ có 4 bàn với 20 chỗ đầu tiên vào những năm 1957 tại Bangkok-Thailand, theo phong cách ẩm thực Hồng Kông. Vợ chồng Ông Srichai Phaphenonphon đã gặt hái được nhiều thành công khi họ mở rộng quy mô và dời nhà hàng về Soi Tantarwan đăt tên là nhà hàng Coca Suki.
+                        br
+                        | Đây chính là nhà hàng Coca Suki đầu tiên ra đời là bước khởi nghiệp cho sự phát triển rộng khắp của hệ thống nhà hàng Coca Suki trên nhiều nước như ngày nay. Công thức chế biến mới của Lẩu Suki và “nước sốt Coca” đặc biệt cùng với sự kết hợp tinh túy các nguyên liệu từ thiên nhiên đã làm nên tên tuổi của Chuỗi nhà hàng Coca suki.  
+                    
+                    a(href="datban.html") Đặt bàn ngay
+
+            section#coca2
+                .container
+                    h2 Lịch Sử Hình Thành
+                    p Trước khi có mặt tại Hà Nội, COCA là thương hiệu nổi tiếng với bề dày lịch sử gần 60 năm và được yêu thích tại hơn 20 quốc gia trên thế giới. Ra mắt từ tháng 4 năm 2017, COCA Restaurant Hà Nội với cơ sở đầu tiên tại 75 Láng Hạ khiến khách hàng ấn tượng và yêu mến bởi phong vị chuẩn Thái  theo công thức bí truyền được kết hợp từ những nguyên liệu tươi mới mỗi ngày. COCA Restaurant HÀ Nội luôn hoạt động với tôn chỉ: “Chúng tôi sẽ phục vụ cho khách hàng những gì mà chúng tôi sử dụng cho chính gia đình mình.
+
+            section#coca3
+                .coca-slider
+                    img(src="images/cs1.jpg", alt="")
+                    img(src="images/cs1.jpg", alt="")
+                    img(src="images/cs1.jpg", alt="")
+                    img(src="images/cs1.jpg", alt="")
+                    img(src="images/cs1.jpg", alt="")
+                    
+            section#coca4
+                .container
+                    .row
+                        .col-lg-6
+                            h2 Quy Mô Hoạt Động
+                            p Lần đầu tiên tại Hà Nội, nhà hàng COCA tọa lạc tại địa chỉ 75 Láng Hạ với sức chứa lên tới hơn 200 khách hàng .
+                                br
+                                | Không gian  nhà hàng được thiết kế ấn tượng, lấy ý tưởng từ những mái vòm cao vút của ngôi chùa Thái và phong cách thiết kế hiện đại. Từng điểm nhấn trong không gian COCA Restaurant mang đậm dấu ấn đất nước xứ sở Chùa Vàng .
+                                br
+                                | Đến với COCA thực khách như được dạo chơi trên khu phố ẩm thực Bangkok , đầy đủ cả sắc, hương , trọn vị tinh tế mà bếp trưởng hàng đầu nhà hàng gửi gắm vào từng món ăn.
+                            a(href="") Tới Website COCA
+                        .col-lg-6.img.r
+                            img(src="images/quymo.jpg", alt="")
+                        .col-lg-6.img.l
+                            img(src="images/quymo.jpg", alt="")
+                        .col-lg-6.right
+                            h2 Món Ăn Đặc Trưng COCA Restaurant
+                            p Tại COCA Restaurant Hà Nội, thực khách có thể cảm nhận trọn vẹn ẩm thực Thái từ những món ăn đặc trưng và quen thuộc như gỏi xoài, cá hấp chanh,.. hay những món ăn hiện đại như Cá lăng cuốn chấm sốt hải sản, Cua sốt cà ri, …
+                            a(href="") Tới Website COCA
+                h1   
+                    a(href="datban.html").red Đặt bàn ngay
+
+            section#coca5
+                img(src="images/clienhe.jpg", alt="")
+                .container
+                    h2 Liên Hệ
+                    p COCA RESTAURANT HÀ NỘI
+                    p ĐỊA CHỈ: 75 LÁNG HẠ, BA ĐÌNH
+                    p WEBSITE: COCASUKI.VN/
+                    p ĐIỆN THOẠI: 024 3960 5555
+                    p FACEBOOK: FB/COCAHANOI
+
+
+            footer
+                .container
+                    .row
+                        .col-lg-2
+                            a(href="").logo
+                                img(src="images/logo.png", alt="")
+                        .col-lg-7
+                            h2 CÔNG TY TNHH XUẤT NHẬP KHẨU & DỊCH VỤ ANH MINH
+                            p Tel: 024 6251 5355 
+                            p Fax : 024 6251 5356
+                            p Email: info@anhminhgroup.vn 
+                            //- p sales@mactech.vn
+                            p Văn phòng giao dịch : Tầng 2, Tòa nhà Petrowaco, 97-99 Láng Hạ, Đống Đa, Hà Nội
+                        .col-lg-3
+                            h3 LIÊN HỆ VỚI CHÚNG TÔI
+                            .soc
+                                a(href="")
+                                    span.ion-social-facebook
+                                a(href="")
+                                    span.ion-social-linkedin-outline
+                                a(href="")
+                                    span.ion-social-youtube-outline
+                            p.copy Copyright - All rights reserved.
+
+            .fb-root
+script(src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js")
+script(src="js/jquery.js")
+script(src="js/gsap.min.js")
+script(src="js/scrollMagic.min.js")
+script(src="js/debug.addIndicators.min.js")
+script(src="js/bootstrap.min.js")
+script(src="js/slick.min.js")
+script(src="js/slide.js")
+script(src="js/script.js")
+script.
+    $('.d-nav').hc_menu({
+        open: '.open-mnav',
+    });
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));

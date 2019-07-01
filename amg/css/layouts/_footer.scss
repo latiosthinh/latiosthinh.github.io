@@ -1,0 +1,99 @@
+footer {
+    padding-top: 10px;
+    border-top: 30px solid $c1;
+    position: relative;
+    .container {
+        .row {
+            justify-content: space-between;
+        }
+    }
+    &:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        display: block;
+        background: $c1;
+        margin-bottom: 40px;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        @media all and (max-width: 1024px) {
+            justify-content: center;
+        }
+        img {
+            width: 85px;
+            height: 115px;
+            margin-right: 10px;
+        }
+    }
+    h2 {
+        font-weight: bold;
+        font-family: $fl;
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .copy {
+        display: inline-block;
+        margin-top: 2px;
+        width: 100%;
+    }
+    .form {
+        .form-input {
+            margin: 15px -15px 50px;
+        }
+        input {
+            border: 3px solid $c2;
+            font-size: 14px;
+            font-style: italic;
+            color: $c2;
+            width: calc(100% - 5px);
+            height: 100%;
+            &:focus, &:hover {
+                border: 3px solid $c1;
+            }
+        }
+        button {
+            border: 3px solid $c1;
+            font-size: 14px;
+            padding: 14px 0;
+            width: calc(100% - 5px);
+            height: 100%;
+            transition: .3s;
+            font-weight: bold;
+            &:hover {
+                background: $c2;
+                color: $c1;
+            }
+        }
+    }
+    .menu-bottom {
+        a {
+            display: block;
+            margin-bottom: 35px;
+            transition: .3s;
+            &:hover {
+                color: $c1;
+            }
+        }
+    }
+    h3 {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .soc {
+        font-size: 40px;
+        display: flex;
+        justify-content: space-between;
+        a {
+            display: inline-flex;
+            transition: .3s;
+            &:hover {
+                color: $c1;
+            }
+        }
+    }
+}

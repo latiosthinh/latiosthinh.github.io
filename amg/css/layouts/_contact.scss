@@ -1,0 +1,156 @@
+#contact-page {
+    background: url(images/contact.jpg) center center / cover no-repeat;
+    margin-top: 90px;
+    padding: 60px 0;
+    @media all and (max-width: 1366px) {
+        margin-top: 70px;
+        padding: 30px 0;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 30px 15px;
+    }
+    h1 {
+        color: $c1;
+        font-size: 40px;
+        font-weight: bold;
+        display: flex;
+        margin-bottom: 60px;
+        @media all and (max-width: 1366px) {
+            font-size: 30px;
+            margin-bottom: 35px;
+        }
+    }
+    .col-lg-6 {
+        padding: 0;
+    }
+    label {
+        display: flex;
+        color: #ffffff;
+        font-family: $fl;
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 12px;
+        position: relative;
+        cursor: pointer;
+        @media all and (max-width: 1366px) {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        &.yn {
+            padding-left: 45px;
+            font-size: 18px;
+            font-family: $fl;
+            font-weight: normal;
+            @media all and (max-width: 1366px) {
+                font-size: 16px;
+            }
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            &:checked {
+                + span {
+                    border: 1px solid $c1;
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        span {
+            transition: .3s;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            &:after {
+                transition: .3s;
+                content: "";
+                opacity: 0;
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                background: $c1;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        +input {
+            margin-bottom: 35px;
+        }
+    }
+    input {
+        color: #ffffff;
+        border: 1px solid $c1;
+        width: 80%;
+        background: transparent;
+        font-style: italic;
+        padding: 18px 20px;
+        @media all and (max-width: 1366px) {
+            padding: 10px 15px;
+        }
+        &.captcha {
+            max-width: 280px;
+        }
+        &[type=submit] {
+            color: #ffffff;
+            background: $c1;
+            max-width: 280px;
+            font-style: normal;
+            font-size: 30px;
+            padding: 7px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 35px;
+            transition: .3s;
+            cursor: pointer;
+            @media all and (max-width: 1366px) {
+                max-width: 280px;
+                font-size: 20px;
+                padding: 5px;
+            }
+            &:hover {
+                background: $c2;
+                color: $c1;
+            }
+        }
+    }
+    textarea {
+        display: flex;
+        width: 100%;
+        border: 1px solid $c1;
+        color: $c1;
+        background: transparent;
+    }
+    h3 {
+        display: flex;
+        color: #ffffff;
+        font-weight: bold;
+        margin-bottom: 12px;
+        margin-top: 30px;
+        font-size: 22px;
+        @media all and (max-width: 1366px) {
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+    }
+    .img {
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $c1;
+        padding: 10px 15px;
+        margin-left: 80px;
+    }
+}

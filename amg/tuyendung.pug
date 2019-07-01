@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content="simple pug template")
+        meta(name="author", content="latiosthinh")
+
+        title Home
+        //- bootstrap
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        //- font
+        //- link(rel="stylesheet", href="fonts/font-awesome/css/font-awesome.min.css")
+        //- link(rel="stylesheet", href="fonts/elegantIcon/elegantIcon.css")
+        link(rel="stylesheet", href="css/slick.css")
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
+
+        //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+        //- WARNING: Respond.js doesn't work if you view the page via file://
+        //- [if lt IE 9]>
+        //-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        //-     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        //- <![endif]
+    body.tuyendung
+        .wrap
+            header
+                a.logo(href="index.html"): img(src="images/logo.png", alt="")
+                nav.d-nav.container
+                    ul
+                        li
+                            a(href="") sản phẩm - dịch vụ
+                            <ion-icon name="arrow-dropdown"></ion-icon>
+                            ul
+                                li: a.smooth(href="http://mactech.vn") thiết bị đo lường
+                                li: a.smooth(href="service.html") dịch vụ nhà hàng
+                                li: a.smooth(href="kdnq.html") kinh doanh nhượng quyền
+                        li
+                            a(href="gioithieu.html") giới thiệu
+                        li
+                            a.smooth(href="news.html", title="") tin tức - sự kiện
+                            //- <ion-icon name="arrow-dropdown"></ion-icon>
+                            //- ul
+                            //-     li: a.smooth(href="tintuc.html") tin tức
+                            //-     li: a.smooth(href="sukien.html") sự kiện
+                        li: a(href="tuyendung.html") tuyển dụng
+                        li: a(href="contact.html") liên hệ
+                .s-form
+                    button.search
+                        <ion-icon name="search"></ion-icon>
+                    input(type="text")
+                    
+
+                button.open-mnav MENU OPEN
+
+            
+            section#banner
+                img(src="images/2.jpg", alt="")
+                .container
+                    .col-lg-12.left-slider
+                        .item
+                            h1 Tin Tức Tuyển Dụng Anh Minh Group
+                            p Thành lập năm 2012, Anh Minh Group là công ty thương mại chuyên về cung cấp máy móc, dụng cụ đo lường chính xác.
+                                br
+                                |Năm 2015, Anh Minh Group mở rộng hoạt động kinh doanh sang lĩnh vực nhà hàng với thương hiệu đầu tiên mang tên Kampong Chicken House.
+                                br
+                                | Tới năm 2018, Anh Minh đã ra mắt thêm hai  thương hiệu mới Coca Restaurant và Duck Plus
+                            a(href="") XEM THÊM
+                        .item
+                            h1 Tin Tức Tuyển Dụng Anh Minh Group
+                            p Thành lập năm 2012, Anh Minh Group là công ty thương mại chuyên về cung cấp máy móc, dụng cụ đo lường chính xác.
+                                br
+                                |Năm 2015, Anh Minh Group mở rộng hoạt động kinh doanh sang lĩnh vực nhà hàng với thương hiệu đầu tiên mang tên Kampong Chicken House.
+                                br
+                                | Tới năm 2018, Anh Minh đã ra mắt thêm hai  thương hiệu mới Coca Restaurant và Duck Plus
+                            a(href="") GXEM THÊM
+                        .item
+                            h1 Tin Tức Tuyển Dụng Anh Minh Group
+                            p Thành lập năm 2012, Anh Minh Group là công ty thương mại chuyên về cung cấp máy móc, dụng cụ đo lường chính xác.
+                                br
+                                |Năm 2015, Anh Minh Group mở rộng hoạt động kinh doanh sang lĩnh vực nhà hàng với thương hiệu đầu tiên mang tên Kampong Chicken House.
+                                br
+                                | Tới năm 2018, Anh Minh đã ra mắt thêm hai  thương hiệu mới Coca Restaurant và Duck Plus
+                            a(href="") XEM THÊM
+                        .item
+                            h1 Tin Tức Tuyển Dụng Anh Minh Group
+                            p Thành lập năm 2012, Anh Minh Group là công ty thương mại chuyên về cung cấp máy móc, dụng cụ đo lường chính xác.
+                                br
+                                |Năm 2015, Anh Minh Group mở rộng hoạt động kinh doanh sang lĩnh vực nhà hàng với thương hiệu đầu tiên mang tên Kampong Chicken House.
+                                br
+                                | Tới năm 2018, Anh Minh đã ra mắt thêm hai  thương hiệu mới Coca Restaurant và Duck Plus
+                            a(href="") XEM THÊM
+                        .item
+                            h1 Tin Tức Tuyển Dụng Anh Minh Group
+                            p Thành lập năm 2012, Anh Minh Group là công ty thương mại chuyên về cung cấp máy móc, dụng cụ đo lường chính xác.
+                                br
+                                |Năm 2015, Anh Minh Group mở rộng hoạt động kinh doanh sang lĩnh vực nhà hàng với thương hiệu đầu tiên mang tên Kampong Chicken House.
+                                br
+                                | Tới năm 2018, Anh Minh đã ra mắt thêm hai  thương hiệu mới Coca Restaurant và Duck Plus
+                            a(href="") XEM THÊM
+                        .item
+                            h1 Tin Tức Tuyển Dụng Anh Minh Group
+                            p Thành lập năm 2012, Anh Minh Group là công ty thương mại chuyên về cung cấp máy móc, dụng cụ đo lường chính xác.
+                                br
+                                |Năm 2015, Anh Minh Group mở rộng hoạt động kinh doanh sang lĩnh vực nhà hàng với thương hiệu đầu tiên mang tên Kampong Chicken House.
+                                br
+                                | Tới năm 2018, Anh Minh đã ra mắt thêm hai  thương hiệu mới Coca Restaurant và Duck Plus
+                            a(href="") XEM THÊM
+
+            section#tuyendung.news
+                h1 Cơ Hội Nghề Nghiệp
+                .container
+                    ul.nav.nav-tabs
+                        li.col-4
+                            a(data-toggle='tab', href='#e1').active Khối kinh doanh thiết bị đo lường
+                        li.col-4
+                            a(data-toggle='tab', href='#e2') Khối quản lý vận hành
+                        li.col-4
+                            a(data-toggle='tab', href='#e3') Khối dịch vụ nhà hàng
+                    .tab-content
+                        #e1.tab-pane.in.active
+                            .col-12
+                                img(src="images/bigevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                            .col-6
+                                img(src="images/smallevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                            .col-6
+                                img(src="images/smallevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                            
+                            button 
+                                | Hiển thị thêm
+                                <ion-icon name="ios-arrow-down"></ion-icon>
+                        #e2.tab-pane.fade
+                            .col-12
+                                img(src="images/bigevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                            .col-6
+                                img(src="images/smallevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                            .col-6
+                                img(src="images/smallevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                        #e3.tab-pane.fade
+                            .col-12
+                                img(src="images/bigevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                            .col-6
+                                img(src="images/smallevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                            .col-6
+                                img(src="images/smallevent.jpg", alt="")
+                                h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum non ab, asperiores expedita necessitatibus ipsam voluptates officia vero autem explicabo ea, ex perferendis nemo officiis inventore molestias perspiciatis placeat quod.
+                                a(href="")
+                            
+                            button 
+                                | Hiển thị thêm
+                                <ion-icon name="ios-arrow-down"></ion-icon>
+
+            section#tuyendung2
+                .container
+                    h1 Ứng Tuyển Online
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+
+                    .form
+                        .col-lg-5
+                            label Họ và tên*
+                            input(type="text", placeholder="Điền tên đầy đủ của bạn")
+                        .col-lg-5
+                            label Số điện thoại*
+                            input(type="text", placeholder="Điền số điện thoại của bạn")
+                        .col-lg-5
+                            label Ngày tháng năm sinh*
+                            input(type="date", placeholder="Điền ngày tháng năm sinh của bạn")
+                        .col-lg-5
+                            label Email*
+                            input(type="text", placeholder="Điền email của bạn")
+                        .col-lg-12
+                            label Thư ngỏ*
+                            textarea(rows="10", placeholder="Hãy nói đôi điều về bạn")
+                        .col-12
+                            input(type="button", value="Tải lên file hồ sơ của bạn")
+                            p (Hỗ trợ tệp JPG, PNG, PDF, WORD)
+                        .col-12
+                            input(type="submit", value="Nộp hồ sơ")
+
+            section#tuyendung3
+                .container
+                    h1 Làm Việc Tại Anh Minh Group
+                    .row
+                        ul.nav.nav-tabs
+                            li.col-4
+                                a(data-toggle='tab', href='#f1').active Môi Trường Và Văn Hóa Làm Việc
+                            li.col-4
+                                a(data-toggle='tab', href='#f2') Hoạt Động Thường Niên
+                            li.col-4
+                                a(data-toggle='tab', href='#f3') Chính Sách Đào Tạo Và Phát Triển
+                        .tab-content
+                            #f1.tab-pane.in.active
+                                .col-lg-6
+                                    p Anh Minh Group là môi trường làm việc  trẻ trung , năng động và nhiệt huyết, tự chủ trong công việc, luôn hành động với một tinh thần tự giác và giúp đỡ, không đổ lỗi, luôn hướng tới vì mục tiêu công việc chung, tất cả công việc đều làm việc minh bạch và công bằng. Cấp trên luôn hướng dẫn giúp đỡ cấp dưới, với cấp dưới thì luôn cam kết công việc hoàn thành đúng thời hạn và làm với tinh thần trách nhiệm công việc, đặt mục tiêu công việc lên hàng đầu. 
+                                        br
+                                        | Chúng tôi hướng đến và hoàn thiện mình mỗi ngày, áp dụng đổi mới công nghệ, áp dụng cải tiến quy trình làm việc, tất cả công việc được xác định bằng những con số, mục tiêu rõ ràng và hiệu quả, lượng hóa công việc và chuyên môn hóa nghiệp vụ để nâng cao năng suất chất lượng công việc. 
+
+                                .col-lg-6
+                                    img(src="images/tuyendungsm.jpg", alt="")
+                                .col-lg-6
+                                    img(src="images/tuyendungsm.jpg", alt="")
+                                .col-lg-6
+                                    p Mọi người trong công ty luôn chung tay mỗi người đều có trách nhiệm xây dựng văn hóa và môi trường làm việc chuyên nghiệp và đáng là nơi để tất cả mọi người luôn cống hiến hết mình trong công việc.
+                                        br
+                                        | Về đời sống của cán bộ nhân viên cũng luôn được quan tâm hỏi han giúp đỡ từ phía Ban chấp hành công đoàn, giúp đỡ những hoàn cảnh khó khăn.
+                                
+                            #f2.tab-pane.fade
+                                .col-lg-6
+                                    p Để xây dựng đội ngũ có tinh thần làm việc đoàn kết sáng tạo, hàng năm công ty tổ chức các hoạt động team building để gắn kết mọi người như: chương trình giao lưu đá bóng, văn nghệ giữa các nhà hàng, nghỉ mát, sinh nhật nhân viên, các hoạt động thiện nguyện góp phần chung tay giúp đỡ trẻ em nghèo vượt khó.
+                                .col-lg-6
+                                    img(src="images/tuyendungsm.jpg", alt="")
+                                .col-lg-6
+                                    img(src="images/tuyendungsm.jpg", alt="")
+                                .col-lg-6
+                                    p Ngoài ra để nhìn lại những thành tích một năm hoạt động và xác định phương hướng mục tiêu hoạt động cho năm tiếp theo công ty thường tổ chức ghi nhận các cá nhân, tập thể có thành tích đóng góp tạo giá trị cho công ty vào cuối năm, có tri ân tặng quà, trao giải thưởng và có bữa tiệc giao lưu gắn kết.
+                            #f3.tab-pane.fade
+                                .col-lg-6
+                                    p Với chúng tôi, con người là tài sản quý giá nhất và là tiền đề để phát triển, chính vì vậy để duy trì và phát triển bền vững chúng tôi luôn có chính sách đào tạo phát triển đội ngũ nhân viên đang làm việc và xây dựng đội ngũ kế cận.
+                                .col-lg-6
+                                    img(src="images/tuyendungsm.jpg", alt="")
+                                .col-lg-6
+                                    img(src="images/tuyendungsm.jpg", alt="")
+                                .col-lg-6
+                                    p Đào tạo chéo năng lực nhằm thúc đẩy và phát triển tạo động lực cho nhân viên giúp nhân viên hiểu biết và phát huy hết khả năng và năng lực của mình, nhân viên luôn nhìn xa và hướng tới những điều phát triển để phấn đấu.
+            
+            section#tuyendung4
+                h1 Quy Trình Tuyển Dụng
+                //- .container-fluid
+                //-     img(src="images/v1.png", alt="")
+                
+                .td
+                    img(src="images/quytrinh.jpg", alt="")
+                    img(src="images/quytrinh.jpg", alt="")
+                    img(src="images/quytrinh.jpg", alt="")
+                    img(src="images/quytrinh.jpg", alt="")
+                    img(src="images/quytrinh.jpg", alt="")
+                .container
+                    h1 Liên Hệ Tuyển Dụng
+
+                    p Điện thoại: 024 6251 5355 ( máy lẻ 101)
+                        br
+                        | Hotline Tuyển dụng: 024 2240 5555
+                        br
+                        | Email: tuyendung@anhminhgroup.vn
+
+            footer
+                .container
+                    .row
+                        .col-lg-2
+                            a(href="").logo
+                                img(src="images/logo.png", alt="")
+                        .col-lg-7
+                            h2 CÔNG TY TNHH XUẤT NHẬP KHẨU & DỊCH VỤ ANH MINH
+                            p Tel: 024 6251 5355 
+                            p Fax : 024 6251 5356
+                            p Email: info@anhminhgroup.vn 
+                            //- p sales@mactech.vn
+                            p Văn phòng giao dịch : Tầng 2, Tòa nhà Petrowaco, 97-99 Láng Hạ, Đống Đa, Hà Nội
+                        .col-lg-3
+                            h3 LIÊN HỆ VỚI CHÚNG TÔI
+                            .soc
+                                a(href="")
+                                    span.ion-social-facebook
+                                a(href="")
+                                    span.ion-social-linkedin-outline
+                                a(href="")
+                                    span.ion-social-youtube-outline
+                            p.copy Copyright - All rights reserved.
+
+            .fb-root
+script(src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js")
+script(src="js/jquery.js")
+script(src="js/gsap.min.js")
+script(src="js/scrollMagic.min.js")
+script(src="js/debug.addIndicators.min.js")
+script(src="js/bootstrap.min.js")
+script(src="js/slick.min.js")
+script(src="js/slide.js")
+script(src="js/script.js")
+script.
+    $('.d-nav').hc_menu({
+        open: '.open-mnav',
+    });
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));

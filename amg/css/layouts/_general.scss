@@ -1,0 +1,66 @@
+body{
+	font-size: 14px;
+	font-family: $fr;
+	line-height: 1.5;
+	color: $c2;
+}
+
+#toTop {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
+.wrap {
+	overflow: hidden;
+}
+
+.yt-box{ @extend %yt-box }
+
+%title {
+	font-weight: bold;
+	font-size: 40px;
+	margin: 70px auto;
+	text-transform: uppercase;
+	text-align: center;
+	@media all and (max-width: 1366px) {
+		font-size: 35px;
+		margin: 30px auto;
+	}
+	@media all and (max-width: 1024px) {
+		font-size: 25px;
+		margin: 20px auto;
+	}
+}
+.slick-slide img {
+	width: 100%;
+}
+.slick-arrow {
+	position: absolute;
+	font-size: 36px;
+	cursor: pointer;
+	color: #fff;
+	&:hover {
+		color: $c1;
+	}
+}
+.slick-dots {
+	position: absolute;
+	li {
+		border: 2px solid #fff;
+		transition: .3s;
+		width: 12px;
+		height: 12px;
+		margin: 0 10px;
+		&:hover, &.slick-active {
+			border: 2px solid $c1;
+			background: $c1;
+		}
+	}
+}
+.yellow {
+	background: #faa61a;
+}
+.pink {
+	background: #fae4c9;
+}

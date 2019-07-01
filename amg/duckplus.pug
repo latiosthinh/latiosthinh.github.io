@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content="simple pug template")
+        meta(name="author", content="latiosthinh")
+
+        title Home
+        //- bootstrap
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        //- font
+        //- link(rel="stylesheet", href="fonts/font-awesome/css/font-awesome.min.css")
+        //- link(rel="stylesheet", href="fonts/elegantIcon/elegantIcon.css")
+        link(rel="stylesheet", href="css/slick.css")
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
+
+        //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+        //- WARNING: Respond.js doesn't work if you view the page via file://
+        //- [if lt IE 9]>
+        //-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        //-     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        //- <![endif]
+    body.yellow
+        .wrap
+            header
+                a.logo(href="index.html"): img(src="images/logo.png", alt="")
+                nav.d-nav.container
+                    ul
+                        li
+                            a(href="") sản phẩm - dịch vụ
+                            <ion-icon name="arrow-dropdown"></ion-icon>
+                            ul
+                                li: a.smooth(href="http://mactech.vn") thiết bị đo lường
+                                li: a.smooth(href="service.html") dịch vụ nhà hàng
+                                li: a.smooth(href="kdnq.html") kinh doanh nhượng quyền
+                        li
+                            a(href="gioithieu.html") giới thiệu
+                        li
+                            a.smooth(href="news.html", title="") tin tức - sự kiện
+                            //- <ion-icon name="arrow-dropdown"></ion-icon>
+                            //- ul
+                            //-     li: a.smooth(href="tintuc.html") tin tức
+                            //-     li: a.smooth(href="sukien.html") sự kiện
+                        li: a(href="tuyendung.html") tuyển dụng
+                        li: a(href="contact.html") liên hệ
+                .s-form
+                    button.search
+                        <ion-icon name="search"></ion-icon>
+                    input(type="text")
+                    
+
+                button.open-mnav MENU OPEN
+
+            
+            section#coca1
+                img(src="images/dbanner.jpg", alt="")
+                .container
+                    img(src="images/dlogo.png", alt="")
+                    p Tại nhà hàng Duck Plus, khách hàng sẽ được thưởng thức trọn vẹn hương vị vịt được chế biến theo phương thức truyền thống kết hợp hiện đại mỗi ngày.
+                    
+                    a(href="datban.html") Đặt bàn ngay
+
+            section#coca2
+                .container
+                    h2 Lịch Sử Hình Thành
+                    p Ra mắt từ tháng 6 năm 2018 tại địa chỉ 38 Hàm Long, Duck Plus là mô hình nhà hàng chuyên biệt các món ăn từ vịt tươi theo phong vị châu Á với món ăn đặc trưng lần đầu xuất hiện tại Hà Nội là cơm Vịt Triều Châu.
+                        br
+                        | Một trong những yếu tố khiến khách hàng ghi nhớ Duck Plus đó là thiết kế và cách bài trí ấn tượng từ những chi tiết trang trí nhỏ nhất. Bên cạnh đó là không gian mở hai tầng với những khoảng xanh tự nhiên khiến Duck Plus càng trở nên đặc biệt giữa phố cổ đông đúc. 
+                        br
+                        | Mặc dù mới ra mắt nhưng Duck Plus đã trở thành khách hàng thân thiết của rất nhiều đối tác lớn như VTC, BIDV, Vpbank, Techcombank, ngân hàng Nhà nước Việt Nam,…
+
+            section#coca3
+                .coca-slider
+                    img(src="images/ds.jpg", alt="")
+                    img(src="images/ds.jpg", alt="")
+                    img(src="images/ds.jpg", alt="")
+                    img(src="images/ds.jpg", alt="")
+                    img(src="images/ds.jpg", alt="")
+                    
+            section#coca4
+                .container
+                    .row
+                        .col-lg-6
+                            h2.cr Quy Mô Hoạt Động
+                            p.cw Nhà  hàng Duck Plus  là điểm đến tụ hội cho thực khách yêu thương món Vịt  phong vị thuần Á Châu, mà không kém phần hấp dẫn . Duck Plus chẳng những làm hài lòng thực khách từ món ăn mà còn gửi gắm ý vị thuần túy để một lần mà mãi chẳng thể quên. Đến năm 2020 nhà hàng sẽ mở rộng phát triển để đáp ứng nhu cầu của thực khách trong và nước ngoài tại Việt Nam 
+                                br
+                                | Tọa lạc tại trung tâm Hà Nội tại địa chỉ 38 Hàm Long, chỉ mất 5 phút di chuyển từ bờ hồ Hoàn Kiếm bạn có thể đến và tận hưởng món ăn đậm đà hòa cùng  không gian tinh tế với sức chứa lên đến 120 khách, lý tưởng cho những bữa tiệc bên bạn bè và người thân.
+                            a(href="") TỚI WEBSITE DUCK PLUS
+                        .col-lg-6.img.r
+                            img(src="images/quymo.jpg", alt="")
+                        .col-lg-6.img.l
+                            img(src="images/quymo.jpg", alt="")
+                        .col-lg-6.right
+                            h2.cr Món Ăn Đặc Trưng Duck Plus
+                            p.cw Bên cạnh món Cơm Vịt Triều Châu lần đầu xuất hiện tại Hà Nội, thực khách có thể thưởng thức những món ăn truyền thống từ vịt như vịt nấu chao, vịt nướng riềng mẻ,… cho tới những món ăn hiện đại như lạp vịt quay, bánh bọt lọc thịt vịt,…
+                            a(href="") TỚI WEBSITE DUCK PLUS
+                h1
+                    a(href="datban.html").yellow Đặt bàn ngay
+
+            section#coca5
+                img(src="images/clienhe.jpg", alt="")
+                .container
+                    h2 Liên Hệ
+                    p DUCK PLUS
+                    p ĐỊA CHỈ: 38 HÀM LONG, HOÀN KIẾM, HÀ NỘI
+                    p HOTLINE: 091 636 3238
+                    p ĐIỆN THOẠI: 024 33 111 666
+                    p WEBSITE: DUCKPLUS.VN
+                    p FACEBOOK: FB/DUCKPLUS.VN
+
+
+            footer
+                .container
+                    .row
+                        .col-lg-2
+                            a(href="").logo
+                                img(src="images/logo.png", alt="")
+                        .col-lg-7
+                            h2 CÔNG TY TNHH XUẤT NHẬP KHẨU & DỊCH VỤ ANH MINH
+                            p Tel: 024 6251 5355 
+                            p Fax : 024 6251 5356
+                            p Email: info@anhminhgroup.vn 
+                            //- p sales@mactech.vn
+                            p Văn phòng giao dịch : Tầng 2, Tòa nhà Petrowaco, 97-99 Láng Hạ, Đống Đa, Hà Nội
+                        .col-lg-3
+                            h3 LIÊN HỆ VỚI CHÚNG TÔI
+                            .soc
+                                a(href="")
+                                    span.ion-social-facebook
+                                a(href="")
+                                    span.ion-social-linkedin-outline
+                                a(href="")
+                                    span.ion-social-youtube-outline
+                            p.copy Copyright - All rights reserved.
+
+            .fb-root
+script(src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js")
+script(src="js/jquery.js")
+script(src="js/gsap.min.js")
+script(src="js/scrollMagic.min.js")
+script(src="js/debug.addIndicators.min.js")
+script(src="js/bootstrap.min.js")
+script(src="js/slick.min.js")
+script(src="js/slide.js")
+script(src="js/script.js")
+script.
+    $('.d-nav').hc_menu({
+        open: '.open-mnav',
+    });
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));

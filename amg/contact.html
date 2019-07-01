@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="simple pug template"/>
+    <meta name="author" content="latiosthinh"/>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+  </head>
+  <body>
+    <div class="wrap">
+      <header><a class="logo" href="index.html"><img src="images/logo.png" alt=""/></a>
+        <nav class="d-nav container">
+          <ul>
+            <li><a href="">sản phẩm - dịch vụ</a><ion-icon name="arrow-dropdown"></ion-icon>
+              <ul>
+                <li><a class="smooth" href="http://mactech.vn">thiết bị đo lường</a></li>
+                <li><a class="smooth" href="service.html">dịch vụ nhà hàng</a></li>
+                <li><a class="smooth" href="kdnq.html">kinh doanh nhượng quyền</a></li>
+              </ul>
+            </li>
+            <li><a href="gioithieu.html">giới thiệu</a></li>
+            <li><a class="smooth" href="news.html" title="">tin tức - sự kiện</a></li>
+            <li><a href="tuyendung.html">tuyển dụng</a></li>
+            <li><a href="contact.html">liên hệ</a></li>
+          </ul>
+        </nav>
+        <div class="s-form">
+          <button class="search"><ion-icon name="search"></ion-icon></button>
+          <input type="text"/>
+        </div>
+        <button class="open-mnav">MENU OPEN</button>
+      </header>
+      <section id="contact-page">
+        <div class="container">
+          <div class="row">
+            <h1>Liên hệ</h1>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <label>Họ và tên*</label>
+              <input type="text" placeholder="Điền tên đầy đủ của bạn"/>
+            </div>
+            <div class="col-lg-6">
+              <label>Email*</label>
+              <input type="text" placeholder="Điền email của bạn"/>
+            </div>
+            <div class="col-lg-6">
+              <label>Số điện thoại*</label>
+              <input type="text" placeholder="Điền số điện thoại của bạn"/>
+            </div>
+          </div>
+          <div class="row">
+            <h3>Nội dung liên hệ</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="row">
+                <label class="yn col-lg-6">Hợp tác nhượng quyền
+                  <input type="radio" name="kenh" value="1"/><span></span>
+                </label>
+                <label class="yn col-lg-6">Hợp tác cung ứng
+                  <input type="radio" name="kenh" value="2"/><span></span>
+                </label>
+                <label class="yn col-lg-6">Hợp tác truyền thông
+                  <input type="radio" name="kenh" value="3"/><span></span>
+                </label>
+                <label class="yn col-lg-6">Nội dung khác
+                  <input type="radio" name="kenh" value="4" checked="checked"/><span></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <h3>Nội dung chi tiết*</h3>
+            <textarea rows="10" placeholder="Hãy nói đôi điều với chúng tôi"></textarea>
+          </div>
+          <div class="row">
+            <input type="submit" value="GỬI"/>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2"><a class="logo" href=""><img src="images/logo.png" alt=""/></a></div>
+            <div class="col-lg-7">
+              <h2>CÔNG TY TNHH XUẤT NHẬP KHẨU & DỊCH VỤ ANH MINH</h2>
+              <p>Tel: 024 6251 5355 </p>
+              <p>Fax : 024 6251 5356</p>
+              <p>Email: info@anhminhgroup.vn </p>
+              <p>Văn phòng giao dịch : Tầng 2, Tòa nhà Petrowaco, 97-99 Láng Hạ, Đống Đa, Hà Nội</p>
+            </div>
+            <div class="col-lg-3">
+              <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+              <div class="soc"><a href=""><span class="ion-social-facebook"></span></a><a href=""><span class="ion-social-linkedin-outline"></span></a><a href=""><span class="ion-social-youtube-outline"></span></a></div>
+              <p class="copy">Copyright - All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="fb-root"></div>
+    </div>
+  </body>
+</html>
+<script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/scrollMagic.min.js"></script>
+<script src="js/debug.addIndicators.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/slide.js"></script>
+<script src="js/script.js"></script>
+<script>
+  $('.d-nav').hc_menu({
+      open: '.open-mnav',
+  });
+  
+  (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6";
+      fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>

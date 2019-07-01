@@ -1,0 +1,14 @@
+body{
+  font-family: $font-family-base;
+  background-color: #fff;
+  font-size: 13px;
+  color: $color-primary;
+}
+.wrap {
+  overflow: hidden;
+}
+@media (max-width: 1199px) {
+    .wow{
+        visibility: visible !important;
+    }
+}
