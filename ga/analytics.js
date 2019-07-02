@@ -11,7 +11,7 @@ otherwise you will get an error message saying the url you try to load does not 
 
 /******************** GLOBAL VARIABLES ********************/
 var SCOPES = ['https://www.googleapis.com/auth/analytics.readonly'];
-var CLIENT_ID = '324200294798-i8lfjn993u13i2esortv4qinkakgv117.apps.googleusercontent.com';
+var CLIENT_ID = '324200294798-ghsjca4pereh2b7bn89sqobttoare6hf.apps.googleusercontent.com';
 var API_KEY = '';
 
 var byTutorialAnalytics = {
