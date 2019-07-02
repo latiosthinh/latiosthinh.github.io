@@ -1837,7 +1837,7 @@ footer {
   max-height: calc(16px * 1); }
 
 .news button {
-  margin: 55px auto 0;
+  margin: 55px auto;
   text-transform: uppercase;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1853,6 +1853,9 @@ footer {
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s; }
+  @media all and (max-width: 1440px) {
+    .news button {
+      margin: 35px auto; } }
   .news button ion-icon {
     margin-left: 10px;
     font-size: 16px; }
