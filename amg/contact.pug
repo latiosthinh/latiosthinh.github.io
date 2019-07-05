@@ -25,34 +25,7 @@ html(lang="en")
         //- <![endif]
     body
         .wrap
-            header
-                a.logo(href="index.html"): img(src="images/logo.png", alt="")
-                nav.d-nav.container
-                    ul
-                        li
-                            a(href="") sản phẩm - dịch vụ
-                            <ion-icon name="arrow-dropdown"></ion-icon>
-                            ul
-                                li: a.smooth(href="http://mactech.vn") thiết bị đo lường
-                                li: a.smooth(href="service.html") dịch vụ nhà hàng
-                                li: a.smooth(href="kdnq.html") kinh doanh nhượng quyền
-                        li
-                            a(href="gioithieu.html") giới thiệu
-                        li
-                            a.smooth(href="news.html", title="") tin tức - sự kiện
-                            //- <ion-icon name="arrow-dropdown"></ion-icon>
-                            //- ul
-                            //-     li: a.smooth(href="tintuc.html") tin tức
-                            //-     li: a.smooth(href="sukien.html") sự kiện
-                        li: a(href="tuyendung.html") tuyển dụng
-                        li: a(href="contact.html") liên hệ
-                .s-form
-                    button.search
-                        <ion-icon name="search"></ion-icon>
-                    input(type="text")
-                    
-
-                button.open-mnav MENU OPEN
+            include header
 
             
             section#contact-page

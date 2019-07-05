@@ -62,14 +62,39 @@ header {
                 ul {
                     display: none;
                     position: absolute;
-                    top: calc(100% + 8px);;
+                    top: calc(100% + 8px);
                     left: 0;
+                    box-shadow: 0 0 4px #000;
                     li {
                         margin:0;
+                        &.has-child {
+                            > a {
+                                position: relative;
+                                ion-icon {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                }
+                            }
+                            ul {
+                                position: absolute;
+                                top: 0;
+                                left: 100%;
+                                display: none;
+                                min-width: 100%;
+                                a:hover {
+                                    background: #000000;
+                                }
+                            }
+                        }
                         &:hover {
                             a {
                                 background: $c1;
                                 color: #ffffff;
+                            }
+                            ul {
+                                display: block;
                             }
                         }
                         a {

@@ -32,9 +32,14 @@ footer {
         font-weight: bold;
         font-family: $fl;
         font-size: 14px;
+        margin-bottom: 20px;
     }
     p {
         font-size: 14px;
+        span {
+            display: inline-block;
+            min-width: 80px;
+        }
     }
     .copy {
         display: inline-block;

@@ -139,7 +139,7 @@
         }
     }
     button {
-        margin: 55px auto 0;
+        margin: 55px auto;
         text-transform: uppercase;
         display: flex;
         align-items: center;
@@ -149,6 +149,9 @@
         border: 3px solid $c1;
         padding: 14px 50px;
         transition: .3s;
+        @media all and (max-width: 1440px) {
+            margin: 35px auto;
+        }
         ion-icon {
             margin-left: 10px;
             font-size: 16px;
