@@ -859,7 +859,10 @@ footer {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    margin-top: 10px; }
+    margin-top: 30px; }
+    @media all and (max-width: 767px) {
+      footer .soc {
+        margin-top: 15px; } }
     footer .soc a {
       display: -webkit-inline-box;
       display: -ms-inline-flexbox;
