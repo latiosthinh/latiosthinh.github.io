@@ -28,48 +28,15 @@ html(lang="en")
             include header
 
             
-            section#datban
+            section#search-result.not-found
                 .container
-                    h1 đặt bàn
-                    
-                    .form
-                        .sline
-                            label Giờ
-                            input(type="text", placeholder="hh/mm")
-                        .sline
-                            label Ngày
-                            input(type="date")
-                        .sline
-                            label Nhà hàng
-                            select.nh
-                                option(value="Nhà hàng 1") Nhà hàng 1
-                                option(value="Nhà hàng 2") Nhà hàng 2
-                        .sline
-                            label Danh xưng
-                            select
-                                option(value) Ông
-                                option Bà
-                        .sline
-                            label Họ tên
-                            input(type="text")
-                        .sline
-                            label Điện thoại
-                            input(type="text")
-                        .sline
-                            label Email
-                            input(type="text")
-                        .sline.nl
-                            .s
-                                label Số lượng khách người lớn
-                                input(type="number")
-                            .s
-                                label Số lượng khách trẻ em
-                                input(type="number")
-                        .sline.ta
-                            label Ghi chú
-                            textarea(rows="5")
-                        .sline
-                            input(type="submit", value="Đặt ngay")
+                    .row
+                        .col-12
+                            h1 404
+                            h2 page not found!
+                            
+                            p Từ khóa bạn tìm kiếm không tồn tại. 
+                                | Xin vui lòng thử lại.
 
             include footer
 
