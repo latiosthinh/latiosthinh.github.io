@@ -1605,7 +1605,8 @@ footer {
     font-size: 40px;
     font-weight: bold;
     position: relative;
-    color: #ffffff; }
+    color: #ffffff;
+    text-align: center; }
     @media all and (max-width: 1366px) {
       #intro1 h1 {
         font-size: 30px; } }
