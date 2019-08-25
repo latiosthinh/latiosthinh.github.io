@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'SVN';
+	src: url('fonts/SVN-Gilroy-Bold.otf') format('opentype');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'SVN';
+	src: url('fonts/SVN-Gilroy-Light.otf') format('opentype');
+}
+
+$font-family-base: 'SVN', sans-serif;
+// ..........
+$f1: $font-family-base;

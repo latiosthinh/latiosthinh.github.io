@@ -1,0 +1,55 @@
+body{
+	font-size: 14px;
+	font-family: $f1;
+	line-height: 1.5;
+	color: $color_text;
+}
+
+::selection {
+	background: $c1; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	background: $c1; /* Gecko Browsers */
+}
+
+.wrap {
+	overflow: hidden;
+}
+
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+	li {
+		text-indent: -9999px;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		border:1px solid #000;
+		margin: 0px 30px;
+		transition: .3s;
+		cursor: pointer;
+		&.slick-active, &:hover {
+			background: #000;
+		}
+	}
+}
+
+%slick-arrow {
+	width: 65px;
+	height: 65px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #000;
+	cursor: pointer;
+	color: #000000;
+	transition: .3s;
+	font-size: 20px;
+	margin-left: 35px;
+	&:hover {
+		background: #000000;
+		color: #ffffff;
+	}
+}
