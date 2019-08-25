@@ -457,6 +457,9 @@ body {
     .slick-dots li.slick-active, .slick-dots li:hover {
       background: #000; }
 
+.slic-slide {
+  outline: none; }
+
 #san-pham .san-pham-moi__heading .slick-arrow, #san-pham .col-lg-4 .san-pham-moi__nav .slick-arrow, #feedback .feedback__nav .slick-arrow {
   width: 65px;
   height: 65px;
@@ -492,6 +495,9 @@ header {
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s; }
+  @media all and (max-width: 991px) {
+    header {
+      padding: 5px 0; } }
   header .logo {
     display: block;
     -webkit-transition: .3s;
@@ -535,6 +541,9 @@ header {
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s; }
+    @media all and (max-width: 991px) {
+      header .nav-top {
+        margin-bottom: 0; } }
     header .nav-top li {
       font-size: 15px;
       font-weight: normal;
@@ -555,6 +564,9 @@ header {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
+    @media all and (max-width: 991px) {
+      header .nav-main {
+        display: none; } }
     header .nav-main li {
       margin-left: 50px; }
     header .nav-main a {
@@ -563,11 +575,14 @@ header {
       -webkit-transition: .3s;
       -o-transition: .3s;
       transition: .3s; }
-      header .nav-main a:hover {
+      header .nav-main a:hover, header .nav-main a.active {
         color: #c49b74; }
 
 #trang-chu .banner-slider {
   padding: 180px 0 80px; }
+  @media all and (max-width: 991px) {
+    #trang-chu .banner-slider {
+      padding: 20px 0 40px; } }
   #trang-chu .banner-slider .item {
     padding: 0px 15px;
     display: -webkit-box;
@@ -579,17 +594,30 @@ header {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
+    @media all and (max-width: 991px) {
+      #trang-chu .banner-slider .item {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
   #trang-chu .banner-slider h2 {
     font-size: 70px;
     letter-spacing: 3px;
     font-weight: bold;
     text-transform: uppercase;
     color: #c49b74; }
+    @media all and (max-width: 991px) {
+      #trang-chu .banner-slider h2 {
+        text-align: center;
+        font-size: 50px; } }
   #trang-chu .banner-slider p {
     font-size: 15px;
     margin: 30px 0px 70px;
     display: block;
     width: 80%; }
+    @media all and (max-width: 991px) {
+      #trang-chu .banner-slider p {
+        text-align: center; } }
   #trang-chu .banner-slider a {
     font-size: 20px;
     color: #ffffff;
@@ -604,6 +632,20 @@ header {
     #trang-chu .banner-slider a:hover {
       background: #ffffff;
       color: #c49b74; }
+  #trang-chu .banner-slider .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  @media all and (max-width: 991px) {
+    #trang-chu .banner-slider img {
+      margin-top: 40px; } }
 
 #gioi-thieu {
   padding: 100px 0;
@@ -655,6 +697,10 @@ header {
     font-size: 88px;
     font-weight: bold;
     letter-spacing: 40px; }
+    @media all and (max-width: 991px) {
+      #gioi-thieu-2 h1 {
+        font-size: 60px;
+        letter-spacing: 10px; } }
   #gioi-thieu-2 p {
     font-size: 15px;
     margin: 50px 0 70px; }
@@ -735,6 +781,9 @@ header {
     padding: 0 70px 0 60%;
     position: relative;
     z-index: 5; }
+    @media all and (max-width: 991px) {
+      #san-pham .feature-product {
+        padding: 20px 70px 20px 60%; } }
     #san-pham .feature-product h2 {
       font-size: 40px;
       font-weight: bold;
@@ -892,6 +941,15 @@ footer {
     -ms-flex-align: center;
     align-items: center;
     margin-top: 40px; }
+    @media all and (max-width: 991px) {
+      footer ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start; } }
   footer li {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -901,6 +959,9 @@ footer {
     align-items: center;
     margin: 0px 20px;
     position: relative; }
+    @media all and (max-width: 991px) {
+      footer li {
+        margin: 10px 0; } }
     footer li a {
       display: block;
       width: 100%;

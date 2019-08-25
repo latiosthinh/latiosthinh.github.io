@@ -100,37 +100,85 @@ jQuery(function($) {
 			$('.san-pham-moi-slide_1').slick({
 				slidesToShow: 3,
 				slidesToScroll: 3,
-				arrows: true,
 				nextArrow: $( '.spm.next' ),
 				prevArrow: $( '.spm.prev' ),
 				dots: false,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2,
+						}
+					},
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+					}
+				]
+			});
+
+			$('.san-pham-moi-slide_3').slick({
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				nextArrow: $( '.spm3.next' ),
+				prevArrow: $( '.spm3.prev' ),
+				dots: false,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2,
+						}
+					},
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+					}
+				]
+			});
+
+			$('.san-pham-moi-slide_4').slick({
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				nextArrow: $( '.spm4.next' ),
+				prevArrow: $( '.spm4.prev' ),
+				dots: false,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2,
+						}
+					},
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+					}
+				]
 			});
 			
 			$('.san-pham-moi-slide_2').slick({
 				nextArrow: $( '.spm2.next' ),
 				prevArrow: $( '.spm2.prev' ),
-				// arrows: true,
 				dots: false,
-				// fade: true
 			});
 
 			$('.banner-slider').slick({
 				nextArrow: false,
 				prevArrow: false,
 				dots:true,
-				// appendDots: $('.neighbor-dot'),
-				// fade: true,
-				// customPaging : function(slider, i) {
-				// 	var title = $(slider.$slides[i]).data('title');
-				// 	return '<a class="pager__item"> '+title+' </a>';
-				// }
-			});
-
-			$('.from-blog').slick({
-				nextArrow: false,
-				prevArrow: false,
-				dots: true,
-				fade: true
 			});
 		},
 
@@ -155,4 +203,14 @@ jQuery(function($) {
 	
 	scrElement.setAttribute( 'src', 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + num_photos + '&callback=mishaProcessResult' );
 	document.body.appendChild( scrElement );
+
+	$( '.psy-link' ).click( function(e) {
+		e.preventDefault();
+		$( '.psy-link' ).removeClass( 'active' )
+		$( this ).addClass( 'active' )
+		let target = $( $(this).attr('href') )
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 500);
+	})
 })
