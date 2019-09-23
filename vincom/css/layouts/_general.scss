@@ -1,0 +1,30 @@
+body{
+	font-size: 14px;
+	// font-family: $f1;
+	line-height: 1.5;
+	// color: $color_text;
+}
+
+::selection {
+	// background: $c1; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	// background: $c1; /* Gecko Browsers */
+}
+
+.wrap {
+	overflow: hidden;
+}
+
+.spacer {
+	&.s0 {
+		min-height: 1px;
+	}
+	&.s2 {
+		min-height: 1000px;
+	}
+}
+#plane {
+    position: absolute;
+    top: 0;
+}
