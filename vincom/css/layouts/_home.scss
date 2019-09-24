@@ -1,0 +1,100 @@
+#cloud-1 {
+    animation: ltr 10s infinite linear;
+}
+#cloud-2 {
+    animation: ltr 7s infinite linear;
+}
+#cloud-3 {
+    animation: ltr 6s infinite linear;
+}
+
+#bike {
+    animation: bikemove1 10s infinite linear;
+    // transform: translate3d( -20px , 20px , 20px );
+}
+
+#bike-2 {
+    animation: bikemove2 10s infinite linear;
+    // transform: translate3d( 20px , 20px , 20px );
+}
+
+#car {
+    animation: car1 10s infinite linear;
+    // transform: translate3d(-62px, -35px, 20px);
+}
+
+#car-2 {
+    animation: car2 10s infinite linear;
+    // transform: translate3d(-38px, 26px, 20px);
+}
+
+#truck {
+    animation: truck 10s infinite linear;
+    // transform: transform: translate3d(130px, -76px, 20px);
+}
+
+#headquater,
+#museum,
+#show,
+#bank,
+#wall,
+#_x34_c4k {
+    cursor: pointer;
+    transition: all .2s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+#_x34_c4k {
+    transform-origin: 45% 65%;
+}
+#headquater {
+    transform-origin: 65% 65%;
+}
+#museum {
+    transform-origin: 35% 55%;
+}
+#show {
+    transform-origin: 50% 50%;
+}
+#bank {
+    transform-origin: 45% 80%;
+}
+#wall {
+    transform-origin: 65% 55%;
+}
+
+@keyframes ltr {
+    0%, 100% { transform: translateX(-5%) }
+    50% { transform: translateX(5%) }
+}
+
+@keyframes bikemove1 {
+    0% { opacity: 1; transform: translate3d( 0px , 0px , 0px ); }
+    99% { opacity: 1; transform: translate3d( -33px , 20px , 20px ); }
+    100% { opacity: 0; transform: translate3d( -33px , 20px , 20px ); }
+}
+
+@keyframes bikemove2 {
+    0% { opacity: 1; transform: translate3d( 0px , 0px , 0px ); }
+    99% { opacity: 1; transform: translate3d(45px, 26px, 20px); }
+    100% { opacity: 0; transform: translate3d(45px, 26px, 20px); }
+}
+
+@keyframes car1 {
+    0% { opacity: 1; transform: translate3d( 0px , 0px , 0px ); }
+    99% { opacity: 1; transform: translate3d(-62px, -35px, 20px); }
+    100% { opacity: 0; transform: translate3d(-62px, -35px, 20px); }
+}
+
+@keyframes car2 {
+    0% { opacity: 1; transform: translate3d( 0px , 0px , 0px ); }
+    99% { opacity: 1; transform: translate3d(-38px, 26px, 20px); }
+    100% { opacity: 0; transform: translate3d(-38px, 26px, 20px); }
+}
+
+@keyframes truck {
+    0% { opacity: 1; transform: translate3d( 0px , 0px , 0px ); }
+    99% { opacity: 1; transform: translate3d(130px, -76px, 20px); }
+    100% { opacity: 0; transform: translate3d(130px, -76px, 20px); }
+}
