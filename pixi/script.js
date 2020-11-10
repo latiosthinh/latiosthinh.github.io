@@ -250,7 +250,7 @@ function initPixi() {
         c4_canvas             = new PIXI.Text( c4, style_contact )
         c4_canvas.interactive = true
         c4_canvas.click       = ( e ) => {
-            window.location.href = 'http://latiosthinh.github.io/trailHover/'
+            window.location.href = 'http://latiosthinh.github.io/'
         }
 
     let c5                    = document.getElementById( 'c5' ).innerText
