@@ -132,7 +132,7 @@ header a:hover {
 }
 
 .hero {
-  background: url(../images/herohob.jpg) var(--color-black) center center/cover no-repeat;
+  background: url(./images/herohob.jpg) var(--color-black) center center/cover no-repeat;
   padding: 7% 0;
 }
 
